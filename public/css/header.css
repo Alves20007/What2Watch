@@ -1,0 +1,108 @@
+
+/* Estilos básicos para o header */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 120px; /* Ajuste conforme o tamanho do logotipo */
+}
+
+/* Estilo do menu de navegação */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #703021;
+}
+
+/* Estilos do dropdown */
+/*o dropdown começa praticamente aqui, depois disso ele fica todo desformatado */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-link {
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    top: 100%; /* Posiciona o dropdown logo abaixo do link */
+}
+
+.dropdown-content a {
+    color: #fff3f3;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #070606;
+}
+
+/* Exibe o conteúdo do dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* A PARTIR daqui é a pesquisa */
+
+.search-bar {
+    display: flex; /* Alinha o input e o botão na horizontal */
+    align-items: center; /* Centraliza verticalmente */
+    border-radius: 5px; /* Arredonda os cantos */
+    padding: 5px; /* Adiciona espaço interno */
+    max-width: 173px; /* Define uma largura máxima */
+    margin: -1px auto; /* Centraliza a barra na página */
+    background-color: #000000; /* Cor de fundo */
+}
+
+.search-bar input {
+    border: none; /* Remove a borda do input */
+    outline: none; /* Remove o contorno ao focar */
+    flex: 1; /* Faz o input ocupar o espaço restante */
+    padding: 1px; /* Adiciona espaço interno ao input */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+}
