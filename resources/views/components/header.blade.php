@@ -1,6 +1,6 @@
 <body>
-    <!-- Header do Site -->
     <header>
+        <link href="{{ asset('css/header.css') }}" rel="stylesheet">
         <div class="container">
             <!-- Logo -->
             <div class="logo">
@@ -11,33 +11,30 @@
             
             <!-- Menu de Navegação -->
             <nav class="nav-menu">
-                <ul>
-                    <li><a href="sobre.html">GR</a></li> <!-- Global rating-->
-                    <li><a href="servicos.html">MR</a></li> <!-- My rating-->
-                    <li><a href="contato.html">2W</a></li> <!-- 2 watch (é tipo filmes e series guardados para ver depois))-->
-                    
-                    <!-- Dropdown Simplificado 
-                    Nota depois acredito que cada "link" tenha de ser associado a data base-->
+                <ul>                    
+                    <!-- Dropdown Simplificado -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Filmes</a>
                         <div class="dropdown-content">
                             <a href="{{ url('acao') }}">Data de lançamento</a>
                             <a href="{{ url('aventura') }}">Top 100 filmes</a>
                             <a href="{{ url('animacao') }}">Os filmes mais populares</a>
-                            <a href="{{ url('comedia') }}">Caixa  surpresa</a>
-                            <a href="{{ url('acao') }}">bilhetes</a> <!--Talvez compra e agendamento de filmes -->
-                            <a href="{{ url('acao') }}">Noticias de filmes</a>
+                            <a href="{{ url('comedia') }}">Caixa surpresa</a>
+                            <a href="{{ url('acao') }}">Bilhetes</a> <!-- Tal vez compra e agendamento de filmes -->
+                            <a href="{{ url('acao') }}">Notícias de filmes</a>
                         </div>
                     </li>
-                    
+
                     <li class="dropdown">
-                        <a href="#" class="dropdown-link">Series</a>
+                        <a href="#" class="dropdown-link">Séries</a>
                         <div class="dropdown-content">
                             <a href="{{ url('acao') }}">O que está a dar</a>
-                            <a href="{{ url('aventura') }}">Top 100 series</a>
-                            <a href="{{ url('animacao') }}">As series mais populares</a>
-                            <a href="{{ url('comedia') }}">Caixa  surpresa</a>
-                            <a href="{{ url('acao') }}">Noticias das series</a>
+                            <a href="{{ url('aventura') }}">Top 100 séries</a>
+                            <a href="{{ url('animacao') }}">As séries mais populares</a>
+                            <a href="{{ url('comedia') }}">Caixa surpresa</a>
+                            <a href="{{ url('acao') }}">Notícias das séries</a>
+                        </div>
+                    </li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">W2</a>
@@ -45,6 +42,27 @@
                             <a href="{{ url('acao') }}">W2W</a>
                             <a href="{{ url('aventura') }}">Trailers</a>
                             <a href="{{ url('animacao') }}">W2 Escolha</a>
+                            <a href="{{ url('animacao') }}">O que está por vir?</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-link">Prêmios e Eventos</a>
+                        <div class="dropdown-content">
+                            <a href="{{ url('acao') }}">Oscares</a>
+                            <a href="{{ url('aventura') }}">Central de prêmios</a>
+                            <a href="{{ url('animacao') }}">Central de festivais</a>
+                            <a href="{{ url('animacao') }}">Todos os eventos</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-link">Celebridades</a>
+                        <div class="dropdown-content">
+                            <a href="{{ url('acao') }}">Oscares</a>
+                            <a href="{{ url('aventura') }}">Nascidas hoje</a>
+                            <a href="{{ url('animacao') }}">As celebridades mais populares</a>
+                            <a href="{{ url('animacao') }}">Notícias dos famosos</a>
                         </div>
                     </li>
 
@@ -64,7 +82,7 @@
                             <a href="{{ url('acao') }}">Romance</a>
                             <a href="{{ url('acao') }}">Suspense</a>
                             <a href="{{ url('acao') }}">Terror</a>
-                            <a href="{{ url('acao') }}">Western</a> <!-- pelo que eu entendi velho oeste -->
+                            <a href="{{ url('acao') }}">Western</a> <!-- Pelo que eu entendi, velho oeste -->
                         </div>
                     </li>
                 </ul>
@@ -73,4 +91,3 @@
     </header>
 </body>
 </html>
-
