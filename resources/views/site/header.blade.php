@@ -63,16 +63,16 @@
                             <a href="{{ url('aventura') }}">Aventura</a>
                             <a href="{{ url('animacao') }}">Animação</a>
                             <a href="{{ url('comedia') }}">Comédia</a>
-                            <a href="{{ url('acao') }}">Drama</a>
-                            <a href="{{ url('acao') }}">Documentário</a>
-                            <a href="{{ url('acao') }}">Fantasia</a>
-                            <a href="{{ url('acao') }}">Ficção Científica</a>
-                            <a href="{{ url('acao') }}">Guerra</a>
-                            <a href="{{ url('acao') }}">Musical</a>
-                            <a href="{{ url('acao') }}">Romance</a>
-                            <a href="{{ url('acao') }}">Suspense</a>
-                            <a href="{{ url('acao') }}">Terror</a>
-                            <a href="{{ url('acao') }}">Western</a> <!-- pelo que eu entendi velho oeste -->
+                            <a href="{{ url('Drama') }}">Drama</a>
+                            <a href="{{ url('Documentario') }}">Documentário</a>
+                            <a href="{{ url('fantasia') }}">Fantasia</a>
+                            <a href="{{ url('Fc') }}">Ficção Científica</a>
+                            <a href="{{ url('Guerra') }}">Guerra</a>
+                            <a href="{{ url('Musical') }}">Musical</a>
+                            <a href="{{ url('Romance') }}">Romance</a>
+                            <a href="{{ url('suspense') }}">Suspense</a>
+                            <a href="{{ url('terror') }}">Terror</a>
+                            <a href="{{ url('western') }}">Western</a> <!-- pelo que eu entendi velho oeste -->
                         </div>
                     </li>
                 </ul>

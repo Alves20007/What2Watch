@@ -1,7 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 /* Estilos básicos para o header */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎;
     margin: 0;
     padding: 0;
     background-color: #f3f4f6;
@@ -43,7 +48,7 @@ header {
 }
 
 .nav-menu a:hover {
-    color: #703021;
+    color: #FFA500;
 }
 
 /* Estilos do dropdown */
@@ -71,10 +76,10 @@ header {
 
 .dropdown-content a {
     color: #fff3f3;
-    padding: 12px 16px;
+    padding: 6px 16px;
     text-decoration: none;
     display: block;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #000000;
     transition: background-color 0.3s ease;
 }
 
@@ -88,21 +93,44 @@ header {
 }
 
 /* A PARTIR daqui é a pesquisa */
-
+/* Estilos para a Barra de Pesquisa */
 .search-bar {
     display: flex; /* Alinha o input e o botão na horizontal */
     align-items: center; /* Centraliza verticalmente */
     border-radius: 5px; /* Arredonda os cantos */
     padding: 5px; /* Adiciona espaço interno */
-    max-width: 173px; /* Define uma largura máxima */
-    margin: -1px auto; /* Centraliza a barra na página */
-    background-color: #000000; /* Cor de fundo */
+    max-width: 250px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza a barra na página */
+    background-color: #333; /* Cor de fundo */
+    gap: 5px; /* Espaçamento entre o input e o botão */
 }
 
 .search-bar input {
     border: none; /* Remove a borda do input */
     outline: none; /* Remove o contorno ao focar */
     flex: 1; /* Faz o input ocupar o espaço restante */
-    padding: 1px; /* Adiciona espaço interno ao input */
-    font-size: 18px; /* Aumenta o tamanho da fonte */
+    padding: 8px; /* Adiciona espaço interno ao input */
+    font-size: 14px; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+    background-color: #444; /* Cor de fundo do campo */
+    border-radius: 5px; /* Arredonda os cantos do campo */
+}
+
+.search-bar input::placeholder {
+    color: #bbb; /* Cor do texto do placeholder */
+}
+
+.search-bar button {
+    background-color: #FFA500; /* Cor de fundo do botão */
+    border: none; /* Remove a borda do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 8px 10px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    transition: background-color 0.3s ease; /* Animação ao passar o mouse */
+}
+
+.search-bar button:hover {
+    background-color: #ff8800; /* Cor do botão ao passar o mouse */
 }

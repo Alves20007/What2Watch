@@ -1,1 +1,2 @@
-pagina da aventura
+<x header />
+    pagina da aventura
