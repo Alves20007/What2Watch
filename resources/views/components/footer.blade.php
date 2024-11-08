@@ -19,6 +19,6 @@
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; <?php echo date("Y"); ?> WDIW. Todos os direitos reservados.</p>
+        <p>&copy; <?php echo date("Y"); ?> W2W. Todos os direitos reservados.</p>
     </div>
 </footer>

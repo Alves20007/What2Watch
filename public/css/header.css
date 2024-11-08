@@ -1,9 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-
 /* Estilos básicos para o header */
 body {
     font-family: 𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎;
@@ -53,6 +47,7 @@ header {
 
 /* Estilos do dropdown */
 /*o dropdown começa praticamente aqui, depois disso ele fica todo desformatado */
+/*ja nao fica mais */
 .dropdown {
     position: relative;
 }
@@ -87,7 +82,6 @@ header {
     background-color: #070606;
 }
 
-/* Exibe o conteúdo do dropdown ao passar o mouse */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -99,7 +93,7 @@ header {
     align-items: center; /* Centraliza verticalmente */
     border-radius: 5px; /* Arredonda os cantos */
     padding: 5px; /* Adiciona espaço interno */
-    max-width: 250px; /* Define uma largura máxima */
+    max-width: 350px; /* Define uma largura máxima */
     margin: 0 auto; /* Centraliza a barra na página */
     background-color: #333; /* Cor de fundo */
     gap: 5px; /* Espaçamento entre o input e o botão */
