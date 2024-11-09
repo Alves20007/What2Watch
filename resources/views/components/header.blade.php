@@ -75,6 +75,7 @@
                                 <a href="{{ url('acao') }}">► Ação</a>
                                 <a href="{{ url('aventura') }}">► Aventura</a>
                                 <a href="{{ url('animacao') }}">► Animação</a>
+                                <a href="{{ url('western') }}">► anime</a>
                                 <a href="{{ url('Comedia') }}">► Comédia</a>
                                 <a href="{{ url('Drama') }}">► Drama</a>
                                 <a href="{{ url('Documentario') }}">► Documentário</a>
