@@ -7,7 +7,6 @@
                 <div class="logo">
                     <a href="index.html">
                         <img src="{{ asset('imagens/logo.png') }}" alt="Logo">
-                    </a>
                 </div>
                 
                 <!-- Menu de Navegação -->

@@ -1,6 +1,6 @@
 <head>
     <x-header />
-    <link rel="stylesheet" href="{{ asset('css/primeiro.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/CG.css') }}">
 </head>
 <body>
 

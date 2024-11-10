@@ -89,3 +89,8 @@ Route::get('maca', function () {
 Route::get('western', function () {
     return view('site.categorias.western');
 });
+
+
+Route::get('teste', function () {
+    return view('site.teste');
+});
