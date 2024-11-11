@@ -12,26 +12,6 @@ header {
   background-color: #222;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 30px;
-  margin-right: 10px;
-}
-
-.nav {
-  display: flex;
-  gap: 15px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #fff;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -44,10 +24,16 @@ header {
   background-color: #333;
   padding: 15px;
   border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+  position: relative; /* Para posicionar os botões nas extremidades */
 }
 
 .section h2 {
   margin-bottom: 10px;
+  font-size: 24px;
+  color: #FFA500;
 }
 
 .grid {
@@ -60,19 +46,63 @@ header {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
+.grid img:hover {
+  transform: scale(1.05);
+}
+
+.movie {
+  text-align: center;
+  position: relative;
+}
+
+.movie p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fff;
+  padding: 5px;
+}
+
+/* Botões de navegação - setas */
 .nav-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  transform: translateY(-50%);
 }
 
-.nav-buttons button {
-  background-color: #555;
+.nav-button {
+  background-color: rgba(85, 85, 85, 0.7); /* Cor de fundo com transparência */
   color: #fff;
   border: none;
   padding: 10px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50%;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.nav-button:hover {
+  background-color: rgba(255, 102, 0, 0.8); /* Cor de fundo laranja e mais opaco ao passar o mouse */
+  transform: scale(1.1); /* Aumenta o tamanho levemente ao passar o mouse */
+}
+
+.nav-button span {
+  font-size: 24px; /* Tamanho da seta */
+}
+
+.nav-button:disabled {
+  background-color: rgba(68, 68, 68, 0.7); /* Cor mais escura e transparente quando desabilitado */
+  cursor: not-allowed;
+}
+ 
