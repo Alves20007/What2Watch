@@ -1,1 +1,0 @@
-pagina da açao

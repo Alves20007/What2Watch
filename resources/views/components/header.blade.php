@@ -1,7 +1,10 @@
 <html>
     <body>
         <header>
-            <link href="{{ asset('css/header.css') }}" rel="stylesheet"> 
+
+            <a href="{{ asset('css/teste.css') }}">
+                <img src="imagens/logo.png" alt="Description of Image">
+            </a>
             <div class="container">
                 <!-- Logo -->
                 <div class="logo">
@@ -69,7 +72,8 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-link">Gêneros▼</a>
+                            <a href="{{ url('teste') }}">categorias</a>
+                             <!--<a href="#" class="dropdown-link">Gêneros▼</a>
                             <div class="dropdown-content">
                                 <a href="{{ url('acao') }}">► Ação</a>
                                 <a href="{{ url('aventura') }}">► Aventura</a>
@@ -86,7 +90,7 @@
                                 <a href="{{ url('suspense') }}">► Suspense</a>
                                 <a href="{{ url('terror') }}">► Terror</a>
                                 <a href="{{ url('maca') }}">► 🍏</a>
-                                <a href="{{ url('western') }}">► Western</a> <!-- Pelo que eu entendi, velho oeste -->
+                                <a href="{{ url('western') }}">► Western</a> Pelo que eu entendi, velho oeste -->
                             </div>
                         </li>
                         <!-- Barra de Pesquisa -->

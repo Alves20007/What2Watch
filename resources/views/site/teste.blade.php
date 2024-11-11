@@ -15,12 +15,19 @@
       // Array de filmes para cada categoria, com o campo 'url' para o link de cada filme
       $movies = [
           'Aventura' => [
-              ['src' => 'imagens/aventura.jpg', 'title' => 'Adventure Movie 1', 'url' => 'https://example.com/adventure1'],
-              ['src' => 'action_movie2.jpg', 'title' => 'Adventure Movie 2', 'url' => 'https://example.com/adventure2'],
-              ['src' => 'action_movie3.jpg', 'title' => 'Adventure Movie 3', 'url' => 'https://example.com/adventure3'],
-              ['src' => 'action_movie4.jpg', 'title' => 'Adventure Movie 4', 'url' => 'https://example.com/adventure4'],
-              ['src' => 'action_movie5.jpg', 'title' => 'Adventure Movie 5', 'url' => 'https://example.com/adventure5'],
-              ['src' => 'action_movie6.jpg', 'title' => 'Adventure Movie 6', 'url' => 'https://example.com/adventure6'],
+              ['src' => 'imagens/filmes/IJ.jpg', 'title' => 'Aventura', 'url' => 'https://example.com/adventure2'],
+              ['src' => 'imagens/filmes/inception.png', 'title' => 'Aventura Epica', 'url' => 'https://example.com/adventure2'],
+              ['src' => 'imagens/filmes/dune.png', 'title' => 'Aventura no Deserto', 'url' => 'https://example.com/adventure3'],
+              ['src' => 'imagens/filmes/dino.jpg', 'title' => 'Aventura Jurasica', 'url' => 'https://example.com/adventure2'],
+              ['src' => 'imagens/filmes/jumanji.png', 'title' => 'Aventura na Selva', 'url' => 'https://example.com/adventure5'],
+              ['src' => 'imagens/filmes/007.png', 'title' => 'Aventura pelo Globo', 'url' => 'https://example.com/adventure4'],              
+              ['src' => 'imagens/filmes/everest.png', 'title' => 'Aventura na Montanha', 'url' => 'https://example.com/adventure6'],
+              ['src' => 'imagens/filmes/Oz.png', 'title' => 'Jornada', 'url' => 'https://example.com/adventure2'],
+              ['src' => 'imagens/filmes/green book.png', 'title' => 'Viagem', 'url' => 'https://example.com/adventure2'],
+              ['src' => 'imagens/filmes/Pi.jpg', 'title' => 'Aventura no Mar', 'url' => 'https://example.com/adventure3'],
+              ['src' => 'imagens/filmes/sword.jpg', 'title' => 'Mestres de espadas', 'url' => 'https://example.com/adventure4'],
+              ['src' => 'imagens/filmes/back to the future.png', 'title' => 'Aventuras Jovenies', 'url' => 'https://example.com/adventure5'],
+              ['src' => 'imagens/filmes/miles.png', 'title' => 'Aventura Urbanas', 'url' => 'https://example.com/adventure6'],
               // Adicione mais filmes conforme necessário
           ],
           'comedy' => [
