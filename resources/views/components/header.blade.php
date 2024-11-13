@@ -11,7 +11,7 @@
             <!-- Logo -->
             <div class="logo">
                 <a href="{{ url('primeiro') }}">
-                    <img src="{{ asset('imagens/logo.png') }}" alt="Logo">
+                    <img src="{{ asset('imagens/novo.png') }}" alt="Logo">
                 </a>
             </div>
             

@@ -15,8 +15,8 @@
       // Array de filmes para cada categoria, com o campo 'url' para o link de cada filme
       $movies = [
           'Aventura' => [
-              ['src' => 'imagens/filmes/IJ.jpg', 'title' => 'Aventura', 'url' => url('acao')],
-              ['src' => 'imagens/filmes/inception.png', 'title' => 'Aventura Epica', 'url' => url('acao')],
+              ['src' => 'imagens/filmes/IJ.jpg', 'title' => 'Aventura', 'url' => url('Aventura')],
+              ['src' => 'imagens/filmes/inception.png', 'title' => 'Aventura Epica', 'url' => url('Epico')],
               ['src' => 'imagens/filmes/dune.png', 'title' => 'Aventura no Deserto', 'url' => url('acao/acao')],
               ['src' => 'imagens/filmes/dino.jpg', 'title' => 'Aventura Jurasica', 'url' => url('acao/acao')],
               ['src' => 'imagens/filmes/jumanji.png', 'title' => 'Aventura na Selva', 'url' => url('acao/acao')],

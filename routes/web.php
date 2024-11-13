@@ -29,13 +29,19 @@ Route::get('/header', function () {
     return view('site.header');
 });
 
-Route::get('acao', function () {
-    return view('site.categorias.acao');
+//Daqui para a frente é a categoria Aventura... contar mais 12
+Route::get('Aventura', function () {
+    return view('site.aventura.Aventura');
 });
 
-Route::get('aventura', function () {
-    return view('site.categorias.aventura');
+Route::get('Epico', function () {
+    return view('site.aventura.Epico');
 });
+
+
+
+
+
 
 Route::get('animacao', function () {
     return view('site.categorias.animacao');
@@ -93,4 +99,8 @@ Route::get('western', function () {
 
 Route::get('teste', function () {
     return view('site.teste');
+});
+
+Route::get('teste2', function () {
+    return view('site.teste2');
 });

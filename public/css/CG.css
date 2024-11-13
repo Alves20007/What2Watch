@@ -1,11 +1,11 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; 
     box-sizing: border-box;
 }
 
 body {
-    font-family: 𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎;
+    font-family: monospace;
     color: #fff;  /* Cor do texto em branco */
     background-color: #111;  /* Cor de fundo preta */
     line-height: 1.6;

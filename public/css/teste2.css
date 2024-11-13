@@ -1,6 +1,5 @@
-/* Estilos básicos para o header */
 body {
-    font-family: "dragon hunter"; /* Mudando a fonte para Inter */
+    font-family: 'Inter', sans-serif; /* Mudando a fonte para Inter */
     margin: 0;
     padding: 0;
     background-color: #f3f4f6;
