@@ -29,13 +29,13 @@
               ['src' => 'imagens/filmes/back to the future.png', 'title' => 'Aventuras Jovenies', 'url' => url('acao/acao')],
               ['src' => 'imagens/filmes/miles.png', 'title' => 'Aventura Urbanas', 'url' => url('acao/acao')],
           ],
-          'comedy' => [
-              ['src' => 'comedia.jpg', 'title' => 'Comedy Movie 1', 'url' => url('acao/acao')],
-              ['src' => 'comedy_movie2.jpg', 'title' => 'Comedy Movie 2', 'url' => url('acao/acao')],
-              ['src' => 'comedy_movie3.jpg', 'title' => 'Comedy Movie 3', 'url' => url('acao/acao')],
-              ['src' => 'comedy_movie4.jpg', 'title' => 'Comedy Movie 4', 'url' => url('acao/acao')],
-              ['src' => 'comedy_movie5.jpg', 'title' => 'Comedy Movie 5', 'url' => url('acao/acao')],
-              ['src' => 'comedy_movie6.jpg', 'title' => 'Comedy Movie 6', 'url' => url('acao/acao')],
+          'Comedias' => [
+              ['src' => 'comedia.jpg', 'title' => 'Comedia 1', 'url' => url('acao/acao')],
+              ['src' => 'filme_comedia.jpg', 'title' => 'filme comedia2', 'url' => url('acao/acao')],
+              ['src' => 'filme_comedia.jpg', 'title' => 'filme comedia3', 'url' => url('acao/acao')],
+              ['src' => 'filme_comedia.jpg', 'title' => 'filme comedia4', 'url' => url('acao/acao')],
+              ['src' => 'filme_comedia.jpg', 'title' => 'filme comedia5', 'url' => url('acao/acao')],
+              ['src' => 'filme_comedia.jpg', 'title' => 'filme comedia6', 'url' => url('acao/acao')],
           ],
       ];
 

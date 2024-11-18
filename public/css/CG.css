@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0; 
     box-sizing: border-box;
+    color: #fff;
 }
 
 body {
@@ -50,12 +51,4 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-}
-
-/* Estilização para telas menores */
-@media (max-width: 768px) {
-    .section {
-        flex-direction: column;
-        text-align: center;
-    }
 }
