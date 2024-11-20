@@ -5,3 +5,6 @@ criar as coisas que faltam
 melhorar
 
 fazer depois nas categorias tipo uma vinheta algo assim
+
+
+descobrir como se faz o foreign key da categorias filmseeder.php etc

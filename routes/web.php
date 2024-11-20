@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Film;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,6 +28,11 @@ Route::get('/footer', function () {
 
 Route::get('/header', function () {
     return view('site.header');
+});
+
+Route::get('/filmes', function () {
+    $films = Film::all();
+    return view('films.index', compact('films'));
 });
 
 //Daqui para a frente é a categoria Aventura... contar mais 12
