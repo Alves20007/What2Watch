@@ -27,6 +27,7 @@
                             <a href="{{ url('comedia') }}">Caixa surpresa</a>
                             <a href="{{ url('acao') }}">Bilhetes</a>
                             <a href="{{ url('acao') }}">Notícias de filmes</a>
+                            <a href="{{ url('filmes') }}">filmes</a>
                         </div>
                     </li>
 

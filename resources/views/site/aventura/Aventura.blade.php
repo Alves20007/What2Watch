@@ -13,3 +13,19 @@
             </p>
         </div>
     </section>
+
+<Section class="section">
+    <div class="text">
+        <h2>Nota</h2>
+        <p>coloco um trailer e .... </p>
+    </div>
+
+</Section>
+
+<Section class="section">
+    <div class="text">
+        <h2>Nota</h2>
+        <p>coloco um trailer e .... </p>
+    </div>
+
+</Section>

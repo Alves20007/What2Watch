@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('image');
             $table->string('Data');
             $table->string('url');
-            $table->foreign('categoria');
+            $table->string('PCategoria')->nullable();
+            //$table->foreign('categoria'); 
+            $table->string('categoria')->nullable();
             $table->timestamps();
         });
     }

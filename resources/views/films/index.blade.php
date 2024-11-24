@@ -5,6 +5,8 @@
                 <img class="h-64" src="/images/films/{{ $film->image }}" >
                 <a class="font-bold" href="{{ $film->url }}">{{ $film->title }}</a>
                 <p class="font-italic">{{ $film->Data }}</p>
+                <p class="font-italic">{{ $film->PCategoria }}</p>
+                <!-- <button type="butao" >{{$film->PCategoria}} </button> -->
             </div>
         @endforeach
     </div>

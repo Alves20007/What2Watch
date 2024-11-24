@@ -15,10 +15,12 @@ class FilmSeeder extends Seeder
     {
         Film::create([
             'title' => 'Eternal Sunshine of the Spotless Mind',
-            'url' => "{{ url('site.acao') }}",
+            'url' => url('Aventura'),
             'image' => 'spotless.jpg',
             'Data' => '20/05/2004',
-            'categoria' => 'acao'
+            'PCategoria' => 'Drama',
+            'categoria'=> 'ação,ficção cientifica',
+            //'categoria' => 'acao'
         ]);
 
         Film::create([
