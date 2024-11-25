@@ -35,6 +35,16 @@ Route::get('/filmes', function () {
     return view('films.index', compact('films'));
 });
 
+Route::get('/filmes', function () {
+    $films = Film::all();
+    return view('films.index', compact('films'));
+});
+
+Route::get('/filmes/{slug}', function ($slug) {    
+    $film = Film::where('slug', $slug)->first();
+    return view('films.show', compact('film'));
+});
+
 Route::get('/batman', function () {
     return view('site.filmes.batman');
 });

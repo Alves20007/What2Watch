@@ -44,5 +44,5 @@
     </section>
     
 </body>
-<x-footer />
+
 </x-guestLayout>

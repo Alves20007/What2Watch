@@ -15,7 +15,7 @@ class FilmSeeder extends Seeder
     {
         Film::create([
             'title' => 'Eternal Sunshine of the Spotless Mind',
-            'url' => url('http://localhost:8000/primeiro'),
+            'slug' => 'eternal',
             'image' => 'spotless.jpg',
             'Data' => '20/05/2004',
             'PCategoria' => 'Drama',
@@ -25,7 +25,7 @@ class FilmSeeder extends Seeder
 
         Film::create([
             'title' => 'Batman',
-            'url' => url('http://localhost:8000/batman'),
+            'slug' => 'batman',
             'image' => 'batman.png',
             'Data' => '4/11/2022',
             'PCategoria' => 'Drama',
@@ -34,28 +34,28 @@ class FilmSeeder extends Seeder
 
         Film::create([
             'title' => 'Avengers Endgame',
-            'url' => "{{ url('site.acao') }}",
+            'slug' => "{{ url('site.acao') }}",
             'image' => 'Endgame.png',
             'Data' => '25/04/2019'
         ]);
 
         Film::create([
             'title' => 'Everest',
-            'url' => 'google.com',
+            'slug' => 'google.com',
             'image' => 'everest.png',
             'Data' => '4/11/2022'
         ]);
 
         Film::create([
             'title' => 'Inception',
-            'url' => "{{ url('site.acao') }}",
+            'slug' => "{{ url('site.acao') }}",
             'image' => 'inception.png',
             'Data' => '20/05/2004'
         ]);
 
         Film::create([
             'title' => 'As Aventuras de Pi',
-            'url' => 'google.com',
+            'slug' => 'google.com',
             'image' => 'Pi.jpg',
             'Data' => '4/11/2022'
         ]);
