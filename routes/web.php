@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site.primeiro');
 });
 
 // Route::middleware([
@@ -33,6 +33,10 @@ Route::get('/header', function () {
 Route::get('/filmes', function () {
     $films = Film::all();
     return view('films.index', compact('films'));
+});
+
+Route::get('/batman', function () {
+    return view('site.filmes.batman');
 });
 
 //Daqui para a frente é a categoria Aventura... contar mais 12

@@ -15,7 +15,7 @@ class FilmSeeder extends Seeder
     {
         Film::create([
             'title' => 'Eternal Sunshine of the Spotless Mind',
-            'url' => url('Aventura'),
+            'url' => url('http://localhost:8000/primeiro'),
             'image' => 'spotless.jpg',
             'Data' => '20/05/2004',
             'PCategoria' => 'Drama',
@@ -25,9 +25,11 @@ class FilmSeeder extends Seeder
 
         Film::create([
             'title' => 'Batman',
-            'url' => 'google.com',
+            'url' => url('http://localhost:8000/batman'),
             'image' => 'batman.png',
-            'Data' => '4/11/2022'
+            'Data' => '4/11/2022',
+            'PCategoria' => 'Drama',
+            'categoria'=> 'ação, qudrinhos, ficçao cientifica, serial killer',
         ]);
 
         Film::create([

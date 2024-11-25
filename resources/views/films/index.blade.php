@@ -6,6 +6,7 @@
                 <a class="font-bold" href="{{ $film->url }}">{{ $film->title }}</a>
                 <p class="font-italic">{{ $film->Data }}</p>
                 <p class="font-italic">{{ $film->PCategoria }}</p>
+                <p class="font-italic">{{ $film->categoria }}</p>
                 <!-- <button type="butao" >{{$film->PCategoria}} </button> -->
             </div>
         @endforeach
