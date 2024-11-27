@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('Data');
             $table->string('slug');
             $table->string('PCategoria')->nullable();
+            $table->string('trailer')->nullable();
+            $table->string('audio')->nullable();
+            $table->string('sinopse')->nullable();
+            $table->string('elenco')->nullable();
             //$table->foreign('categoria'); 
             $table->string('categoria')->nullable();
             $table->timestamps();

@@ -30,6 +30,9 @@ class FilmSeeder extends Seeder
             'Data' => '4/11/2022',
             'PCategoria' => 'Drama',
             'categoria'=> 'ação, qudrinhos, ficçao cientifica, serial killer',
+            'audio'=>'the-batman.ogg',
+            'trailer'=>'the-batman.mp4',
+            'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
         ]);
 
         Film::create([
