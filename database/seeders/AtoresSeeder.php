@@ -15,6 +15,7 @@ class AtoresSeeder extends Seeder
     {
         Atores::create([
             'NomeAD' => 'Adam sandler',
+            'slug'=>'AdamSandler',
             'NomeT' => 'Adam Richard Sandler',
             'idade' => '58 anos',
             'nascimneto' => '09/07/1966',

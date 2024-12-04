@@ -6,23 +6,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/filmes', function () {
     $films = Film::all();
-    return view('films.index', compact('films'));
+    return view('films.Filmdex', compact('films'));
 });
 
 Route::get('/filmes/{slug}', function ($slug) {
-    $film = Film::where('nomeAD', $slug)->first();    
-    return view('films.show', compact('film'));
+    $film = Film::where('slug', $slug)->first();    
+    return view('films.MovieShow', compact('film'));
 });
 
 Route::get('/atores', function () {
     $atores = Atores::all();
-    return view('actor.showA',compact('atores'));
+    return view('actor.Atordex',compact('atores'));
 });
 
-// Route::get('/atores/{slug}', function ($NomeAD) {
-//     $film = Film::where('slug', $NomeAD)->first();    
-//     return view('atores.show', compact('atores'));
-// });
+
+Route::get('/atores/{slug}', function ($slug) {
+    $ator = Film::where('slug', $slug)->first();    
+    return view('actor.AtorShow', compact('ator'));
+});
 
 
 Route::get('/', function () {

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('NomeAD');
             $table->string('url')->nullable();
             $table->string('NomeT');
+            $table->string('slug');
             $table->string('idade');
             $table->string('imagem');
             $table->string('participação')->nullable();
