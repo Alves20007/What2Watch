@@ -27,12 +27,13 @@
         </div>
         <div class="text">
             <h2>Futuras Updates</h2>
-            <p>celebs ).</p>
+            <p>celebs.</p>
         </div>
     </section>
     <section class="section">
         <div class="text">
-            <h2>Objetivo do Site</h2>
+            {{ $film->atores}}
+            {{-- <h2>Objetivo do Site {{ $film->atores->slug}}</h2> --}}
             <p>O meu principal Objetivo é criar um site onde o utilizador possa descobrir novos filmes e series e dar a sua opiniao.</p>
             <p>Nota a imagem tem de ser do genero de pessoas a assistirem algo</p>
         </div>

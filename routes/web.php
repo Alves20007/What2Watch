@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AtoresController;
+use App\Http\Controllers\FilmController;
 use App\Models\atores;
 use App\Models\Film;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +27,9 @@ Route::get('/atores/{slug}', function ($slug) {
     return view('actor.AtorShow', compact('ator'));
 });
 
+Route::get('films',[FilmController::class,'primeiro']);
+
+Route::get('atores',[AtoresController::class,'primeiro']);
 
 Route::get('/', function () {
 
@@ -38,7 +43,7 @@ Route::get('/', function () {
     $id = $calculo % $total + 1;
 
     $film = Film::find($id);    
-    return view('site.primeiro', compact(['film']));
+    return view('primeiro', compact(['film']));
 });
 
 
@@ -75,3 +80,9 @@ Route::get('teste2', function () {
     return view('site.teste2');
 });
 
+
+
+Route::get('/categories', function () {
+    $categories = Category::all();    
+    return view('categories.index', compact('categories'));
+});

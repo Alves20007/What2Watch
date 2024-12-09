@@ -47,7 +47,8 @@ class FilmSeeder extends Seeder
             'title' => 'Everest',
             'slug' => 'Everest',
             'image' => 'everest.png',
-            'Data' => '4/11/2022'
+            'Data' => '4/11/2022',
+            'trailer'=>'the-batman.mp4',
         ]);
 
         Film::create([
