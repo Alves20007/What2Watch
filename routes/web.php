@@ -27,9 +27,9 @@ Route::get('/atores/{slug}', function ($slug) {
     return view('actor.AtorShow', compact('ator'));
 });
 
-Route::get('films',[FilmController::class,'primeiro']);
+Route::get('films',[FilmController::class,'site.primeiro']);
 
-Route::get('atores',[AtoresController::class,'primeiro']);
+Route::get('atores',[AtoresController::class,'site.primeiro']);
 
 Route::get('/', function () {
 
@@ -46,7 +46,22 @@ Route::get('/', function () {
     return view('primeiro', compact(['film']));
 });
 
+Route::post('/categories/store', function (Request $request) {
 
+    $validated = $request->validate([
+        'name' => 'required|min:3',        
+        'slug' => 'required',
+        'image' => 'image',
+        'description' => 'min:3'
+    ]);
+
+    Category::create([
+        'name' => $request->input('name'),
+        'slug' => $request->input('slug'),
+        'description' => $request->input('description'),
+        'image' => $request->input('image'),
+    ]);
+});
 
 // Route::middleware([
 //     'auth:sanctum',

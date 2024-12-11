@@ -8,3 +8,8 @@ fazer depois nas categorias tipo uma vinheta algo assim
 
 
 descobrir como se faz o foreign key da categorias filmseeder.php etc
+
+
+Fazer a cena da category
+vai ser util para o pessoal adicionar ator, filme, serie etc
+a conexao das duas tabelas da db para depois
