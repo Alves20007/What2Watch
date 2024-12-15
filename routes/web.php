@@ -5,6 +5,8 @@ use App\Http\Controllers\FilmController;
 use App\Models\atores;
 use App\Models\Film;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 Route::get('/filmes', function () {
     $films = Film::all();
@@ -46,7 +48,14 @@ Route::get('/', function () {
     return view('primeiro', compact(['film']));
 });
 
-Route::post('/categories/store', function (Request $request) {
+
+
+Route::get('/apload/create', function () {
+    return view('apload.create');
+});
+
+
+Route::post('/apload/store', function (Request $request) {
 
     $validated = $request->validate([
         'name' => 'required|min:3',        
@@ -55,7 +64,7 @@ Route::post('/categories/store', function (Request $request) {
         'description' => 'min:3'
     ]);
 
-    Category::create([
+    Apload::create([
         'name' => $request->input('name'),
         'slug' => $request->input('slug'),
         'description' => $request->input('description'),
@@ -97,7 +106,7 @@ Route::get('teste2', function () {
 
 
 
-Route::get('/categories', function () {
-    $categories = Category::all();    
-    return view('categories.index', compact('categories'));
-});
+// Route::get('/categories', function () {
+//     $categories = Category::all();    
+//     return view('categories.index', compact('categories'));
+// });

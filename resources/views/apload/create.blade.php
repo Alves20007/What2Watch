@@ -1,5 +1,5 @@
 <x-guestLayout>
-    <form action="/categories/store" method="POST">
+    <form action="/apload/store" method="POST">
         @csrf
         Nome: <input type="text" name="name" value="{{ old('name') }}">
         @error('name')
@@ -10,10 +10,10 @@
         @error('slug')
             <div class="text-sm text-red-500">{{ $message }}</div>
         @enderror
-        Image: <input type="file" name="image" value="{{ old('image') }}">
+        {{-- Image: <input type="file" name="image" value="{{ old('image') }}">
         @error('image')
             <div class="text-sm text-red-500">{{ $message }}</div>
-        @enderror
+        @enderror --}}
         <br>
         Descrição: <textarea name="description">{{ old('description') }}</textarea>
         @error('description')
