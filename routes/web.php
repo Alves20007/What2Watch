@@ -4,9 +4,11 @@ use App\Http\Controllers\AtoresController;
 use App\Http\Controllers\FilmController;
 use App\Models\atores;
 use App\Models\Film;
+use App\Models\apload;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-
+use Laravel\Jetstream\Rules\Role;
+use Psy\CodeCleaner\ReturnTypePass;
 
 Route::get('/filmes', function () {
     $films = Film::all();
@@ -54,6 +56,9 @@ Route::get('/apload/create', function () {
     return view('apload.create');
 });
 
+Route::get('/apload/store',function(){
+    return view('apload.store');
+});
 
 Route::post('/apload/store', function (Request $request) {
 
@@ -70,6 +75,8 @@ Route::post('/apload/store', function (Request $request) {
         'description' => $request->input('description'),
         'image' => $request->input('image'),
     ]);
+
+    return view('apload.store');
 });
 
 // Route::middleware([

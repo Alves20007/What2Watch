@@ -34,22 +34,7 @@
         <div class="text">
             {{ $film->atores}}
             {{-- <h2>Objetivo do Site {{ $film->atores->slug}}</h2> --}}
-            <p>O meu principal Objetivo é criar um site onde o utilizador possa descobriRoute::post('/categories/store', function (Request $request) {
-
-    $validated = $request->validate([
-        'name' => 'required|min:3',        
-        'slug' => 'required',
-        'image' => 'image',
-        'description' => 'min:3'
-    ]);
-
-    Category::create([
-        'name' => $request->input('name'),
-        'slug' => $request->input('slug'),
-        'description' => $request->input('description'),
-        'image' => $request->input('image'),
-    ]);
-});r novos filmes e series e dar a sua opiniao.</p>
+            <p>O meu principal Objetivo é criar um site onde o utilizador possa descobrir novos filmes e series e dar a sua opiniao.</p>
             <p>Nota a imagem tem de ser do genero de pessoas a assistirem algo</p>
         </div>
         <div class="image">
