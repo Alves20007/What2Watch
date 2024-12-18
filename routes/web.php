@@ -79,6 +79,11 @@ Route::post('/apload/store', function (Request $request) {
     return view('apload.store');
 });
 
+Route::get('/apload', function () {
+    return view('apload');
+});
+
+
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
