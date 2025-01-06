@@ -60,6 +60,10 @@ Route::get('/apload/store',function(){
     return view('apload.store');
 });
 
+Route::get('/apload/Ownfilm',function(){
+    return view('apload.Ownfilm');
+});
+
 Route::post('/apload/store', function (Request $request) {
 
     $validated = $request->validate([

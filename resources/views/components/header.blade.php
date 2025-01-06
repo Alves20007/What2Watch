@@ -19,31 +19,18 @@
             <nav class="nav-menu">
                 <ul>                    
                     <li class="dropdown">
-                        <a href="#" class="dropdown-link">Filmes▼</a>
+                        <a href="#" class="dropdown-link">Filmes/series▼</a>
                         <div class="dropdown-content">
                             <a href="{{ url('acao') }}">Data de lançamento</a>
-                            <a href="{{ url('aventura') }}">Top 100 filmes</a>
-                            <a href="{{ url('animacao') }}">Os filmes mais populares</a>
+                            <a href="{{ url('aventura') }}">Top 100</a>
+                            <a href="{{ url('animacao') }}">Os mais populares</a>
                             <a href="{{ url('comedia') }}">Caixa surpresa</a>
-                            <a href="{{ url('acao') }}">Bilhetes</a>
                             <a href="{{ url('acao') }}">Notícias de filmes</a>
-                            <a href="{{ url('filmes') }}">filmes</a>
+                            <a href="{{ url('filmes') }}">Filmes/series</a>
                         </div>
                     </li>
-
                     <li class="dropdown">
-                        <a href="#" class="dropdown-link">Séries▼</a>
-                        <div class="dropdown-content">
-                            <a href="{{ url('acao') }}">O que está a dar</a>
-                            <a href="{{ url('aventura') }}">Top 100 séries</a>
-                            <a href="{{ url('animacao') }}">As séries mais populares</a>
-                            <a href="{{ url('comedia') }}">Caixa surpresa</a>
-                            <a href="{{ url('acao') }}">Notícias das séries</a>
-                        </div>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-link">World choice▼</a>
+                        <a href="#" class="dropdown-link">Our choice▼</a>
                         <div class="dropdown-content">
                             <a href="{{ url('acao') }}">W2W</a>
                             <a href="{{ url('aventura') }}">Trailers</a>
@@ -70,6 +57,7 @@
                             <a href="{{ url('aventura') }}">Nascidas hoje</a>
                             <a href="{{ url('animacao') }}">As celebridades mais populares</a>
                             <a href="{{ url('animacao') }}">Notícias dos famosos</a>
+                            <a href="{{ url('animacao') }}">adesao de atores</a>
                         </div>
                     </li>
 

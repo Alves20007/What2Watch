@@ -27,7 +27,7 @@
                 <option value="comedia">Comedia</option>
                 <option value="horror">Horror</option>
                 <option value="romance">Romance</option>
-                <option value="animacao">sdads</option>
+                <option value="animacao"
             </select>
         <x-button>Criar</x-button>
     </form>
