@@ -4,8 +4,26 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <!-- Fonte do Google -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .btn {
+            text-decoration: none;
+            padding: 0.5rem;
+            border: 1px solid #ff4800;
+            background: #ff4800;
+        }
+
+        .btn2 {
+            color: black;    
+            text-decoration: none;
+            padding: 0.5rem;
+            border: 1px solid #black;
+            background: #black;
+            }
+    </style>
 </head>
 <body>
+
+
     <header>
         <div class="container">
             <!-- Logo -->
@@ -41,12 +59,10 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-link">Prêmios e Eventos▼</a>
+                        <a href="#" class="dropdown-link">Prêmios</a>
                         <div class="dropdown-content">
                             <a href="{{ url('acao') }}">Oscares</a>
                             <a href="{{ url('aventura') }}">Central de prêmios</a>
-                            <a href="{{ url('animacao') }}">Central de festivais</a>
-                            <a href="{{ url('animacao') }}">Todos os eventos</a>
                         </div>
                     </li>
 
@@ -60,18 +76,28 @@
                             <a href="{{ url('animacao') }}">adesao de atores</a>
                         </div>
                     </li>
-
-                    <li>
-                        <a href="{{ url('teste') }}">Categorias</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-link">Criaçao▼</a>
+                        <div class="dropdown-content">
+                            <a href="{{ url('acao') }}">Criar filme</a>
+                            <a href="{{ url('aventura') }}">Own film</a>
+                            <a href="{{ url('animacao') }}">Celebs</a>
+                        </div>
                     </li>
+                    <a class="btn" href="{{ url('acao') }}">
+                        Login
+                      </a>
+                  
+                      <a class="btn2" href="{{ url('acao') }}">
+                        Login
+                      </a>
+                      
+                    <div class="search-bar">
+                        <input type="text" placeholder="Pesquisar...">
+                        <button type="submit">🔍</button>
+                    </div>
                 </ul>
             </nav>
-            
-            <!-- Barra de Pesquisa -->
-            <div class="search-bar">
-                <input type="text" placeholder="Pesquisar...">
-                <button type="submit">🔍</button>
-            </div>
         </div>
     </header>
 </body>
