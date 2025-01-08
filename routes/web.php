@@ -56,6 +56,15 @@ Route::get('/apload/create', function () {
     return view('apload.create');
 });
 
+Route::get('/series', function () {
+    $films = Film::all();
+    return view('Series.112', compact('series'));
+});
+
+
+Route::get('/apload/create2', function (){
+    return view('apload.create2');
+});
 Route::get('/apload/store',function(){
     return view('apload.store');
 });

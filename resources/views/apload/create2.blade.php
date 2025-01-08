@@ -1,69 +1,65 @@
 <x-guestLayout>
-    <form action="/apload/store" method="POST">
-        @csrf
-        Nome: <input type="text" name="name" value="{{ old('name') }}">
-        @error('name')
-            <div class="text-sm text-red-500">{{ $message }}</div>
-        @enderror
-        <br>
-        Slug: <input type="text" name="slug" value="{{ old('slug') }}"><br>
-        @error('slug')
-            <div class="text-sm text-red-500">{{ $message }}</div>
-        @enderror
-        {{-- Image: <input type="file" name="image" value="{{ old('image') }}">
-        @error('image')
-            <div class="text-sm text-red-500">{{ $message }}</div>
-        @enderror --}}
-        <br>
-        Descrição breve: <textarea name="description">{{ old('description') }}</textarea>
-        @error('description')
-            <div class="text-sm text-red-500">{{ $message }}</div>
-        @enderror
-
-        <br>        
-        <label for="CP">Categoria principal:</label>
-            <select name="CP" id="CP">
-                <option value="acao">Ação</option>
-                <option value="comedia">Comedia</option>
-                <option value="horror">Horror</option>
-                <option value="romance">Romance</option>
-                <option value="animacao"
-            </select>
-        <x-button>Criar</x-button>
-    </form>
-
-    {{-- <link rel="stylesheet" href="{{ asset('css/testess.css') }}">
-    <form class="form">
-        <p class="title">Register </p>
-        <p class="message">Signup now and get full access to our app. </p>
-            <div class="flex">
-            <label>
-                <input class="input" type="text" placeholder="" required="">
-                <span>Firstname</span>
-            </label>
-
-            <label>
-                <input class="input" type="text" placeholder="" required="">
-                <span>Lastname</span>
-            </label>
-        </div>  
-                
-        <label>
-            <input class="input" type="email" placeholder="" required="">
-            <span>Email</span>
-        </label> 
-            
-        <label>
-            <input class="input" type="password" placeholder="" required="">
-            <span>Password</span>
-        </label>
-        <label>
-            <input class="input" type="password" placeholder="" required="">
-            <span>Confirm password</span>
-        </label>
-        <button class="submit">Submit</button>
-        <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
-    </form>
     
-    procurar mais no tailwindflex ou uiverse.io--}}
+    <div class="max-w-4xl mx-auto mt-10 p-6 bg-0000 rounded shadow">
+        <h1 class="text-2xl font-bold mb-6">Cadastro do Ator</h1>
+
+
+            @csrf
+
+            <!-- Nome do Filme -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Nome do Filme</label>
+                <input type="text" name="nome_filme" class="w-full p-2 border rounded" required>
+            </div>
+
+            <!-- Slug -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Slug</label>
+                <input type="text" name="slug" class="w-full p-2 border rounded">
+            </div>
+
+            <!-- Imagem -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Imagem</label>
+                <input type="file" name="imagem" class="w-full">
+            </div>
+
+            <!-- Data -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Data</label>
+                <input type="date" name="data" class="w-full p-2 border rounded">
+            </div>
+
+            <!-- Categoria -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Categoria</label>
+                <input type="text" name="categoria" class="w-full p-2 border rounded">
+            </div>
+
+            <!-- Trailer -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Trailer (URL)</label>
+                <input type="url" name="trailer" class="w-full p-2 border rounded">
+            </div>
+
+            <!-- Elenco -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Elenco (Nota: isto tem de ser do genero de tem na db e aparece o ator caso o ator estaja na db ou seja jonny deep aparece a foto dele e é ele que aparece em baixo em ver de ser caixa de texto)</label>
+                <textarea name="elenco" class="w-full p-2 border rounded"></textarea>
+            </div>
+
+            <!-- Sinopse -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Sinopse</label>
+                <textarea name="sinopse" class="w-full p-2 border rounded"></textarea>
+            </div>
+
+            <!-- Botão -->
+            <div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Cadastrar Filme
+                </button>
+            </div>
+        </form>
+    </div>
 </x-guestLayout>

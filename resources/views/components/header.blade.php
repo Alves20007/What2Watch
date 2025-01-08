@@ -79,23 +79,32 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Criaçao▼</a>
                         <div class="dropdown-content">
-                            <a href="{{ url('acao') }}">Criar filme</a>
-                            <a href="{{ url('aventura') }}">Own film</a>
-                            <a href="{{ url('animacao') }}">Celebs</a>
+                            <a href="{{ url('apload/create') }}">Criar filme</a>
+                            <a href="{{ url('apload/Ownfilm') }}">Own film</a>
+                            <a href="{{ url('apload/create2') }}">Celebs</a>
                         </div>
                     </li>
-                    <a class="btn" href="{{ url('acao') }}">
-                        Login
-                      </a>
-                  
-                      <a class="btn2" href="{{ url('acao') }}">
-                        Login
-                      </a>
+                    <div class="sm:flex sm:justify-center lg:justify-start">
+                        <div class="rounded-md shadow">
+                            <a href=""
+                                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 md:py-4 md:text-lg md:px-10">
+                                login
+                            </a>
+                        </div>
+                        <div class="mt-3 sm:mt-0 sm:ml-3">
+                            <a href=""
+                                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-600 bg-yellow-700 hover:bg-yellow-200 md:py-4 md:text-lg md:px-10">
+                                signup
+                            </a>
+                        </div>
+                    </div>
                       
-                    <div class="search-bar">
+                    {{-- <div class="search-bar">
                         <input type="text" placeholder="Pesquisar...">
                         <button type="submit">🔍</button>
-                    </div>
+                    </div> --}}
+
+                    
                 </ul>
             </nav>
         </div>

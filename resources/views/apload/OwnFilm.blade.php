@@ -1,7 +1,7 @@
 <x-guestLayout>
     
     <div class="max-w-4xl mx-auto mt-10 p-6 bg-0000 rounded shadow">
-        <h1 class="text-2xl font-bold mb-6">Cadastro de Filme</h1>
+        <h1 class="text-2xl font-bold mb-6">Cadastro do filme do Utilizador</h1>
 
 
             @csrf
