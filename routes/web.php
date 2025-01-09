@@ -15,6 +15,12 @@ Route::get('/filmes', function () {
     return view('films.Filmdex', compact('films'));
 });
 
+
+Route::get('/series', function () {
+    $films = Film::all();
+    return view('Series.112', compact('series'));
+});
+
 Route::get('/filmes/{slug}', function ($slug) {
     $film = Film::where('slug', $slug)->first();    
     return view('films.MovieShow', compact('film'));
@@ -30,6 +36,7 @@ Route::get('/atores/{slug}', function ($slug) {
     $ator = Film::where('slug', $slug)->first();    
     return view('actor.AtorShow', compact('ator'));
 });
+
 
 Route::get('films',[FilmController::class,'site.primeiro']);
 
@@ -56,10 +63,6 @@ Route::get('/apload/create', function () {
     return view('apload.create');
 });
 
-Route::get('/series', function () {
-    $films = Film::all();
-    return view('Series.112', compact('series'));
-});
 
 
 Route::get('/apload/create2', function (){
