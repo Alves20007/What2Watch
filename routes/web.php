@@ -14,16 +14,35 @@ Route::get('/filmes', function () {
     $films = Film::all();
     return view('films.Filmdex', compact('films'));
 });
-
-
-Route::get('/series', function () {
+Route::get('/filmes/Lancamento', function () {
     $films = Film::all();
-    return view('Series.112', compact('series'));
+    return view('films.Lancamento', compact('lancamento'));
+});
+
+Route::get('/filmes/Lancamento', function () {
+    $films = Film::all();
+    return view('films.Lancamento');
+});
+Route::get('/filmes', function () {
+    $films = Film::all();
+    return view('films.Filmdex', compact('films'));
+});
+
+Route::get('/filmes/{slug}', function ($slug) {
+    
+    $film = Film::where('slug', $slug)->first();
+    return view('films.MovieShow', compact('film'));
 });
 
 Route::get('/filmes/{slug}', function ($slug) {
     $film = Film::where('slug', $slug)->first();    
     return view('films.MovieShow', compact('film'));
+});
+
+
+Route::get('/series', function () {
+    $films = Film::all();
+    return view('Series.112', compact('series'));
 });
 
 Route::get('/atores', function () {

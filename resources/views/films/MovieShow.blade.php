@@ -6,7 +6,7 @@
 
     <!-- Introdução -->
     <section class="intro">
-        <h1>{{ $film->title }}</h1>
+        <h1>a{{ $film->title }}</h1>
         <p>Justice for gothen!</p>
     </section>
 
@@ -23,7 +23,7 @@
 
     <section class="section">
         <div class="text">
-            <h2>Trailer do filme "{{ $film->title}}"</h2>
+            <h2>Trailer do filme {{ $film->title}}</h2>
         </div>
         <video width="400" controls>
             <source src="/imagens/video/{{ $film->trailer }}" type="video/mp4">
