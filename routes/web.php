@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\AtoresController;
+use App\Http\Controllers\ActorController;
 use App\Http\Controllers\FilmController;
-use App\Models\atores;
+use App\Models\actor;
 use App\Models\Film;
 use App\Models\apload;
 use Illuminate\Support\Facades\Route;
@@ -14,52 +14,35 @@ Route::get('/filmes', function () {
     $films = Film::all();
     return view('films.Filmdex', compact('films'));
 });
-Route::get('/filmes/Lancamento', function () {
+
+Route::get('Lancamento', function () {
     $films = Film::all();
-    return view('films.Lancamento', compact('lancamento'));
+    return view('films.Lancamento', compact('films'));
 });
 
-Route::get('/filmes/Lancamento', function () {
-    $films = Film::all();
-    return view('films.Lancamento');
-});
-Route::get('/filmes', function () {
-    $films = Film::all();
-    return view('films.Filmdex', compact('films'));
-});
 
+Route::get('/atores', function () {
+    $actor = actor::all();
+    return view('actor.Atordex',compact('actor'));
+});
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/filmes/{slug}', function ($slug) {
-    
     $film = Film::where('slug', $slug)->first();
     return view('films.MovieShow', compact('film'));
 });
 
-Route::get('/filmes/{slug}', function ($slug) {
-    $film = Film::where('slug', $slug)->first();    
-    return view('films.MovieShow', compact('film'));
+Route::get('/atores/{slug}', function ($slug) {
+    $ator = actor::where('slug', $slug)->first();    
+    return view('actor.AtorShow', compact('ator'));
 });
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('/series', function () {
     $films = Film::all();
     return view('Series.112', compact('series'));
 });
 
-Route::get('/atores', function () {
-    $atores = Atores::all();
-    return view('actor.Atordex',compact('atores'));
-});
-
-
-Route::get('/atores/{slug}', function ($slug) {
-    $ator = Film::where('slug', $slug)->first();    
-    return view('actor.AtorShow', compact('ator'));
-});
-
-
-Route::get('films',[FilmController::class,'site.primeiro']);
-
-Route::get('atores',[AtoresController::class,'site.primeiro']);
 
 Route::get('/', function () {
 
@@ -76,7 +59,7 @@ Route::get('/', function () {
     return view('primeiro', compact(['film']));
 });
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('/apload/create', function () {
     return view('apload.create');
@@ -119,15 +102,15 @@ Route::get('/apload', function () {
 });
 
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 //Route::get('/primeiro', function () {
     //  return view('site.primeiro');

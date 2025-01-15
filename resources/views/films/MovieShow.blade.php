@@ -26,7 +26,7 @@
             <h2>Trailer do filme {{ $film->title}}</h2>
         </div>
         <video width="400" controls>
-            <source src="/imagens/video/{{ $film->trailer }}" type="video/mp4">
+            <source src="/imagens/video/{{ $film-O>trailer }}" type="video/mp4">
             <!--<source src="/imagens/ogg/{{ $film->audio }}" type="video/ogg"> -->
             Your browser does not support HTML video.
           </video>

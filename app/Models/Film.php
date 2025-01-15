@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\atores;
 
 class Film extends Model
 {
@@ -23,8 +22,4 @@ class Film extends Model
         'sinopse'
     ];
      
-    public function atores()
-    {
-        return $this->hasMany(Atores::class,'NomeAD','slug','NomeT','idade','nascimento','imagem');
-    }
 }
