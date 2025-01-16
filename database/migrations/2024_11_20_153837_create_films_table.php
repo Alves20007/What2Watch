@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('elenco')->nullable();
             //$table->foreign('categoria'); 
             $table->string('categoria')->nullable();
+            
             $table->timestamps();
         });
     }

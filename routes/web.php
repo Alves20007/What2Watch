@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\FilmController;
+use App\Http\Controllers\SeriesController;
 use App\Models\actor;
 use App\Models\Film;
+Use App\Models\series;
 use App\Models\apload;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -25,6 +27,11 @@ Route::get('/atores', function () {
     $actor = actor::all();
     return view('actor.Atordex',compact('actor'));
 });
+
+Route::get('/series',function(){
+    $series = series::all();
+    return view('series.Seridex',compact('series'));
+});
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/filmes/{slug}', function ($slug) {
     $film = Film::where('slug', $slug)->first();
@@ -36,12 +43,11 @@ Route::get('/atores/{slug}', function ($slug) {
     return view('actor.AtorShow', compact('ator'));
 });
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Route::get('/series', function () {
-    $films = Film::all();
-    return view('Series.112', compact('series'));
+Route::get('/series/{slug}', function($slug){
+    $series = series::where('slug',$slug)->first();
+    return view('series.SeriesShow',compact('series'));
 });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 Route::get('/', function () {

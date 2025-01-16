@@ -6,7 +6,7 @@
     
     <!-- Introdução -->
     <section class="intro">
-        <h1>a{{ $ator->Name }}</h1>
+        <h1>a{{ $series->Nome }}</h1>
         <p>Justice for gothen!</p>
     </section>
     
