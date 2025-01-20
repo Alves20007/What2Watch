@@ -28,7 +28,7 @@
         <div class="container">
             <!-- Logo -->
             <div class="logo">
-                <a href="{{ url('primeiro') }}">
+                <a href="{{ url('/') }}">
                     <img src="{{ asset('imagens/novo.png') }}" alt="Logo">
                 </a>
             </div>
@@ -39,21 +39,16 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Filmes/series▼</a>
                         <div class="dropdown-content">
-                            <a href="{{ url('acao') }}">Data de lançamento</a>
-                            <a href="{{ url('aventura') }}">Top 100</a>
-                            <a href="{{ url('animacao') }}">Os mais populares</a>
-                            <a href="{{ url('comedia') }}">Caixa surpresa</a>
-                            <a href="{{ url('acao') }}">Notícias de filmes</a>
                             <a href="{{ url('filmes') }}">Filmes/series</a>
-                        </div>
+                            <a href="{{ url('acao') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
+                            <a href="{{ url('aventura') }}">Top 100</a> 
+                            <a href="{{ url('comedia') }}">Caixa surpresa</a>                        </div>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Our choice▼</a>
                         <div class="dropdown-content">
-                            <a href="{{ url('acao') }}">W2W</a>
-                            <a href="{{ url('aventura') }}">Trailers</a>
-                            <a href="{{ url('animacao') }}">W2 Escolha</a>
-                            <a href="{{ url('animacao') }}">O que está por vir?</a>
+                            <a href="{{ url('acao') }}">Random</a> <!-- vai aparecer um filme random-->
+                            <a href="{{ url('animacao') }}">W2 Escolha</a> <!--5 filmes da minha escolha de diferentes generos -->
                             <a href="{{ url('animacao') }}">Os meus rankings</a>
                         </div>
                     </li>
@@ -69,11 +64,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Artistas▼</a>
                         <div class="dropdown-content">
+                            <a href="{{ url('atores')}}">Atores</a>
                             <a href="{{ url('acao') }}">Oscares</a>
                             <a href="{{ url('aventura') }}">Nascidas hoje</a>
                             <a href="{{ url('animacao') }}">As celebridades mais populares</a>
                             <a href="{{ url('animacao') }}">Notícias dos famosos</a>
-                            <a href="{{ url('animacao') }}">adesao de atores</a>
                         </div>
                     </li>
                     <li class="dropdown">
@@ -82,6 +77,7 @@
                             <a href="{{ url('apload/create') }}">Criar filme</a>
                             <a href="{{ url('apload/Ownfilm') }}">Own film</a>
                             <a href="{{ url('apload/create2') }}">Celebs</a>
+                            <a href="{{ url('apload/create2') }}">watch list</a>
                         </div>
                     </li>
                     <div class="sm:flex sm:justify-center lg:justify-start">

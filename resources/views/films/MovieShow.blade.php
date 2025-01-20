@@ -13,7 +13,7 @@
     <!-- Seção 1: Texto à esquerda, imagem à direita -->
     <section class="section">
         <div class="image">
-            <img src="/images/films/{{ $film->image }}">
+            <img class="h-64 object-cover" src="/images/films/{{ $film->image }}">
         </div>
         <div class="text">
             <h2>Sínopse do filme</h2>

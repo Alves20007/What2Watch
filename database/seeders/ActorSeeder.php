@@ -14,12 +14,14 @@ class ActorSeeder extends Seeder
     public function run(): void
     {
         actor::create([
-            'FullName' => 'Teste do testinha Testoso',
-            'Name' => 'Teste',
-            'Slug'=>"TesteDoTeste",
-            'image' => 'incognito.png',
-            'birthday' => '20/05/2004',
-            //'categoria' => 'acao'
+            'FullName' => 'Adam Richard Sandler',
+            'Name' => 'Adam Sandler',
+            'Slug'=>"AdamSandler",
+            'image' => 'adam_sandler.jpg',
+            'birthday' => '09/07/1966',
+            'idade' => '58 anos',
+            'Frase'=>'Agora percebo como sou feio',
+            'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
     }
 }

@@ -19,7 +19,7 @@ class AtoresSeeder extends Seeder
             'NomeT' => 'Adam Richard Sandler',
             'idade' => '58 anos',
             'nascimneto' => '09/07/1966',
-            'imagem'=> 'adam_sandler.jpg'
+            'imagem'=> 'adam_sandler.jpg',
         ]);
     }
 }
