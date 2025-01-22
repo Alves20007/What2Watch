@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('Data');
             $table->text('noticia');
+            $table->string('slug');
             $table->string('title noticia');
             $table->string('imagem');
             $table->timestamps();

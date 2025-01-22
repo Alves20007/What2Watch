@@ -4,22 +4,6 @@
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
     <!-- Fonte do Google -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        .btn {
-            text-decoration: none;
-            padding: 0.5rem;
-            border: 1px solid #ff4800;
-            background: #ff4800;
-        }
-
-        .btn2 {
-            color: black;    
-            text-decoration: none;
-            padding: 0.5rem;
-            border: 1px solid #black;
-            background: #black;
-            }
-    </style>
 </head>
 <body>
 
@@ -40,7 +24,7 @@
                         <a href="#" class="dropdown-link">Filmes/series▼</a>
                         <div class="dropdown-content">
                             <a href="{{ url('filmes') }}">Filmes/series</a>
-                            <a href="{{ url('acao') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
+                            <a href="{{ url('noticia') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
                             <a href="{{ url('aventura') }}">Top 100</a> 
                             <a href="{{ url('comedia') }}">Caixa surpresa</a>                        </div>
                     </li>

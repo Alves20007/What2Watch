@@ -54,6 +54,11 @@ Route::get('/series/{slug}', function($slug){
     $series = series::where('slug',$slug)->first();
     return view('series.SeriesShow',compact('series'));
 });
+
+Route::get('noticia/{slug}',function($slug){
+    $noticiaFilme = noticiaFilme::where('slug',$slug)->first();
+    return view('NoticiaFilme.NoticiaFilmShow',compact('noticiaFilme'));
+});
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

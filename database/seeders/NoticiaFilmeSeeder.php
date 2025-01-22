@@ -14,7 +14,8 @@ class NoticiaFilmeSeeder extends Seeder
     public function run(): void
     {
         NoticiaFilme::create([
-            'title'=>'O filme paralelípipedo vai lançara para 2026',
+            'title'=>'O filme paralelípipedo esta previsto para ser lançado em 2026',
+            'slug'=>'noticia1',
             'Data'=>'21/01/2025',
             'noticia' => 'Os estúdios Bravura Pictures anunciaram o lançamento de Paralelipípedo, uma produção ousada e eletrizante que chegará aos cinemas em 2026. Dirigido por Lucas Andrade, um dos novos talentos do cinema brasileiro, o filme promete ser uma montanha-russa de adrenalina, efeitos visuais deslumbrantes e uma narrativa cheia de reviravoltas. Ambientado em um mundo onde física, geometria e estratégia se tornam armas mortais, Paralelipípedo já está sendo apontado como um dos filmes mais aguardados do ano.
 A história acompanha Lara Duarte, interpretada por Gabriela Menezes, uma arqueóloga e especialista em estruturas antigas, que descobre um artefato misterioso conhecido como o "Paralelipípedo do Infinito". A peça, aparentemente inofensiva, é na verdade um dispositivo capaz de manipular o tempo e o espaço, despertando o interesse de grupos sombrios ao redor do mundo. Lara se junta a Rafael Velasquez, vivido por Bruno Ramos, um ladrão de obras de arte com um passado enigmático, para impedir que o artefato caia nas mãos erradas.
