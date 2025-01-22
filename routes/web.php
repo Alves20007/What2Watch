@@ -3,10 +3,12 @@
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\NoticiaFilmeController;
 use App\Models\actor;
 use App\Models\Film;
 Use App\Models\series;
 use App\Models\apload;
+use App\Models\noticiaFilme;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Laravel\Jetstream\Rules\Role;
@@ -31,6 +33,11 @@ Route::get('/atores', function () {
 Route::get('/series',function(){
     $series = series::all();
     return view('series.Seridex',compact('series'));
+});
+
+Route::get('/noticia',function(){
+    $noticiaFilme = noticiaFilme::all();
+    return view('NoticiaFilme.NoticiaFilmDex',compact('noticiaFilme'));
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/filmes/{slug}', function ($slug) {

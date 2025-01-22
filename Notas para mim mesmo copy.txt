@@ -17,3 +17,4 @@ vai ser util para o pessoal adicionar ator, filme, serie etc
 a conexao das duas tabelas da db para depois
 
 Top 100 -> ou eu escolhe 100 
+    

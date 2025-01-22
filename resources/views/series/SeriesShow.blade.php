@@ -1,14 +1,57 @@
 <x-guestLayout>
-<head>
-    <link rel="stylesheet" href="{{ asset('css/CG.css') }}">
-</head>
-<body>
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/CG.css') }}">
+    </head>
+    <body>
     
-    <!-- Introdução -->
-    <section class="intro">
-        <h1>a{{ $series->Nome }}</h1>
-        <p>Justice for gothen!</p>
-    </section>
+        <!-- Introdução -->
+        <section class="intro">
+            <h1>{{ $series->title }}</h1>
+            <p>{{ $series->frase}}</p>
+        </section>
     
-</body>
-</x-guestLayout>
+        <!-- Seção 1: Texto à esquerda, imagem à direita -->
+        <section class="section">
+            <div class="image">
+                <img class="h-64 object-cover" src="/imagens/series/{{ $series->image }}">
+            </div>
+            <div class="text">
+                <h2>Sínopse do seriese</h2>
+                <p>{{$series->sinopse}}</p>
+            </div>
+        </section>
+    
+        <section class="section">
+            <div class="text">
+                <h2>Trailer da serie {{ $series->title}}</h2>
+            </div>
+            <video width="400" controls>
+                <source src="/imagens/video/{{ $series->trailer }}" type="video/mp4">
+                <!--<source src="/imagens/ogg/{{ $series->audio }}" type="video/ogg"> -->
+                Your browser does not support HTML video.
+              </video>
+        </section>
+    
+        <section class="section">
+            <div class="image">
+                <img src="imagens/serieses2/IJ.jpg" alt="telemovel tecnologico">
+            </div>
+            <div class="text">
+                <h2>aqui vai ser o campo dos atores
+    
+                </h2>
+                <p>Aqui o utilizador vai poder colocar imagens, e depois vai ser salvo na DB</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="text">
+                <h2>Aqui vai ser as celebridades</h2>
+                <p>Colocar as fotos quanto as suas respectivas fotos e infos talvez fazer isso em cima</p>
+            </div>
+            <div class="image">
+                <img src="images/imagem1.jpg" alt="Imagem 1">
+            </div>
+        </section>
+        
+    </body>
+    </x-guestLayout>

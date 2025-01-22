@@ -14,9 +14,16 @@ class SeriesSeeder extends Seeder
     public function run(): void
     {
         series::create([
-            'Nome'=> 'teste das series',
-            'imagem'=> 'incognito.png',
+            'title'=> 'brooklyn 99',
+            'image'=> 'broklyn99.jpg',
             'slug'=> 'testeSeries',
+            'frase'=>'A única coisa de útil que fiz hoje foi um teste do Buzzfeed sobre que tipo de cebola eu sou.',
+            'Data'=>'17/09/2013',
+            'PCategoria'=>'Açao',
+            'trailer'=>'brooklyn99.mp4',
+            'audio'=>'broklyn99',
+            'sinopse'=>'É uma serie de TV de comédia policial americada criada por Dan Goor e Michael Schur',
+            'elenco'=>'Adam Sandler'
         ]);
     }
 }

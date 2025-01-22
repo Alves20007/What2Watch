@@ -13,9 +13,18 @@ return new class extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->string('image');
+            $table->string('Data');
             $table->string('slug');
-            $table->string('Nome');
-            $table->string('imagem');
+            $table->string('frase');    
+            $table->string('PCategoria')->nullable();
+            $table->string('trailer')->nullable();
+            $table->string('audio')->nullable();
+            $table->string('sinopse')->nullable();
+            $table->string('elenco')->nullable();
+            //$table->foreign('categoria'); 
+            $table->string('categoria')->nullable();
             $table->timestamps();
         });
     }

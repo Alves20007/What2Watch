@@ -12,8 +12,8 @@
             @foreach ($series as $serie)
                 <a href="/series/{{$serie->slug}}">
                     <div class="border-2 p-4">
-                        <img class="h-64 object-cover" src="/imagens/atores/{{ $serie->imagem }}" >
-                        <b>a{{ $serie->Nome }}</b>
+                        <img class="h-64 object-cover" src="/imagens/series/{{ $serie->image }}" >
+                        <b>{{ $serie->title }}</b>
                     </div>
                 </a>
             @endforeach
