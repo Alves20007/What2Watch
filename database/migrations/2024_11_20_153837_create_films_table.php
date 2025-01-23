@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('Data');
             $table->string('slug');
+            $table->string('Falas');
             $table->string('PCategoria')->nullable();
             $table->string('trailer')->nullable();
             $table->string('audio')->nullable();

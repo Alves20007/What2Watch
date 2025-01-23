@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             ActorSeeder::class,
             AploadSeeder::class,
             SeriesSeeder::class,
-            NoticiaFilmeSeeder::class
+            NoticiaFilmeSeeder::class,
+            NoticiafamososSeeder::class
         ]);
     }
 }

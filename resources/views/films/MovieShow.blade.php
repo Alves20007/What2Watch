@@ -6,8 +6,8 @@
 
     <!-- Introdução -->
     <section class="intro">
-        <h1>a{{ $film->title }}</h1>
-        <p>Justice for gothen!</p>
+        <h1>{{ $film->title }}</h1>
+        <p>{{ $film->Falas }}</p>
     </section>
 
     <!-- Seção 1: Texto à esquerda, imagem à direita -->

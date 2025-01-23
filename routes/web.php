@@ -4,10 +4,12 @@ use App\Http\Controllers\ActorController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\NoticiaFilmeController;
+use App\Http\Controllers\NoticiafamososController; 
 use App\Models\actor;
 use App\Models\Film;
 Use App\Models\series;
 use App\Models\apload;
+use App\Models\noticiafamosos;
 use App\Models\noticiaFilme;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -35,9 +37,14 @@ Route::get('/series',function(){
     return view('series.Seridex',compact('series'));
 });
 
-Route::get('/noticia',function(){
+Route::get('/Lançamentos',function(){
     $noticiaFilme = noticiaFilme::all();
     return view('NoticiaFilme.NoticiaFilmDex',compact('noticiaFilme'));
+});
+
+Route::get('/noticias',function(){
+    $noticiaFamosos = noticiafamosos::all();
+    return view('NoticiaFamosos.NoticFamosoShow',compact('noticiaFamosos'));
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/filmes/{slug}', function ($slug) {
@@ -55,9 +62,14 @@ Route::get('/series/{slug}', function($slug){
     return view('series.SeriesShow',compact('series'));
 });
 
-Route::get('noticia/{slug}',function($slug){
+Route::get('Lançamentos/{slug}',function($slug){
     $noticiaFilme = noticiaFilme::where('slug',$slug)->first();
     return view('NoticiaFilme.NoticiaFilmShow',compact('noticiaFilme'));
+});
+
+Route::get('noticias/{slug}',function($slug){
+    $noticiaFamosos = noticiafamosos::where('slug',$slug)->first();
+    return view('NoticiaFamosos.NoticiaFamososDex',compact('noticiaFamosos'));
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -75,6 +87,19 @@ Route::get('/', function () {
 
     $film = Film::find($id);    
     return view('primeiro', compact(['film']));
+});
+
+
+Route::get('CaixaSurpresa', function () {
+
+
+    $calculo = rand();
+    $total = Film::count();
+
+    $id = $calculo % $total + 1;
+
+    $film = Film::find($id);    
+    return view('films.MovieShow', compact(['film']));
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

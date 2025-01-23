@@ -19,6 +19,7 @@ class FilmSeeder extends Seeder
             'image' => 'spotless.jpg',
             'Data' => '20/05/2004',
             'PCategoria' => 'Drama',
+            'Falas'=>'Ai meu toba',
             'categoria'=> 'ação,ficção cientifica',
             //'categoria' => 'acao'
         ]);
@@ -33,6 +34,7 @@ class FilmSeeder extends Seeder
             'audio'=>'the-batman.ogg',
             'trailer'=>'the-batman.mp4',
             'elenco' =>'Adam sandler',
+            'Falas' =>'Justice for gothan!',
             'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
         ]);
 
@@ -40,6 +42,7 @@ class FilmSeeder extends Seeder
             'title' => 'Avengers Endgame',
             'slug' => "A EndgameS",
             'image' => 'Endgame.png',
+            'Falas' => 'Avengers Assemble!',
             'Data' => '25/04/2019',
         ]);
 
@@ -48,6 +51,7 @@ class FilmSeeder extends Seeder
             'slug' => 'Everest',
             'image' => 'everest.png',
             'Data' => '4/11/2022',
+            'Falas' => 'Montanha Dificil',
             'trailer'=>'the-batman.mp4',
         ]);
 
@@ -56,6 +60,7 @@ class FilmSeeder extends Seeder
             'slug' => "Inception",
             'image' => 'inception.png',
             'Data' => '20/05/2004',
+            'Falas' => 'caralho estou em drogas',
             'sinopse' => "teste da sinopse do inception "
         ]);
 
@@ -63,6 +68,7 @@ class FilmSeeder extends Seeder
             'title' => 'As Aventuras de Pi',
             'slug' => 'Pi adventure',
             'image' => 'Pi.jpg',
+            'Falas' => 'Que medo de Tigres',    
             'Data' => '4/11/2022'
         ]);
 

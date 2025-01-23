@@ -26,19 +26,19 @@
                             <a href="{{ url('filmes') }}">Filmes/series</a>
                             <a href="{{ url('noticia') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
                             <a href="{{ url('aventura') }}">Top 100</a> 
-                            <a href="{{ url('comedia') }}">Caixa surpresa</a>                        </div>
+                            <a href="{{ url('CaixaSurpresa') }}">Caixa surpresa</a>                      
+                        </div>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Our choice▼</a>
                         <div class="dropdown-content">
-                            <a href="{{ url('acao') }}">Random</a> <!-- vai aparecer um filme random-->
                             <a href="{{ url('animacao') }}">W2 Escolha</a> <!--5 filmes da minha escolha de diferentes generos -->
                             <a href="{{ url('animacao') }}">Os meus rankings</a>
                         </div>
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-link">Prêmios</a>
+                        <a href="#" class="dropdown-link">Prêmios▼</a>
                         <div class="dropdown-content">
                             <a href="{{ url('acao') }}">Oscares</a>
                             <a href="{{ url('aventura') }}">Central de prêmios</a>

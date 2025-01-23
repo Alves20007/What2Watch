@@ -1,6 +1,5 @@
 /* Regras gerais (sem alterações) */
 * {
-    font-family: monospace;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +7,6 @@
 }
 
 body {
-    font-family: monospace;
     color: #fff;
     background-color: #111;
     line-height: 1.6;
