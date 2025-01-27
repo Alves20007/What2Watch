@@ -24,7 +24,7 @@
                         <a href="#" class="dropdown-link">Filmes/series▼</a>
                         <div class="dropdown-content">
                             <a href="{{ url('filmes') }}">Filmes/series</a>
-                            <a href="{{ url('noticia') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
+                            <a href="{{ url('noticias') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
                             <a href="{{ url('aventura') }}">Top 100</a> 
                             <a href="{{ url('CaixaSurpresa') }}">Caixa surpresa</a>                      
                         </div>
