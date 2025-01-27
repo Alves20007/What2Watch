@@ -24,7 +24,7 @@
                         <a href="#" class="dropdown-link">Filmes/series▼</a>
                         <div class="dropdown-content">
                             <a href="{{ url('filmes') }}">Filmes/series</a>
-                            <a href="{{ url('noticias') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
+                            <a href="{{ url('Lançamentos') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
                             <a href="{{ url('aventura') }}">Top 100</a> 
                             <a href="{{ url('CaixaSurpresa') }}">Caixa surpresa</a>                      
                         </div>
@@ -52,7 +52,7 @@
                             <a href="{{ url('acao') }}">Oscares</a>
                             <a href="{{ url('aventura') }}">Nascidas hoje</a>
                             <a href="{{ url('animacao') }}">As celebridades mais populares</a>
-                            <a href="{{ url('animacao') }}">Notícias dos famosos</a>
+                            <a href="{{ url('noticias') }}">Notícias dos famosos</a>
                         </div>
                     </li>
                     <li class="dropdown">

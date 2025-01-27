@@ -44,7 +44,7 @@ Route::get('/Lançamentos',function(){
 
 Route::get('/noticias',function(){
     $noticiaFamosos = noticiafamosos::all();
-    return view('NoticiaFamosos.NoticFamosoShow',compact('noticiaFamosos'));
+    return view('NoticiaFamosos.NoticiaFamososDex',compact('noticiaFamosos'));
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/filmes/{slug}', function ($slug) {
