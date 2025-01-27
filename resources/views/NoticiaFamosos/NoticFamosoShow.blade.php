@@ -9,7 +9,7 @@
 
     <section class="section">
         <div class="text">
-            <img class="h-64 object-cover" src="/imagens/NoticiasAtores/{{ $noticiaFamosos->imagem }}">
+            <img class="h-64 object-cover" src="/imagens/NotciaAtores/{{ $noticiaFamosos->imagem }}">
             <p>{{$noticiaFamosos->noticia}}</p>
         </div>
     </section>

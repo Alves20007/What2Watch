@@ -29,7 +29,7 @@ Amigos e familiares de Rafael descreveram-no como uma pessoa reservada, mas com 
 
 O caso segue em investigação, e a população de São Valério está abalada pela tragédia. As autoridades pedem que qualquer pessoa com informações entre em contato pelo telefone da delegacia local.
 ',
-            'imagem' => 'goch.png',
+            'imagem' => 'gocha.png',
             'title noticia' => ' Corpo de empresário é encontrado em parque local; polícia investiga possível assassinato'
         ]);
     }

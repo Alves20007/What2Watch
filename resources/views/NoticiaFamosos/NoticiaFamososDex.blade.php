@@ -4,7 +4,7 @@
             @foreach ($noticiaFamosos as $noticia)
                 <a href="/noticias/{{$noticia->slug}}">
                     <div class="border-2 p-4 truncate overflow-hidden">
-                        <img class="h-64 object-cover" src="/imagens/NoticiasFilmeSeries/{{ $noticia->imagem }}" >
+                        <img class="h-64 object-cover" src="/imagens/NotciaAtores/{{ $noticia->imagem }}" >
                         <b>{{ $noticia->title }}</b>
                     </div>
                 </a>
