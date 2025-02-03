@@ -1,25 +1,37 @@
 <x-guestLayout>
-    <div class="max-w-4xl m-auto">
+    <div class="max-w-4xl mx-auto p-4">
 
-        <div class="my-8">
-            <x-button  class="bg-orange-500 ">
-                <a href="{{ url('filmes') }}">Filmes</a></x-button>
-            <x-button url="/" class="bg-zinc-50 hover:bg-orange-500 text-slate-950">
-                <a href="{{ url('series') }}">series</a></x-button>
+        <!-- Botões de navegação -->
+        <div class="my-8 flex gap-4">
+            <x-button class="bg-orange-500 hover:bg-orange-600 text-white">
+                <a href="{{ url('filmes') }}">Filmes</a>
+            </x-button>
+            <x-button class="bg-zinc-50 hover:bg-orange-500 text-slate-950 border border-zinc-300">
+                <a href="{{ url('series') }}">Séries</a>
+            </x-button>
         </div>
-    
+
+        <!-- Grid de filmes -->
         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             @foreach ($films as $film)
-                <a href="/filmes/{{$film->slug}}">
-                    <div class="border-2 p-4">
-                        <img class="h-64 object-cover" src="/images/films/{{ $film->image }}" >
-                        <b>{{ $film->title }}</b>
-                        <p class="font-italic">{{ $film->Data }}</p>
-                        <p class="font-italic">{{ $film->PCategoria }}</p>
-                        
+                <a href="/filmes/{{ $film->slug }}" class="block hover:shadow-lg transition-shadow duration-300">
+                    <div class="border-2 border-gray-200 rounded-lg overflow-hidden p-4">
+                        <!-- Imagem do filme -->
+                        <img 
+                            class="h-64 w-full object-cover rounded-t-lg" 
+                            src="/images/films/{{ $film->image }}" 
+                            alt="{{ $film->title }} - Poster" 
+                            loading="lazy"
+                        >
+                        <!-- Informações do filme -->
+                        <div class="mt-2">
+                            <h3 class="font-bold text-lg">{{ $film->title }}</h3>
+                            <p class="text-sm text-gray-600">{{ $film->Data }}</p>
+                            {{-- <p class="text-sm text-gray-600">{{ $film->PCategoria }}</p> --}}
+                        </div>
                     </div>
                 </a>
             @endforeach
         </div>
     </div>
-</x-guestLayout>|
+</x-guestLayout>

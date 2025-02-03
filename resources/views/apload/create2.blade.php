@@ -8,16 +8,17 @@
 
             <!-- Nome do Filme -->
             <div class="mb-4">
-                <label class="block text-gray-700">Nome do Filme</label>
+                <label class="block text-gray-700">Nome do Ator</label>
                 <input type="text" name="nome_filme" class="w-full p-2 border rounded" required>
             </div>
 
             <!-- Slug -->
-            <div class="mb-4">
-                <label class="block text-gray-700">Slug</label>
-                <input type="text" name="slug" class="w-full p-2 border rounded">
-            </div>
 
+            <?php
+                $uniqueKey=strtoupper(substr(sha1(microtime()), rand(0, 5), 20));  
+                $uniqueKey  = implode("-", str_split($uniqueKey, 5)); 
+                $slug = $uniqueKey
+            ?>
             <!-- Imagem -->
             <div class="mb-4">
                 <label class="block text-gray-700">Imagem</label>
@@ -26,34 +27,19 @@
 
             <!-- Data -->
             <div class="mb-4">
-                <label class="block text-gray-700">Data</label>
+                <label class="block text-gray-700">Data de nascimento</label>
                 <input type="date" name="data" class="w-full p-2 border rounded">
             </div>
-
-            <!-- Categoria -->
             <div class="mb-4">
-                <label class="block text-gray-700">Categoria</label>
-                <input type="text" name="categoria" class="w-full p-2 border rounded">
+                <label class="block text-gray-700">Local de nascimento</label>
+                <input type="text" name="data" class="w-full p-2 border rounded">
             </div>
-
-            <!-- Trailer -->
+            
             <div class="mb-4">
-                <label class="block text-gray-700">Trailer (URL)</label>
-                <input type="url" name="trailer" class="w-full p-2 border rounded">
+                <label class="block text-gray-700">Filmes no qual participou</label>
+                <input type="text" name="data" class="w-full p-2 border rounded">
             </div>
-
-            <!-- Elenco -->
-            <div class="mb-4">
-                <label class="block text-gray-700">Elenco (Nota: isto tem de ser do genero de tem na db e aparece o ator caso o ator estaja na db ou seja jonny deep aparece a foto dele e é ele que aparece em baixo em ver de ser caixa de texto)</label>
-                <textarea name="elenco" class="w-full p-2 border rounded"></textarea>
-            </div>
-
-            <!-- Sinopse -->
-            <div class="mb-4">
-                <label class="block text-gray-700">Sinopse</label>
-                <textarea name="sinopse" class="w-full p-2 border rounded"></textarea>
-            </div>
-
+            
             <!-- Botão -->
             <div>
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">

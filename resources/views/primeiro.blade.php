@@ -1,46 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
 <head>
     <x-header />
     <link rel="stylesheet" href="{{ asset('css/CG.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What2Watch - Descubra novos filmes e séries e compartilhe sua opinião.">
+    <title>What2Watch</title>
 </head>
 <body>
 
     <!-- Introdução -->
-    <section class="intro">
+    <header class="intro">
         <h1>What2Watch</h1>
-        <p>Onde o seu entertenimento é o nosso dever!</p>
-    </section>
+        <p>Onde o seu entretenimento é o nosso dever!</p>
+    </header>
 
-    <!-- Seção 1: Texto à esquerda, imagem à direita -->
+    <!-- Seção 1: Filme do dia -->
     <section class="section">
         <div class="text">
-            <h1>O filme do dia é <b>{{ $film->title }}</b></h1>
-            <p>(O video ao lado é o trailer)  {{ $film->sinopse}}</p>
+            <h1>O filme do dia é <strong>{{ $film->title }}</strong></h1>
+            <p>(O vídeo ao lado é o trailer) {{ $film->sinopse }}</p>
         </div>
         <video width="400" controls>
-        <source src="/imagens/video/{{ $film->trailer }}" type="video/mp4">
+            <source src="/imagens/video/{{ $film->trailer }}" type="video/mp4">
             Your browser does not support HTML video.
-          </video>
+        </video>
     </section>
+
+    <!-- Seção 2: Futuras Updates -->
     <section class="section">
         <div class="image">
-            <img src="imagens/filmes2/IJ.jpg" alt="telemovel tecnologico">
+            <img src="imagens/filmes2/IJ.jpg" alt="Telemóvel tecnológico">
         </div>
         <div class="text">
             <h2>Futuras Updates</h2>
-            <p>celebs.</p>
+            <p>Celebs.</p>
         </div>
     </section>
+
+    <!-- Seção 3: Objetivo do Site -->
     <section class="section">
         <div class="text">
-            {{ $film->atores}}
-            {{-- <h2>Objetivo do Site {{ $film->atores->slug}}</h2> --}}
-            <p>O meu principal Objetivo é criar um site onde o utilizador possa descobrir novos filmes e series e dar a sua opiniao.</p>
-            <p>Nota a imagem tem de ser do genero de pessoas a assistirem algo</p>
+            <h2>Objetivo do Site</h2>
+            <p>{{ $film->atores }}</p>
+            <p>O meu principal objetivo é criar um site onde o utilizador possa descobrir novos filmes e séries e dar a sua opinião.</p>
+            <p>Nota: A imagem deve ser do género de pessoas a assistirem a algo.</p>
         </div>
         <div class="image">
-            <img src="images/imagem1.jpg" alt="Imagem 1">
+            <img src="images/imagem1.jpg" alt="Pessoas assistindo a um filme">
         </div>
     </section>
-    
+
+    <!-- Rodapé -->
+    <x-footer />
+
 </body>
-<x-footer />
+</html>

@@ -46,6 +46,11 @@ Route::get('/noticias',function(){
     $noticiaFamosos = noticiafamosos::all();
     return view('NoticiaFamosos.NoticiaFamososDex',compact('noticiaFamosos'));
 });
+
+Route::get('/escolhido',function($escolhido){
+    $Filmes = Film::where('escolhido',$escolhido)->first();
+    return view('NoticiaFamosos.NoticiaFamososDex',compact('Filmes'));
+});
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/filmes/{slug}', function ($slug) {
     $film = Film::where('slug', $slug)->first();
@@ -97,8 +102,8 @@ Route::get('nascimento',function(){
     $dia = ($day);
     $mes = strval($month);
     $ano = strval($year);
-    $calculo = ($dia + $mes + $ano);
-    dd($dia);
+    $calculo = (($dia * 31) + ($mes * 12) + ($ano * 365));
+    dd($calculo);
     return view('actor.AtorShow');
 });
 

@@ -21,6 +21,7 @@ class FilmSeeder extends Seeder
             'PCategoria' => 'Drama',
             'Falas'=>'Ai meu toba',
             'categoria'=> 'ação,ficção cientifica',
+            'escolhido'=> 'Sim',
             //'categoria' => 'acao'
         ]);
 
@@ -34,6 +35,7 @@ class FilmSeeder extends Seeder
             'audio'=>'the-batman.ogg',
             'trailer'=>'the-batman.mp4',
             'elenco' =>'Adam sandler',
+            'escolhido'=>'nao',
             'Falas' =>'Justice for gothan!',
             'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
         ]);

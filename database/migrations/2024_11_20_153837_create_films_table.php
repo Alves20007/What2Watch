@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('audio')->nullable();
             $table->string('sinopse')->nullable();
             $table->string('elenco')->nullable();
+            $table->string('escolhido')->nullable();
             //$table->foreign('categoria'); 
             $table->string('categoria')->nullable();
             

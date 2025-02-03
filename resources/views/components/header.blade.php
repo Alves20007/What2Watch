@@ -48,7 +48,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Artistas▼</a>
                         <div class="dropdown-content">
-                            <a href="{{ url('atores')}}">Atores</a>
+                            <a href="{{ url('atores')}}">Famosos</a>
                             <a href="{{ url('acao') }}">Oscares</a>
                             <a href="{{ url('aventura') }}">Nascidas hoje</a>
                             <a href="{{ url('animacao') }}">As celebridades mais populares</a>
