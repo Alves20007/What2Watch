@@ -14,8 +14,13 @@ return new class extends Migration
         Schema::create('aploads', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("slug");
-            $table->string("description");
+            $table->string("slug")->nullable();
+            $table->text("description")->nullable();
+            $table->string("Data")->nullable();
+            $table->string("categoria")->nullable();
+            $table->string("trailer")->nullable();
+            $table->string("elenco")->nullable();
+            $table->string("sinopse")->nullable();
             $table->string("image")->nullable();
             $table->timestamps();
         });

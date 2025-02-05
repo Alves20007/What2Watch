@@ -1,3 +1,0 @@
-<x-guestLayout>
-
-</x-guestLayout>

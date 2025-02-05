@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Laravel\Jetstream\Rules\Role;
 use Psy\CodeCleaner\ReturnTypePass;
 
+
 Route::get('/filmes', function () {
     $films = Film::all();
     return view('films.Filmdex', compact('films'));
@@ -122,12 +123,6 @@ Route::get('CaixaSurpresa', function () {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('/apload/create', function () {
-    return view('apload.create');
-});
-
-
-
 Route::get('/apload/create2', function (){
     return view('apload.create2');
 });
@@ -139,12 +134,22 @@ Route::get('/apload/Ownfilm',function(){
     return view('apload.Ownfilm');
 });
 
+
+Route::get('/apload/create', function () {
+    return view(view: 'apload.create');
+})->name('apload.create');
+
+
 Route::post('/apload/store', function (Request $request) {
 
     $validated = $request->validate([
         'name' => 'required|min:3',        
         'slug' => 'required',
         'image' => 'image',
+        'data'=> 'min:3',
+        'categoria'=>'required|min:3',
+        'elenco'=> 'required|min:3',
+        'sinopse'=>'required|min:3',
         'description' => 'min:3'
     ]);
 
@@ -153,9 +158,14 @@ Route::post('/apload/store', function (Request $request) {
         'slug' => $request->input('slug'),
         'description' => $request->input('description'),
         'image' => $request->input('image'),
+        'data'=> $request->input('data'),
+        'categoria'=> $request->input('categoria'),
+        'trailer'=> $request->input('trailer'),
+        'elenco'=> $request->input('elenco'),
+        'sinopse'=> $request->input('sinopse'),
     ]);
 
-    return view('apload.store');
+    return redirect()->route('apload.create')->banner('Race created with success');
 });
 
 Route::get('/apload', function () {
