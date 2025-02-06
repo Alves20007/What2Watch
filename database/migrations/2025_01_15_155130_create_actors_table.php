@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('actors', function (Blueprint $table) {
             $table->id();
-            $table->string("FullName");
-            $table->string("Frase");
-            $table->string("Slug");
-            $table->string("idade");
-            $table->string("Historia");
-            $table->string("Name");
-            $table->string("birthday");
-            $table->string("image");
+            $table->string("FullName")->nullable();
+            $table->string("Frase")->nullable();
+            $table->string("Slug")->nullable();
+            $table->string("idade")->nullable();
+            $table->string("Historia")->nullable();
+            $table->string("Name")->nullable();
+            $table->string("birthday")->nullable();
+            $table->string("image")->nullable();
             $table->timestamps();
         });
     }

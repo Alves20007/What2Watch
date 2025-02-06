@@ -58,9 +58,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Criaçao▼</a>
                         <div class="dropdown-content">
-                            <a href="{{ url('apload/create') }}">Criar filme</a>
-                            <a href="{{ url('apload/Ownfilm') }}">Own film</a>
-                            <a href="{{ url('apload/create2') }}">Celebs</a>
+                            <a href="{{ url('CriacaoFilmes') }}">Criar filme</a>
+                            <a href="{{ url('Users') }}">Own film</a>
+                            <a href="{{ url('CriarCelebs') }}">Celebs</a>
                             <a href="{{ url('apload/create2') }}">watch list</a>
                         </div>
                     </li>

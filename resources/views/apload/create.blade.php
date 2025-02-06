@@ -10,7 +10,7 @@
                 <!-- Nome do Filme -->
                 <div class="mb-4">
                     <label class="block text-gray-700">Nome do Filme</label>
-                    <input type="text" name="name" class="w-full p-2 border rounded" required>
+                    <input type="text" name="title" class="w-full p-2 border rounded" required>
                 </div>
 
                 <!-- Slug -->

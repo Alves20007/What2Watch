@@ -123,19 +123,20 @@ Route::get('CaixaSurpresa', function () {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('/apload/create2', function (){
+Route::get('CriarCelebs', function (){
     return view('apload.create2');
-});
+})->name('apload.create2');
+
 Route::get('/apload/store',function(){
     return view('apload.store');
 });
 
-Route::get('/apload/Ownfilm',function(){
+Route::get('Users',function(){
     return view('apload.Ownfilm');
 });
 
 
-Route::get('/apload/create', function () {
+Route::get('CriacaoFilmes', function () {
     return view(view: 'apload.create');
 })->name('apload.create');
 
@@ -143,34 +144,51 @@ Route::get('/apload/create', function () {
 Route::post('/apload/store', function (Request $request) {
 
     $validated = $request->validate([
-        'name' => 'required|min:3',        
+        'title' => 'required|min:3',        
         'slug' => 'required',
         'image' => 'image',
         'data'=> 'min:3',
-        'categoria'=>'required|min:3',
         'elenco'=> 'required|min:3',
         'sinopse'=>'required|min:3',
-        'description' => 'min:3'
+        'description' => 'min:3',
+        'Falas'=>'min:3',
+
     ]);
 
-    Apload::create([
-        'name' => $request->input('name'),
+    Film::create([
+        'title' => $request->input('title'),
         'slug' => $request->input('slug'),
         'description' => $request->input('description'),
         'image' => $request->input('image'),
-        'data'=> $request->input('data'),
-        'categoria'=> $request->input('categoria'),
+        'Data'=> $request->input('Data'),
         'trailer'=> $request->input('trailer'),
         'elenco'=> $request->input('elenco'),
         'sinopse'=> $request->input('sinopse'),
+        'Falas'=> $request->input('Falas'),
     ]);
 
     return redirect()->route('apload.create')->banner('Race created with success');
 });
 
-Route::get('/apload', function () {
-    return view('apload');
-});
+// Route::post('/apload/store2', function (Request $request) {
+//     $validated = $request->validate([
+//         'idade'=> 'min1',
+//         'birthday'=>'min:3',
+//         'Name'=> 'min:3',
+
+//     ]);
+//     actor::create([
+//         'birthday'=> $request->input('birthday'),
+//         'Name'=> $request->input('Name'),
+//         'idade'=> $request->input('idade'),
+//     ]);
+
+//     return redirect()->route('apload.create2')->banner('Race created with success');
+// });
+
+// Route::get('/apload', function () {
+//     return view('apload');
+// });
 
 
 Route::middleware([

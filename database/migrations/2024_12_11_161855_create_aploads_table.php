@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string("elenco")->nullable();
             $table->string("sinopse")->nullable();
             $table->string("image")->nullable();
+            $table->string("Falas")->nullable();
             $table->timestamps();
         });
     }
