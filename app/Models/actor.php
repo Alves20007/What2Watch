@@ -9,4 +9,6 @@ class actor extends Model
 {
     /** @use HasFactory<\Database\Factories\ActorFactory> */
     use HasFactory;
+    protected $guarded = [];
+
 }

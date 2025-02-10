@@ -1,5 +1,5 @@
 <x-guestLayout>
-    <form action="/apload/store" method="POST">
+    <form action="/apload/ator/store" method="POST">
 
         <div class="max-w-4xl mx-auto mt-10 p-6 bg-0000 rounded shadow">
             <h1 class="text-2xl font-bold mb-6">Cadastro do Ator</h1>
