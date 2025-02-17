@@ -47,10 +47,12 @@ Route::get('/noticias',function(){
     return view('NoticiaFamosos.NoticiaFamososDex',compact('noticiaFamosos'));
 });
 
-Route::get('/escolhido',function(){
-    $Filmes = Film::where('escolhido',$escolhido)->first();
-    return view('films.Filmdex',compact('Filmes'));
+Route::get('/escolhido', function() {
+    $films = Film::where('escolhido', 'sim')->get();
+    
+    return view('films.Filmdex', compact('films'));
 });
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/filmes/{slug}', function ($slug) {
     $film = Film::where('slug', $slug)->first();
