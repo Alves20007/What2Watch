@@ -16,7 +16,6 @@ use Illuminate\Http\Request;
 use Laravel\Jetstream\Rules\Role;
 use Psy\CodeCleaner\ReturnTypePass;
 
-
 Route::get('/filmes', function () {
     $films = Film::all();
     return view('films.Filmdex', compact('films'));
@@ -48,9 +47,9 @@ Route::get('/noticias',function(){
     return view('NoticiaFamosos.NoticiaFamososDex',compact('noticiaFamosos'));
 });
 
-Route::get('/escolhido',function($escolhido){
+Route::get('/escolhido',function(){
     $Filmes = Film::where('escolhido',$escolhido)->first();
-    return view('NoticiaFamosos.NoticiaFamososDex',compact('Filmes'));
+    return view('films.Filmdex',compact('Filmes'));
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/filmes/{slug}', function ($slug) {
