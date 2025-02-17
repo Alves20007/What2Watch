@@ -21,6 +21,7 @@ class ActorSeeder extends Seeder
             'birthday' => '09/07/1966',
             'idade' => '58 anos',
             'Frase'=>'Agora percebo como sou feio',
+            'Oscares'=> 'sim',
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
     }

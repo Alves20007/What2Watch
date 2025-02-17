@@ -48,9 +48,17 @@ Route::get('/noticias',function(){
 });
 
 Route::get('/escolhido', function() {
+
     $films = Film::where('escolhido', 'sim')->get();
     
     return view('films.Filmdex', compact('films'));
+});
+
+Route::get('/Oscares', function() {
+
+    $actor = actor::where('Oscares', 'sim')->get();
+    
+    return view('actor.Atordex', compact('actor'));
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
