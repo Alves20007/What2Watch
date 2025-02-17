@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\actor;
+use App\Models\Actor;
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ActorSeeder extends Seeder
 {
@@ -13,7 +15,9 @@ class ActorSeeder extends Seeder
      */
     public function run(): void
     {
-        actor::create([
+        $oscar_id = Category::where('slug', 'oscar')->first()->id;
+
+        $actor = Actor::create([
             'FullName' => 'Adam Richard Sandler',
             'Name' => 'Adam Sandler',
             'Slug'=>"AdamSandler",
@@ -23,6 +27,11 @@ class ActorSeeder extends Seeder
             'Frase'=>'Agora percebo como sou feio',
             'Oscares'=> 'sim',
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
+        ]);
+
+        DB::table('actor_category')->insert([
+            'actor_id' => $actor->id,
+            'category_id' => $oscar_id
         ]);
     }
 }

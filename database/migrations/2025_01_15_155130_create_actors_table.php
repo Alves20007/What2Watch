@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Actor;
+use App\Models\Category;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,6 +25,11 @@ return new class extends Migration
             $table->string("image")->nullable();
             $table->string("Oscares")->nullable();
             $table->timestamps();
+        });
+
+        Schema::create('actor_category', function (Blueprint $table) {
+            $table->foreignIdFor(Actor::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
         });
     }
 
