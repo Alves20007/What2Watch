@@ -25,14 +25,14 @@
                         <div class="dropdown-content">
                             <a href="{{ url('filmes') }}">Filmes/series</a>
                             <a href="{{ url('Lançamentos') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
-                            <a href="{{ url('escolhido') }}">Top 100</a> 
+                            <a href="{{ url('TOP100') }}">Top 100</a> 
                             <a href="{{ url('CaixaSurpresa') }}">Caixa surpresa</a>                      
                         </div>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-link">Our choice▼</a>
                         <div class="dropdown-content">
-                            <a href="{{ url('animacao') }}">W2 Escolha</a> <!--5 filmes da minha escolha de diferentes generos -->
+                            <a href="{{ url('escolhido') }}">W2 Escolha</a> <!--5 filmes da minha escolha de diferentes generos -->
                             <a href="{{ url('animacao') }}">Os meus rankings</a>
                         </div>
                     </li>
@@ -51,7 +51,7 @@
                             <a href="{{ url('atores')}}">Famosos</a>
                             <a href="{{ url('Oscares') }}">Oscares</a>
                             <a href="{{ url('aventura') }}">Nascidas hoje</a>
-                            <a href="{{ url('animacao') }}">As celebridades mais populares</a>
+                            <a href="{{ url('top') }}">As celebridades mais populares</a>
                             <a href="{{ url('noticias') }}">Notícias dos famosos</a>
                         </div>
                     </li>

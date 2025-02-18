@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string("birthday")->nullable();
             $table->string("image")->nullable();
             $table->string("Oscares")->nullable();
+            $table->string("Top")->nullable();
             $table->timestamps();
         });
 

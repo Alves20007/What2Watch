@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('sinopse')->nullable();
             $table->string('elenco')->nullable();
             $table->string('escolhido')->nullable();
+            $table->string('top100')->nullable();
             //$table->foreign('categoria'); 
             $table->string('categoria')->nullable();
             

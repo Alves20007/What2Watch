@@ -29,9 +29,23 @@ class ActorSeeder extends Seeder
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
+        $actor = Actor::create([
+            'FullName' => 'chico da tina',
+            'Name' => 'teste',
+            'Slug'=>"AdamSandler",
+            'image' => 'adam_sandler.jpg',
+            'birthday' => '09/07/1966',
+            'idade' => '58 anos',
+            'Frase'=>'Agora percebo como sou feio',
+            'Top' => 'sim',
+            'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
+        ]);
+        
+        
         DB::table('actor_category')->insert([
             'actor_id' => $actor->id,
             'category_id' => $oscar_id
         ]);
+
     }
 }
