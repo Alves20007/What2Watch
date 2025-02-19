@@ -19,6 +19,11 @@
             <h2>Sínopse do filme</h2>
             <p>{{$film->sinopse}}</p>
         </div>
+
+        <div class = "text">
+            <h1>Categoria teste </h1>
+            <p>{{$film->categoria}}</p>
+        </div>
     </section>
 
     <section class="section">

@@ -17,8 +17,10 @@ use Laravel\Jetstream\Rules\Role;
 use Psy\CodeCleaner\ReturnTypePass;
 
 Route::get('/filmes', function () {
-    $films = Film::all();
+
+    $films = Film::where('tipo', 'filme')->get();
     return view('films.Filmdex', compact('films'));
+
 });
 
 Route::get('Lancamento', function () {
@@ -194,10 +196,13 @@ Route::post('/apload/filme/store', function (Request $request) {
         'sinopse'=>'required|min:3',
         'description' => 'min:3',
         'Falas'=>'min:3',
+        'categoria'=> 'required|min:3',
+        'tipo'=> 'min:3',
 
     ]);
 
     Film::create([
+        'categoria'=> $request->input('categoria'),
         'title' => $request->input('title'),
         'slug' => $request->input('slug'),
         'description' => $request->input('description'),
@@ -207,6 +212,7 @@ Route::post('/apload/filme/store', function (Request $request) {
         'elenco'=> $request->input('elenco'),
         'sinopse'=> $request->input('sinopse'),
         'Falas'=> $request->input('Falas'),
+        'tipo'=> $request->input('tipo')
     ]);
 
     return redirect()->route('apload.filme.create')->banner('Race created with success');

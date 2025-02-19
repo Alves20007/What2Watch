@@ -13,6 +13,13 @@
                     <input type="text" name="title" class="w-full p-2 border rounded" required>
                 </div>
 
+                <label for="tipo">É filme ou é serie?:</label>
+                <select name="tipo" id="tipo">
+                    <option value="filme">Filme</option>
+                    <option value="serie">Serie</option>
+                </select>
+
+
                 <!-- Slug -->
                 <div class="mb-4">
                     <label class="block text-gray-700">Slug</label>
@@ -30,18 +37,19 @@
                     <label class="block text-gray-700">Data</label>
                     <input type="date" name="data" class="w-full p-2 border rounded">
                 </div>
-
-                <!-- Categoria -->
-                <div class="mb-4">
-                    <label class="block text-gray-700">Categoria</label>
-                    <input type="text" name="categoria" class="w-full p-2 border rounded">
-                </div>
-
                 <!-- Trailer -->
                 <div class="mb-4">
                     <label class="block text-gray-700">Trailer (URL)</label>
                     <input type="url" name="trailer" class="w-full p-2 border rounded">
                 </div>
+
+                <label for="categoria">Escolhe a categoria do filme/serie:</label>
+                <select name="categoria" id="categoria">
+                    <option value="acao">Ação</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="drama">Drama</option>
+                    <option value="Romance">Romance</option>
+                </select>
 
                 <!-- Elenco -->
                 <div class="mb-4">

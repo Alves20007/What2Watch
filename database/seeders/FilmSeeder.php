@@ -22,6 +22,7 @@ class FilmSeeder extends Seeder
             'Falas'=>'Ai meu toba',
             'categoria'=> 'ação,ficção cientifica',
             'top100'=> 'Sim',
+            'tipo'=> 'filme',
             //'categoria' => 'acao'
         ]);
 
