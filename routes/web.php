@@ -4,13 +4,15 @@ use App\Http\Controllers\ActorController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\NoticiaFilmeController;
-use App\Http\Controllers\NoticiafamososController; 
+use App\Http\Controllers\NoticiafamososController;
+use App\Http\Controllers\ImageController;
 use App\Models\actor;
 use App\Models\Film;
 Use App\Models\series;
 use App\Models\apload;
 use App\Models\noticiafamosos;
 use App\Models\noticiaFilme;
+use App\Models\Image;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Laravel\Jetstream\Rules\Role;
@@ -185,8 +187,15 @@ Route::get('Own Movie', function (){
     return view('apload.Own.OwnFilm');
 })->name('apload.Own.OwnFilm');
 
+
+
 Route::post('/apload/filme/store', function (Request $request) {
 
+    
+    $imageName = time() . "." . $request->image->extension();
+    $request->image->move(public_path('images'), $imageName);
+
+    
     $validated = $request->validate([
         'title' => 'required|min:3',        
         'slug' => 'required',
@@ -197,10 +206,9 @@ Route::post('/apload/filme/store', function (Request $request) {
         'description' => 'min:3',
         'Falas'=>'min:3',
         'categoria'=> 'required|min:3',
-        'tipo'=> 'min:3',
+        'tipo'=> 'required|min:1',
 
     ]);
-
     Film::create([
         'categoria'=> $request->input('categoria'),
         'title' => $request->input('title'),
@@ -212,8 +220,14 @@ Route::post('/apload/filme/store', function (Request $request) {
         'elenco'=> $request->input('elenco'),
         'sinopse'=> $request->input('sinopse'),
         'Falas'=> $request->input('Falas'),
-        'tipo'=> $request->input('tipo')
+        'tipo'=> $request->input(['tipo'])
     ]);
+    
+    Image::create([
+        'name' => $request['name'],
+        'path' => $imageName
+    ]);
+    
 
     return redirect()->route('apload.filme.create')->banner('Race created with success');
 });
@@ -298,6 +312,23 @@ Route::get('teste', function () {
 
 Route::get('teste2', function () {
     return view('site.teste2');
+});
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Route::post('/image_upload/store', function (Request $request) {    
+    $request->validate([
+        'name' => 'required',
+        'image' => 'required|image|mimes:jpeg,png|max:2048'
+    ]);
+    $imageName = time() . "." . $request->image->extension();
+    $request->image->move(public_path('images'), $imageName);
+    Image::create([
+        'name' => $request['name'],
+        'path' => $imageName
+    ]);
+    return redirect('/');
 });
 
 

@@ -22,13 +22,18 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            ImageSeeder::class
+        ]);
+
+        $this->call([
             CategorySeeder::class,
             FilmSeeder::class,
             ActorSeeder::class,
             AploadSeeder::class,
             SeriesSeeder::class,
             NoticiaFilmeSeeder::class,
-            NoticiafamososSeeder::class
+            NoticiafamososSeeder::class,
+            ImageSeeder::class
         ]);
     }
 }

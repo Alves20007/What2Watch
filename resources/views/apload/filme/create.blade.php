@@ -25,13 +25,17 @@
                     <label class="block text-gray-700">Slug</label>
                     <input type="text" name="slug" class="w-full p-2 border rounded">
                 </div>
-
-                <!-- Imagem -->
-                <div class="mb-4">
-                    <label class="block text-gray-700">Imagem</label>
-                    <input type="file" name="imagem" class="w-full">
-                </div>
-
+                
+                <form method="POST" action="/images" enctype="multipart/form-data">
+                    @csrf
+                    <div class="space-y-4">
+                        <div>
+                            <x-label>Imagem</x-label>
+                            <x-input type="file" name="image" id="image"/>
+                    </div>
+                    
+                </form>
+                
                 <!-- Data -->
                 <div class="mb-4">
                     <label class="block text-gray-700">Data</label>
