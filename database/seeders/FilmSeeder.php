@@ -29,6 +29,7 @@ class FilmSeeder extends Seeder
         Film::create([
             'title' => 'Batman',
             'slug' => 'batman',
+            'tipo'=> 'filme',
             'image' => 'batman.png',
             'Data' => '4/11/2022',
             'PCategoria' => 'Drama',
@@ -47,6 +48,7 @@ class FilmSeeder extends Seeder
             'image' => 'Endgame.png',
             'Falas' => 'Avengers Assemble!',
             'Data' => '25/04/2019',
+            'tipo'=> 'filme',
         ]);
 
         Film::create([
@@ -56,6 +58,7 @@ class FilmSeeder extends Seeder
             'Data' => '4/11/2022',
             'Falas' => 'Montanha Dificil',
             'trailer'=>'the-batman.mp4',
+            'tipo'=> 'filme',
         ]);
 
         Film::create([
@@ -64,7 +67,8 @@ class FilmSeeder extends Seeder
             'image' => 'inception.png',
             'Data' => '20/05/2004',
             'Falas' => 'caralho estou em drogas',
-            'sinopse' => "teste da sinopse do inception "
+            'sinopse' => "teste da sinopse do inception ",
+            'tipo'=> 'filme',
         ]);
 
         Film::create([
@@ -72,7 +76,8 @@ class FilmSeeder extends Seeder
             'slug' => 'Pi adventure',
             'image' => 'Pi.jpg',
             'Falas' => 'Que medo de Tigres',    
-            'Data' => '4/11/2022'
+            'Data' => '4/11/2022',
+            'tipo'=> 'filme',
         ]);
 
     }

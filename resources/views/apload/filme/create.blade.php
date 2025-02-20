@@ -13,6 +13,7 @@
                     <input type="text" name="title" class="w-full p-2 border rounded" required>
                 </div>
 
+                                
                 <label for="tipo">É filme ou é serie?:</label>
                 <select name="tipo" id="tipo">
                     <option value="filme">Filme</option>
@@ -26,7 +27,7 @@
                     <input type="text" name="slug" class="w-full p-2 border rounded">
                 </div>
                 
-                <form method="POST" action="/images" enctype="multipart/form-data">
+                <!-- <form method="POST" action="/images" enctype="multipart/form-data">
                     @csrf
                     <div class="space-y-4">
                         <div>
@@ -35,7 +36,7 @@
                     </div>
                     
                 </form>
-                
+                 -->
                 <!-- Data -->
                 <div class="mb-4">
                     <label class="block text-gray-700">Data</label>
@@ -51,8 +52,6 @@
                 <select name="categoria" id="categoria">
                     <option value="acao">Ação</option>
                     <option value="comedia">Comédia</option>
-                    <option value="drama">Drama</option>
-                    <option value="Romance">Romance</option>
                 </select>
 
                 <!-- Elenco -->

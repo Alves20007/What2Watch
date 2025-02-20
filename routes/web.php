@@ -191,9 +191,9 @@ Route::get('Own Movie', function (){
 
 Route::post('/apload/filme/store', function (Request $request) {
 
-    
-    $imageName = time() . "." . $request->image->extension();
-    $request->image->move(public_path('images'), $imageName);
+    dd($request->all());
+    // $imageName = time() . "." . $request->image->extension();
+    // $request->image->move(public_path('images'), $imageName);
 
     
     $validated = $request->validate([
@@ -203,13 +203,14 @@ Route::post('/apload/filme/store', function (Request $request) {
         'data'=> 'min:3',
         'elenco'=> 'required|min:3',
         'sinopse'=>'required|min:3',
+        'tipo'=> 'required|min:2',
         'description' => 'min:3',
         'Falas'=>'min:3',
-        'categoria'=> 'required|min:3',
-        'tipo'=> 'required|min:1',
+        'categoria'=> 'required|min:3'
 
     ]);
     Film::create([
+        'tipo'=> $request->input('tipo'),
         'categoria'=> $request->input('categoria'),
         'title' => $request->input('title'),
         'slug' => $request->input('slug'),
@@ -219,14 +220,13 @@ Route::post('/apload/filme/store', function (Request $request) {
         'trailer'=> $request->input('trailer'),
         'elenco'=> $request->input('elenco'),
         'sinopse'=> $request->input('sinopse'),
-        'Falas'=> $request->input('Falas'),
-        'tipo'=> $request->input(['tipo'])
+        'Falas'=> $request->input('Falas')
     ]);
     
-    Image::create([
-        'name' => $request['name'],
-        'path' => $imageName
-    ]);
+    // Image::create([
+    //     'name' => $request['name'],
+    //     'path' => $imageName
+    // ]);
     
 
     return redirect()->route('apload.filme.create')->banner('Race created with success');
