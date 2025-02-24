@@ -20,9 +20,9 @@ class FilmSeeder extends Seeder
             'Data' => '20/05/2004',
             'PCategoria' => 'Drama',
             'Falas'=>'Ai meu toba',
-            'categoria'=> 'ação,ficção cientifica',
             'top100'=> 'Sim',
             'tipo'=> 'filme',
+            'categoria' => 'acao',
             //'categoria' => 'acao'
         ]);
 
@@ -49,6 +49,7 @@ class FilmSeeder extends Seeder
             'Falas' => 'Avengers Assemble!',
             'Data' => '25/04/2019',
             'tipo'=> 'filme',
+            'categoria' => 'acao',
         ]);
 
         Film::create([
@@ -59,6 +60,7 @@ class FilmSeeder extends Seeder
             'Falas' => 'Montanha Dificil',
             'trailer'=>'the-batman.mp4',
             'tipo'=> 'filme',
+            'categoria' => 'acao',
         ]);
 
         Film::create([
@@ -69,6 +71,7 @@ class FilmSeeder extends Seeder
             'Falas' => 'caralho estou em drogas',
             'sinopse' => "teste da sinopse do inception ",
             'tipo'=> 'filme',
+            'categoria' => 'acao',
         ]);
 
         Film::create([
@@ -78,6 +81,17 @@ class FilmSeeder extends Seeder
             'Falas' => 'Que medo de Tigres',    
             'Data' => '4/11/2022',
             'tipo'=> 'filme',
+            'categoria' => 'acao',
+        ]);
+
+        Film::create([
+            'title' => 'broklyn 99',
+            'slug' => 'brok',
+            'image' => 'broklyn99.jpg',
+            'Falas' => 'Que medo de Tigres',    
+            'Data' => '4/11/2022',
+            'tipo'=> 'serie',
+            'categoria' => 'acao',
         ]);
 
     }

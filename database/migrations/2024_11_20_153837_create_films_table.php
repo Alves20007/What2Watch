@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('elenco')->nullable();
             $table->string('escolhido')->nullable();
             $table->string('top100')->nullable();
-            $table->string('categoria')->nullable();
+            $table->string('categoria');
             $table->string('tipo')->nullable();
             
             $table->timestamps();

@@ -30,15 +30,14 @@ Route::get('Lancamento', function () {
     return view('films.Lancamento', compact('films'));
 });
 
+Route::get('/series',function(){
+    $films = Film::where('tipo','serie')->get();
+    return view('films.Filmdex',compact('films'));
+});
 
 Route::get('/atores', function () {
     $actor = actor::all();
     return view('actor.Atordex',compact('actor'));
-});
-
-Route::get('/series',function(){
-    $series = series::all();
-    return view('series.Seridex',compact('series'));
 });
 
 Route::get('/Lançamentos',function(){
@@ -93,8 +92,8 @@ Route::get('/atores/{slug}', function ($slug) {
 });
 
 Route::get('/series/{slug}', function($slug){
-    $series = series::where('slug',$slug)->first();
-    return view('series.SeriesShow',compact('series'));
+    $films = Film::where('slug',$slug)->first();
+    return view('films.Filmdex',compact('films'));
 });
 
 Route::get('Lançamentos/{slug}',function($slug){
@@ -191,7 +190,7 @@ Route::get('Own Movie', function (){
 
 Route::post('/apload/filme/store', function (Request $request) {
 
-    dd($request->all());
+    // dd($request->all());
     // $imageName = time() . "." . $request->image->extension();
     // $request->image->move(public_path('images'), $imageName);
 

@@ -19,7 +19,8 @@ class Film extends Model
         'audio',
         'trailer',
         'elenco',
-        'sinopse'
+        'sinopse',
+        'tipo',
     ];
      
 }
