@@ -1,5 +1,5 @@
 <x-guestLayout>
-    <form action="/apload/filme/store" method="POST">
+    <form action="/apload/filme/store" method="POST" enctype="multipart/form-data">
 
         <div class="max-w-4xl mx-auto mt-10 p-6 bg-0000 rounded shadow">
             <h1 class="text-2xl font-bold mb-6">Cadastro de Filme</h1>
@@ -26,17 +26,12 @@
                     <label class="block text-gray-700">Slug</label>
                     <input type="text" name="slug" class="w-full p-2 border rounded">
                 </div>
-                
-                <!-- <form method="POST" action="/images" enctype="multipart/form-data">
-                    @csrf
-                    <div class="space-y-4">
-                        <div>
-                            <x-label>Imagem</x-label>
-                            <x-input type="file" name="image" id="image"/>
-                    </div>
-                    
-                </form>
-                 -->
+        
+                <div class= "mb-4">
+                    <label class="block text-gray-700">teste</label>
+                    <x-input type="file" name="image" id="image"/>
+                </div>
+            
                 <!-- Data -->
                 <div class="mb-4">
                     <label class="block text-gray-700">Data</label>

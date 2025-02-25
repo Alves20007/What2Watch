@@ -195,19 +195,24 @@ Route::post('/apload/filme/store', function (Request $request) {
     // $request->image->move(public_path('images'), $imageName);
 
     
-    $validated = $request->validate([
+    $request->validate([
         'title' => 'required|min:3',        
         'slug' => 'required',
-        'image' => 'image',
+        // 'image' => 'required|image|mimes:jpeg,png,gif,PNG|max:2048',
+        'image' => 'min:3',
         'data'=> 'min:3',
         'elenco'=> 'required|min:3',
         'sinopse'=>'required|min:3',
         'tipo'=> 'required|min:2',
         'description' => 'min:3',
         'Falas'=>'min:3',
-        'categoria'=> 'required|min:3'
-
+        'categoria'=> 'required|min:3' 
     ]);
+
+    $imageName = time() . "." . $request->image->extension();
+    $request->image->move(public_path('img'), $imageName);
+
+    
     Film::create([
         'tipo'=> $request->input('tipo'),
         'categoria'=> $request->input('categoria'),
@@ -221,12 +226,6 @@ Route::post('/apload/filme/store', function (Request $request) {
         'sinopse'=> $request->input('sinopse'),
         'Falas'=> $request->input('Falas')
     ]);
-    
-    // Image::create([
-    //     'name' => $request['name'],
-    //     'path' => $imageName
-    // ]);
-    
 
     return redirect()->route('apload.filme.create')->banner('Race created with success');
 });
@@ -316,19 +315,19 @@ Route::get('teste2', function () {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::post('/image_upload/store', function (Request $request) {    
-    $request->validate([
-        'name' => 'required',
-        'image' => 'required|image|mimes:jpeg,png|max:2048'
-    ]);
-    $imageName = time() . "." . $request->image->extension();
-    $request->image->move(public_path('images'), $imageName);
-    Image::create([
-        'name' => $request['name'],
-        'path' => $imageName
-    ]);
-    return redirect('/');
-});
+// Route::post('/image_upload/store', function (Request $request) {    
+//     $request->validate([
+//         'name' => 'required',
+//         'image' => 'required|image|mimes:jpeg,png|max:2048'
+//     ]);
+//     $imageName = time() . "." . $request->image->extension();
+//     $request->image->move(public_path('images'), $imageName);
+//     Image::create([
+//         'name' => $request['name'],
+//         'path' => $imageName
+//     ]);
+//     return redirect('/');
+// });
 
 
 

@@ -12,7 +12,6 @@ class Film extends Model
     protected $fillable = [
         'title',
         'slug',
-        'image',
         'Data',
         'PCategoria',
         'categoria',
