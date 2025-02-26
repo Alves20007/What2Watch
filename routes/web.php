@@ -190,44 +190,48 @@ Route::get('Own Movie', function (){
 
 Route::post('/apload/filme/store', function (Request $request) {
 
-    // dd($request->all());
-    // $imageName = time() . "." . $request->image->extension();
-    // $request->image->move(public_path('images'), $imageName);
-
-    
+    // Validação dos dados
     $request->validate([
         'title' => 'required|min:3',        
         'slug' => 'required',
-        // 'image' => 'required|image|mimes:jpeg,png,gif,PNG|max:2048',
-        'image' => 'min:3',
-        'data'=> 'min:3',
-        'elenco'=> 'required|min:3',
-        'sinopse'=>'required|min:3',
-        'tipo'=> 'required|min:2',
+        'image' => 'required|image|mimes:jpeg,png,gif,PNG|max:2048',  // Validação para imagem
+        'data' => 'min:3',
+        'elenco' => 'required|min:3',
+        'sinopse' => 'required|min:3',
+        'tipo' => 'required|min:2',
         'description' => 'min:3',
-        'Falas'=>'min:3',
-        'categoria'=> 'required|min:3' 
+        'Falas' => 'min:3',
+        'categoria' => 'required|min:3' 
     ]);
 
-    $imageName = time() . "." . $request->image->extension();
-    $request->image->move(public_path('img'), $imageName);
+    // Processando a imagem
+    $image = $request->file('image');
+    $imageName = time() . '.' . $image->extension();
+        
 
-    
+    // Criando o filme no banco de dados
     Film::create([
-        'tipo'=> $request->input('tipo'),
-        'categoria'=> $request->input('categoria'),
+        'tipo' => $request->input('tipo'),
+        'categoria' => $request->input('categoria'),
         'title' => $request->input('title'),
         'slug' => $request->input('slug'),
         'description' => $request->input('description'),
-        'image' => $request->input('image'),
-        'Data'=> $request->input('Data'),
-        'trailer'=> $request->input('trailer'),
-        'elenco'=> $request->input('elenco'),
-        'sinopse'=> $request->input('sinopse'),
-        'Falas'=> $request->input('Falas')
+        'image' => $imageName,  // Aqui usamos o nome da imagem gerada
+        'Data' => $request->input('data'),
+        'trailer' => $request->input('trailer'),
+        'elenco' => $request->input('elenco'),
+        'sinopse' => $request->input('sinopse'),
+        'Falas' => $request->input('Falas')
     ]);
 
-    return redirect()->route('apload.filme.create')->banner('Race created with success');
+    // Criando a imagem no banco de dados
+    Image::create([
+        'name' => $request->input('title'),  
+        'path' => $imageName 
+    ]);
+
+    // Redirecionando para a criação de filme com mensagem de sucesso
+    return redirect()->route('apload.filme.create')->with('banner', 'Filme criado com sucesso');
 });
 
 

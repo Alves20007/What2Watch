@@ -22,10 +22,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            ImageSeeder::class
-        ]);
-
-        $this->call([
             CategorySeeder::class,
             FilmSeeder::class,
             ActorSeeder::class,
