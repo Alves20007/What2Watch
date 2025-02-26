@@ -20,6 +20,7 @@ class Film extends Model
         'elenco',
         'sinopse',
         'tipo',
+        'image'
     ];
      
 }

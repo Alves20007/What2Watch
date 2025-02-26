@@ -188,7 +188,7 @@ Route::get('Own Movie', function (){
 
 
 
-Route::post('/apload/filme/store', function (Request $request) {
+Route::post('/films/store', function (Request $request) {
 
     // Validação dos dados
     $request->validate([
@@ -206,8 +206,8 @@ Route::post('/apload/filme/store', function (Request $request) {
 
     // Processando a imagem
     $image = $request->file('image');
-    $imageName = time() . '.' . $image->extension();
-        
+    $imageName = time() . '.' . $image->extension();     
+    $request->image->move(public_path('img'), $imageName);
 
     // Criando o filme no banco de dados
     Film::create([
@@ -221,13 +221,10 @@ Route::post('/apload/filme/store', function (Request $request) {
         'trailer' => $request->input('trailer'),
         'elenco' => $request->input('elenco'),
         'sinopse' => $request->input('sinopse'),
-        'Falas' => $request->input('Falas')
+        'Falas' => $request->input('Falas'),
+        'image' => $imageName
     ]);
-
-    Image::create([
-        'name' => $request->input('title'),  
-        'path' => $imageName 
-    ]);
+    
 
     // Redirecionando para a criação de filme com mensagem de sucesso
     return redirect()->route('apload.filme.create')->with('banner', 'Filme criado com sucesso');
