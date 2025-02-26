@@ -40,7 +40,7 @@ Route::get('/atores', function () {
     return view('actor.Atordex',compact('actor'));
 });
 
-Route::get('/Lançamentos',function(){
+Route::get('/NoticiasFilmes',function(){
     $noticiaFilme = noticiaFilme::all();
     return view('NoticiaFilme.NoticiaFilmDex',compact('noticiaFilme'));
 });
@@ -224,7 +224,6 @@ Route::post('/apload/filme/store', function (Request $request) {
         'Falas' => $request->input('Falas')
     ]);
 
-    // Criando a imagem no banco de dados
     Image::create([
         'name' => $request->input('title'),  
         'path' => $imageName 
