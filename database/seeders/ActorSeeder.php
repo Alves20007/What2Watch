@@ -31,7 +31,7 @@ class ActorSeeder extends Seeder
 
         $actor = Actor::create([
             'FullName' => 'chico da tina',
-            'Name' => 'teste',
+            'Name' => 'chico',
             'Slug'=>"AdamSandler",
             'image' => 'adam_sandler.jpg',
             'birthday' => '09/07/1966',

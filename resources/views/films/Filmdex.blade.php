@@ -6,8 +6,11 @@
             <x-button class="bg-orange-500 hover:bg-orange-600 text-white">
                 <a href="{{ url('filmes') }}">Filmes</a>
             </x-button>
-            <x-button class="bg-zinc-50 hover:bg-orange-500 text-slate-950 border border-zinc-300">
+            <x-button class="bg-zinc-200 hover:bg-orange-500 text-slate-950 border border-zinc-300">
                 <a href="{{ url('series') }}">Séries</a>
+            </x-button>
+            <x-button class="bg-zinc-200 hover:bg-orange-500 text-slate-950 border border-zinc-300">
+                <a href="{{ url('video/utilizador') }}">Vídeos</a>
             </x-button>
         </div>
 
@@ -19,7 +22,7 @@
                         <!-- Imagem do filme -->
                         <img 
                             class="h-64 w-full object-cover rounded-t-lg" 
-                            src="/images/films/{{ $film->image }}" 
+                            src="/images/{{ $film->image }}" 
                             alt="{{ $film->title }} - Poster" 
                             loading="lazy"
                         >

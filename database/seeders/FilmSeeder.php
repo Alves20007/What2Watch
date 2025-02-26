@@ -94,5 +94,16 @@ class FilmSeeder extends Seeder
             'categoria' => 'acao',
         ]);
 
+        
+        Film::create([
+            'title' => 'broklyn 99',
+            'slug' => 'brok22q',
+            'image' => 'broklyn99.jpg',
+            'Falas' => 'Que medo de Tigres',    
+            'Data' => '4/11/2022',
+            'tipo'=> 'video',
+            'categoria' => 'acao',
+        ]);
+
     }
 }

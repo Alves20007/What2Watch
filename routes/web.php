@@ -25,15 +25,22 @@ Route::get('/filmes', function () {
 
 });
 
-Route::get('Lancamento', function () {
-    $films = Film::all();
-    return view('films.Lancamento', compact('films'));
+Route::get('/video/utilizador',function(){
+    $films = Film::where('tipo','video')->get();
+    return view('films.Filmdex',compact('films'));
 });
 
 Route::get('/series',function(){
     $films = Film::where('tipo','serie')->get();
     return view('films.Filmdex',compact('films'));
 });
+
+
+Route::get('Lancamento', function () {
+    $films = Film::all();
+    return view('films.Lancamento', compact('films'));
+});
+
 
 Route::get('/atores', function () {
     $actor = actor::all();
@@ -207,7 +214,7 @@ Route::post('/films/store', function (Request $request) {
     // Processando a imagem
     $image = $request->file('image');
     $imageName = time() . '.' . $image->extension();     
-    $request->image->move(public_path('img'), $imageName);
+    $request->image->move(public_path('images'), $imageName);
 
     // Criando o filme no banco de dados
     Film::create([
@@ -215,9 +222,7 @@ Route::post('/films/store', function (Request $request) {
         'categoria' => $request->input('categoria'),
         'title' => $request->input('title'),
         'slug' => $request->input('slug'),
-        'description' => $request->input('description'),
-        'image' => $imageName,  // Aqui usamos o nome da imagem gerada
-        'Data' => $request->input('data'),
+        'description' => $request->input('description'),        'Data' => $request->input('data'),
         'trailer' => $request->input('trailer'),
         'elenco' => $request->input('elenco'),
         'sinopse' => $request->input('sinopse'),
@@ -313,25 +318,4 @@ Route::get('teste2', function () {
 });
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Route::post('/image_upload/store', function (Request $request) {    
-//     $request->validate([
-//         'name' => 'required',
-//         'image' => 'required|image|mimes:jpeg,png|max:2048'
-//     ]);
-//     $imageName = time() . "." . $request->image->extension();
-//     $request->image->move(public_path('images'), $imageName);
-//     Image::create([
-//         'name' => $request['name'],
-//         'path' => $imageName
-//     ]);
-//     return redirect('/');
-// });
-
-
-
-// Route::get('/categories', function () {
-//     $categories = Category::all();    
-//     return view('categories.index', compact('categories'));
-// });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

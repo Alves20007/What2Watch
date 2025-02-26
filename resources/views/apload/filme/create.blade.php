@@ -18,6 +18,7 @@
                 <select name="tipo" id="tipo">
                     <option value="filme">Filme</option>
                     <option value="serie">Serie</option>
+                    <option value="video">Video</option>
                 </select>
 
 
@@ -47,6 +48,9 @@
                 <select name="categoria" id="categoria">
                     <option value="acao">Ação</option>
                     <option value="comedia">Comédia</option>
+                    <option value="drama">Drama</option>
+                    <option value="FC">Ficção científica</option>
+                    <option value="terror">Terror</option>
                 </select>
 
                 <!-- Elenco -->
