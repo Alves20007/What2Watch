@@ -6,10 +6,10 @@
             <x-button class="bg-orange-500 hover:bg-orange-600 text-white">
                 <a href="{{ url('filmes') }}">Filmes</a>
             </x-button>
-            <x-button class="bg-zinc-200 hover:bg-orange-500 text-slate-950 border border-zinc-300">
+            <x-button class="bg-orange-700 hover:bg-orange-500 text-slate-950 border border-zinc-300">
                 <a href="{{ url('series') }}">Séries</a>
             </x-button>
-            <x-button class="bg-zinc-200 hover:bg-orange-500 text-slate-950 border border-zinc-300">
+            <x-button class="bg-yellow-500 hover:bg-orange-500 text-slate-950 border border-zinc-300">
                 <a href="{{ url('video/utilizador') }}">Vídeos</a>
             </x-button>
         </div>
@@ -28,8 +28,8 @@
                         >
                         <!-- Informações do filme -->
                         <div class="mt-2">
-                            <h3 class="font-bold text-lg">{{ $film->title }}</h3>
-                            <p class="text-sm text-gray-600">{{ $film->Data }}</p>
+                            <h3 class="font-bold text-neutral-200 text-lg">{{ $film->title }}</h3>
+                            <p class="text-sm text-neutral-200">{{ $film->Data }}</p>
                             {{-- <p class="text-sm text-gray-600">{{ $film->PCategoria }}</p> --}}
                         </div>
                     </div>

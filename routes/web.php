@@ -73,12 +73,22 @@ Route::get('/escolhido', function() {
 });
 
 
-Route::get('/Oscares', function() {
+Route::get('/Oscares/artistas', function() {
 
     $actor = actor::where('Oscares', 'sim')->get();
-    
+
     return view('actor.Atordex', compact('actor'));
 });
+
+Route::get('/noticias/oscares', function() {
+
+    $actor = actor::where('Oscares', 'sim')->get();
+
+    $film = Film::where('oscares', 'sim')->get();
+    
+    return view('actor.Atordex', compact('actor' , 'film'));
+});
+
 
 
 Route::get('/top', function() {
@@ -203,11 +213,11 @@ Route::post('/films/store', function (Request $request) {
         'slug' => 'required',
         'image' => 'required|image|mimes:jpeg,png,gif,PNG|max:2048',  // Validação para imagem
         'data' => 'min:3',
-        'elenco' => 'required|min:3',
         'sinopse' => 'required|min:3',
         'tipo' => 'required|min:2',
         'description' => 'min:3',
         'Falas' => 'min:3',
+        'trailer' => 'required|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime|max:100000',
         'categoria' => 'required|min:3' 
     ]);
 
@@ -216,18 +226,23 @@ Route::post('/films/store', function (Request $request) {
     $imageName = time() . '.' . $image->extension();     
     $request->image->move(public_path('images'), $imageName);
 
+    $video = $request->file('trailer');
+    $videoname = time() . '.' . $video->extension();     
+    $video->move(public_path('video'), $videoname);
+
     // Criando o filme no banco de dados
     Film::create([
         'tipo' => $request->input('tipo'),
         'categoria' => $request->input('categoria'),
         'title' => $request->input('title'),
         'slug' => $request->input('slug'),
-        'description' => $request->input('description'),        'Data' => $request->input('data'),
-        'trailer' => $request->input('trailer'),
+        'description' => $request->input('description'),     
+        'Data' => $request->input('data'),
         'elenco' => $request->input('elenco'),
         'sinopse' => $request->input('sinopse'),
         'Falas' => $request->input('Falas'),
-        'image' => $imageName
+        'image' => $imageName,
+        'trailer' => $videoname
     ]);
     
 

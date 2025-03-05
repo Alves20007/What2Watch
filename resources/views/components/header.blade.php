@@ -1,91 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-    <!-- Fonte do Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-
-
-    <header>
-        <div class="container">
+<body class="bg-neutral-900 text-gray-300">
+    <header class="bg-neutral-900 shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
             <!-- Logo -->
-            <div class="logo">
+            <div>
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('imagens/novo.png') }}" alt="Logo">
+                    <img src="{{ asset('imagens/novo.png') }}" alt="Logo" class="w-32 hover:scale-110 transition-transform">
                 </a>
             </div>
             
             <!-- Menu de Navegação -->
-            <nav class="nav-menu">
-                <ul>                    
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-link">Filmes/series▼</a>
-                        <div class="dropdown-content">
-                            <a href="{{ url('filmes') }}">Filmes/series</a>
-                            <a href="{{ url('TOP100') }}">Top 100</a> 
-                            <a href="{{ url('CaixaSurpresa') }}">Caixa surpresa</a>                      
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-link">Our choice▼</a>
-                        <div class="dropdown-content">
-                            <a href="{{ url('escolhido') }}">W2 Escolha</a> <!--5 filmes da minha escolha de diferentes generos -->
-                            <a href="{{ url('animacao') }}">Os meus rankings</a>
-                            <a href="{{ url('NoticiasFilmes') }}">Noticias</a> <!--tem as ultimas noticias dos filmes/series etc-->
-                        </div>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-link">Prêmios▼</a>
-                        <div class="dropdown-content">
-                            <a href="{{ url('acao') }}">Oscares</a>
-                            <a href="{{ url('aventura') }}">Central de prêmios</a>
-                        </div>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-link">Artistas▼</a>
-                        <div class="dropdown-content">
-                            <a href="{{ url('atores')}}">Famosos</a>
-                            <a href="{{ url('Oscares') }}">Oscares</a>
-                            <a href="{{ url('aventura') }}">Nascidas hoje</a>
-                            <a href="{{ url('top') }}">As celebridades mais populares</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-link">Criaçao▼</a>
-                        <div class="dropdown-content">
-                            <a href="{{ url('CriacaoFilmes') }}">Criar filme</a>
-                            <a href="{{ url('Users') }}">Own film</a>
-                            <a href="{{ url('CriarCelebs') }}">Celebs</a>
-                            <a href="{{ url('apload/create2') }}">watch list</a>
-                        </div>
-                    </li>
-                    <div class="sm:flex sm:justify-center lg:justify-start">
-                        <div class="rounded-md shadow">
-                            <a href=""
-                                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 md:py-4 md:text-lg md:px-10">
-                                login
-                            </a>
-                        </div>
-                        <div class="mt-3 sm:mt-0 sm:ml-3">
-                            <a href=""
-                                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-600 bg-yellow-700 hover:bg-yellow-200 md:py-4 md:text-lg md:px-10">
-                                signup
-                            </a>
-                        </div>
+            <nav class="hidden md:flex space-x-6">
+                @foreach ([
+                    'Filmes/series' => [['filmes', 'Filmes/series'], ['TOP100', 'Top 100'], ['CaixaSurpresa', 'Caixa surpresa']],
+                    'W2 World' => [['escolhido', 'W2 Escolha'], ['animacao', 'Os meus rankings'], ['NoticiasFilmes', 'Notícias']],
+                    'Prêmios' => [['/noticias/oscares', 'Oscares'], ['aventura', 'Central de prêmios']],
+                    'Artistas' => [['atores', 'Famosos'], ['Oscares/artistas', 'Oscares'], ['aventura', 'Nascidos hoje'], ['top', 'Celebridades populares']],
+                    'Criação' => [['CriacaoFilmes', 'Criar filme'], ['Users', 'Own film'], ['CriarCelebs', 'Celebs'], ['apload/create2', 'Watch list']]                ] as $title => $links)
+                <div class="relative group">
+                    <button class="text-gray-300 font-semibold px-4 py-2 focus:outline-none">{{ $title }} ▼</button>
+                    <div class="absolute left-0 hidden group-hover:block bg-gray-700 shadow-md rounded-md mt-1 py-2 w-48">
+                        @foreach ($links as [$url, $name])
+                            <a href="{{ url($url) }}" class="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-300">{{ $name }}</a>
+                        @endforeach
                     </div>
-                      
-                    {{-- <div class="search-bar">
-                        <input type="text" placeholder="Pesquisar...">
-                        <button type="submit">🔍</button>
-                    </div> --}}
-
-                    
-                </ul>
+                </div>
+                @endforeach
             </nav>
+            
+            <!-- Login & Signup -->
+            <div class="flex space-x-4">
+                <a href="#" class="bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium px-6 py-2 rounded-md">Login</a>
+                <a href="#" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium px-6 py-2 rounded-md">Signup</a>
+            </div>
         </div>
     </header>
 </body>

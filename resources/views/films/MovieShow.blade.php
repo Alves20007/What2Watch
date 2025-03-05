@@ -6,23 +6,18 @@
 
     <!-- Introdução -->
     <section class="intro">
-        <h1>{{ $film->title }}</h1>
+        <h1 class="text-yellow-600">{{ $film->title }}</h1>
         <p>{{ $film->Falas }}</p>
     </section>
 
     <!-- Seção 1: Texto à esquerda, imagem à direita -->
     <section class="section">
         <div class="image">
-            <img class="h-64 object-cover" src="/images/films/{{ $film->image }}">
+            <img class="h-64 object-cover" src="/images/{{ $film->image }}">
         </div>
         <div class="text">
-            <h2>Sínopse do filme</h2>
+            <h2>Sínopse do {{$film->tipo}}</h2>
             <p>{{$film->sinopse}}</p>
-        </div>
-
-        <div class = "text">
-            <h1>Categoria teste </h1>
-            <p>{{$film->categoria}}</p>
         </div>
     </section>
 
@@ -31,13 +26,13 @@
             <h2>Trailer do filme {{ $film->title}}</h2>
         </div>
         <video width="400" controls>
-            <source src="/imagens/video/{{ $film->trailer }}" type="video/mp4">
+            <source src="/video/{{ $film->trailer }}" type="video/mp4">
             <!--<source src="/imagens/ogg/{{ $film->audio }}" type="video/ogg"> -->
             Your browser does not support HTML video.
           </video>
     </section>
 
-    <section class="section">
+    {{-- <section class="section">
         <div class="image">
             <img src="imagens/filmes2/IJ.jpg" alt="telemovel tecnologico">
         </div>
@@ -57,6 +52,6 @@
             <img src="images/imagem1.jpg" alt="Imagem 1">
         </div>
     </section>
-    
+     --}}
 </body>
 </x-guestLayout>

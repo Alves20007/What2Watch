@@ -1,77 +1,81 @@
 <x-guestLayout>
-    <form action="/films/store" method="POST" enctype="multipart/form-data">
+    <form action="/films/store" method="POST" enctype="multipart/form-data" class="max-w-4xl mx-auto mt-10 p-6 bg-gray-800 rounded shadow">
+        <h1 class="text-2xl text-neutral-50 font-bold mb-6">Cadastro de Filme</h1>
 
-        <div class="max-w-4xl mx-auto mt-10 p-6 bg-0000 rounded shadow">
-            <h1 class="text-2xl font-bold mb-6">Cadastro de Filme</h1>
+        @csrf
+        <x-validation-errors />
+
+        <!-- Nome do Filme -->
+        <div class="mb-4">
+            <label for="title" class="block text-neutral-50 font-medium">Nome do Filme</label>
+            <input type="text" name="title" id="title" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+
+        <!-- Tipo -->
+        <div class="mb-4">
+            <label for="tipo" class="block text-neutral-50 font-medium">É filme ou série?</label>
+            <select name="tipo" id="tipo" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="filme">Filme</option>
+                <option value="serie">Série</option>
+                <option value="video">Vídeo</option>
+            </select>
+        </div>
+
+        <!-- Slug -->
+        <div class="mb-4">
+            <label for="slug" class="block text-neutral-50 font-medium">Slug</label>
+            <input type="text" name="slug" id="slug" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Imagem -->
+        <div class="mb-4">
+            <label for="image" class="block text-neutral-50 font-medium">Imagem</label>
+            <x-input type="file" name="image" id="image" class="w-full p-2 border rounded bg-gray-700 text-white"/>
+        </div>
+
+        <!-- Data -->
+        <div class="mb-4">
+            <label for="data" class="block text-neutral-50 font-medium">Data</label>
+            <input type="date" name="data" id="data" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Trailer -->
+        <div class="mb-4">
+            <label for="trailer" class="block text-neutral-50 font-medium">Video</label>
+            <input type="file" name="trailer" id="trailer" class="w-full p-2 border rounded bg-gray-700 text-white"/>
+        </div>
 
 
-                @csrf
-                <x-validation-errors/>
-                <!-- Nome do Filme -->
-                <div class="mb-4">
-                    <label class="block text-gray-700">Nome do Filme</label>
-                    <input type="text" name="title" class="w-full p-2 border rounded" required>
-                </div>
+        <!-- Categoria -->
+        <div class="mb-4">
+            <label for="categoria" class="block text-neutral-50 font-medium">Escolha a categoria</label>
+            <select name="categoria" id="categoria" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="acao">Ação</option>
+                <option value="comedia">Comédia</option>
+                <option value="drama">Drama</option>
+                <option value="FC">Ficção Científica</option>
+                <option value="terror">Terror</option>
+            </select>
+        </div>
 
-                                
-                <label for="tipo">É filme ou é serie?:</label>
-                <select name="tipo" id="tipo">
-                    <option value="filme">Filme</option>
-                    <option value="serie">Serie</option>
-                    <option value="video">Video</option>
-                </select>
+        <!-- Elenco -->
 
+        {{-- <div class="mb-4">
+            <label for="elenco" class="block text-neutral-50 font-medium">Elenco</label>
+            <textarea name="elenco" id="elenco" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <small class="text-gray-400">Se o ator estiver no banco de dados, sua foto será exibida automaticamente.</small>
+        </div> --}}
+        <!-- Sinopse -->
+        <div class="mb-4">
+            <label for="sinopse" class="block text-neutral-50 font-medium">Sinopse</label>
+            <textarea name="sinopse" id="sinopse" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
 
-                <!-- Slug -->
-                <div class="mb-4">
-                    <label class="block text-gray-700">Slug</label>
-                    <input type="text" name="slug" class="w-full p-2 border rounded">
-                </div>
-        
-                <div class= "mb-4">
-                    <label class="block text-gray-700">teste</label>
-                    <x-input type="file" name="image" id="image"/>
-                </div>
-            
-                <!-- Data -->
-                <div class="mb-4">
-                    <label class="block text-gray-700">Data</label>
-                    <input type="date" name="data" class="w-full p-2 border rounded">
-                </div>
-                <!-- Trailer -->
-                <div class="mb-4">
-                    <label class="block text-gray-700">Trailer (URL)</label>
-                    <input type="url" name="trailer" class="w-full p-2 border rounded">
-                </div>
-
-                <label for="categoria">Escolhe a categoria do filme/serie:</label>
-                <select name="categoria" id="categoria">
-                    <option value="acao">Ação</option>
-                    <option value="comedia">Comédia</option>
-                    <option value="drama">Drama</option>
-                    <option value="FC">Ficção científica</option>
-                    <option value="terror">Terror</option>
-                </select>
-
-                <!-- Elenco -->
-                <div class="mb-4">
-                    <label class="block text-gray-700">Elenco (Nota: isto tem de ser do genero de tem na db e aparece o ator caso o ator estaja na db ou seja jonny deep aparece a foto dele e é ele que aparece em baixo em ver de ser caixa de texto)</label>
-                    <textarea name="elenco" class="w-full p-2 border rounded"></textarea>
-                </div>
-
-                <!-- Sinopse -->
-                <div class="mb-4">
-                    <label class="block text-gray-700">Sinopse</label>
-                    <textarea name="sinopse" class="w-full p-2 border rounded"></textarea>
-                </div>
-
-                <!-- Botão -->
-                <div>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
-                        Cadastrar Filme
-                    </button>
-                </div>
-            </div>
+        <!-- Botão -->
+        <div class="text-right">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                Cadastrar Filme
+            </button>
         </div>
     </form>
 </x-guestLayout>

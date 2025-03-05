@@ -20,10 +20,10 @@
     <section class="section">
         <div class="text">
             <h1>O filme do dia é <strong>{{ $film->title }}</strong></h1>
-            <p>(O vídeo ao lado é o trailer) {{ $film->sinopse }}</p>
+            <p>{{ $film->sinopse }}</p>
         </div>
         <video width="400" controls>
-            <source src="/imagens/video/{{ $film->trailer }}" type="video/mp4">
+            <source src="/video/{{ $film->trailer }}" type="video/mp4">
             Your browser does not support HTML video.
         </video>
     </section>
@@ -35,11 +35,11 @@
         </div>
         <div class="text">
             <h2>Futuras Updates</h2>
-            <p>Celebs.</p>
+            <p>Tenho de continuar a construir o site e a melhora-lo.</p>
         </div>
     </section>
 
-    <!-- Seção 3: Objetivo do Site -->
+    {{-- <!-- Seção 3: Objetivo do Site -->
     <section class="section">
         <div class="text">
             <h2>Objetivo do Site</h2>
@@ -50,7 +50,7 @@
         <div class="image">
             <img src="images/imagem1.jpg" alt="Pessoas assistindo a um filme">
         </div>
-    </section>
+    </section> --}}
 
     <!-- Rodapé -->
     <x-footer />
