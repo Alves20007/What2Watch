@@ -4,16 +4,10 @@
 
         @csrf
         <x-validation-errors />
-
         <!-- Nome do Filme -->
-        <div class="mb-4">
-            <label for="title" class="block text-neutral-50 font-medium">Nome do Filme</label>
-            <input type="text" name="title" id="title" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-        </div>
-
         <!-- Tipo -->
         <div class="mb-4">
-            <label for="tipo" class="block text-neutral-50 font-medium">É filme ou série?</label>
+            <label for="tipo" class="block text-neutral-50 font-medium">É filme/serie ou video?</label>
             <select name="tipo" id="tipo" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="filme">Filme</option>
                 <option value="serie">Série</option>
@@ -21,15 +15,47 @@
             </select>
         </div>
 
+        
+        <div class="mb-4">
+            <label for="title" class="block text-neutral-50 font-medium">Nome do tipo de Media</label>
+            <input type="text" name="title" id="title" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                onchange="document.getElementById('slug').value=slugify(document.getElementById('title').value)" required>
+        </div>
+        
+
+           <!-- Categoria -->
+        <div class="mb-4">
+            <label for="categoria" class="block text-neutral-50 font-medium">Escolha a categoria</label>
+            <select name="categoria" id="categoria" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="acao">Ação</option>
+                <option value="comedia">Comédia</option>
+                <option value="drama">Drama</option>
+                <option value="FC">Ficção Científica</option>
+                <option value="terror">Terror</option>
+            </select>
+        </div>
         <!-- Slug -->
         <div class="mb-4">
-            <label for="slug" class="block text-neutral-50 font-medium">Slug</label>
+            <label for="slug" class="block text-neutral-50 font-medium">Slug!!!!!!!!!!!!!!!!!!!!!!!!</label>
             <input type="text" name="slug" id="slug" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
 
+        <!-- Temporadas-->
+        <div class="mb-4">
+            <label for="Temporadas" class="block text-neutral-50 font-medium">Quantas temporadas possui (caso seja filme coloque 1)</label>
+            <select name="Temporadas" id="Temporadas" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </select>
+        </div>
+                
+        <!-- Episódios-->
+        <div class="mb-4">
+            <label for="Episodios" class="block text-neutral-50 font-medium">Quantos episódios possui (caso seja filme coloque 1)</label>
+            <select name="Episodios" id="Episodios" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </select>
+        </div>
         <!-- Imagem -->
         <div class="mb-4">
-            <label for="image" class="block text-neutral-50 font-medium">Imagem</label>
+            <label for="image" class="block text-neutral-50 font-medium">Imagem!!!!!!!!!!!!!!!!!!!!!!!!!!</label>
             <x-input type="file" name="image" id="image" class="w-full p-2 border rounded bg-gray-700 text-white"/>
         </div>
 
@@ -43,19 +69,6 @@
         <div class="mb-4">
             <label for="trailer" class="block text-neutral-50 font-medium">Video</label>
             <input type="file" name="trailer" id="trailer" class="w-full p-2 border rounded bg-gray-700 text-white"/>
-        </div>
-
-
-        <!-- Categoria -->
-        <div class="mb-4">
-            <label for="categoria" class="block text-neutral-50 font-medium">Escolha a categoria</label>
-            <select name="categoria" id="categoria" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="acao">Ação</option>
-                <option value="comedia">Comédia</option>
-                <option value="drama">Drama</option>
-                <option value="FC">Ficção Científica</option>
-                <option value="terror">Terror</option>
-            </select>
         </div>
 
         <!-- Elenco -->
@@ -78,4 +91,37 @@
             </button>
         </div>
     </form>
+    <script>
+
+            function slugify(str) {
+            str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
+            str = str.toLowerCase(); // convert string to lowercase
+            str = str.replace(/[^a-z0-9 -]/g, '') // remove any non-alphanumeric characters
+                    .replace(/\s+/g, '-') // replace spaces with hyphens
+                    .replace(/-+/g, '-'); // remove consecutive hyphens
+            return str;
+            }
+    </script>
+
+    <script>
+        // Script para as temporadas
+        const selectTemporadas = document.getElementById('Temporadas');
+        for (let i = 1; i <= 50; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            selectTemporadas.appendChild(option);
+        }
+    </script>
+
+    <script>
+        // Script para os episódios
+        const selectEpisodios = document.getElementById('Episodios');
+        for (let i = 1; i <= 10000; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            selectEpisodios.appendChild(option);
+        }
+    </script>
 </x-guestLayout>

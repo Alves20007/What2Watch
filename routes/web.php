@@ -13,6 +13,7 @@ use App\Models\apload;
 use App\Models\noticiafamosos;
 use App\Models\noticiaFilme;
 use App\Models\Image;
+use App\Models\Premios;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Laravel\Jetstream\Rules\Role;
@@ -86,7 +87,15 @@ Route::get('/noticias/oscares', function() {
 
     $film = Film::where('oscares', 'sim')->get();
     
-    return view('actor.Atordex', compact('actor' , 'film'));
+    return view('actor.AtordexFilm', compact('actor' , 'film'));
+});
+
+
+Route::get('/noticias/premios', function() {
+    
+    $premiacao = Premios::all();
+
+    return view('premios.premios', data: compact('premiacao'));
 });
 
 
@@ -218,7 +227,9 @@ Route::post('/films/store', function (Request $request) {
         'description' => 'min:3',
         'Falas' => 'min:3',
         'trailer' => 'required|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime|max:100000',
-        'categoria' => 'required|min:3' 
+        'categoria' => 'required|min:3', 
+        'Temporadas' => 'min:1',
+        'Episodios' => 'min:1'
     ]);
 
     // Processando a imagem
@@ -242,7 +253,8 @@ Route::post('/films/store', function (Request $request) {
         'sinopse' => $request->input('sinopse'),
         'Falas' => $request->input('Falas'),
         'image' => $imageName,
-        'trailer' => $videoname
+        'trailer' => $videoname,
+        'Temporadas'
     ]);
     
 
@@ -280,6 +292,8 @@ Route::post('/apload/Own/store', function (Request $request) {
         'sinopse'=>'required|min:3',
         'description' => 'min:3',
         'Falas'=>'min:3',
+        'Temporadas' => 'min:1',
+        'Episodios'=>'min:1',
 
     ]);
 
@@ -293,6 +307,8 @@ Route::post('/apload/Own/store', function (Request $request) {
         'elenco'=> $request->input('elenco'),
         'sinopse'=> $request->input('sinopse'),
         'Falas'=> $request->input('Falas'),
+        'Temporadas'=> $request->input('Temporada'),
+        'Episodios'=> $request->input('Episodios')
     ]);
 
 

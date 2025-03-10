@@ -21,9 +21,9 @@
                 @foreach ([
                     'Filmes/series' => [['filmes', 'Filmes/series'], ['TOP100', 'Top 100'], ['CaixaSurpresa', 'Caixa surpresa']],
                     'W2 World' => [['escolhido', 'W2 Escolha'], ['animacao', 'Os meus rankings'], ['NoticiasFilmes', 'Notícias']],
-                    'Prêmios' => [['/noticias/oscares', 'Oscares'], ['aventura', 'Central de prêmios']],
+                    'Prêmios' => [['/noticias/oscares', 'Oscares'], ['/noticias/premios', 'Central de prêmios']],
                     'Artistas' => [['atores', 'Famosos'], ['Oscares/artistas', 'Oscares'], ['aventura', 'Nascidos hoje'], ['top', 'Celebridades populares']],
-                    'Criação' => [['CriacaoFilmes', 'Criar filme'], ['Users', 'Own film'], ['CriarCelebs', 'Celebs'], ['apload/create2', 'Watch list']]                ] as $title => $links)
+                    'Criação' => [['CriacaoFilmes', 'Criar filme'], ['CriarCelebs', 'Celebs'], ['apload/create2', 'Watch list']]                ] as $title => $links)
                 <div class="relative group">
                     <button class="text-gray-300 font-semibold px-4 py-2 focus:outline-none">{{ $title }} ▼</button>
                     <div class="absolute left-0 hidden group-hover:block bg-gray-700 shadow-md rounded-md mt-1 py-2 w-48">

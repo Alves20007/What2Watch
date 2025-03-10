@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string('top100')->nullable();
             $table->string('categoria')->nullable();
             $table->string('tipo')->nullable();
+            $table->string('Episodios')->nullable();
+            $table->string('Temporadas')->nullable();
             $table->string('oscares')->nullable();
             
             $table->timestamps();

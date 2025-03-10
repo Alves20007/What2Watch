@@ -9,15 +9,5 @@
                 </div>
             </a>
         @endforeach
-
-        @foreach ($film as $films)
-            <a href="/filmes/{{ $films->Slug }}">
-                <div class="border-2 p-4 text-neutral-50">
-                    <img class="h-64 object-cover" src="/images/{{ $films->image }}">
-                    <b>{{ $films->title }}</b>
-                    <p class="font-italic text-neutral-50">{{ $films->Data }}</p>                    
-                </div>
-            </a>
-        @endforeach
     </div>
 </x-guestLayout>

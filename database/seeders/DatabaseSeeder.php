@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             SeriesSeeder::class,
             NoticiaFilmeSeeder::class,
             NoticiafamososSeeder::class,
-            ImageSeeder::class
+            ImageSeeder::class,
+            PremiosSeeder::class,
         ]);
     }
 }

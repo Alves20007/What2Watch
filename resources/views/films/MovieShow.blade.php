@@ -17,7 +17,10 @@
         </div>
         <div class="text">
             <h2>Sínopse do {{$film->tipo}}</h2>
-            <p>{{$film->sinopse}}</p>
+            <p>temp: {{$film ->Temporadas}}</p>
+            <P>Epi:{{$film->Episodios}}</P>
+            <p>Sin: {{$film->sinopse}}</p>
+
         </div>
     </section>
 
