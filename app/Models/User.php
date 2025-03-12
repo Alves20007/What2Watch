@@ -64,4 +64,11 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+
+    public function watchlist()
+    {
+        return $this->belongsToMany(Movie::class, 'watchlist')->withTimestamps();
+    }
+    
+    
 }

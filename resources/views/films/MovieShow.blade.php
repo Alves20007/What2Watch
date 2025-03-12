@@ -4,6 +4,13 @@
 </head>
 <body>
 
+    <div class="absolute top-40 right-4">
+        <a href="{{ route('filmes', ['id' => $film->id]) }}" 
+           class="bg-blue-500 text-white px-4 py-2 rounded-full shadow hover:bg-bue-600 transition">
+            + Ver Depois
+        </a>
+    </div>
+    
     <!-- Introdução -->
     <section class="intro">
         <h1 class="text-yellow-600">{{ $film->title }}</h1>
@@ -35,26 +42,21 @@
           </video>
     </section>
 
-    {{-- <section class="section">
-        <div class="image">
-            <img src="imagens/filmes2/IJ.jpg" alt="telemovel tecnologico">
-        </div>
-        <div class="text">
-            <h2>aqui vai ser o campo dos atores
+    <!-- Melhorar a secçao de avaliação para depois-->
+    <section class="section mt-10">
+        <h2 class="text-xl font-bold mb-4">Avaliação</h2>
+        <form action="{{ route('filmes', ['id' => $film->id]) }}" method="POST">
+            @csrf
+            <div class="flex space-x-2 mb-4">
+                @for ($i = 5; $i >= 1; $i--)
+                    <input type="radio" id="star{{ $i }}" name="rating" value="{{ $i }}" class="hidden" />
+                    <label for="star{{ $i }}" class="cursor-pointer text-3xl text-gray-400 hover:text-yellow-400">&#9733;</label>
+                @endfor
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Avaliar</button>
+        </form>
+    </section>
 
-            </h2>
-            <p>Aqui o utilizador vai poder colocar imagens, e depois vai ser salvo na DB</p>
-        </div>
-    </section>
-    <section class="section">
-        <div class="text">
-            <h2>Aqui vai ser as celebridades</h2>
-            <p>Colocar as fotos quanto as suas respectivas fotos e infos talvez fazer isso em cima</p>
-        </div>
-        <div class="image">
-            <img src="images/imagem1.jpg" alt="Imagem 1">
-        </div>
-    </section>
-     --}}
+    <!-- Fazer os Comentários Depois -->
 </body>
 </x-guestLayout>

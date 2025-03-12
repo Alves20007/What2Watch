@@ -21,7 +21,6 @@
             <input type="text" name="title" id="title" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
                 onchange="document.getElementById('slug').value=slugify(document.getElementById('title').value)" required>
         </div>
-        
 
            <!-- Categoria -->
         <div class="mb-4">
@@ -36,26 +35,30 @@
         </div>
         <!-- Slug -->
         <div class="mb-4">
-            <label for="slug" class="block text-neutral-50 font-medium">Slug!!!!!!!!!!!!!!!!!!!!!!!!</label>
+            <label for="slug" class="block text-neutral-50 font-medium">Slug</label>
             <input type="text" name="slug" id="slug" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
 
-        <!-- Temporadas-->
+        {{-- <!-- Temporadas-->
         <div class="mb-4">
             <label for="Temporadas" class="block text-neutral-50 font-medium">Quantas temporadas possui (caso seja filme coloque 1)</label>
             <select name="Temporadas" id="Temporadas" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
             </select>
         </div>
+
+        
                 
         <!-- Episódios-->
         <div class="mb-4">
             <label for="Episodios" class="block text-neutral-50 font-medium">Quantos episódios possui (caso seja filme coloque 1)</label>
             <select name="Episodios" id="Episodios" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
             </select>
-        </div>
+        </div> --}}
+
+        
         <!-- Imagem -->
         <div class="mb-4">
-            <label for="image" class="block text-neutral-50 font-medium">Imagem!!!!!!!!!!!!!!!!!!!!!!!!!!</label>
+            <label for="image" class="block text-neutral-50 font-medium">Imagem</label>
             <x-input type="file" name="image" id="image" class="w-full p-2 border rounded bg-gray-700 text-white"/>
         </div>
 
@@ -101,27 +104,5 @@
                     .replace(/-+/g, '-'); // remove consecutive hyphens
             return str;
             }
-    </script>
-
-    <script>
-        // Script para as temporadas
-        const selectTemporadas = document.getElementById('Temporadas');
-        for (let i = 1; i <= 50; i++) {
-            const option = document.createElement('option');
-            option.value = i;
-            option.textContent = i;
-            selectTemporadas.appendChild(option);
-        }
-    </script>
-
-    <script>
-        // Script para os episódios
-        const selectEpisodios = document.getElementById('Episodios');
-        for (let i = 1; i <= 10000; i++) {
-            const option = document.createElement('option');
-            option.value = i;
-            option.textContent = i;
-            selectEpisodios.appendChild(option);
-        }
     </script>
 </x-guestLayout>

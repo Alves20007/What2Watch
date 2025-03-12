@@ -24,5 +24,10 @@ class Film extends Model
         'Temporada',
         'Episodios'
     ];
-     
+    
+    public function usersWhoWatchlist()
+    {
+        return $this->belongsToMany(User::class, 'watchlist')->withTimestamps();
+    }
+
 }

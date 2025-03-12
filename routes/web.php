@@ -19,12 +19,18 @@ use Illuminate\Http\Request;
 use Laravel\Jetstream\Rules\Role;
 use Psy\CodeCleaner\ReturnTypePass;
 
+
+Route::get('/atores/aniversariantes', [ActorController::class, 'aniversariantesHoje'])->name('actor.Atordex');
+Route::get('/ver-depois/{id}', [FilmController::class, 'marcarVerDepois'])->name('verDepois');
+
+
 Route::get('/filmes', function () {
 
     $films = Film::where('tipo', 'filme')->get();
     return view('films.Filmdex', compact('films'));
 
-});
+})->name('filmes');
+
 
 Route::get('/video/utilizador',function(){
     $films = Film::where('tipo','video')->get();
@@ -149,19 +155,6 @@ Route::get('/', function () {
     return view('primeiro', compact(['film']));
 });
 
-Route::get('nascimento',function(){
-    $day = date("d");
-    $month = date("m");
-    $year = date("y");
-
-    $dia = ($day);
-    $mes = strval($month);
-    $ano = strval($year);
-    $calculo = (($dia * 31) + ($mes * 12) + ($ano * 365));
-    dd($calculo);
-    return view('actor.AtorShow');
-});
-
 
 Route::get('CaixaSurpresa', function () {
 
@@ -254,14 +247,14 @@ Route::post('/films/store', function (Request $request) {
         'Falas' => $request->input('Falas'),
         'image' => $imageName,
         'trailer' => $videoname,
-        'Temporadas'
+        'Temporadas' => $request->input('Temporadas'),
+        'Episodios' =>$request->input('Episodios')
     ]);
     
 
     // Redirecionando para a criação de filme com mensagem de sucesso
     return redirect()->route('apload.filme.create')->with('banner', 'Filme criado com sucesso');
 });
-
 
 
 Route::post('/apload/ator/store', function (Request $request) {

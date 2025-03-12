@@ -4,13 +4,15 @@
             <x-authentication-card-logo />
         </x-slot>
 
+        <!-- Exibição de erros de validação -->
         <x-validation-errors class="mb-4" />
 
-        @session('status')
+        <!-- Exibição de mensagens de status -->
+        @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
+                {{ session('status') }}
             </div>
-        @endsession
+        @endif
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
