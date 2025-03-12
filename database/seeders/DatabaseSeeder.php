@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             NoticiafamososSeeder::class,
             ImageSeeder::class,
             PremiosSeeder::class,
+            WatchlistSeeder::class,
         ]);
     }
 }

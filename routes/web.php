@@ -6,6 +6,7 @@ use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\NoticiaFilmeController;
 use App\Http\Controllers\NoticiafamososController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\WatchlistController;
 use App\Models\actor;
 use App\Models\Film;
 Use App\Models\series;
@@ -342,4 +343,10 @@ Route::get('teste2', function () {
 });
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////´
+
+Route::middleware('auth')->group(function () {
+    Route::post('/filmes/watch-later/add/{filmId}', [WatchlistController::class, 'add'])->name('filmes.watchlater.add');
+    Route::delete('/filmes/watch-later/remove/{filmId}', [WatchlistController::class, 'remove'])->name('filmes.watchlater.remove');
+    Route::get('/filmes/watch-later/list', [WatchlistController::class, 'list'])->name('filmes.watchlater.list');
+});
