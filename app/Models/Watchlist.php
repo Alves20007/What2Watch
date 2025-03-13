@@ -7,16 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Watchlist extends Model
 {
-    /** @use HasFactory<\Database\Factories\WatchlistFactory> */
-    protected $fillable = ['user_id', 'film_id'];
+    use HasFactory;
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    protected $fillable = ['user_id', 'film_id'];
 
     public function film()
     {
-        return $this->belongsTo(Film::class);
+        return $this->belongsTo(Film::class, 'film_id'); // garantir que é 'film_id'
     }
 }

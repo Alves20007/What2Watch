@@ -4,18 +4,18 @@
         <!-- Botões de navegação -->
         <div class="my-8 flex gap-4">
             <x-button class="bg-orange-500 hover:bg-orange-600 text-white">
-                <a href="{{ url('filmes') }}">Filmes</a>
+                <a href="{{ url('/filmes/Ver/Mais/tarde') }}">Filmes</a>
             </x-button>
             <x-button class="bg-orange-700 hover:bg-orange-500 text-slate-950 border border-zinc-300">
-                <a href="{{ url('series') }}">Séries</a>
+                <a href="{{ url('/serie/Ver/Mais/tarde') }}">Séries</a>
             </x-button>
             <x-button class="bg-yellow-500 hover:bg-orange-500 text-slate-950 border border-zinc-300">
-                <a href="{{ url('video/utilizador') }}">Vídeos</a>
+                <a href="{{ url('/video/Ver/Mais/tarde') }}">Vídeos</a>
             </x-button>
         </div>
         <!-- Grid de filmes -->
         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            @foreach ($films as $film)
+            @foreach ($serie as $film)
                 <a href="/filmes/{{ $film->slug }}" class="block hover:shadow-lg transition-shadow duration-300">
                     <div class="border-2 border-gray-200 rounded-lg overflow-hidden p-4">
                         <!-- Imagem do filme -->

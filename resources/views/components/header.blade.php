@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
+    <title>What2Watch</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-neutral-900 text-gray-300">
@@ -23,7 +23,7 @@
                     'W2 World' => [['escolhido', 'W2 Escolha'], ['animacao', 'Os meus rankings'], ['NoticiasFilmes', 'Notícias']],
                     'Prêmios' => [['/noticias/oscares', 'Oscares'], ['/noticias/premios', 'Central de prêmios']],
                     'Artistas' => [['atores', 'Famosos'], ['Oscares/artistas', 'Oscares'], ['/atores/aniversariantes', 'Nascidos hoje'], ['top', 'Celebridades populares']],
-                    'Criação' => [['CriacaoFilmes', 'Criar filme'], ['CriarCelebs', 'Celebs'], ['apload/create2', 'Watch list']]              
+                    'Criação' => [['CriacaoFilmes', 'Criar filme'], ['CriarCelebs', 'Celebs'], ['/filmes/Ver/Mais/tarde', 'Watch list']]              
                     ] as $title => $links)
                 <div class="relative group">
                     <button class="text-gray-300 font-semibold px-4 py-2 focus:outline-none">{{ $title }} ▼</button>
@@ -37,9 +37,19 @@
             </nav>
             
             <!-- Login & Signup -->
-            <div class="flex space-x-4">
-                <a href="{{ url ('register') }}" class="bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium px-6 py-2 rounded-md ">Registrar-se</a>
-                <a href="{{ url ('login') }}" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium px-6 py-2 rounded-md">Entrar</a>
+            <div class="flex space-x-4 items-center">
+                @guest
+                    <a href="{{ url('register') }}" class="bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium px-6 py-2 rounded-md">Registrar-se</a>
+                    <a href="{{ url('login') }}" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium px-6 py-2 rounded-md">Entrar</a>
+                @else
+                    <span class="text-gray-300 font-medium">Olá, {{ Auth::user()->name }}</span>
+                    <form action="{{ route('logout') }}" method="POST" class="inline">
+                        @csrf
+                        <button type="submit" class="bg-red-700 hover:bg-red-600 text-white font-medium px-6 py-2 rounded-md">
+                            Sair
+                        </button>
+                    </form>
+                @endguest
             </div>
         </div>
     </header>

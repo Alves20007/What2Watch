@@ -13,6 +13,7 @@
                 <a href="{{ url('video/utilizador') }}">Vídeos</a>
             </x-button>
         </div>
+
         <!-- Grid de filmes -->
         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             @foreach ($films as $film)
