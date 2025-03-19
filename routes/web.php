@@ -265,7 +265,7 @@ Route::post('/apload/ator/store', function (Request $request) {
         'idade'=> 'min1',
         'birthday'=>'min:1',
         'Name'=> 'min:3',
-        'slug' => 'required'
+        'Slug' => 'required'
     ]);
 
     $image = $request->file('image');
@@ -280,7 +280,7 @@ Route::post('/apload/ator/store', function (Request $request) {
         'birthday'=> $request->input('birthday'),
         'Name'=> $request->input('Name'),
         'idade'=> $request->input('idade'),
-        'slug' => $request->input('slug')
+        'Slug' => $request->input('Slug')
 ,    ]);
 
     return redirect()->route('apload.ator.create2')->banner('Race created with success');

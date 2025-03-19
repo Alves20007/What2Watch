@@ -9,17 +9,17 @@
         <div class="mb-4">
             <label for="Name" class="block text-neutral-50 font-medium">Nome da Celebridade</label>
             <input type="text" name="Name" id="Name" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
-                onchange="document.getElementById('slug').value=slugify(document.getElementById('Name').value)" required>
+                onchange="document.getElementById('Slug').value=slugify(document.getElementById('Name').value)" required>
         </div>
         <!-- Slug -->
         <div class="mb-4">
-            <label for="slug" class="block text-neutral-50 font-medium">Slug!!!!!!!!!!!!!!!!!!!!!!!!</label>
-            <input type="text" name="slug" id="slug" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <label for="Slug" class="block text-neutral-50 font-medium">Slug</label>
+            <input type="text" name="Slug" id="Slug" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
         
         <!-- Imagem -->
         <div class="mb-4">
-            <label for="image" class="block text-neutral-50 font-medium">Imagem!!!!!!!!!!!!!!!!!!!!!!!!!!</label>
+            <label for="image" class="block text-neutral-50 font-medium">Imagem</label>
             <x-input type="file" name="image" id="image" class="w-full p-2 border rounded bg-gray-700 text-white"/>
         </div>
 
@@ -29,14 +29,13 @@
             <input type="date" name="data" id="data" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
 
-        <!-- Trailer -->
         <div class="mb-4">
-            <label for="trailer" class="block text-neutral-50 font-medium">Video</label>
-            <input type="file" name="trailer" id="trailer" class="w-full p-2 border rounded bg-gray-700 text-white"/>
+            <label for="Falas" class="block text-neutral-50 font-medium">Frase do Ator</label>
+            <textarea name="Falas" id="Falas" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
 
         <div class="mb-4">
-            <label for="Falas" class="block text-neutral-50 font-medium">Frase do Ator</label>
+            <label for="Falas" class="block text-neutral-50 font-medium">Hístoria</label>
             <textarea name="Falas" id="Falas" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
 
