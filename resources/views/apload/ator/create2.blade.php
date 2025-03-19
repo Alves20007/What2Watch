@@ -4,33 +4,19 @@
 
         @csrf
         <x-validation-errors />
-        <!-- Nome do Filme -->
+        <!-- Name do Filme -->
         <!-- Tipo -->
         <div class="mb-4">
-            <label for="Nome" class="block text-neutral-50 font-medium">Nome da Celebridade</label>
-            <input type="text" name="Nome" id="Nome" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
-                onchange="document.getElementById('slug').value=slugify(document.getElementById('title').value)" required>
+            <label for="Name" class="block text-neutral-50 font-medium">Nome da Celebridade</label>
+            <input type="text" name="Name" id="Name" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                onchange="document.getElementById('slug').value=slugify(document.getElementById('Name').value)" required>
         </div>
         <!-- Slug -->
         <div class="mb-4">
             <label for="slug" class="block text-neutral-50 font-medium">Slug!!!!!!!!!!!!!!!!!!!!!!!!</label>
             <input type="text" name="slug" id="slug" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
-
-        {{-- <!-- Temporadas-->
-        <div class="mb-4">
-            <label for="Temporadas" class="block text-neutral-50 font-medium">Quantas temporadas possui (caso seja filme coloque 1)</label>
-            <select name="Temporadas" id="Temporadas" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </select>
-        </div>
-                
-        <!-- Episódios-->
-        <div class="mb-4">
-            <label for="Episodios" class="block text-neutral-50 font-medium">Quantos episódios possui (caso seja filme coloque 1)</label>
-            <select name="Episodios" id="Episodios" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </select>
-        </div> --}}
-
+        
         <!-- Imagem -->
         <div class="mb-4">
             <label for="image" class="block text-neutral-50 font-medium">Imagem!!!!!!!!!!!!!!!!!!!!!!!!!!</label>
@@ -63,14 +49,15 @@
         </div> --}}
         <!-- Sinopse -->
         <!-- Botão -->
+
+
         <div class="text-right">
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                Cadastrar Filme
+                Cadastrar ator
             </button>
         </div>
     </form>
     <script>
-
             function slugify(str) {
             str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
             str = str.toLowerCase(); // convert string to lowercase

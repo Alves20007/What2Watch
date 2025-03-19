@@ -217,7 +217,7 @@ Route::post('/films/store', function (Request $request) {
     $request->validate([
         'title' => 'required|min:3',        
         'slug' => 'required',
-        'image' => 'required|image|mimes:jpeg,png,gif,PNG|max:2048',  // Validação para imagem
+        'image' => 'required|image|mimes:jpeg,png,gif,PNG|max:2048',
         'data' => 'min:3',
         'sinopse' => 'required|min:3',
         'tipo' => 'required|min:2',
@@ -229,7 +229,7 @@ Route::post('/films/store', function (Request $request) {
         'Episodios' => 'min:1'
     ]);
 
-    // Processando a imagem
+    //imagem e video
     $image = $request->file('image');
     $imageName = time() . '.' . $image->extension();     
     $request->image->move(public_path('images'), $imageName);
@@ -238,7 +238,7 @@ Route::post('/films/store', function (Request $request) {
     $videoname = time() . '.' . $video->extension();     
     $video->move(public_path('video'), $videoname);
 
-    // Criando o filme no banco de dados
+    //filme no banco de dados
     Film::create([
         'tipo' => $request->input('tipo'),
         'categoria' => $request->input('categoria'),
@@ -255,61 +255,35 @@ Route::post('/films/store', function (Request $request) {
         'Episodios' =>$request->input('Episodios')
     ]);
     
-
-    // Redirecionando para a criação de filme com mensagem de sucesso
     return redirect()->route('apload.filme.create')->with('banner', 'Filme criado com sucesso');
 });
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::post('/apload/ator/store', function (Request $request) {
     $validated = $request->validate([
         'idade'=> 'min1',
         'birthday'=>'min:1',
         'Name'=> 'min:3',
-
+        'slug' => 'required'
     ]);
+
+    $image = $request->file('image');
+    $imageName = time() . '.' . $image->extension();     
+    $request->image->move(public_path('images'), $imageName);
+
+    $video = $request->file('trailer');
+    $videoname = time() . '.' . $video->extension();     
+    $video->move(public_path('video'), $videoname);
+
     actor::create([
         'birthday'=> $request->input('birthday'),
         'Name'=> $request->input('Name'),
         'idade'=> $request->input('idade'),
-    ]);
+        'slug' => $request->input('slug')
+,    ]);
 
     return redirect()->route('apload.ator.create2')->banner('Race created with success');
-});
-
-
-
-Route::post('/apload/Own/store', function (Request $request) {
-    $validated = $request->validate([
-        'title' => 'required|min:3',        
-        'slug' => 'required',
-        'image' => 'image',
-        'data'=> 'min:3',
-        'elenco'=> 'required|min:3',
-        'sinopse'=>'required|min:3',
-        'description' => 'min:3',
-        'Falas'=>'min:3',
-        'Temporadas' => 'min:1',
-        'Episodios'=>'min:1',
-
-    ]);
-
-    Film::create([
-        'title' => $request->input('title'),
-        'slug' => $request->input('slug'),
-        'description' => $request->input('description'),
-        'image' => $request->input('image'),
-        'Data'=> $request->input('Data'),
-        'trailer'=> $request->input('trailer'),
-        'elenco'=> $request->input('elenco'),
-        'sinopse'=> $request->input('sinopse'),
-        'Falas'=> $request->input('Falas'),
-        'Temporadas'=> $request->input('Temporada'),
-        'Episodios'=> $request->input('Episodios')
-    ]);
-
-
-    return redirect()->route('apload.Own.OwnFilm')->banner('Race created with success');
 });
 
 

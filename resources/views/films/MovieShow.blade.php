@@ -4,8 +4,9 @@
     </head>
     <body>
         @if (Auth::check())
-        <button onclick="addToWatchLater({{ $film->id }})" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow hover:bg-blue-600 transition">
-            + Ver Depois
+        <button onclick="addToWatchLater({{ $film->id }})" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow hover:bg-blue-600 transition ml-[1313Px]">
+            📁
+            ver depois
         </button>
         @else
             <p>Faz login para guardar na lista "Ver Depois"</p>
@@ -17,18 +18,19 @@
             <p>{{ $film->Falas }}</p>
         </section>
     
-        <!-- Seção 1: Texto à esquerda, imagem à direita -->
-        <section class="section">
-            <div class="image">
-                <img class="h-64 object-cover" src="/images/{{ $film->image }}">
-            </div>
-            <div class="text">
-                <h2>Sínopse do {{$film->tipo}}</h2>
-                <p>Temp: {{$film->Temporadas}}</p>
-                <p>Epi: {{$film->Episodios}}</p>
-                <p>Sin: {{$film->sinopse}}</p>
-            </div>
-        </section>
+        <section class="section flex flex-col md:flex-row items-center gap-6 p-4">
+    <!-- Imagem com tamanho fixo e responsivo -->
+    <div class="h-80 w-60 md:h-96 md:w-72 overflow-hidden rounded-lg shadow-lg">
+        <img class="h-full w-full object-cover" src="/images/{{ $film->image }}" alt="{{ $film->title }}">
+    </div>
+    <!-- Texto -->
+    <div class="text max-w-md">
+        <h2 class="text-xl font-semibold mb-2">Sínopse do {{ $film->tipo }}</h2>
+        <p><b>Temporadas: {{ $film->Temporadas }}</b></p>
+        <p><b>Episódios : {{ $film->Episodios }}</b></p>
+        <p><b>Sinopse: </b>{{ $film->sinopse }}</p>
+    </div>
+</section>
     
         <section class="section">
             <div class="text">

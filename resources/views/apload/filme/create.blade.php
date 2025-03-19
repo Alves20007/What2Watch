@@ -7,14 +7,18 @@
         <!-- Nome do Filme -->
         <!-- Tipo -->
         <div class="mb-4">
-            <label for="tipo" class="block text-neutral-50 font-medium">É filme/serie ou video?</label>
+            <label for="data" class="block text-neutral-50 font-medium">Data da criaçao</label>
+            <input type="date" name="data" id="data" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        
+        <div class="mb-S">
+            <label for="tipo" class="block text-neutral-50 font-medium">É filme/nao oNão video?</label>
             <select name="tipo" id="tipo" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="filme">Filme</option>
                 <option value="serie">Série</option>
                 <option value="video">Vídeo</option>
             </select>
         </div>
-
         
         <div class="mb-4">
             <label for="title" class="block text-neutral-50 font-medium">Nome do tipo de Media</label>
@@ -32,6 +36,11 @@
                 <option value="FC">Ficção Científica</option>
                 <option value="terror">Terror</option>
             </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="sinopse" class="block text-neutral-50 font-medium">Sinopse</label>
+            <textarea name="sinopse" id="sinopse" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
         <!-- Slug -->
         <div class="mb-4">
@@ -62,11 +71,6 @@
             <x-input type="file" name="image" id="image" class="w-full p-2 border rounded bg-gray-700 text-white"/>
         </div>
 
-        <!-- Data -->
-        <div class="mb-4">
-            <label for="data" class="block text-neutral-50 font-medium">Data</label>
-            <input type="date" name="data" id="data" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
 
         <!-- Trailer -->
         <div class="mb-4">
@@ -82,9 +86,13 @@
             <small class="text-gray-400">Se o ator estiver no banco de dados, sua foto será exibida automaticamente.</small>
         </div> --}}
         <!-- Sinopse -->
+        
         <div class="mb-4">
-            <label for="sinopse" class="block text-neutral-50 font-medium">Sinopse</label>
-            <textarea name="sinopse" id="sinopse" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <label for="tipo" class="block text-neutral-50 font-medium">Ja recebeu Oscar?</label>
+            <select name="tipo" id="tipo" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
         </div>
 
         <!-- Botão -->
@@ -95,7 +103,6 @@
         </div>
     </form>
     <script>
-
             function slugify(str) {
             str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
             str = str.toLowerCase(); // convert string to lowercase

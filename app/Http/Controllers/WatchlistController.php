@@ -56,6 +56,6 @@ class WatchlistController extends Controller
         $watchLaterFilmIds = Watchlist::where('user_id', Auth::id())->pluck('film_id');
         $video = Film::whereIn('id', $watchLaterFilmIds)->where('tipo','video')->get();
 
-        return view('Watchlist.watchVideo', compact('video'));
+        return view('Watchlist.watchVideo   ', compact('video'));
     }
 }
