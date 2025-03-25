@@ -24,7 +24,7 @@
         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             @foreach ($films as $film)
                 <a href="/filmes/{{ $film->slug }}" class="block hover:shadow-lg transition-shadow duration-300">
-                    <div class="border-2 border-gray-200 rounded-lg overflow-hidden p-4 bg-gray-800">
+                    <div class="border-2 border-gray-200 rounded-lg overflow-hidden p-4 ">
                         <!-- Imagem do filme -->
                         <img 
                             class="h-64 w-full object-cover rounded-t-lg" 
@@ -42,7 +42,7 @@
                             <div class="flex items-center mt-2">
                                 <div class="flex mr-2">
                                     @php $roundedRating = round($film->average_rating) @endphp
-                                    @for($i = 1; $i <= 5; $i++)
+                                    @for($i = 1; $i <= 5;$i++)
                                         @if($i <= $roundedRating)
                                             <span class="text-yellow-500">★</span>
                                         @else
@@ -55,10 +55,7 @@
                                 </span>
                             </div>
                             
-                            <!-- Posição no ranking -->
-                            <div class="absolute top-2 left-2 bg-yellow-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center">
-                                {{ $loop->iteration }}
-                            </div>
+                    
                         </div>
                     </div>
                 </a>

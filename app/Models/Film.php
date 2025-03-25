@@ -33,4 +33,9 @@ class Film extends Model
         return $this->hasMany(Ranking::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class)->withPivot('rating');
+    }
+
 }

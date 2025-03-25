@@ -9,33 +9,19 @@ use Illuminate\Support\Facades\Auth;
 
 class RankingController extends Controller
 {
-    // Mostrar o formulário com o ID do produto ou item a ser avaliado
-    // public function showForm($id)
-    // {
-    //     return view('review.form', compact('id'));
-    // }
-
-    // // Guardar a avaliação no banco de dados
-    // public function submitReview(Request $request)
-    // {
-    //     $request->validate([
-    //         'product_id' => 'required|integer',
-    //         'rating' => 'required|integer|min:1|max:5',
-    //         'comment' => 'nullable|string',
-    //     ]);
-
-    //     Ranking::create([
-    //         'user_id' => Auth::id(), // Captura o ID do usuário autenticado
-    //         'product_id' => $request->product_id,
-    //         'rating' => $request->rating,
-    //         'comment' => $request->comment,
-    //     ]);
-
-    //     return redirect()->route('home')->with('success', 'Avaliação enviada com sucesso!');
-    // }
-
     public function create($film_id)
     {
         return view('films.rank', compact('film_id'));
+    }
+
+    public function userRankings($userId)
+    {
+        $films = Ranking::where('user_id', $userId)
+            ->with('film') // Carrega os dados do filme
+            ->get()
+            ->pluck('film') // Obtém apenas os filmes
+            ->unique(); // Remove duplicatas caso existam múltiplas avaliações no mesmo filme
+    
+        return view('films.avaliacao', compact('films'));
     }
 }

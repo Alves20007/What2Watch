@@ -30,9 +30,11 @@ Route::middleware('auth')->get('/serie/Ver/Mais/tarde', [WatchlistController::cl
 Route::middleware('auth')->get('/video/Ver/Mais/tarde', [WatchlistController::class, 'video'])->name('Watchlist.watchVideo');
 
 Route::get('/filmes/{film}/review', [FilmController::class, 'showReviewForm'])->name('films.review.form');
-Route::post('/filmes/{film}/review', [FilmController::class, 'storeReview'])->name('films.review.store');
+Route::post('/filmes/{film}/review', [FilmController::class, 'storeReview'] )->name('films.review.store');
 
 Route::get('/top-100', [FilmController::class, 'top100'])->name('films.top100');
+
+Route::get('/user/{id}/movies', [FilmController::class, 'getUserMovies'])->name('user.movies');
 
 Route::get('/filmes', function () {
 

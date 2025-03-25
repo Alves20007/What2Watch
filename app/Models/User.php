@@ -68,6 +68,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function watchlist()
     {
         return $this->belongsToMany(Movie::class, 'watchlist')->withTimestamps();
+    }   
+
+    public function movies()
+    {
+        return $this->belongsToMany(Film::class)->withPivot('rating');
     }
     
     
