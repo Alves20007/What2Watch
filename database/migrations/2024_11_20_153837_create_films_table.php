@@ -18,13 +18,9 @@ return new class extends Migration
             $table->string('Data')->nullable();
             $table->string('slug')->unique();
             $table->string('Falas')->nullable();
-            $table->string('PCategoria')->nullable();
             $table->string('trailer')->nullable();
-            $table->string('audio')->nullable();
             $table->string('sinopse')->nullable();
-            $table->string('elenco')->nullable();
             $table->string('escolhido')->nullable();
-            $table->string('top100')->nullable();
             $table->string('categoria')->nullable();
             $table->string('tipo')->nullable();
             $table->string('Episodios')->nullable();

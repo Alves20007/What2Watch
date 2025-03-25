@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             ImageSeeder::class,
             PremiosSeeder::class,
             WatchlistSeeder::class,
+            RankingSeeder::class,
         ]);
     }
 }

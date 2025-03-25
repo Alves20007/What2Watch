@@ -20,7 +20,7 @@ class ActorSeeder extends Seeder
         $actor = Actor::create([
             'FullName' => 'Adam Richard Sandler',
             'Name' => 'Adam Sandler',
-            'Slug'=>"AdamSandler",
+            'Slug'=>"Adam Sandler",
             'image' => 'adam_sandler.jpg',
             'birthday' => '09/07/1966',
             'idade' => '58 anos',

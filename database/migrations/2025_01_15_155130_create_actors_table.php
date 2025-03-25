@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("FullName")->nullable();
             $table->string("Frase")->nullable();
-            $table->unique("Slug")->nullable();
+            $table->string("Slug")->nullable();
             $table->string("idade")->nullable();
             $table->string("Historia")->nullable();
             $table->string("Name")->nullable();

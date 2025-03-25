@@ -29,5 +29,8 @@ class Film extends Model
     {
         return $this->belongsToMany(User::class, 'watchlist')->withTimestamps();
     }
+    public function reviews() {
+        return $this->hasMany(Ranking::class);
+    }
 
 }

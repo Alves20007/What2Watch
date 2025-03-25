@@ -6,6 +6,7 @@ use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\NoticiaFilmeController;
 use App\Http\Controllers\NoticiafamososController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\RankingController;
 use App\Http\Controllers\WatchlistController;
 use App\Models\actor;
 use App\Models\Film;
@@ -27,6 +28,11 @@ Route::get('/ver-depois/{id}', [FilmController::class, 'marcarVerDepois'])->name
 Route::middleware('auth')->get('/filmes/Ver/Mais/tarde', [WatchlistController::class, 'index'])->name('Watchlist.watchFilm');
 Route::middleware('auth')->get('/serie/Ver/Mais/tarde', [WatchlistController::class, 'serie'])->name('Watchlist.watchSerie');
 Route::middleware('auth')->get('/video/Ver/Mais/tarde', [WatchlistController::class, 'video'])->name('Watchlist.watchVideo');
+
+Route::get('/filmes/{film}/review', [FilmController::class, 'showReviewForm'])->name('films.review.form');
+Route::post('/filmes/{film}/review', [FilmController::class, 'storeReview'])->name('films.review.store');
+
+Route::get('/top-100', [FilmController::class, 'top100'])->name('films.top100');
 
 Route::get('/filmes', function () {
 
@@ -180,8 +186,7 @@ Route::get('/apload', function () {
 
 
 Route::get('/apload/filme/store',function(){
-    return view('apload.filme.store');
-    
+    return view('apload.filme.store');    
 });
 
 Route::get('CriacaoFilmes', function () {
