@@ -29,9 +29,9 @@
                         <div class="mt-2">
                             <h3 class="font-bold text-neutral-200 text-lg">{{ $film->title }}</h3>
                             <p class="text-sm text-neutral-200">{{ $film->Data }}</p>
-                            <a href="{{ route('films.review.form', $film) }}" class="hover:bg-green-600">📝</a>
-
-                            {{-- <p class="text-sm text-gray-600">{{ $film->PCategoria }}</p> --}}
+                            <button onclick="addToWatchLater({{ $film->id }})" class="bg-blue-500 text-white px-4  rounded-full shadow hover:bg-blue-600 transition ml-[1310px]">
+                                📁 Ver Depois
+                            </button>
                         </div>
                     </div>
                 </a>
