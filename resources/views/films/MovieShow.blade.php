@@ -28,10 +28,11 @@
                 <p><b>Temporadas: {{ $film->Temporadas }}</b></p>
                 <p><b>Episódios: {{ $film->Episodios }}</b></p>
                 <p><b>Sinopse:</b> {{ $film->sinopse }}</p>
+                <p><b>Atores: </b></p>
                 @if($film->reviews->count() > 0)
                 <div class="mt-4">
                     <p class="text-lg font-semibold">Avaliação Média: 
-                        <span class="text-yellow-500">{{ number_format($film->reviews->avg('rating'), 1) }}/10</span>
+                        <span class="text-yellow-500">{{ number_format($film->reviews->avg('rating'), 1) }}/5</span>
                     </p>
                 </div>
                 @endif
@@ -49,7 +50,7 @@
             <h2 class="text-xl font-bold mb-4 text-yellow-600">Avaliações</h2>
             @if ($film->reviews->count() > 0)
                 <p class="text-lg">
-                    Média: <span class="font-bold">{{ number_format($film->reviews->avg('rating'), 1) }}/10</span>
+                    Média: <span class="font-bold">{{ number_format($film->reviews->avg('rating'), 1) }}/5</span>
                     ({{ $film->reviews->count() }} reviews)
                 </p>
                 <div class="mt-4 space-y-4">
@@ -58,7 +59,7 @@
                             <p class="font-semibold">
                                 <!-- Nome do usuário + nota -->
                                 {{ $review->user->name }}<br>
-                                Nota: {{ $review->rating }}/10  
+                                Nota: {{ $review->rating }}/5  
                             </p>
                             <!-- Comentário -->
                             <p class="text-neutral-100">{{ $review->comment }}</p>

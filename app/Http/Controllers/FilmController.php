@@ -50,4 +50,6 @@ class FilmController extends Controller
         return view('films.top100', compact('films'));
     }
 
+    
+
 }

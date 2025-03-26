@@ -4,9 +4,9 @@
         <form action="{{ route('films.review.store', $film) }}" method="POST">
             @csrf
             <div class="mb-4">
-                <label class="block text-neutral-100">Nota (1-10)</label>
+                <label class="block text-neutral-100">Nota (1-5)</label>
                 <select name="rating" class="w-full px-3 py-2 border rounded">
-                    @for ($i = 1; $i <= 10; $i++)
+                    @for ($i = 1; $i <= 5; $i++)
                         <option value="{{ $i }}">{{ $i }}</option>
                     @endfor
                 </select>

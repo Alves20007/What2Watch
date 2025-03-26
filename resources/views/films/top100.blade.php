@@ -1,25 +1,5 @@
 <x-guestLayout>
     <div class="max-w-4xl mx-auto p-4">
-        <!-- Título da página -->
-        <h1 class="text-3xl font-bold text-yellow-600 mb-6">Top 100 Filmes</h1>
-        <p class="text-neutral-200 mb-8">Os filmes melhor avaliados pela comunidade</p>
-
-        <!-- Botões de navegação -->
-        <div class="my-8 flex gap-4">
-            <x-button class="bg-orange-500 hover:bg-orange-600 text-white">
-                <a href="{{ url('filmes') }}">Filmes</a>
-            </x-button>
-            <x-button class="bg-orange-700 hover:bg-orange-500 text-slate-950 border border-zinc-300">
-                <a href="{{ url('series') }}">Séries</a>
-            </x-button>
-            <x-button class="bg-yellow-500 hover:bg-orange-500 text-slate-950 border border-zinc-300">
-                <a href="{{ url('video/utilizador') }}">Vídeos</a>
-            </x-button>
-            <x-button class="bg-purple-500 hover:bg-purple-600 text-white">
-                <a href="{{ url('top-100') }}">Top 100</a>
-            </x-button>
-        </div>
-
         <!-- Grid de filmes -->
         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             @foreach ($films as $film)

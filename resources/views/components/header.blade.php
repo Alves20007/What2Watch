@@ -19,8 +19,8 @@
             <!-- Menu de Navegação -->
             <nav class="hidden md:flex space-x-6">
                 @foreach ([
-                    'Filmes/series' => [['filmes', 'Filmes/series'], ['Top-100', 'Top 100'], ['CaixaSurpresa', 'Caixa surpresa']],
-                    'W2 World' => [['escolhido', 'W2 Escolha'], ['user/{id}/movies', 'Os meus rankings'], ['NoticiasFilmes', 'Notícias']],
+                    'Filmes/series' => [['filmes', 'Filmes/series'], ['top-100', 'Top 100'], ['CaixaSurpresa', 'Caixa surpresa']],
+                    'W2 World' => [['escolhido', 'W2 Escolha'], ['NoticiasFilmes', 'Notícias']],
                     'Prêmios' => [['/noticias/oscares', 'Oscares'], ['/noticias/premios', 'Central de prêmios']],
                     'Artistas' => [['atores', 'Famosos'], ['Oscares/artistas', 'Oscares'], ['/atores/aniversariantes', 'Nascidos hoje'], ['top', 'Celebridades populares']],
                     'Criação' => [['CriacaoFilmes', 'Criar filme'], ['CriarCelebs', 'Celebs'], ['/filmes/Ver/Mais/tarde', 'Watch list']]              
