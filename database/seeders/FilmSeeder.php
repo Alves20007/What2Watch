@@ -24,6 +24,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'ESOES.mp4',
             'Diretor'=> 'Michel Gondry',
             'Editora' => 'Focus Features',
+            'CE'=> 'M/12',
             'sinopse' => 'Joel se surpreende ao saber que seu amor verdadeiro, Clementine, o apagou completamente de sua memória. Ele decide fazer o mesmo, mas muda de ideia.',
             //'categoria' => 'acao'
         ]);
@@ -41,6 +42,7 @@ class FilmSeeder extends Seeder
             'Diretor' => 'Matt Reeves',
             'Editora' => 'Warner Bros. Pictures.',
             'Falas' =>'Justice for gothan!',
+            'CE'=> 'M/12',
             'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
         ]);
 
@@ -55,6 +57,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'EndGame.mp4',
             'Diretor' => 'Anthony Russo, Joe Russo',
             'Editora' => 'Marvel',
+            'CE'=> 'M/12',
             'sinopse' => 'Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos..',
         ]);
 
@@ -69,6 +72,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'Everest.mp4',
             'Diretor' => 'Baltasar Kormákur',
             'Editora' => 'Universal Picture',
+            'CE'=> 'M/12',
             'sinopse' => 'Em maio de 1996, escaladores de duas expedições diferentes começam a subir em direção ao cume do Monte Everest, mas logo se veem lutando por suas vidas em uma nevasca mortal.',
         ]);
 
@@ -84,6 +88,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'Inception.mp4',
             'Diretor' =>'Christopher Nolan',
             'Editora' =>' Legendary Pictures',
+            'CE'=> 'M/12',
             'sinopse' => 'Dom Cobb é um ladrão com a rara habilidade de roubar segredos do inconsciente, obtidos durante o estado de sono.',
         ]);
 
@@ -98,6 +103,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'Pi.mp4',
             'Diretor' => 'Ang Lee',
             'Editora' => '20th Century Fox',
+            'CE'=> 'M/6',
             'sinopse' => 'Pi e sua família decidem ir para o Canadá depois de fechar o zoológico da família. A embarcação deles naufraga, e o jovem sobrevive junto com alguns animais, incluindo um temível tigre de Bengala, com o qual desenvolve uma ligação.',
         ]);
 
@@ -113,6 +119,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'AsFitas.mp4',
             'Diretor' => 'John Erick Dowdle',
             'Editora' => 'Metro-Goldwyn-Maye',
+            'CE'=> 'M/18',
             'sinopse' => 'As Fitas de Poughkeepsie é um documentário sobre a descoberta de centenas de fitas VHS gravadas por um serial killer, revelando seus crimes brutais e a tortura psicológica de suas vítimas.' 
         ]);
         
@@ -127,6 +134,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'MeganIsMissing.mp4',
             'Diretor' =>'Michael Goi',
             'Editora' =>'Anchor Bay Entertainment.',
+            'CE'=> 'M/18',
             'sinopse' => 'Megan Is Missing é um filme de terror psicológico no estilo found footage que acompanha a busca por Megan Stewart, uma adolescente que desaparece após conhecer um homem online.'
         ]); 
 
@@ -145,6 +153,7 @@ class FilmSeeder extends Seeder
             'trailer' => '99.mp4',
             'Editora' => 'FOX',
             'Diretor' => 'Dan Goor, Michael Schur',
+            'CE'=> 'M/12',
             'sinopse' => 'O despreocupado detetive Jake Peralta precisa aprender a seguir as regras e trabalhar em equipe quando um capitão exigente assume o comando de seu esquadrão',
         ]);
 
@@ -161,6 +170,7 @@ class FilmSeeder extends Seeder
             'Temporadas' => '7',
             'Diretor' =>'Chuck Lorre, Steven Molare',
             'Editora' =>'CBS',
+            'CE'=> 'M/6',
             'sinopse' => 'Ambientada no Texas dos anos 80 e 90, a história mostra Sheldon enfrentando desafios acadêmicos e sociais enquanto cresce em uma família tradicional e tenta se encaixar em um mundo que não entende sua genialidade.',
         ]);
 
@@ -177,6 +187,7 @@ class FilmSeeder extends Seeder
             'Temporadas' => '2',
             'Diretor' =>'Haro Aso',
             'Editora' =>'Netflix',
+            'CE'=> 'M/16',
             'sinopse' => ' Para sobreviver, eles precisam participar de jogos letais, onde cada desafio testa suas habilidades físicas e mentais. Enquanto lutam pela vida, eles tentam desvendar os mistérios desse mundo e encontrar uma saída.',
         ]);
 
@@ -193,6 +204,7 @@ class FilmSeeder extends Seeder
             'Temporadas' => '1',
             'Diretor' =>'Alfred Gough, Miles Millar',
             'Editora' =>'Netflix',
+            'CE'=> 'M/12',
             'sinopse' => 'Wednesday acompanha Wednesday Addams enquanto investiga mistérios sombrios na Nevermore Academy, descobrindo segredos sobre sua família e um monstro aterrorizando a cidade.',
         ]);
 
@@ -209,6 +221,7 @@ class FilmSeeder extends Seeder
             'Temporadas' => '1',
             'Diretor' =>'Michael Waldron',
             'Editora' =>'Disney+',
+            'CE'=> 'M/12',
             'sinopse' => 'Loki segue o Deus da Trapaça após os eventos de Vingadores: Ultimato, quando ele é capturado pela AVT e embarca em uma jornada pelo multiverso para confrontar seu destino.',
         ]);
 
@@ -225,6 +238,7 @@ class FilmSeeder extends Seeder
             'Temporadas' => '5',
             'Diretor' =>'Asaph Fipke',
             'Editora' =>'Disney XD',
+            'CE'=> 'M/6',
             'sinopse' => 'Slugterra segue Eli Shane, um jovem que explora o mundo subterrâneo de Slugterra, treinando lesmas com poderes especiais para batalhas enquanto enfrenta vilões que ameaçam o equilíbrio do local.',
         ]);
         
@@ -239,8 +253,9 @@ class FilmSeeder extends Seeder
             'trailer' => 'MorangosComAcucar.mp4',
             'Episodios' => '2611',
             'Temporadas' => '9',
-            'Diretor' =>'????',
+            'Diretor' =>'Tim Burton',
             'Editora' =>'TVI',
+            'CE'=> 'M/12',
             'sinopse' => 'Esta novela acompanha a rotina e os problemas diários de um grupo de adolescentes portugueses.',
         ]);
 
@@ -257,6 +272,7 @@ class FilmSeeder extends Seeder
             'Temporadas' => '9',
             'Diretor' =>'Greg Daniels, Ricky Gervais, Stephen Merchant',
             'Editora' =>'NBC',
+            'CE'=> 'M/12',
             'sinopse' => 'Uma comedia para todos aqueles que tem um Patrão idiota.',
         ]);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -272,6 +288,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'porta.mp4',
             'Editora' => 'Madjimby',
             'Diretor' => 'Madjimby',
+            'CE'=> 'M/6',
             'sinopse' => 'Hoje vou ensinar a fechar uma porta',
         ]);
 
@@ -286,6 +303,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'Gondomar-JoaoDantes.mp4',
             'Editora' => 'Fernando Rocha',
             'Diretor' => 'João Dantes',
+            'CE'=> 'M/12',
             'sinopse' => 'Comedia do grupo Pi 100 Pé feita em Gondomar, piada do João Dantas',
         ]);
 
@@ -300,6 +318,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'Gondomar-QuimRoscas.mp4',
             'Editora' => 'Fernando Rocha',
             'Diretor' => 'Quim Roscas e Zecas Estacionâncio',
+            'CE'=> 'M/12',
             'sinopse' => 'Comedia do grupo Pi 100 Pé feita em Gondomar, piada do Quim Roscas e Zeca Estacionâncio',
         ]);
 
@@ -314,6 +333,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'Gondomar-FernadoRocha.mp4',
             'Diretor' => 'Fernando Rocha',
             'Editora' => 'Fernando Rocha',
+            'CE'=> 'M/12',
             'sinopse' => 'Comedia do grupo Pi 100 Pé feita em Gondomar, piada do Fernando Rocha',
         ]);
 
@@ -328,6 +348,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'SaltaJoca.mp4',
             'Diretor' => 'Gravador do Joca',
             'Editora' =>'Rosquilho Gameplays',
+            'CE'=> 'M/6',
             'sinopse' => 'Uma Historia deveras bonitas sobre um Rapaz e o seu sonho de saltar',
         ]);
 
@@ -342,6 +363,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'LeaveMeAlone.mp4',
             'Diretor' => 'Jose Castelo Branco',
             'Editora' =>'TVI',
+            'CE'=> 'M/6',
             'sinopse' => 'Apenas um Homem simples e suas simplicidades',
         ]);
 
@@ -356,6 +378,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'MecanicoLadrao.mp4',
             'Diretor' => 'Mecanico',
             'Editora' =>'TVI',
+            'CE'=> 'M/6',
             'sinopse' => 'Apenas um Homem simples e seus Objetivos de vida',
         ]);
 
@@ -370,6 +393,7 @@ class FilmSeeder extends Seeder
             'trailer' => 'MarioArmario.mp4',
             'Diretor' => 'Paulo',
             'Editora' =>'Paulo el Mario',
+            'CE'=> 'M/6',
             'sinopse' => 'Dois rapazes a falarem da vida alheia ate que um decide pregar uma peça ao outro',
         ]);
 
