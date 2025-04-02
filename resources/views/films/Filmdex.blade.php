@@ -29,18 +29,11 @@
                         <div class="mt-2">
                             <h3 class="font-bold text-neutral-200 text-lg">{{ $film->title }}</h3>
                             <p class="text-sm text-neutral-200">{{ $film->Data }}</p>
-<<<<<<< HEAD
                             <button 
                                 onclick="event.stopPropagation(); addToWatchLater({{ $film->id }})" 
                                 class=" text-white px-4 rounded-full shadow hover:bg-blue-600 transition">
                                 📁
-=======
-                            
-                            <button onclick="addToWatchLater({{ $film->id }})" class="bg-blue-500 text-white px-4  rounded-full shadow hover:bg-blue-600 transition">
-                                📁 Ver Depois
->>>>>>> 8db8b9d7de183be8a5b0123c38fb9f823d5028e2
                             </button>
-                            
                         </div>
                     </div>
                 </a>
