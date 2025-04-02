@@ -43,6 +43,24 @@ Route::get('/filmes', function () {
 
 })->name('filmes');
 
+Route::get('/search-films', function (Request $request) {
+    $query = $request->query('query'); // Pegando o termo digitado na barra de pesquisa
+    $categorias = explode(',', $request->query('categoria')); // Pegando os gêneros selecionados
+
+    $films = Film::query();
+
+    // Filtrar pelo título se tiver pesquisa
+    if (!empty($query)) {
+        $films->where('title', 'LIKE', "%{$query}%");
+    }
+
+    // Filtrar pelos gêneros
+    if (!empty($categorias) && $categorias[0] !== "") {
+        $films->whereIn('categoria', $categorias);
+    }
+
+    return response()->json($films->get());
+});
 
 Route::get('/video/utilizador',function(){
     $films = Film::where('tipo','video')->get();

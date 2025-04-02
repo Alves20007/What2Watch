@@ -26,7 +26,10 @@ return new class extends Migration
             $table->string('Episodios')->nullable();
             $table->string('Temporadas')->nullable();
             $table->string('oscares')->nullable();
-            
+            $table->string('Diretor')->nullable();
+            $table->string('Editora')->nullable();
+            $table->string('CE')->nullable();
+
             $table->timestamps();
         });
     }

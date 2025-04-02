@@ -34,8 +34,8 @@
             <img src="imagens/filmes2/IJ.jpg" alt="Telemóvel tecnológico">
         </div>
         <div class="text">
-            <h2>Futuras Updates</h2>
-            <p>Tenho de continuar a construir o site e a melhora-lo.</p>
+            <h2>Update Logs</h2>
+            <p>Quem é que se da ao trabalho de ler isto?</p>
         </div>
     </section>
 

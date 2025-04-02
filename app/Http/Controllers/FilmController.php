@@ -50,6 +50,31 @@ class FilmController extends Controller
         return view('films.top100', compact('films'));
     }
 
+    public function index(Request $request)
+    {
+        $query = \App\Models\Film::query(); // Certifique-se de importar a model correta
     
+        // Filtro por pesquisa de texto
+        if ($request->filled('search')) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+    
+        // Filtro por categorias selecionadas
+        if ($request->filled('categoria')) {
+            $query->whereIn('categoria', $request->categoria);
+        }
+    
+        $films = $query->get();
+    
+        return view('filmes', compact('films'));
+    }
+    
+    public function search(Request $request)
+{
+    $films = \App\Models\Film::where('title', 'like', '%' . $request->s . '%')->take(5)->get();
+    return response()->json($films);
+}
 
+
+    
 }

@@ -29,13 +29,31 @@
                         <div class="mt-2">
                             <h3 class="font-bold text-neutral-200 text-lg">{{ $film->title }}</h3>
                             <p class="text-sm text-neutral-200">{{ $film->Data }}</p>
-                            <button onclick="addToWatchLater({{ $film->id }})" class="bg-blue-500 text-white px-4  rounded-full shadow hover:bg-blue-600 transition ml-[1310px]">
-                                📁 Ver Depois
+                            <button 
+                                onclick="event.stopPropagation(); addToWatchLater({{ $film->id }})" 
+                                class=" text-white px-4 rounded-full shadow hover:bg-blue-600 transition">
+                                📁
                             </button>
                         </div>
                     </div>
                 </a>
             @endforeach
         </div>
+        <script>
+            function addToWatchLater(filmId) {
+                fetch(/filmes/watch-later/add/${filmId}, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({})
+                })
+                .then(res => res.json())
+                .then(data => alert(data.message))
+                .catch(error => console.error('Erro:', error));
+            }
+        </script>
     </div>
 </x-guestLayout>
