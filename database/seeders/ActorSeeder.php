@@ -26,6 +26,7 @@ class ActorSeeder extends Seeder
             'idade' => '58 anos',
             'Frase'=>'Agora percebo como sou feio',
             'Oscares'=> 'sim',
+            'profissao' => 'ator',
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
@@ -38,12 +39,13 @@ class ActorSeeder extends Seeder
             'idade' => '58 anos',
             'Frase'=>'Agora percebo como sou feio',
             'Top' => 'sim',
+            'profissao' => 'cantor',
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
         
         $actor = Actor::create([
-            'FullName' => 'teste',
+            'FullName' => 'wuant',
             'Name' => 'teste',
             'Slug'=>"testa",
             'image' => 'adam_sandler.jpg',
@@ -51,6 +53,7 @@ class ActorSeeder extends Seeder
             'idade' => '58 anos',
             'Frase'=>'Agora percebo como sou feio',
             'Top' => 'sim',
+            'profissao' => 'Criador de conteudo',
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
         

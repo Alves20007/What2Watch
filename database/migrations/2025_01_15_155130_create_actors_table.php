@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string("image")->nullable();
             $table->string("Oscares")->nullable();
             $table->string("Top")->nullable();
+            $table->string("profissao")->nullable();
             $table->timestamps();
         });
 

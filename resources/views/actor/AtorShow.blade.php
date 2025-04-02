@@ -29,6 +29,7 @@
                 <b>Nome completo: {{ $ator->FullName}}</b> <br>
                 <b>Local de Nascimento:</b> <br>
                 <b>Dia do seu nascimento: {{ $ator->birthday}}</b> <br>
+                <b>Tipo de profissão: {{ $ator->profissao}}</b>
                 </var>
                 
             </div>
