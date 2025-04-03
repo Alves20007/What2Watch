@@ -70,11 +70,33 @@ class FilmController extends Controller
     }
     
     public function search(Request $request)
-{
-    $films = \App\Models\Film::where('title', 'like', '%' . $request->s . '%')->take(5)->get();
-    return response()->json($films);
-}
+    {
+        $films = \App\Models\Film::where('title', 'like', '%' . $request->s . '%')->take(5)->get();
+        return response()->json($films);
+    }
 
+    
+    public function filter(Request $request)
+    {
+        $query = Film::query();
 
+        if ($request->has('categorias') && !empty($request->categorias)) {
+            $query->whereIn('categoria', $request->categorias);
+        }
+
+        if ($request->has('tipos') && !empty($request->tipos)) {
+            $query->whereIn('tipo', $request->tipos);
+        }
+
+        if ($request->has('CE') && !empty($request->CE)) {
+            $query->whereIn('CE', $request->CE);
+        }
+        
+        $films = $query->get();
+
+        $html = view('films.partials.grid', compact('films'))->render();
+
+        return response()->json(['html' => $html]);
+    }
     
 }

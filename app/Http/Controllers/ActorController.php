@@ -18,4 +18,19 @@ class ActorController extends Controller
 
         return view('actor.Atordex', compact('actor'));
     }
+
+    public function filter(Request $request)
+    {
+        $query = Actor::query();
+
+        if ($request->has('profissao') && !empty($request->profissao)) {
+            $query->whereIn('profissao', $request->profissao);
+        }
+        
+        $actor = $query->get();
+
+        $html = view('actor.partials.grid', compact('actor'))->render();
+
+        return response()->json(['html' => $html]);
+    }
 }

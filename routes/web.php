@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\FilmController;
-use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\NoticiaFilmeController;
 use App\Http\Controllers\NoticiafamososController;
 use App\Http\Controllers\ImageController;
@@ -10,7 +9,6 @@ use App\Http\Controllers\RankingController;
 use App\Http\Controllers\WatchlistController;
 use App\Models\actor;
 use App\Models\Film;
-Use App\Models\series;
 use App\Models\apload;
 use App\Models\noticiafamosos;
 use App\Models\noticiaFilme;
@@ -32,6 +30,9 @@ Route::middleware('auth')->get('/video/Ver/Mais/tarde', [WatchlistController::cl
 Route::get('/filmes/{film}/review', [FilmController::class, 'showReviewForm'])->name('films.review.form');
 Route::post('/filmes/{film}/review', [FilmController::class, 'storeReview'] )->name('films.review.store');
 
+Route::post('/filmes/filter', [FilmController::class, 'filter'])->name('filmes.filter');
+Route::post('/famosos/filter',[ActorController::class,'filter'])->name('famosos.filter');
+
 Route::get('/top-100', [FilmController::class, 'top100'])->name('films.top100');
 
 Route::get('/user/{id}/movies', [FilmController::class, 'getUserMovies'])->name('user.movies');
@@ -43,24 +44,6 @@ Route::get('/filmes', function () {
 
 })->name('filmes');
 
-Route::get('/search-films', function (Request $request) {
-    $query = $request->query('query'); // Pegando o termo digitado na barra de pesquisa
-    $categorias = explode(',', $request->query('categoria')); // Pegando os gêneros selecionados
-
-    $films = Film::query();
-
-    // Filtrar pelo título se tiver pesquisa
-    if (!empty($query)) {
-        $films->where('title', 'LIKE', "%{$query}%");
-    }
-
-    // Filtrar pelos gêneros
-    if (!empty($categorias) && $categorias[0] !== "") {
-        $films->whereIn('categoria', $categorias);
-    }
-
-    return response()->json($films->get());
-});
 
 Route::get('/video/utilizador',function(){
     $films = Film::where('tipo','video')->get();

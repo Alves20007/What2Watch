@@ -14,10 +14,12 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
             <br>
+
             <div>
                 <x-label for="pais" value="{{ __('País') }}" />
                 <select id="pais" name="pais" class="block mt-1 w-full" required>
                     <option value="">Selecione um país...</option>
+                    <option value="Portugal">Portugal </option>
                 </select>
             </div>
             
@@ -71,19 +73,18 @@
             </div>
 
             <script>
-                // Carregar os países usando a API Restcountries
-                fetch('https://restcountries.com/v3.1/all')
-                    .then(response => response.json())
-                    .then(data => {
-                        const select = document.getElementById('pais');
-                        data.forEach(pais => {
-                            const option = document.createElement('option');
-                            option.value = pais.name.common;
-                            option.textContent = pais.name.common;
-                            select.appendChild(option);
-                        });
-                    })
-                    .catch(error => console.error('Erro ao carregar os países:', error));
+                // fetch('https://restcountries.com/v3.1/all')
+                //     .then(response => response.json())
+                //     .then(data => {
+                //         const select = document.getElementById('pais');
+                //         data.forEach(pais => {
+                //             const option = document.createElement('option');
+                //             option.value = pais.name.common;
+                //             option.textContent = pais.name.common;
+                //             select.appendChild(option);
+                //         });
+                //     })
+                //     .catch(error => console.error('Erro ao carregar os países:', error));
             </script>
         </form>
     </x-authentication-card>
