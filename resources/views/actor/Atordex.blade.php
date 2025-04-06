@@ -85,7 +85,7 @@
                         <b class="text-neutral-50">{{ $ator->Name }}    </b>
                         <p class="font-italic text-neutral-50">{{ $ator->birthday }}</p>
                                             
-                    </div>
+                    </div>      
                 </a>
             @endforeach
         </div>
@@ -98,7 +98,7 @@
                 const profissao = Array.from(document.querySelectorAll("input[name='profissao[]']:checked"))
                                     .map(cb => cb.value);
 
-                fetch("/famosos/filter", {
+                fetch("{{ route('actor.filter') }}", {
                     method: "POST",
                     headers: {
                         "X-CSRF-TOKEN": "{{ csrf_token() }}",

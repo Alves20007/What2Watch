@@ -28,18 +28,18 @@ class WatchlistController extends Controller
         }
     }
         
-    // Listar vídeos do Watch Later
     public function list()
     {
         $watchLater = Watchlist::where('user_id', Auth::id())->with('films')->get();
 
         return response()->json($watchLater);
     }
+
     public function index()
     {
         $watchLaterFilmIds = Watchlist::where('user_id', Auth::id())->pluck('film_id');
         $films = Film::whereIn('id', $watchLaterFilmIds)->where('tipo','filme')->get();
-
+        
         return view('Watchlist.watchFilm', compact('films'));
     }
 

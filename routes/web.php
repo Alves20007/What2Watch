@@ -31,7 +31,7 @@ Route::get('/filmes/{film}/review', [FilmController::class, 'showReviewForm'])->
 Route::post('/filmes/{film}/review', [FilmController::class, 'storeReview'] )->name('films.review.store');
 
 Route::post('/filmes/filter', [FilmController::class, 'filter'])->name('filmes.filter');
-Route::post('/famosos/filter',[ActorController::class,'filter'])->name('famosos.filter');
+Route::post('/actor/filter', [ActorController::class, 'filter'])->name('actor.filter');
 
 Route::get('/top-100', [FilmController::class, 'top100'])->name('films.top100');
 

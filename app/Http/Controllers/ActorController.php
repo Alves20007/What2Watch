@@ -27,10 +27,13 @@ class ActorController extends Controller
             $query->whereIn('profissao', $request->profissao);
         }
         
-        $actor = $query->get();
+        $actors = $query->get();
 
-        $html = view('actor.partials.grid', compact('actor'))->render();
+        if ($request->wantsJson()) {
+            $html = view('actor.partials.grid', compact('actors'))->render();
+            return response()->json(['html' => $html]);
+        }
 
-        return response()->json(['html' => $html]);
-    }
+        return view('actor.Atordex', compact('actors'));
+     }
 }

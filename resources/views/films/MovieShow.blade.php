@@ -2,6 +2,8 @@
     <head>
         <link rel="stylesheet" href="{{ asset('css/CG.css') }}">
     </head>
+    <!-- Fazer algo do genero "Caso a serie ainda esteja em lancamento apareçe em lançamneto
+    Caso tenha acabado apareça ano em que acabou ou que vai acabar "tipo acabou a  4/06/2025" ou "vai acabar a 05/03/2026"-->
     <body>
         @if (Auth::check())
             <button onclick="addToWatchLater({{ $film->id }})" class="bg-blue-500 text-white px-4  rounded-full shadow hover:bg-blue-600 transition ml-[1310px]">
