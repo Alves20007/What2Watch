@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\NoticiaFilmeController;
@@ -15,6 +16,7 @@ use App\Models\noticiaFilme;
 use App\Models\Image;
 use App\Models\Premios;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Laravel\Jetstream\Rules\Role;
 use Psy\CodeCleaner\ReturnTypePass;
@@ -32,6 +34,7 @@ Route::post('/filmes/{film}/review', [FilmController::class, 'storeReview'] )->n
 
 Route::post('/filmes/filter', [FilmController::class, 'filter'])->name('filmes.filter');
 Route::post('/actor/filter', [ActorController::class, 'filter'])->name('actor.filter');
+Route::post('/filmes/filter-escolhido', [FilmController::class, 'filtrarescolhido'])->name('filmes.filter.escolhido');
 
 Route::get('/top-100', [FilmController::class, 'top100'])->name('films.top100');
 
@@ -39,7 +42,7 @@ Route::get('/user/{id}/movies', [FilmController::class, 'getUserMovies'])->name(
 
 Route::get('/filmes', function () {
 
-    $films = Film::where('tipo', 'filme')->get();
+    $films = Film::all();
     return view('films.Filmdex', compact('films'));
 
 })->name('filmes');
@@ -50,10 +53,6 @@ Route::get('/video/utilizador',function(){
     return view('films.Filmdex',compact('films'));
 });
 
-Route::get('/series',function(){
-    $films = Film::where('tipo','serie')->get();
-    return view('films.Filmdex',compact('films'));
-});
 
 
 Route::get('Lancamento', function () {
@@ -294,17 +293,24 @@ Route::post('/apload/ator/store', function (Request $request) {
     return redirect()->route('apload.ator.create2')->banner('Race created with success');
 });
 
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
+    ->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('dashboard');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+        Route::get('/perfil', function () {
+            return view('perfil', ['user' => Auth::user()]);
+        })->name('perfil');
 
+        // Página para editar o perfil (perfil-remake.blade.php)
+        Route::get('/editar-perfil', function () {
+            return view('perfil-remake', ['user' => Auth::user()]);
+        })->name('perfil.edit');
+
+        // Atualizar perfil do usuário
+        Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+    });
 //Route::get('/primeiro', function () {
     //  return view('site.primeiro');
 //});

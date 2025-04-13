@@ -22,6 +22,13 @@ class DatabaseSeeder extends Seeder
             'birthday' => '1991-01-21'
         ]);
 
+        User::factory()->create([
+            'name' => 'Portugal',
+            'password' => 'admin',
+            'email' => 'Portugal@Facebook.com',
+            'birthday' => '1991-01-21'
+        ]);
+
         $this->call([
             CategorySeeder::class,
             FilmSeeder::class,

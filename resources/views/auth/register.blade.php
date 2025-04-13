@@ -6,12 +6,21 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
 
             <div>
                 <x-label for="name" value="{{ __('Name') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            </div>
+
+            <div>
+                <x-label for="bio" value="{{ __('bio') }}" />
+                <x-input id="bio" class="block mt-1 w-full" type="text" name="bio" :value="old('bio')" required autofocus autocomplete="bio" />
+            </div>
+            <div>
+                <x-label for="Foto_Perfil" value="{{ __('Foto_Perfil') }}" />
+                <x-input id="Foto_Perfil" class="block mt-1 w-full" type="file" name="Foto_Perfil" :value="old('Foto_Perfil')" required autofocus autocomplete="Foto_Perfil" />
             </div>
             <br>
 

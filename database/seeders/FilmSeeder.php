@@ -23,6 +23,7 @@ class FilmSeeder extends Seeder
             'categoria' => 'acao',
             'trailer' => 'ESOES.mp4',
             'Diretor'=> 'Michel Gondry',
+            'Escolhido'=> 'sim',
             'Editora' => 'Focus Features',
             'CE'=> 'M/12',
             'sinopse' => 'Joel se surpreende ao saber que seu amor verdadeiro, Clementine, o apagou completamente de sua memória. Ele decide fazer o mesmo, mas muda de ideia.',

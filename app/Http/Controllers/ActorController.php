@@ -29,11 +29,11 @@ class ActorController extends Controller
         
         $actors = $query->get();
 
-        if ($request->wantsJson()) {
+        if ($request->wantsJson() || $request->ajax()) {
             $html = view('actor.partials.grid', compact('actors'))->render();
             return response()->json(['html' => $html]);
         }
 
         return view('actor.Atordex', compact('actors'));
-     }
+    }
 }

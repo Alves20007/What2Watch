@@ -37,35 +37,14 @@
                                 <span class="text-white text-sm group-hover:text-orange-300">Escritor</span>
                             </label>
                             <label class="flex items-center space-x-2 cursor-pointer group">
-                                <input type="checkbox" name="profissao[]" value="escritor" 
+                                <input type="checkbox" name="profissao[]" value="cantor" 
                                        class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
                                 <span class="text-white text-sm group-hover:text-orange-300">Cantor</span>
                             </label>
                         </div>
                     </div>
                     <!-- Idade -->
-                    <div>
-                        <h3 class="text-xs text-zinc-400 uppercase mb-1">Idade</h3>
-                        <div class="space-y-1">
-                            <label class="flex items-center space-x-2 cursor-pointer group">
-                                <input type="checkbox" name="CE[]" value="M/6" 
-                                       class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
-                                <span class="text-white text-sm group-hover:text-orange-300">Maiores de 6</span>
-                            </label>
-                            <label class="flex items-center space-x-2 cursor-pointer group">
-                                <input type="checkbox" name="CE[]" value="M/12" 
-                                       class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
-                                <span class="text-white text-sm group-hover:text-orange-300">Maiores de 12</span>
-                            </label>
-                            <label class="flex items-center space-x-2 cursor-pointer group">
-                                <input type="checkbox" name="CE[]" value="M/16" 
-                                       class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
-                                <span class="text-white text-sm group-hover:text-orange-300">Maiores de 16</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-        
+                        
                 <!-- Botão compacto -->
                 <button id="searchButton" 
                         class="mt-3 w-full bg-orange-600 hover:bg-orange-700 text-white py-1.5 px-3 rounded-sm 
@@ -103,6 +82,8 @@
                     headers: {
                         "X-CSRF-TOKEN": "{{ csrf_token() }}",
                         "Content-Type": "application/json",
+                        "Accept": "application/json"
+                        
                     },
                     body: JSON.stringify({
                         profissao: profissao,
