@@ -14,6 +14,25 @@
     <header class="intro">
         <h1>What2Watch</h1>
         <p>Onde o seu entretenimento é o nosso dever!</p>
+
+<!-- Barra de Pesquisa -->
+        <div class="flex justify-center mt-4">
+            <form action="{{ route('search') }}" method="GET" class="flex text-neutral-800 gap-2 w-[500px] max-w-full">
+                <input 
+                    type="text" 
+                    name="query" 
+                    placeholder="Pesquisar filmes, atores ou utilizadores..." 
+                    class="flex-1 px-4 py-2 border border-gray-300 rounded-lg"
+                >
+                <button 
+                    type="submit" 
+                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                >
+                    Buscar
+                </button>
+            </form>
+        </div>
+
     </header>
 
     <!-- Seção 1: Filme do dia -->

@@ -7,6 +7,7 @@ use App\Http\Controllers\NoticiaFilmeController;
 use App\Http\Controllers\NoticiafamososController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\RankingController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\WatchlistController;
 use App\Models\actor;
 use App\Models\Film;
@@ -39,6 +40,8 @@ Route::post('/filmes/filter-escolhido', [FilmController::class, 'filtrarescolhid
 Route::get('/top-100', [FilmController::class, 'top100'])->name('films.top100');
 
 Route::get('/user/{id}/movies', [FilmController::class, 'getUserMovies'])->name('user.movies');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+
 
 Route::get('/filmes', function () {
 

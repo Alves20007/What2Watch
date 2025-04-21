@@ -9,6 +9,18 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                     </svg>
                 </h2>
+
+                <!-- 🔍 Nova barra de pesquisa -->
+                <div class="mb-3">
+                    <label for="searchInputSidebar" class="sr-only">Pesquisar</label>
+                    <input 
+                        type="text" 
+                        id="searchInputSidebar" 
+                        placeholder="Pesquisar..." 
+                        class="w-full px-3 py-1.5 text-sm bg-zinc-700 text-white border border-zinc-500 rounded-sm placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                    />
+                </div>
+
         
                 <!-- Seções compactas -->
                 <div class="space-y-3">
@@ -163,8 +175,17 @@
             document.addEventListener("DOMContentLoaded", function () {
             const searchButton = document.getElementById("searchButton");
             
-            searchButton.addEventListener("click", function () {
-                // Coletar categorias e tipos selecionados
+            const searchButton = document.getElementById("searchButton");
+
+            searchButton.addEventListener("click", handleSearch);
+            document.getElementById("searchInputSidebar").addEventListener("keypress", function (e) {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    handleSearch();
+                }
+            });
+
+            function handleSearch() {
                 const categorias = Array.from(document.querySelectorAll("input[name='categorias[]']:checked"))
                                     .map(cb => cb.value);
                 
@@ -173,6 +194,8 @@
 
                 const CE = Array.from(document.querySelectorAll("input[name='CE[]']:checked"))
                                 .map(cb => cb.value);
+
+                const searchTerm = document.getElementById("searchInputSidebar").value;
 
                 fetch("/filmes/filter", {
                     method: "POST",
@@ -183,7 +206,8 @@
                     body: JSON.stringify({
                         categorias: categorias,
                         tipos: tipos,
-                        CE: CE
+                        CE: CE,
+                        search: searchTerm
                     }),
                 })
                 .then(response => response.json())
@@ -195,7 +219,7 @@
                     }
                 })
                 .catch(error => console.error("Erro:", error));
-            });
+            }
         });
 
         </script>
