@@ -22,7 +22,8 @@ class Film extends Model
         'tipo',
         'image',
         'Temporada',
-        'Episodios'
+        'Episodios',
+        'banner'
     ];
     
     public function usersWhoWatchlist()
@@ -36,6 +37,10 @@ class Film extends Model
     public function users()
     {
         return $this->belongsToMany(User::class)->withPivot('rating');
+    }
+    public function actors()
+    {
+        return $this->belongsToMany(Actor::class);
     }
 
 }

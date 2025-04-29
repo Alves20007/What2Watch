@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\atores;
+use App\Models\actor;
 use App\Models\Film;
 use App\Models\Ranking;
 
@@ -37,7 +37,12 @@ class FilmController extends Controller
     
         return redirect()->route('filmes', $film)->with('success', 'Review adicionada!');
     }
+    public function show(Film $film)
+    {
+        $film->load(['rankings.user', 'actors']);
 
+        return view('films.show', compact('film'));
+    }
     public function top100()
     {
         $films = Film::withCount('reviews')
@@ -106,8 +111,15 @@ class FilmController extends Controller
         return view('films.Filmdex', compact('films'));
     }
 
+
+    public function create()
+    {
+        $actors = actor::all(); // ou Atores, depende do nome do teu model
+
+        return view('films.create', compact('actors'));
+    }
     public function filtrarescolhido(Request $request)
-{
+    {
     // Debug inicial
     \Log::debug('Iniciando filtrarescolhido', ['request' => $request->all()]);
     

@@ -25,6 +25,7 @@
             <input type="text" name="title" id="title" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
                 onchange="document.getElementById('slug').value=slugify(document.getElementById('title').value)" required>
         </div>
+        
 
            <!-- Categoria -->
         <div class="mb-4">
@@ -78,14 +79,17 @@
             <input type="file" name="trailer" id="trailer" class="w-full p-2 border rounded bg-gray-700 text-white"/>
         </div>
 
-        <!-- Elenco -->
-
-        {{-- <div class="mb-4">
-            <label for="elenco" class="block text-neutral-50 font-medium">Elenco</label>
-            <textarea name="elenco" id="elenco" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-            <small class="text-gray-400">Se o ator estiver no banco de dados, sua foto será exibida automaticamente.</small>
-        </div> --}}
-        <!-- Sinopse -->
+        <div class="mb-4">
+            <label for="actors" class="block text-neutral-50 font-medium">Elenco (escolha os atores)</label>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-2 bg-neutral-800 p-4 rounded">
+                @foreach ($actors as $actor)
+                    <label class="flex items-center space-x-2 text-white">
+                        <input type="checkbox" name="actors[]" value="{{ $actor->id }}" class="accent-red-600">
+                        <span>{{ $actor->FullName }}</span>
+                    </label>
+                @endforeach
+            </div>
+        </div>
         
         <div class="mb-4">
             <label for="tipo" class="block text-neutral-50 font-medium">Ja recebeu Oscar?</label>

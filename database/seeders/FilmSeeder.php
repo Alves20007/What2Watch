@@ -34,6 +34,7 @@ class FilmSeeder extends Seeder
             'title' => 'Batman',
             'slug' => 'batman',
             'tipo'=> 'filme',
+            'banner'=> 'batmanBanner.jfif',
             'image' => 'batman.png',
             'Data' => '4/11/2022',
             'oscares' => 'Sim',
@@ -46,6 +47,8 @@ class FilmSeeder extends Seeder
             'CE'=> 'M/12',
             'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
         ]);
+        $robert = Actor::where('name', 'Robert Pattinson')->first();
+
 
         Film::create([
             'title' => 'Avengers Endgame',

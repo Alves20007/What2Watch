@@ -17,7 +17,7 @@
 
 <!-- Barra de Pesquisa -->
         <div class="flex justify-center mt-4">
-            <form action="{{ route('search') }}" method="GET" class="flex text-neutral-800 gap-2 w-[500px] max-w-full">
+            <form action="{{ route('search') }}" method="GET" class="flex text-neutral-800 gap-2 w-[800px] max-w-full">
                 <input 
                     type="text" 
                     name="query" 
@@ -26,9 +26,9 @@
                 >
                 <button 
                     type="submit" 
-                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                    class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600  w-[100px]"
                 >
-                    Buscar
+                🔍
                 </button>
             </form>
         </div>

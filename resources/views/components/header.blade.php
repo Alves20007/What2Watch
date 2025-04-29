@@ -9,7 +9,7 @@
 <body class="bg-neutral-900 text-gray-300">
 
     <!-- Header com Navegação -->
-    <header class="bg-neutral-900 shadow-md py-4">
+    <header class="bg-neutral-900shadow-md py-4 z-50 relative">
         <div class="container mx-auto flex justify-between items-center px-4">
             <!-- Logo -->
             <div>
@@ -19,7 +19,7 @@
             </div>
             
             <!-- Menu de Navegação -->
-            <nav class="hidden md:flex space-x-6">
+            <nav class="hidden md:flex space-x-6 ">
                 @foreach ([
                     'Filmes/series' => [['filmes', 'Filmes/series'], ['top-100', 'Top 100'], ['CaixaSurpresa', 'Caixa surpresa']],
                     'W2 World' => [['escolhido', 'W2 Escolha'], ['NoticiasFilmes', 'Notícias']],
@@ -28,10 +28,10 @@
                     'Criação' => [['CriacaoFilmes', 'Criar filme'], ['CriarCelebs', 'Celebs'], ['/filmes/Ver/Mais/tarde', 'Watch list']]              
                     ] as $title => $links)
                 <div class="relative group">
-                    <button class="text-gray-300 font-semibold px-4 py-2 focus:outline-none">{{ $title }} ▼</button>
-                    <div class="absolute left-0 hidden group-hover:block bg-gray-700 shadow-md rounded-md mt-1 py-2 w-48">
+                    <button class="text-gray-300 font-semibold px-4 py-2 focus:outline-none ">{{ $title }} ▼</button>
+                    <div class="absolute left-0 hidden group-hover:block bg-neutral-700 shadow-md rounded-md mt-1 py-2 w-48 hover:text-orange-600">
                         @foreach ($links as [$url, $name])
-                            <a href="{{ url($url) }}" class="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-300">{{ $name }}</a>
+                            <a href="{{ url($url) }}" class="block px-4 py-2 text-sm hover:bg-neutral-600  hover:text-orange-50 text-gray-300">{{ $name }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                         <!-- Foto de Perfil -->
                         <button id="profile-img-btn" class="focus:outline-none">
                             <img src="{{ asset('FP/' . Auth::user()->Foto_Perfil ?? 'https://via.placeholder.com/150') }}"
-                                class="w-10 h-10 rounded-full object-cover cursor-pointer hover:scale-110 transition-transform"
+                                class="w-10 h-10 rounded-full object-cover cursor-pointer  hover:scale-110 transition-transform"
                                 alt="Foto de Perfil" id="profile-img">
 
                         </button>

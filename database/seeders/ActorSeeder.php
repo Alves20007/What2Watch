@@ -43,6 +43,19 @@ class ActorSeeder extends Seeder
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
+        $actor = Actor::create([
+            'FullName' => 'Francisco Leite',
+            'Name' => 'Francisco',
+            'Slug'=>"FranciscoLeite",
+            'image' => 'adam_sandler.jpg',
+            'birthday' => '09/07/1966',
+            'idade' => '58 anos',
+            'Frase'=>'Agora percebo como sou feio',
+            'Top' => 'sim',
+            'profissao' => 'cantor',
+            'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
+        ]);
+
         
         $actor = Actor::create([
             'FullName' => 'wuant',
@@ -56,6 +69,11 @@ class ActorSeeder extends Seeder
             'profissao' => 'Criador de conteudo',
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
+
+        Actor::create(['name' => 'Jim Carrey']);
+        Actor::create(['name' => 'Kate Winslet']);
+        Actor::create(['name' => 'Robert Pattinson']);
+        Actor::create(['name' => 'Zoë Kravitz']);
         
         
         DB::table('actor_category')->insert([

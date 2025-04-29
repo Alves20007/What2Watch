@@ -13,16 +13,16 @@
         <div class="social-media">
             <h4>Redes Sociais</h4>
             <a href="https://facebook.com/Algomeuaperfil" target="_blank">
-                <img src="imagens/redesSociais/facebook.png" alt="Facebook" width="25" height="25"/>
+                <img src="/imagens/redesSociais/facebook.png" alt="Facebook" width="25" height="25"/>
             </a>
             <a href="https://facebook.com/Algomeuaperfil" target="_blank">
-                <img src="imagens/redesSociais/instagram.png" alt="Instagram" width="25" height="25" clas= "ml-[30px]"/>
+                <img src="/imagens/redesSociais/instagram.png" alt="Instagram" width="25" height="25" clas= "ml-[30px]"/>
             </a>
             <a href="https://facebook.com/Algomeuaperfil" target="_blank">
-                <img src="imagens/redesSociais/twitter.png" alt="Twitter" width="25" height="25"/>
+                <img src="/imagens/redesSociais/twitter.png" alt="Twitter" width="25" height="25"/>
             </a>
             <a href="https://facebook.com/Algomeuaperfil" target="_blank">
-                <img src="imagens/redesSociais/tiktok.png" alt="tiktok" width="25" height="25"/>
+                <img src="/imagens/redesSociais/tiktok.png" alt="tiktok" width="25" height="25"/>
             </a>
         </div>
     </div>

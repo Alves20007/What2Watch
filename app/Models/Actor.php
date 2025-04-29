@@ -14,4 +14,9 @@ class Actor extends Model
     public function oscar() {
         return $this->belongsToMany(Category::class);        
     }
+    public function films()
+    {
+        return $this->belongsToMany(Film::class);
+    }
+
 }

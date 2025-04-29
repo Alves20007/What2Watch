@@ -36,4 +36,11 @@ class ActorController extends Controller
 
         return view('actor.Atordex', compact('actors'));
     }
+
+    public function show(Actor $actor)
+    {
+        $actor->load('films');
+
+        return view('actor.show', compact('actor'));
+    }
 }

@@ -41,6 +41,9 @@ Route::get('/top-100', [FilmController::class, 'top100'])->name('films.top100');
 
 Route::get('/user/{id}/movies', [FilmController::class, 'getUserMovies'])->name('user.movies');
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/filmes/{slug}', [FilmController::class, 'show'])->name('filmes.show');
+
+Route::get('/actor/{slug}', [ActorController::class, 'show'])->name('actors.show');
 
 
 Route::get('/filmes', function () {
@@ -244,10 +247,15 @@ Route::post('/films/store', function (Request $request) {
     $imageName = time() . '.' . $image->extension();     
     $request->image->move(public_path('images'), $imageName);
 
+    $banner = $request->file('banner');
+    $banner = time() . '.' . $banner->extension();     
+    $request->banner->move(public_path('banner'), $banner);
+
     $video = $request->file('trailer');
     $videoname = time() . '.' . $video->extension();     
     $video->move(public_path('video'), $videoname);
 
+    
     //filme no banco de dados
     Film::create([
         'tipo' => $request->input('tipo'),

@@ -1,7 +1,7 @@
 <x-guestLayout>
     <div class="max-w-5xl mx-auto px-4 py-8 text-white">
         <h1 class="text-2xl font-semibold mb-4">
-            Resultados para: <span class="text-blue-400">"{{ request('query') }}"</span>
+            Resultados para: <span class="text-orange-600">"{{ request('query') }}"</span>
         </h1>
 
         {{-- Barra de Pesquisa --}}
@@ -11,12 +11,12 @@
                 name="query" 
                 value="{{ request('query') }}" 
                 placeholder="Pesquisar novamente..." 
-                class="w-full md:w-1/2 px-4 py-2 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                class="w-full md:w-1/2 px-4 py-2 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-700 transition"
             >
             <button 
                 type="submit" 
-                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition">
-                🔍 Pesquisar
+                class="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-4 py-2 rounded-lg transition w-[100px] ">
+                🔍 
             </button>
         </form>
         
@@ -25,7 +25,7 @@
             <h2 class="text-xl font-bold mb-4">🎬 Filmes & Séries</h2>
             <div class="space-y-4">
                 @foreach ($results['films'] as $film)
-                    <a href="/filmes/{{ $film->slug }}" class="flex items-center bg-gray-900 rounded-lg shadow hover:shadow-lg transition p-3 hover:bg-gray-800">
+                    <a href="/filmes/{{ $film->slug }}" class="flex items-center bg-neutral-900 rounded-lg shadow hover:shadow-lg transition p-3 hover:bg-neutral-800">
                         <img 
                             src="/images/{{ $film->image }}" 
                             alt="{{ $film->title }}" 
@@ -42,7 +42,7 @@
             <h2 class="text-xl font-bold mt-10 mb-4">🎭 Atores</h2>
             <div class="space-y-4">
                 @foreach ($results['actors'] as $actor)
-                    <a href="/atores/{{ $actor->id }}" class="flex items-center bg-gray-900 rounded-lg shadow hover:shadow-lg transition p-3 hover:bg-gray-800">
+                    <a href="/atores/{{ $actor->id }}" class="flex items-center bg-neutral-900 rounded-lg shadow hover:shadow-lg transition p-3 hover:bg-neutral-800">
                         <img 
                             src="/imagens/atores/{{ $actor->image ?? 'default-actor.png' }}" 
                             alt="{{ $actor->Name }}" 
@@ -59,7 +59,7 @@
             <h2 class="text-xl font-bold mt-10 mb-4">👤 Utilizadores</h2>
             <div class="space-y-4">
                 @foreach ($results['users'] as $user)
-                    <a href="/users/{{ $user->username }}" class="flex items-center bg-gray-900 rounded-lg shadow hover:shadow-lg transition p-3 hover:bg-gray-800">
+                    <a href="/users/{{ $user->username }}" class="flex items-center bg-neutral-900 rounded-lg shadow hover:shadow-lg transition p-3 hover:bg-neutral-800">
                         <img 
                             src="/images/users/{{ $user->avatar ?? 'default-user.png' }}" 
                             alt="{{ $user->username }}" 
