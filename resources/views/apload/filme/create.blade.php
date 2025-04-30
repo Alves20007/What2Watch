@@ -79,7 +79,7 @@
             <input type="file" name="trailer" id="trailer" class="w-full p-2 border rounded bg-gray-700 text-white"/>
         </div>
 
-        <div class="mb-4">
+        {{-- <div class="mb-4">
             <label for="actors" class="block text-neutral-50 font-medium">Elenco (escolha os atores)</label>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-2 bg-neutral-800 p-4 rounded">
                 @foreach ($actors as $actor)
@@ -89,7 +89,7 @@
                     </label>
                 @endforeach
             </div>
-        </div>
+        </div> --}}
         
         <div class="mb-4">
             <label for="tipo" class="block text-neutral-50 font-medium">Ja recebeu Oscar?</label>

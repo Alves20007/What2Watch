@@ -14,7 +14,7 @@ return new class extends Migration
     Schema::create('watchlists', function (Blueprint $table) {
         $table->id();
         $table->foreignId('user_id')->constrained()->onDelete('cascade');
-        $table->foreignId('film_id')->constrained()->onDelete('cascade'); // ou outro item
+        $table->foreignId('film_id')->constrained()->onDelete('cascade');
         $table->timestamps();
     });
     }

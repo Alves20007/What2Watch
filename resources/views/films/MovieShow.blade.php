@@ -4,7 +4,7 @@
     </head>
 
     <body class="bg-neutral-700 text-white">
-        {{-- @auth
+        @auth
             <div class="flex justify-end gap-4 p-4">
                 <button onclick="addToWatchLater({{ $film->id }})"
                     class="bg-blue-500 text-white px-4 py-2 rounded-full shadow hover:bg-blue-600 transition">
@@ -17,7 +17,7 @@
             </div>
         @else
             <p class="text-center text-sm text-gray-300">Faz login para guardar na lista "Ver Depois" ou escrever uma review</p>
-        @endauth --}}
+        @endauth
 
         <section class="relative bg-neutral-700 text-white mb-6">
             <div class="absolute inset-0">

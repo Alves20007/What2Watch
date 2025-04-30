@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('actor_film', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('actor_id')->constrained()->onDelete('cascade');
-            $table->foreignId('film_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
-        });
+    Schema::create('actor_film', function (Blueprint $table) {
+        $table->id();
+        $table->foreignId('actor_id')->constrained()->onDelete('cascade');
+        $table->foreignId('film_id')->constrained()->onDelete('cascade');
+        $table->timestamps();
+    });
     }
     /**
      * Reverse the migrations.

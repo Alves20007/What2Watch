@@ -47,7 +47,8 @@ class FilmSeeder extends Seeder
             'CE'=> 'M/12',
             'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
         ]);
-        $robert = Actor::where('name', 'Robert Pattinson')->first();
+
+        // $robert = Actor::where('name', 'Robert Pattinson')->first();
 
 
         Film::create([
@@ -163,6 +164,7 @@ class FilmSeeder extends Seeder
 
         Film::create([
             'title' => 'Young Sheldon',
+            'banner' => 'YoungSheldonBanner.jpg',
             'slug' => 'YoungSheldon',
             'image' => 'YoungSheldon.jpg',
             'falas' => 'Bazinga',
@@ -180,6 +182,7 @@ class FilmSeeder extends Seeder
 
         Film::create([
             'title' => 'Alice In Borderland',
+            'banner' => 'AliceInBorderland.jpg',
             'slug' => 'AliceInBorderland',
             'image' => 'AliceInBorderland.jpg',
             'falas' => 'Arisu..',
@@ -198,6 +201,7 @@ class FilmSeeder extends Seeder
         Film::create([
             'title' => 'Wednesday',
             'slug' => 'Wednesday',
+            'banner' => 'Wednesday.jpg',
             'image' => 'Wednesday.jpg',
             'falas' => 'I will dance, dance, dance. With my hands, hands, hands',
             'Data' => '23/11/2022',
@@ -215,6 +219,7 @@ class FilmSeeder extends Seeder
         Film::create([
             'title' => 'Loki',
             'slug' => 'Loki',
+            'banner' => 'Loki.jpg',
             'image' => 'Loki.jpg',
             'falas' => 'Eu vou queimar este lugar ate ao chão',
             'Data' => '9/6/2021',
@@ -249,6 +254,7 @@ class FilmSeeder extends Seeder
         Film::create([
             'title' => 'Morangos com Açúcar',
             'slug' => 'MorangosComAcucar',
+            'banner' => 'MorangosComAcucar.jpg',
             'image' => 'MorangosComAcucar.jpg',
             'falas' => 'Slug it out!',
             'Data' => '3/9/2012',
@@ -266,7 +272,8 @@ class FilmSeeder extends Seeder
         Film::create([
             'title' => 'The Office',
             'slug' => 'TheOffice',
-            'image' => 'Theffice.jpg',
+            'banner' => 'TheOffice.jpg',
+            'image' => 'TheOffice.jpg',
             'falas' => "That's what she said!",
             'Data' => '24/3/2005',
             'tipo' => 'serie',
@@ -281,9 +288,12 @@ class FilmSeeder extends Seeder
         ]);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
         Film::create([
             'title' => 'Como abrir uma porta',
             'slug' => 'madjimby',
+             
             'image' => 'MadjimbiPorta.jpg',
             'Falas' => 'Olá!',    
             'Data' => '4/11/2022',

@@ -13,6 +13,6 @@ class Watchlist extends Model
 
     public function film()
     {
-        return $this->belongsTo(Film::class, 'film_id'); // garantir que é 'film_id'
+        return $this->belongsTo(Film::class, 'film_id');
     }
 }

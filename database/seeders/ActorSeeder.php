@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Actor;
+use App\Models\Film;
 use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -70,15 +71,35 @@ class ActorSeeder extends Seeder
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
-        Actor::create(['name' => 'Jim Carrey']);
-        Actor::create(['name' => 'Kate Winslet']);
-        Actor::create(['name' => 'Robert Pattinson']);
-        Actor::create(['name' => 'Zoë Kravitz']);
+        // Actor::create(['name' => 'Jim Carrey']);
+        // Actor::create(['name' => 'Kate Winslet']);
+        // Actor::create(['name' => 'Robert Pattinson']);
+        // Actor::create(['name' => 'Zoë Kravitz']);
         
         
         DB::table('actor_category')->insert([
             'actor_id' => $actor->id,
             'category_id' => $oscar_id
+        ]);
+
+        $film = Film::slug('name', 'Batman')->first();
+
+        DB::table('actor_film')->insert([
+            'actor_id' => 1,
+            'film_id' => $film->id,
+            'personagem' => 'Jocker'
+        ]);
+
+        DB::table('actor_film')->insert([
+            'actor_id' => 2,
+            'film_id' => $film->id,
+            'personagem' => 'Batman'
+        ]);
+
+        DB::table('actor_film')->insert([
+            'actor_id' => 3,
+            'film_id' => $film->id,
+            'personagem' => 'Alfred'
         ]);
 
     }

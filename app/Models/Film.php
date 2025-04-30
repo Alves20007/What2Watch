@@ -23,7 +23,7 @@ class Film extends Model
         'image',
         'Temporada',
         'Episodios',
-        'banner'
+        'banner'    
     ];
     
     public function usersWhoWatchlist()
