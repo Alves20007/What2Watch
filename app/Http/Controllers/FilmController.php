@@ -54,6 +54,7 @@ class FilmController extends Controller
     
         return view('films.top100', compact('films'));
     }
+    
 
     public function index(Request $request)
     {
@@ -97,6 +98,10 @@ class FilmController extends Controller
             $query->whereIn('CE', $request->CE);
         }
         
+        if ($request->has('search') && !empty($request->search)) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+
         $films = $query->get();
 
         $html = view('films.partials.grid', compact('films'))->render();
@@ -106,7 +111,6 @@ class FilmController extends Controller
 
     public function index2()
     {
-        // Mostra apenas filmes com escolhido = 'SIM'
         $films = Film::where('escolhido', 'SIM')->get();
         return view('films.Filmdex', compact('films'));
     }

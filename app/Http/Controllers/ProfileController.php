@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Watchlist;
+use App\Models\User;
+use App\Models\Film;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -38,5 +41,20 @@ class ProfileController extends Controller
         ]);
 
         return redirect()->route('perfil')->with('success', 'Perfil atualizado com sucesso!');
+    }
+    public function mostrar($id)
+    {
+        $user = User::findOrFail($id);
+
+        $videos = Film::where('criadores', $user->id)->get();
+
+        $comentarios = Watchlist::where('user_id', $user->id)->get();
+
+        $isOwner = auth()->check() && auth()->id() === $user->id;
+
+        // Supondo que já tens uma relação chamada 'watchlist' no User
+        $watchlist = $isOwner ? $user->watchlist : null;
+
+        return view('perfil', compact('user', 'videos', 'comentarios', 'watchlist', 'isOwner'));
     }
 }

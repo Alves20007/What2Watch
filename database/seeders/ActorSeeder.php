@@ -17,10 +17,11 @@ class ActorSeeder extends Seeder
     public function run(): void
     {
         $oscar_id = Category::where('slug', 'oscar')->first()->id;
+        
 
-        $actor = Actor::create([
+        $actor1 = Actor::create([
             'FullName' => 'Adam Richard Sandler',
-            'Name' => 'Adam Sandler',
+            'Name' => 'kskasdkasd',
             'Slug'=>"Adam Sandler",
             'image' => 'adam_sandler.jpg',
             'birthday' => '09/07/1966',
@@ -31,7 +32,7 @@ class ActorSeeder extends Seeder
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
-        $actor = Actor::create([
+        $actor2 = Actor::create([
             'FullName' => 'chico da tina',
             'Name' => 'chico',
             'Slug'=>"AdamSandler",
@@ -44,7 +45,7 @@ class ActorSeeder extends Seeder
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
-        $actor = Actor::create([
+        $actor3 = Actor::create([
             'FullName' => 'Francisco Leite',
             'Name' => 'Francisco',
             'Slug'=>"FranciscoLeite",
@@ -58,7 +59,7 @@ class ActorSeeder extends Seeder
         ]);
 
         
-        $actor = Actor::create([
+        $actor4 = Actor::create([
             'FullName' => 'wuant',
             'Name' => 'teste',
             'Slug'=>"testa",
@@ -71,36 +72,45 @@ class ActorSeeder extends Seeder
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
-        // Actor::create(['name' => 'Jim Carrey']);
-        // Actor::create(['name' => 'Kate Winslet']);
-        // Actor::create(['name' => 'Robert Pattinson']);
-        // Actor::create(['name' => 'Zoë Kravitz']);
+        $film = Film::where('slug', 'batman')->first();
+
+        $film->actors()->attach([
+            $actor1->id => ['personagem' => 'Jocker'],
+            $actor2->id => ['personagem' => 'Batman'],
+            $actor3->id => ['personagem' => 'Alfred'],
+        ]);
         
-        
-        DB::table('actor_category')->insert([
-            'actor_id' => $actor->id,
-            'category_id' => $oscar_id
-        ]);
+        // Atualizar elenco do filme
+        $elenco = $film->actors->pluck('Name')->implode(', ');
+        $film->elenco = $elenco;
+        $film->save();
 
-        $film = Film::slug('name', 'Batman')->first();
 
-        DB::table('actor_film')->insert([
-            'actor_id' => 1,
-            'film_id' => $film->id,
-            'personagem' => 'Jocker'
-        ]);
 
-        DB::table('actor_film')->insert([
-            'actor_id' => 2,
-            'film_id' => $film->id,
-            'personagem' => 'Batman'
-        ]);
+        // DB::table('actor_category')->insert([
+        //     'actor_id' => $actor->id,
+        //     'category_id' => $oscar_id
+        // ]);
 
-        DB::table('actor_film')->insert([
-            'actor_id' => 3,
-            'film_id' => $film->id,
-            'personagem' => 'Alfred'
-        ]);
+        // $film = Film::slug('name', 'Batman')->first();
+
+        // DB::table('actor_film')->insert([
+        //     'actor_id' => 1,
+        //     'film_id' => $film->id,
+        //     'personagem' => 'Jocker'
+        // ]);
+
+        // DB::table('actor_film')->insert([
+        //     'actor_id' => 2,
+        //     'film_id' => $film->id,
+        //     'personagem' => 'Batman'
+        // ]);
+
+        // DB::table('actor_film')->insert([
+        //     'actor_id' => 3,
+        //     'film_id' => $film->id,
+        //     'personagem' => 'Alfred'
+        // ]);
 
     }
 }

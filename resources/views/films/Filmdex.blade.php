@@ -26,7 +26,7 @@
                 <div class="space-y-3">
                     <!--estilo de media -->
                     <div>
-                        <h3 class="text-xs text-zinc-400 uppercase mb-1">Tipo de édia</h3>
+                        <h3 class="text-xs text-zinc-400 uppercase mb-1">Tipo de Média</h3>
                         <div class="space-y-1">
                             <label class="flex items-center space-x-2 cursor-pointer group">
                                 <input type="checkbox" name="tipos[]" value="filme" 
@@ -173,54 +173,52 @@
             }
 
             document.addEventListener("DOMContentLoaded", function () {
-            const searchButton = document.getElementById("searchButton");
-            
-            const searchButton = document.getElementById("searchButton");
+    const searchButton = document.getElementById("searchButton");
 
-            searchButton.addEventListener("click", handleSearch);
-            document.getElementById("searchInputSidebar").addEventListener("keypress", function (e) {
-                if (e.key === "Enter") {
-                    e.preventDefault();
-                    handleSearch();
-                }
-            });
+    searchButton.addEventListener("click", handleSearch);
+    document.getElementById("searchInputSidebar").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            handleSearch();
+        }
+    });
 
-            function handleSearch() {
-                const categorias = Array.from(document.querySelectorAll("input[name='categorias[]']:checked"))
-                                    .map(cb => cb.value);
-                
-                const tipos = Array.from(document.querySelectorAll("input[name='tipos[]']:checked"))
-                                .map(cb => cb.value);
+    function handleSearch() {
+        const categorias = Array.from(document.querySelectorAll("input[name='categorias[]']:checked"))
+                            .map(cb => cb.value);
+        
+        const tipos = Array.from(document.querySelectorAll("input[name='tipos[]']:checked"))
+                        .map(cb => cb.value);
 
-                const CE = Array.from(document.querySelectorAll("input[name='CE[]']:checked"))
-                                .map(cb => cb.value);
+        const CE = Array.from(document.querySelectorAll("input[name='CE[]']:checked"))
+                        .map(cb => cb.value);
 
-                const searchTerm = document.getElementById("searchInputSidebar").value;
+        const searchTerm = document.getElementById("searchInputSidebar").value;
 
-                fetch("/filmes/filter", {
-                    method: "POST",
-                    headers: {
-                        "X-CSRF-TOKEN": "{{ csrf_token() }}",
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        categorias: categorias,
-                        tipos: tipos,
-                        CE: CE,
-                        search: searchTerm
-                    }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.html) {
-                        document.querySelector(".grid").innerHTML = data.html;
-                    } else {
-                        console.error("Resposta inesperada:", data);
-                    }
-                })
-                .catch(error => console.error("Erro:", error));
+        fetch("/filmes/filter", {  // Alterado para usar a rota correta
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                categorias: categorias,
+                tipos: tipos,
+                CE: CE,
+                search: searchTerm
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.html) {
+                document.querySelector(".grid").innerHTML = data.html;
+            } else {
+                console.error("Resposta inesperada:", data);
             }
-        });
+        })
+        .catch(error => console.error("Erro:", error));
+        }
+    });
 
         </script>
     </div>

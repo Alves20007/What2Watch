@@ -29,6 +29,8 @@ return new class extends Migration
             $table->string('oscares')->nullable();
             $table->string('Diretor')->nullable();
             $table->string('Editora')->nullable();
+            $table->string('Elenco')->nullable();
+            $table->string('criador')->nullable();
             $table->string('CE')->nullable();//Isto é a minha clasificaçao eteraria eu do futuro
 
             $table->timestamps();

@@ -53,9 +53,9 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 @foreach($film->actors as $actor)
                     <div class="bg-neutral-800 p-3 rounded shadow">
-                        <img src="/actors/{{ $actor->image }}" alt="{{ $actor->FullName }}" class="h-40 w-full object-cover rounded">
-                        <h3 class="mt-2 font-semibold">{{ $actor->FullName }}</h3>
-                        <p class="text-sm text-gray-400">{{ $actor->profissao }}</p>
+                        <img src="/imagens/atores/{{ $actor->image }}" alt="{{ $actor->FullName }}" class="h-64 object-cover object-cover rounded">
+                        <h3 class="mt-2 font-semibold text-white">{{ $actor->FullName }}</h3>
+                        <p class="text-sm text-yellow-400 italic">Personagem: {{ $actor->pivot->personagem }}</p>
                     </div>
                 @endforeach
             </div>

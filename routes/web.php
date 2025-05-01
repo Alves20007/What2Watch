@@ -6,6 +6,7 @@ use App\Http\Controllers\FilmController;
 use App\Http\Controllers\NoticiaFilmeController;
 use App\Http\Controllers\NoticiafamososController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\WatchlistController;
@@ -31,6 +32,8 @@ Route::middleware('auth')->get('/filmes/Ver/Mais/tarde', [WatchlistController::c
 Route::middleware('auth')->get('/serie/Ver/Mais/tarde', [WatchlistController::class, 'serie'])->name('Watchlist.watchSerie');
 Route::middleware('auth')->get('/video/Ver/Mais/tarde', [WatchlistController::class, 'video'])->name('Watchlist.watchVideo');
 
+Route::get('/perfil/{id}', [ProfileController::class, 'mostrar'])->name('perfil.mostrar');
+
 Route::get('/filmes/{film}/review', [FilmController::class, 'showReviewForm'])->name('films.review.form');
 Route::post('/filmes/{film}/review', [FilmController::class, 'storeReview'] )->name('films.review.store');
 
@@ -45,6 +48,11 @@ Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/filmes/{slug}', [FilmController::class, 'show'])->name('filmes.show');
 
 Route::get('/actor/{slug}', [ActorController::class, 'show'])->name('actors.show');
+
+Route::get('/api/actors', function () {
+    return \App\Models\Actor::select('id', 'FullName', 'image')->get();
+});
+
 
 
 Route::get('/filmes', function () {
@@ -248,13 +256,15 @@ Route::post('/films/store', function (Request $request) {
     $imageName = time() . '.' . $image->extension();     
     $request->image->move(public_path('images'), $imageName);
 
-    $banner = $request->file('banner');
-    $banner = time() . '.' . $banner->extension();     
-    $request->banner->move(public_path('banner'), $banner);
+    // $banner = $request->file('banner');
+    // $banner = time() . '.' . $banner->extension();     
+    // $request->banner->move(public_path('banner'), $banner);
 
     $video = $request->file('trailer');
     $videoname = time() . '.' . $video->extension();     
     $video->move(public_path('video'), $videoname);
+
+    $validatedData['criador'] = auth()->id();
 
     
     //filme no banco de dados
@@ -271,7 +281,8 @@ Route::post('/films/store', function (Request $request) {
         'image' => $imageName,
         'trailer' => $videoname,
         'Temporadas' => $request->input('Temporadas'),
-        'Episodios' =>$request->input('Episodios')
+        'Episodios' =>$request->input('Episodios'),
+        'criador' => $validatedData['criador']
     ]);
     
     return redirect()->route('apload.filme.create')->with('banner', 'Filme criado com sucesso');
