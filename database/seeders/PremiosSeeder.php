@@ -14,10 +14,10 @@ class PremiosSeeder extends Seeder
     public function run(): void
     {
         Premios::create([
-            'Name' => 'Globos de Ouro',
+            'title' => 'Globos de Ouro',
             'slug'=>'Globos',
-            'day' => '10/3/2025',
-            'image'=> 'teste.png',
+            'Data' => '10/3/2025',
+            'imagem'=> 'teste.png',
         ]);
     }
 }

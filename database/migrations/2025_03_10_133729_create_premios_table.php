@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('premios', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->string('image');
-            $table->string('Slug');
-            $table->string('day');
+            $table->string('title')->nullable();
+            $table->string('Data')->nullable();
+            $table->text('noticia')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('title noticia')->nullable();
+            $table->string('imagem')->nullable();
             $table->timestamps();
         });
     }

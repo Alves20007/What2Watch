@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('noticiafamosos', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('Data');
-            $table->text('noticia');
-            $table->string('slug');
-            $table->string('title noticia');
-            $table->string('imagem');
+            $table->string('title')->nullable();
+            $table->string('Data')->nullable();
+            $table->text('noticia')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('title noticia')->nullable();
+            $table->string('imagem')->nullable();
             $table->timestamps();
         });
     }

@@ -42,19 +42,11 @@ class ProfileController extends Controller
 
         return redirect()->route('perfil')->with('success', 'Perfil atualizado com sucesso!');
     }
-    public function mostrar($id)
+    public function index()
     {
-        $user = User::findOrFail($id);
+        $user = Auth::user();
+        $watchlist = $user->watchlists()->latest()->get(); // relação no modelo User
 
-        $videos = Film::where('criadores', $user->id)->get();
-
-        $comentarios = Watchlist::where('user_id', $user->id)->get();
-
-        $isOwner = auth()->check() && auth()->id() === $user->id;
-
-        // Supondo que já tens uma relação chamada 'watchlist' no User
-        $watchlist = $isOwner ? $user->watchlist : null;
-
-        return view('perfil', compact('user', 'videos', 'comentarios', 'watchlist', 'isOwner'));
+        return view('profile.index', compact('user', 'watchlists'));
     }
 }

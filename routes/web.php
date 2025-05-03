@@ -32,7 +32,9 @@ Route::middleware('auth')->get('/filmes/Ver/Mais/tarde', [WatchlistController::c
 Route::middleware('auth')->get('/serie/Ver/Mais/tarde', [WatchlistController::class, 'serie'])->name('Watchlist.watchSerie');
 Route::middleware('auth')->get('/video/Ver/Mais/tarde', [WatchlistController::class, 'video'])->name('Watchlist.watchVideo');
 
-Route::get('/perfil/{id}', [ProfileController::class, 'mostrar'])->name('perfil.mostrar');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/meu-perfil', [ProfileController::class, 'index'])->name('profile');
+});
 
 Route::get('/filmes/{film}/review', [FilmController::class, 'showReviewForm'])->name('films.review.form');
 Route::post('/filmes/{film}/review', [FilmController::class, 'storeReview'] )->name('films.review.store');
@@ -143,6 +145,11 @@ Route::get('/top', function() {
 Route::get('/filmes/{slug}', function ($slug) {
     $film = Film::where('slug', $slug)->first();
     return view('films.MovieShow', compact('film'));
+});
+
+Route::get('/premios/{slug}', function ($slug) {
+    $film = Premios::where('slug', $slug)->first();
+    return view('premios.premiosShow', compact('film'));
 });
 
 Route::get('/atores/{slug}', function ($slug) {

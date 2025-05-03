@@ -56,18 +56,20 @@
 
         </div>
         </div>
-        <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            @foreach ($actor as $ator)
-                <a href="/atores/{{ $ator->Slug }}">
-                    <div class="border-2 p-4">
-                        <img class="h-64 object-cover" src="/imagens/atores/{{ $ator->image }}">
-                        <b class="text-neutral-50">{{ $ator->Name }}    </b>
-                        <p class="font-italic text-neutral-50">{{ $ator->birthday }}</p>
-                                            
-                    </div>      
-                </a>
-            @endforeach
+        <div class="ml-2 pr-64"> <!-- Adiciona espaço à direita para o filtro -->
+            <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 grid-atores">
+                @foreach ($actor as $ator)
+                    <a href="/atores/{{ $ator->Slug }}">
+                        <div class="border-2 p-4 rounded-lg bg-zinc-900 hover:shadow-lg transition">
+                            <img class="h-64 w-full object-cover rounded" src="/imagens/atores/{{ $ator->image }}" alt="{{ $ator->Name }}">
+                            <b class="block text-neutral-50 mt-2 text-base">{{ $ator->Name }}</b>
+                            <p class="text-sm text-neutral-300 italic">{{ $ator->birthday }}</p>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
+
         <script>
             document.addEventListener("DOMContentLoaded", function () {
             const searchButton = document.getElementById("searchButton");

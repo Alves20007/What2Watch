@@ -1,19 +1,13 @@
 <x-guestLayout>
-    <div class="max-w-4xl m-auto">
-        <div class="my-8 flex gap-4">
-            <x-button class="bg-orange-500 hover:bg-orange-500 text-slate-950 border border-zinc-300">
-                <a href="{{ url('NoticiasFilmes') }}">Noticias de filmes</a>
-            </x-button>
-            <x-button class="bg-yellow-600 hover:bg-orange-600 text-white">
-                <a href="{{ url('noticias') }}">Noticias de Famosos</a>
-            </x-button>
-        </div>
-        <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+        <h2 class="text-3xl font-bold text-neutral-100 mb-6">Últimas Notícias</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach ($noticiaFamosos as $noticia)
-                <a href="/noticias/{{$noticia->slug}}">
-                    <div class="border-2 p-4 text-neutral-200 truncate overflow-hidden">
-                        <img class="h-64 object-cover" src="/imagens/NotciaAtores/{{ $noticia->imagem }}" >
-                        <b class="font-bold text-neutral-200 text-lg">{{ $noticia->title }}</b>
+                <a href="/noticias/{{$noticia->slug}}" class="bg-neutral-900 border border-neutral-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img src="/imagens/NotciaAtores/{{ $noticia->imagem }}" alt="{{ $noticia->title }}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-white mb-2">{{ $noticia->title }}</h3>
+                        <p class="text-sm text-neutral-400 line-clamp-3">{{ Str::limit(strip_tags($noticia->noticia), 100) }}</p>
                     </div>
                 </a>
             @endforeach
