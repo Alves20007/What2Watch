@@ -48,6 +48,7 @@ class ActorSeeder extends Seeder
         $actor3 = Actor::create([
             'FullName' => 'Francisco Leite',
             'Name' => 'Francisco',
+            'banner' => 'Loki.jpg',
             'Slug'=>"FranciscoLeite",
             'image' => 'adam_sandler.jpg',
             'birthday' => '09/07/1966',

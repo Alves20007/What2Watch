@@ -18,7 +18,7 @@ ator
                     <h1 class="text-3xl md:text-4xl font-bold mb-2 text-yellow-400">{{ $ator->FullName }}</h1>
                     <p class="mb-4 text-sm italic">{{ $ator->Frase }}</p>
                     <p class="mb-2"><b>profissão:</b> {{ $ator->profissao }}</p>
-                    <p class="mb-2"><b>sexo:</b> {{ $ator->birthday }}</p>
+                    <p class="mb-2"><b>sexo:</b> {{ $ator->sexo }}</p>
                     <p class="mb-2"><b>Data de Nascimento:</b> {{ $ator->birthday }}</p>
                     <p class="mb-2"><b>Local de Nascimento: </b> {{ $ator->country }}</p>
                     <p class="mb-2"><b>Biografia:   </b>{{ $ator->bio}}</p>

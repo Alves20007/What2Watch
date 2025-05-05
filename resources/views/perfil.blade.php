@@ -20,7 +20,7 @@
             <p class="my-3">{{ $user->bio }}</p>
         </div>
 
-        <!-- Watchlist -->
+        {{-- <!-- Watchlist -->
         <div class="p-4">
             <h2 class="text-lg font-bold mb-2">Minha Watchlist</h2>
             @forelse($watchlist as $item)
@@ -30,6 +30,6 @@
             @empty
                 <p class="text-gray-500">Nenhum filme salvo ainda.</p>
             @endforelse
-        </div>
+        </div> --}}
     </div>
 </x-guestLayout>

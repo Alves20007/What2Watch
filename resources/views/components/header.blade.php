@@ -79,7 +79,12 @@
                     <!-- Menu Dropdown -->
                     <div id="profile-dropdown" class="absolute right-0 mt-2 w-48 bg-gray-700 text-gray-300 rounded-md shadow-lg hidden">
                         <a href="/editar-perfil" class="block px-4 py-2 text-sm hover:bg-gray-600">Editar Perfil</a>
-                        <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm hover:bg-gray-600">Sair</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="w-full text-left block px-4 py-2 text-sm hover:bg-gray-600">
+                                Sair
+                            </button>
+                        </form>
                     </div>
                 </div>
                 @endauth

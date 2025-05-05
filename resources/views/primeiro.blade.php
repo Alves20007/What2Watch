@@ -54,7 +54,7 @@
         </div>
         <div class="text">
             <h2>Update Logs</h2>
-            <p>Quem é que se da ao trabalho de ler isto?</p>
+            <p>Update do dia Arroz com feijao é bom</p>
         </div>
     </section>
 
