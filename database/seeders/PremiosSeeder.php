@@ -18,6 +18,8 @@ class PremiosSeeder extends Seeder
             'slug'=>'Globos',
             'Data' => '10/3/2025',
             'imagem'=> 'teste.png',
+            'noticia'=> 'testesadsdadasdadasddasads',
+            'title noticia' => 'sadasd'
         ]);
     }
 }

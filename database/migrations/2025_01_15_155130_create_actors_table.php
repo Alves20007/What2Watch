@@ -9,13 +9,16 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     public function up(): void
-    {
+    {   
         Schema::create('actors', function (Blueprint $table) {
             $table->id();
             $table->string("FullName")->nullable();
             $table->string("Frase")->nullable();
+            $table->string("sexo")->nullable();
             $table->string("Slug")->nullable();
+            $table->string("banner")->nullable();
             $table->string("idade")->nullable();
+            $table->string("bio")->nullable();
             $table->string("Historia")->nullable();
             $table->string("Name")->nullable();
             $table->string("birthday")->nullable();

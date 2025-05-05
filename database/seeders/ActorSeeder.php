@@ -52,8 +52,11 @@ class ActorSeeder extends Seeder
             'image' => 'adam_sandler.jpg',
             'birthday' => '09/07/1966',
             'idade' => '58 anos',
+            'sexo' => 'femenino',
+            'country' => 'Japao,Conxixina',
             'Frase'=>'Agora percebo como sou feio',
             'Top' => 'sim',
+            'bio' => 'Ele foi um jovem no qual nasceu a 04/12/2028 e que nasceu no kenya',
             'profissao' => 'cantor',
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
