@@ -47,6 +47,7 @@ class FilmSeeder extends Seeder
             'CE'=> 'M/12',
             'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
         ]);
+        
 
         // $robert = Actor::where('name', 'Robert Pattinson')->first();
 
@@ -293,7 +294,6 @@ class FilmSeeder extends Seeder
         Film::create([
             'title' => 'Como abrir uma porta',
             'slug' => 'madjimby',
-             
             'image' => 'MadjimbiPorta.jpg',
             'Falas' => 'Olá!',    
             'Data' => '4/11/2022',

@@ -51,4 +51,5 @@ class Film extends Model
                     ->withPivot('personagem')
                     ->withTimestamps();
     }
+
 }

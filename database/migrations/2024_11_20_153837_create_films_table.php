@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('Data')->nullable();
             $table->string('slug')->unique();
             $table->string('Falas')->nullable();
+            $table->string('participou')->nullable();
             $table->string('banner')->nullable();
             $table->string('trailer')->nullable();
             $table->string('sinopse')->nullable();

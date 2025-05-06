@@ -29,20 +29,21 @@ class ActorSeeder extends Seeder
             'Frase'=>'Agora percebo como sou feio',
             'Oscares'=> 'sim',
             'profissao' => 'ator',
-            'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
+            'bio' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
         $actor2 = Actor::create([
-            'FullName' => 'chico da tina',
-            'Name' => 'chico',
-            'Slug'=>"AdamSandler",
+            'FullName' => ' Francisco da Concertina',
+            'Name' => 'Chico da Tina',
+            'Slug'=>"ChicoDaTina",
             'image' => 'adam_sandler.jpg',
-            'birthday' => '09/07/1966',
+            'birthday' => '03/04/1996',
             'idade' => '58 anos',
-            'Frase'=>'Agora percebo como sou feio',
-            'Top' => 'sim',
+            'Frase'=>'Chico da tina tu és mesmo fudido',
             'profissao' => 'cantor',
-            'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
+            'sexo' => 'Crocodilo',
+            'country' => 'Evora,Portugal,Terra,Via Lactea',
+            'bio' => 'Chico da Tina ou Francisco da Concertina, é um rapper português de Viana do Castelo. A sua música é caraterizada pelo tom jocoso e caricatural.',
         ]);
 
         $actor3 = Actor::create([
@@ -76,45 +77,31 @@ class ActorSeeder extends Seeder
             'Historia' => 'Adam sandler é um atori, comediante, produtor, roteirista inimaginavel',
         ]);
 
-        $film = Film::where('slug', 'batman')->first();
 
-        $film->actors()->attach([
+        //Filme do Batman
+        $filmBatman = Film::where('slug', 'batman')->first();
+
+        $filmBatman->actors()->attach([
             $actor1->id => ['personagem' => 'Jocker'],
             $actor2->id => ['personagem' => 'Batman'],
             $actor3->id => ['personagem' => 'Alfred'],
         ]);
         
-        // Atualizar elenco do filme
-        $elenco = $film->actors->pluck('Name')->implode(', ');
-        $film->elenco = $elenco;
-        $film->save();
+        $elenco = $filmBatman->actors->pluck('Name')->implode(', ');
+        $filmBatman->elenco = $elenco;
+        $filmBatman->save();
 
+        $serieWednesday = Film::where('slug', 'Wednesday')->first();
 
-
-        // DB::table('actor_category')->insert([
-        //     'actor_id' => $actor->id,
-        //     'category_id' => $oscar_id
-        // ]);
-
-        // $film = Film::slug('name', 'Batman')->first();
-
-        // DB::table('actor_film')->insert([
-        //     'actor_id' => 1,
-        //     'film_id' => $film->id,
-        //     'personagem' => 'Jocker'
-        // ]);
-
-        // DB::table('actor_film')->insert([
-        //     'actor_id' => 2,
-        //     'film_id' => $film->id,
-        //     'personagem' => 'Batman'
-        // ]);
-
-        // DB::table('actor_film')->insert([
-        //     'actor_id' => 3,
-        //     'film_id' => $film->id,
-        //     'personagem' => 'Alfred'
-        // ]);
-
+        $serieWednesday->actors()->attach([
+            $actor1->id => ['personagem' => 'Jocker'],
+            $actor2->id => ['personagem' => 'Batman'],
+            $actor3->id => ['personagem' => 'Alfred'],
+        ]);
+        
+        $elenco = $serieWednesday->actors->pluck('Name')->implode(', ');
+        $serieWednesday->elenco = $elenco;
+        $serieWednesday->save();
+        
     }
 }

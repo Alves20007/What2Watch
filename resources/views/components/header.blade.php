@@ -10,7 +10,7 @@
 
     <!-- Header com Navegação -->
     <header class="bg-neutral-900 shadow-md py-4 z-50 relative">
-        <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="container mx-auto flex justify-between i    ms-center px-4">
             <!-- Logo -->
             <div>
                 <a href="{{ url('/') }}">
@@ -75,8 +75,6 @@
                             class="w-10 h-10 rounded-full object-cover cursor-pointer hover:scale-110 transition-transform"
                             alt="Foto de Perfil" id="profile-img">
                     </button>
-
-                    <!-- Menu Dropdown -->
                     <div id="profile-dropdown" class="absolute right-0 mt-2 w-48 bg-gray-700 text-gray-300 rounded-md shadow-lg hidden">
                         <a href="/editar-perfil" class="block px-4 py-2 text-sm hover:bg-gray-600">Editar Perfil</a>
                         <form method="POST" action="{{ route('logout') }}">

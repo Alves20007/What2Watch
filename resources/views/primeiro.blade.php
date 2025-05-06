@@ -57,20 +57,6 @@
             <p>Update do dia Arroz com feijao é bom</p>
         </div>
     </section>
-
-    {{-- <!-- Seção 3: Objetivo do Site -->
-    <section class="section">
-        <div class="text">
-            <h2>Objetivo do Site</h2>
-            <p>{{ $film->atores }}</p>
-            <p>O meu principal objetivo é criar um site onde o utilizador possa descobrir novos filmes e séries e dar a sua opinião.</p>
-            <p>Nota: A imagem deve ser do género de pessoas a assistirem a algo.</p>
-        </div>
-        <div class="image">
-            <img src="images/imagem1.jpg" alt="Pessoas assistindo a um filme">
-        </div>
-    </section> --}}
-
     <!-- Rodapé -->
     <x-footer />
 

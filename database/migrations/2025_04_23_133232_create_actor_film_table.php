@@ -16,7 +16,7 @@ return new class extends Migration
         $table->foreignId('actor_id')->constrained()->onDelete('cascade');
         $table->foreignId('film_id')->constrained()->onDelete('cascade');
         $table->string("personagem")->nullable();
-
+        $table->string("participou")->nullable();
         $table->timestamps();
     });
     }
