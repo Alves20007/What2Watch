@@ -21,11 +21,11 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-            'birthday' => ['date'],
-            'pais' => ['string'],
+            // 'birthday' => ['date'],
+            // 'pais' => ['string'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'bio' => 'nullable|string|max:500',
-            'Foto_Perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,jpg|max:2048',
+            // 'bio' => 'nullable|string|max:500',
+            // 'Foto_Perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,jpg|max:2048',
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
@@ -41,11 +41,11 @@ class CreateNewUser implements CreatesNewUsers
 
         return User::create([
             'name' => $input['name'],
-            'pais' => $input['pais'],   
+            // 'pais' => $input['pais'],   
             'email' => $input['email'],
-            'bio' => $input['bio'],
-            'Foto_Perfil' => $imageName,
-            'birthday' => $input['birthday'],
+            // 'bio' => $input['bio'],
+            // 'Foto_Perfil' => $imageName,
+            // 'birthday' => $input['birthday'],
             'password' => Hash::make($input['password']),
         ]);
     }

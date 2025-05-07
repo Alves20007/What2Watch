@@ -28,6 +28,7 @@
                     'Criação' => [['CriacaoFilmes', 'Criar filme'], ['CriarCelebs', 'Celebs'], ['/filmes/Ver/Mais/tarde', 'Watch list']]
                 ] as $title => $links)
 
+                {{-- Colocar a tabela criaçao apenas apos o user fazer login ou registro--}}
                 {{-- ['/noticias/oscares', 'Oscares'] --}}
                 {{-- ['top', 'Celebridades populares'] --}}
                     <div class="relative group">

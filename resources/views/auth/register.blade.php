@@ -14,7 +14,7 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
-            <div>
+            {{-- <div>
                 <x-label for="bio" value="{{ __('bio') }}" />
                 <x-input id="bio" class="block mt-1 w-full" type="text" name="bio" :value="old('bio')" required autofocus autocomplete="bio" />
             </div>
@@ -37,7 +37,7 @@
             <div>
                 <x-label for="birthday" value="{{ __('Birthday') }}" />
                 <x-input id="birthday" class="block mt-1 w-full" type="date" name="birthday" :value="old('birthday')" required autofocus autocomplete="bday" />
-            </div>
+            </div> --}}
 
             <div class="mt-4">
                 <x-label for="email" value="{{ __('Email') }}" />

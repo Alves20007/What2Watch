@@ -122,38 +122,4 @@ class FilmController extends Controller
 
         return view('films.create', compact('actors'));
     }
-    public function filtrarescolhido(Request $request)
-    {
-    // Debug inicial
-    \Log::debug('Iniciando filtrarescolhido', ['request' => $request->all()]);
-    
-    // Query base SEMPRE com escolhido = 'SIM'
-    $query = Film::where('escolhido', 'SIM');
-    \Log::debug('Query base', ['sql' => $query->toSql(), 'bindings' => $query->getBindings()]);
-
-    // Filtros adicionais
-    if ($request->has('tipos') && !empty($request->tipos)) {
-        $query->whereIn('tipo', $request->tipos);
-        \Log::debug('Após filtrar tipos', ['sql' => $query->toSql()]);
-    }
-    
-    if ($request->has('categorias') && !empty($request->categorias)) {
-        $query->whereIn('categoria', $request->categorias);
-        \Log::debug('Após filtrar categorias', ['sql' => $query->toSql()]);
-    }
-    
-    if ($request->has('CE') && !empty($request->CE)) {
-        $query->whereIn('classificacao_etaria', $request->CE);
-        \Log::debug('Após filtrar CE', ['sql' => $query->toSql()]);
-    }
-    
-    $films = $query->get();
-    \Log::debug('Resultados encontrados', ['count' => $films->count()]);
-    
-    return response()->json([
-        'html' => view('partials.filmes_grid', compact('films'))->render()
-    ]);
-}
-
-    
 }
