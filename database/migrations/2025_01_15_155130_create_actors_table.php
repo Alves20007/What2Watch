@@ -18,16 +18,14 @@ return new class extends Migration
             $table->string("Slug")->nullable();
             $table->string("banner")->nullable();
             $table->string("idade")->nullable();
-            $table->string("bio")->nullable();
-            $table->string("Historia")->nullable();
+            $table->string('falecimento')->nullable(); 
+            $table->text("bio")->nullable();
             $table->string("Name")->nullable();
             $table->string("birthday")->nullable();
             $table->string('country')->nullable();
-            $table->string('cidade')->nullable();
             $table->string('height')->nullable();
             $table->string("image")->nullable();
             $table->string("Oscares")->nullable();
-            $table->string("Top")->nullable();
             $table->string("profissao")->nullable();
             $table->string("personagem")->nullable();
             $table->timestamps();

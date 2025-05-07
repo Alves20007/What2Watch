@@ -2,17 +2,16 @@
     <head>
         <link rel="stylesheet" href="{{ asset('css/CG.css') }}">
     </head>
-ator
     <body class="bg-neutral-700 text-white">
         <section class="relative bg-neutral-700 text-white mb-6">
             <div class="absolute inset-0">
-                <img src="/banner/{{ $ator->banner }}" alt="{{ $ator->title }}" class="w-full h-full object-cover opacity-30">
+                <img src="/bannerAtor/{{ $ator->banner }}" alt="{{ $ator->title }}" class="w-full h-full object-cover opacity-30">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
             </div>
         
             <div class="relative z-10 px-6 py-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6">
                 <div class="w-48 h-72 overflow-hidden rounded shadow-lg">
-                    <img src="/images/{{ $ator->image }}" alt="{{ $ator->title }}" class="w-full h-full object-cover">
+                    <img src="\imagens\atores\{{ $ator->image }}" alt="{{ $ator->title }}" class="w-full h-full object-cover">
                 </div>
                 <div class="flex-1">
                     <h1 class="text-3xl md:text-4xl font-bold mb-2 text-yellow-400">{{ $ator->FullName }}</h1>

@@ -21,7 +21,7 @@
 
         <section class="relative bg-neutral-700 text-white mb-6">
             <div class="absolute inset-0">
-                <img src="/banner/{{ $film->banner }}" alt="{{ $film->title }}" class="w-full h-full object-cover opacity-30">
+                <img src="/bannerFilmw/{{ $film->banner }}" alt="{{ $film->title }}" class="w-full h-full object-cover opacity-30">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
             </div>
         
