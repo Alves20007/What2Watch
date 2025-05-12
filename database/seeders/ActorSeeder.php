@@ -342,14 +342,14 @@ class ActorSeeder extends Seeder
         $actor20 = Actor::create([
             'FullName' => 'Hunter Doohan',
             'sexo' => 'Masculino',
-            'Name' => 'Joy Sunday',
+            'Name' => 'Hunter Doohan',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'Joy_Sunday.jpg',
+            'image' => 'Hunter_Doohan.jpg',
             'Frase' => "Embracing vulnerability is the key to authentic storytelling.",
             'birthday' => '19/01/1994',
             'country' => 'Estados Unidos',
             'profissao' => 'Ator',
-            'Slug' => 'JoySunday',
+            'Slug' => 'TylerGalpin',
             'bio' => 'Hunter Doohan é um ator americano conhecido por seu papel como Tyler Galpin na série "Wednesday" da Netflix. Ele também atuou em séries como "Your Honor" e "Truth Be Told", demonstrando sua versatilidade como ator.'         
         
         ]);
@@ -358,13 +358,85 @@ class ActorSeeder extends Seeder
         $SerieWednesday->actors()->attach([
             $actor17->id => ['personagem' => 'Wednesday Adams'],
             $actor18->id => ['personagem' => 'Enid Sinclair'],
-            $actor19->id => ['personagem' => 'Missy Cooper'],
-            $actor20->id => ['personagem' => 'George Cooper'],
+            $actor19->id => ['personagem' => 'Bianca Barclay'],
+            $actor20->id => ['personagem' => 'Tyler Galpin'],
 
         ]);
         
         $elenco = $SerieWednesday->actors->pluck('Name')->implode(', ');
         $SerieWednesday->elenco = $elenco;
         $SerieWednesday->save();
+
+        $actor21 = Actor::create([
+            'FullName' => 'David A. J. Samberg',
+            'sexo' => 'Masculino',
+            'Name' => 'Andy Samberg',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Andy_Samberg.jpg',
+            'Frase' => "I think if you can be funny, it makes you more likable.",
+            'birthday' => '18/08/1978',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'DavidA.J.Samberg',
+            'bio' => ' Andy Samberg é um comediante, ator, músico, escritor e produtor americano. Ganhou destaque como membro do elenco do "Saturday Night Live" de 2005 a 2012, onde popularizou os "SNL Digital Shorts" com seu grupo de comédia musical The Lonely Island. Também é conhecido por seu papel como Jake Peralta na série "Brooklyn Nine-Nine" (2013–2021).'         
+        ]);
+
+        $actor22 = Actor::create([
+            'FullName' => 'Joseph Vincent Lo Truglio',
+            'sexo' => 'Masculino',
+            'Name' => 'Joe Lo Truglio',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'JoeLoTruglio.jpg',
+            'Frase' => "Being different is what makes you special.",
+            'birthday' => '2/12/1972',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'JosephVicentLoTruglio',
+            'bio' => ' Joe Lo Truglio é um ator e comediante americano, conhecido por seu papel como Charles Boyle na série "Brooklyn Nine-Nine". Também participou de séries como "The State" e "Reno 911!", além de filmes como "Superbad", "I Love You, Man" e "Role Models".'         
+        ]);
+
+        $actor23 = Actor::create([
+            'FullName' => 'Terry Alan Crews',
+            'sexo' => 'Masculino',
+            'Name' => 'Terry Crews',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Terry_Crews.jpg',
+            'Frase' => "The best you can do is be honest and let people see the real you.",
+            'birthday' => '30/07/1968',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'TerryAlanCrews',
+            'bio' => 'Terry Crews é um ator e ex-jogador de futebol americano. Após sua carreira na NFL, tornou-se conhecido por seus papéis em filmes de comédia e por interpretar Terry Jeffords na série "Brooklyn Nine-Nine". Também é apresentador do programa "Americas Got Talent". '         
+        ]);
+
+        $actor24 = Actor::create([
+            'FullName' => 'Melissa Gallo Fumero',
+            'sexo' => 'Masculino',
+            'Name' => 'Melissa Fumero',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Melissa_Fumero.jpg',
+            'Frase' => "Representation matters, and I’m proud to be part of that change.",
+            'birthday' => '19/08/1982',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'MelissaGalloFumero',
+            'bio' => 'Melissa Fumero é uma atriz americana conhecida por seu papel como Amy Santiago na série "Brooklyn Nine-Nine". Iniciou sua carreira na novela "One Life to Live" e também trabalhou como diretora de televisão.'         
+        
+        ]);
+
+        $SerieBrokklyn99 = Film::where('slug', 'broklyn99')->first();
+
+        $SerieBrokklyn99->actors()->attach([
+            $actor21->id => ['personagem' => 'Jake Peralta'],
+            $actor22->id => ['personagem' => 'Charles Boyle'],
+            $actor23->id => ['personagem' => 'Terry Jefford'],
+            $actor24->id => ['personagem' => 'Amy Santiago'],
+
+        ]);
+        
+        $elenco = $SerieBrokklyn99->actors->pluck('Name')->implode(', ');
+        $SerieBrokklyn99->elenco = $elenco;
+        $SerieBrokklyn99->save();
+
     }
 }

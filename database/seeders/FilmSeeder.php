@@ -81,6 +81,173 @@ class FilmSeeder extends Seeder
             'CE'=> 'M/12',
             'sinopse' => 'Em maio de 1996, escaladores de duas expedições diferentes começam a subir em direção ao cume do Monte Everest, mas logo se veem lutando por suas vidas em uma nevasca mortal.',
         ]);
+        Film::create([
+            'title' => 'Star Wars I',
+            'slug' => 'StarWarsI',
+            'tipo'=> 'filme',
+            'banner'=> 'StarWarsI.jpg',
+            'image' => 'StarWarsI.jpg',
+            'Data' => '16/05/2002',
+            'oscares' => '3 Oscars (Melhor Som, Efeitos Visuais, Edição de Som)',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'George Lucas',
+            'Editora' => 'W20th Century Fox',
+            'Falas' =>'Fear is the path to the dark side.',
+            'CE'=> 'PG',
+            'sinopse'=> 'Dois Cavaleiros Jedi descobrem um jovem com grande potencial na Força enquanto enfrentam uma ameaça crescente da Federação do Comércio.',
+        ]);
+
+        Film::create([
+            'title' => 'Star Wars II',
+            'slug' => 'StarWarsII',
+            'tipo'=> 'filme',
+            'banner'=> 'StarWarsII.jpg',
+            'image' => 'StarWarsII.png',
+            'Data' => '16/05/2002',
+            'oscares' => '1 Oscar (Melhores Efeitos Visuais)',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'George Lucas',
+            'Editora' => '20th Century Fox',
+            'Falas' =>'I dont like sand. Its coarse and rough and irritating, and it gets everywhere.',
+            'CE'=> 'PG',
+            'sinopse'=> 'Anakin Skywalker inicia um romance proibido com Padmé Amidala enquanto a galáxia se aproxima da guerra.',
+        ]);
+        
+        Film::create([
+            'title' => 'Star Wars III',
+            'slug' => 'StarWarsIII',
+            'tipo'=> 'filme',
+            'banner'=> 'StarWarsIII.jpg',
+            'image' => 'StarWarsIII.png',
+            'Data' => '19/05/2005',
+            'oscares' => '1 Oscar (Melhores Efeitos Visuais)',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'George Lucas',
+            'Editora' => '20th Century Fox',
+            'Falas' =>'You were the Chosen One!',
+            'CE'=> 'PG-13',
+            'sinopse'=> 'Anakin Skywalker sucumbe ao lado sombrio da Força, tornando-se Darth Vader, enquanto a República se transforma no Império Galáctico.',
+        ]);
+        
+        Film::create([
+            'title' => 'Star Wars IV',
+            'slug' => 'StarWarsIV',
+            'tipo'=> 'filme',
+            'banner'=> 'StarWarsIV.jpg',
+            'image' => 'StarWarsIV.png',
+            'Data' => '25/05/1977',
+            'oscares' => '6 Oscars (incluindo Melhor Direção de Arte e Efeitos Visuais)',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'George Lucas',
+            'Editora' => '20th Century Fox',
+            'Falas' =>'May the Force be with you.',
+            'CE'=> 'M/12',
+            'sinopse'=> 'Luke Skywalker se junta à Aliança Rebelde para destruir a Estrela da Morte e enfrentar o Império.',
+        ]);
+        
+
+        Film::create([
+            'title' => 'Star Wars V',
+            'slug' => 'StarWarsV',
+            'tipo'=> 'filme',
+            'banner'=> 'StarWarsV.jpg',
+            'image' => 'StarWarsV.png',
+            'Data' => '21/05/1980',
+            'oscares' => '1 Oscar (Melhor Som)',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'Irvin Kershner',
+            'Editora' => '20th Century Fox',
+            'Falas' =>'I am your father',
+            'CE'=> 'M/12',
+            'sinopse'=> 'O Império persegue os Rebeldes enquanto Luke treina com Yoda e enfrenta Darth Vader.',
+        ]);
+        
+        Film::create([
+            'title' => 'Star Wars VI',
+            'slug' => 'StarWarsVI',
+            'tipo'=> 'filme',
+            'banner'=> 'StarWarsVI.jpg',
+            'image' => 'StarWarsVI.png',
+            'Data' => '25/05/1983',
+            'oscares' => '1 Oscar (Melhores Efeitos Visuais);',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'Richard Marquand',
+            'Editora' => '20th Century Fox',
+            'Falas' =>'Its a trap!',
+            'CE'=> 'M/12',
+            'sinopse'=> 'Luke confronta Vader e o Imperador enquanto os Rebeldes tentam destruir a segunda Estrela da Morte.',
+        ]);
+        
+
+        Film::create([
+            'title' => 'Star Wars VII',
+            'slug' => 'StarWarsVII',
+            'tipo'=> 'filme',
+            'banner'=> 'StarWarsVII.jpg',
+            'image' => 'StarWarsVII.png',
+            'Data' => '18/12/2015',
+            'oscares' => 'nao',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'Matt Reeves',
+            'Editora' => 'Walt Disney Studios',
+            'Falas' =>'Chewie, were home.',
+            'CE'=> 'M/12',
+            'sinopse'=> 'Trinta anos após a queda do Império, uma nova ameaça surge, e Rey embarca em uma jornada para encontrar Luke Skywalker.',
+        ]);
+        
+
+        Film::create([
+            'title' => 'Star Wars VIII',
+            'slug' => 'StarWarsVIII',
+            'tipo'=> 'filme',
+            'banner'=> 'StarWarsVIII.jpg',
+            'image' => 'StarWarsVIII.png',
+            'Data' => '4/11/2022',
+            'oscares' => 'Sim',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'J.J. Abrams',
+            'Editora' => 'Walt Disney Studios',
+            'Falas' =>'Justice for gothan!',
+            'CE'=> 'M/12',
+            'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
+        ]);
+        
+        Film::create([
+            'title' => 'Star Wars IX',
+            'slug' => 'batman',
+            'tipo'=> 'filme',
+            'banner'=> 'batmanBanner.jpg',
+            'image' => 'batman.png',
+            'Data' => '4/11/2022',
+            'oscares' => 'Sim',
+            'categoria'=> 'ação',
+            'trailer'=>'the-batman.mp4',
+            'escolhido'=>'sim',
+            'Diretor' => 'Matt Reeves',
+            'Editora' => 'Walt Disney Studios',
+            'Falas' =>'Justice for gothan!',
+            'CE'=> 'M/12',
+            'sinopse'=> 'Quando um serial killer sádico começa a assassinar figuras políticas importantes em Gotham, o Batman é forçado a investigar a corrupção oculta da cidade e a questionar o envolvimento de sua família.',
+        ]);
+        
+
+        
 
         Film::create([
             'title' => 'Inception',
@@ -148,7 +315,7 @@ class FilmSeeder extends Seeder
 
         Film::create([
             'title' => 'broklyn 99',
-            'slug' => 'brok',
+            'slug' => 'broklyn99',
             'image' => 'broklyn99.jpg',
             'Falas' => 'The only useful thing I did today was take a Buzzfeed quiz about what kind of onion I am.',    
             'Data' => '4/11/2022',
