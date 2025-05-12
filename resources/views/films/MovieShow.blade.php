@@ -72,26 +72,26 @@
         <!-- Críticas -->
         <section class="p-6">
             <h2 class="text-xl font-bold text-yellow-500 mb-4">Críticas</h2>
-            @auth
-                @if ($film->reviews->count() > 0)
-                    <p>Média: <span class="font-bold">{{ number_format($film->reviews->avg('rating'), 1) }}/5</span>
-                        ({{ $film->reviews->count() }} reviews)</p>
-                    <div class="mt-4 space-y-4">
-                        @foreach ($film->reviews as $review)
-                            <div class="p-3 bg-neutral-800 rounded shadow">
-                                <p class="font-semibold">{{ $review->user->name }} — Nota: {{ $review->rating }}/5</p>
-                                <p class="text-neutral-100">{{ $review->comment }}</p>
-                            </div>
-                        @endforeach
-                    </div>
-                @else
-                    <p>Nenhuma review ainda. Sê o primeiro a avaliar!</p>
-                @endif
+        
+            @if ($film->reviews->count() > 0)
+                <p>Média: <span class="font-bold">{{ number_format($film->reviews->avg('rating'), 1) }}/5</span>
+                    ({{ $film->reviews->count() }} reviews)</p>
+                <div class="mt-4 space-y-4">
+                    @foreach ($film->reviews as $review)
+                        <div class="p-3 bg-neutral-800 rounded shadow">
+                            <p class="font-semibold">{{ $review->user->name }} — Nota: {{ $review->rating }}/5</p>
+                            <p class="text-neutral-100">{{ $review->comment }}</p>
+                        </div>
+                    @endforeach
+                </div>
             @else
-                <p class="text-gray-300">Faz login para ver ou escrever críticas.</p>
-            @endauth
+                <p>Ainda não há reviews. Sê o primeiro a avaliar!</p>
+            @endif
+        
+            @guest
+                <p class="mt-4 text-sm text-gray-300 italic">⚠️ Inicia sessão para escrever uma crítica.</p>
+            @endguest
         </section>
-
         <script>
             function addToWatchLater(filmId) {
                 fetch(`/filmes/watch-later/add/${filmId}`, {

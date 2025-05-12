@@ -19,18 +19,21 @@
             </div>
             
             <!-- Menu de Navegação -->
-            <nav class="hidden md:flex space-x-6">
-                @foreach ([
+            @php
+                $menus = [
                     'Filmes/series' => [['filmes', 'Filmes/series'], ['top-100', 'Top 100'], ['CaixaSurpresa', 'Caixa surpresa']],
                     'W2 World' => [['escolhido', 'W2 Escolha'], ['noticias', 'Notícias']],
                     'Prêmios' => [['/noticias/premios', 'Central de prêmios']],
                     'Artistas' => [['atores', 'Famosos'], ['/atores/aniversariantes', 'Nascidos hoje']],
-                    'Criação' => [['CriacaoFilmes', 'Criar filme'], ['CriarCelebs', 'Celebs'], ['/filmes/Ver/Mais/tarde', 'Watch list']]
-                ] as $title => $links)
+                ];
 
-                {{-- Colocar a tabela criaçao apenas apos o user fazer login ou registro--}}
-                {{-- ['/noticias/oscares', 'Oscares'] --}}
-                {{-- ['top', 'Celebridades populares'] --}}
+                if (Auth::check()) {
+                    $menus['Criação'] = [['CriacaoFilmes', 'Criar filme'], ['CriarCelebs', 'Celebs'], ['/filmes/Ver/Mais/tarde', 'Watch list']];
+                }
+            @endphp
+
+            <nav class="hidden md:flex space-x-6">
+                @foreach ($menus as $title => $links)
                     <div class="relative group">
                         <button class="text-gray-300 font-semibold px-4 py-2 focus:outline-none">{{ $title }} ▼</button>
                         <div class="absolute left-0 hidden group-hover:block bg-neutral-700 shadow-md rounded-md mt-1 py-2 w-48 hover:text-orange-600">

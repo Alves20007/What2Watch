@@ -54,7 +54,7 @@ class FilmSeeder extends Seeder
 
         Film::create([
             'title' => 'Avengers Endgame',
-            'slug' => "A EndgameS",
+            'slug' => "AvengerEndgame",
             'image' => 'Endgame.png',
             'Falas' => 'Avengers Assemble!',
             'Data' => '25/04/2019',

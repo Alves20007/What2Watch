@@ -14,7 +14,7 @@ class PremiosSeeder extends Seeder
     public function run(): void
     {
         Premios::create([
-           'title'=>'O filme paralelípipedo esta previsto para ser lançado em 2026',
+           'title'=>'Gala de ouro',
             'slug'=>'noticia1',
             'Data'=>'21/01/2025',
             'noticia' => 'Os estúdios Bravura Pictures anunciaram o lançamento de Paralelipípedo, uma produção ousada e eletrizante que chegará aos cinemas em 2026. Dirigido por Lucas Andrade, um dos novos talentos do cinema brasileiro, o filme promete ser uma montanha-russa de adrenalina, efeitos visuais deslumbrantes e uma narrativa cheia de reviravoltas. Ambientado em um mundo onde física, geometria e estratégia se tornam armas mortais, Paralelipípedo já está sendo apontado como um dos filmes mais aguardados do ano.

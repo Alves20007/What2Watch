@@ -167,7 +167,7 @@ class ActorSeeder extends Seeder
             'sexo' => 'Masculino',
             'Name' => 'Robert Downey Jr.',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'Robert_Downey_Jr .jpg',
+            'image' => 'Robert_Downey_Jr.jpg',
             'Frase' => 'My God! Middle Earth does exist!',
             'birthday' => '4/04/1965',
             'country' => 'Estados Unidos',
@@ -177,45 +177,194 @@ class ActorSeeder extends Seeder
         ]);
 
         $actor10 = Actor::create([
-            'FullName' => 'Elijah Jordan Wood',
+            'FullName' => 'Christopher Robert Evans',
             'sexo' => 'Masculino',
-            'Name' => 'Jeffrey Wright',
+            'Name' => 'Chris Evans',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'Elihah_Wood.jpg',
-            'Frase' => 'My God! Middle Earth does exist!',
-            'birthday' => '28/01/1981',
+            'image' => 'Chris_Evans.jpg',
+            'Frase' => "I think it's important to love yourself. I think it's important to be proud of who you are and what you do",
+            'birthday' => '13/07/1981',
             'country' => 'Estados Unidos',
             'profissao' => 'Ator',
-            'Slug' => 'ElijahJordanWood',
-            'bio' => 'Elijah Wood é um ator americano que começou sua carreira ainda criança. Tornou-se mundialmente famoso ao interpretar Frodo Baggins na trilogia "O Senhor dos Anéis". Além disso, participou de filmes como "Brilho Eterno de uma Mente Sem Lembranças" e "Sin City", demonstrando sua versatilidade como ator.'         
+            'Slug' => 'ChristopherRobertEvans',
+            'bio' => 'Chris Evans é um ator americano que ganhou reconhecimento internacional ao interpretar Steve Rogers/Capitão América no Universo Cinematográfico Marvel. Além disso, atuou em filmes como "Knives Out" e "Snowpiercer.'         
         ]);
         $actor11 = Actor::create([
-            'FullName' => 'Elijah Jordan Wood',
+            'FullName' => 'Mark Alan Ruffalo',
             'sexo' => 'Masculino',
-            'Name' => 'Jeffrey Wright',
+            'Name' => 'Mark Ruffalo',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'Elihah_Wood.jpg',
-            'Frase' => 'My God! Middle Earth does exist!',
-            'birthday' => '28/01/1981',
+            'image' => 'Mark_ruffalo.jpg',
+            'Frase' => 'A lot of people are living with mental illness around them. Either you love one or you are one.',
+            'birthday' => '22/11/1967',
             'country' => 'Estados Unidos',
             'profissao' => 'Ator',
-            'Slug' => 'ElijahJordanWood',
-            'bio' => 'Elijah Wood é um ator americano que começou sua carreira ainda criança. Tornou-se mundialmente famoso ao interpretar Frodo Baggins na trilogia "O Senhor dos Anéis". Além disso, participou de filmes como "Brilho Eterno de uma Mente Sem Lembranças" e "Sin City", demonstrando sua versatilidade como ator.'         
+            'Slug' => 'MarkAlanRuffalo',
+            'bio' => 'Mark Ruffalo é um ator americano conhecido por sua atuação como Bruce Banner/Hulk no Universo Cinematográfico Marvel. Também recebeu aclamação da crítica por papéis em filmes como "Spotlight" e "The Kids Are All Right.'         
         ]);
         $actor12 = Actor::create([
-            'FullName' => 'Elijah Jordan Wood',
+            'FullName' => 'Christopher Hemsworth',
             'sexo' => 'Masculino',
-            'Name' => 'Jeffrey Wright',
+            'Name' => 'Chris Hemsworth',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'Elihah_Wood.jpg',
-            'Frase' => 'My God! Middle Earth does exist!',
-            'birthday' => '28/01/1981',
+            'image' => 'Chris_Hemsworth.jpg',
+            'Frase' => 'As kids, our experiences shape our opinions of ourselves and the world around us.',
+            'birthday' => '11/08/1983',
+            'country' => 'Austrália',
+            'profissao' => 'Ator',
+            'Slug' => 'ChristopherHemsworth',
+            'bio' => 'Elijah Wood é um ator americano que começou sua carreira ainda criança. Tornou-se mundialmente famoso ao interpretar Frodo Baggins na trilogia "O Senhor dos Anéis". Além disso, participou de filmes como "Brilho Eterno de uma Mente Sem Lembranças" e "Sin City", demonstrando sua versatilidade como ator.Chris Hemsworth é um ator australiano que alcançou fama internacional ao interpretar Thor no Universo Cinematográfico Marvel. Também estrelou filmes como "Rush", "Extraction" e "Furiosa: A Mad Max Saga'         
+        ]);
+        $FilmEndGame = Film::where('slug', 'AvengerEndgame')->first();
+
+        $FilmEndGame->actors()->attach([
+            $actor9->id => ['personagem' => 'Tony Stark'],
+            $actor10->id => ['personagem' => 'Chris Evans'],
+            $actor11->id => ['personagem' => 'Bruce Banner'],
+            $actor12->id => ['personagem' => 'Thor'],
+
+        ]);
+        
+        $elenco = $FilmEndGame->actors->pluck('Name')->implode(', ');
+        $FilmEndGame->elenco = $elenco;
+        $FilmEndGame->save();
+
+        $actor13 = Actor::create([
+            'FullName' => 'Iain Armitage',
+            'sexo' => 'Masculino',
+            'Name' => 'Iain Armitage',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Iain_Armitage.jpg',
+            'Frase' => 'I love acting, but I also love watching theater and reviewing it.',
+            'birthday' => '15/07/2008',
             'country' => 'Estados Unidos',
             'profissao' => 'Ator',
-            'Slug' => 'ElijahJordanWood',
-            'bio' => 'Elijah Wood é um ator americano que começou sua carreira ainda criança. Tornou-se mundialmente famoso ao interpretar Frodo Baggins na trilogia "O Senhor dos Anéis". Além disso, participou de filmes como "Brilho Eterno de uma Mente Sem Lembranças" e "Sin City", demonstrando sua versatilidade como ator.'         
+            'Slug' => 'RobertJohnDowneyJr',
+            'bio' => ' Iain Armitage é um ator americano que ganhou destaque ao interpretar Sheldon Cooper na série "Young Sheldon", um spin-off de "The Big Bang Theory". Também é conhecido por seu papel como Ziggy Chapman em "Big Little Lies". Além da atuação, Iain é apaixonado por teatro e já apresentou críticas teatrais em seu canal no YouTube.'         
+        ]);
+        $actor14 = Actor::create([
+            'FullName' => 'Mckenna Grace',
+            'sexo' => 'Femenino',
+            'Name' => 'Mckenna Grace',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Mckenna_Grace.jpg',
+            'Frase' => "I think it's important to be kind to everyone and to always try your best.",
+            'birthday' => '25/06/2006',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Cantor',
+            'Slug' => 'MckennaGrace',
+            'bio' => 'Mckenna Grace é uma atriz e cantora americana que começou sua carreira ainda criança. Ela é conhecida por seus papéis em "Gifted", "I, Tonya", "The Haunting of Hill House" e "Ghostbusters: Afterlife". Além da atuação, Mckenna também se dedica à música, tendo lançado singles e EPs que exploram os gêneros pop rock e folk.'         
         ]);
 
+        $actor15 = Actor::create([
+            'FullName' => 'Raegan Revord',
+            'sexo' => 'Femenino',
+            'Name' => 'Raegan Revord',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Raegan_Revord.jpg',
+            'Frase' => 'Reading opens up new worlds and helps us understand others better.',
+            'birthday' => '3/01/2008',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'RaeganRevord',
+            'bio' => 'Raegan Revord é uma atriz americana conhecida por seu papel como Missy Cooper em "Young Sheldon". Além da atuação, ela é apaixonada por literatura e criou o clube do livro online "Read with Raegan", voltado para jovens leitores. Em 2025, está previsto o lançamento de seu primeiro romance jovem adulto, "Rules for Fake Girlfriends".'         
+        ]);
+        $actor16 = Actor::create([
+            'FullName' => 'Montana Jordan',
+            'sexo' => 'Masculino',
+            'Name' => 'Montana Jordan',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Montana_Jordan.jpg',
+            'Frase' => 'Family means everything to me; they keep me grounded.',
+            'birthday' => '08/03/2003',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'MontanaJordan',
+            'bio' => 'Montana Jordan é um ator americano que ganhou notoriedade ao interpretar Georgie Cooper em "Young Sheldon" e no spin-off "Georgie & Mandy´s First Marriage". Nascido no Texas, Montana é o mais novo de três irmãos e recentemente tornou-se pai de uma menina chamada Emma Rae.'         
+        ]);
+
+        $SerieYoungSheldon = Film::where('slug', 'YoungSheldon')->first();
+
+        $SerieYoungSheldon->actors()->attach([
+            $actor13->id => ['personagem' => 'Sheldon Cooper'],
+            $actor14->id => ['personagem' => 'Paige Swanson'],
+            $actor15->id => ['personagem' => 'Missy Cooper'],
+            $actor16->id => ['personagem' => 'George Cooper'],
+
+        ]);
         
+        $elenco = $SerieYoungSheldon->actors->pluck('Name')->implode(', ');
+        $SerieYoungSheldon->elenco = $elenco;
+        $SerieYoungSheldon->save();
+
+        $actor17 = Actor::create([
+            'FullName' => 'Jenna Marie Ortega',
+            'sexo' => 'Femenino',
+            'Name' => 'Jenna Ortega',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Jenna_Ortega.jpg',
+            'Frase' => "I think it's important to be unapologetically yourself.",
+            'birthday' => '27/09/2002',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'JennaMarieOrtega',
+            'bio' => ' Jenna Ortega é uma atriz americana que começou sua carreira ainda criança, ganhando destaque em séries como "Jane the Virgin" e "You". Tornou-se amplamente conhecida por interpretar a personagem-título na série "Wednesday" da Netflix, onde também demonstrou suas habilidades como dançarina.'         
+        ]);
+
+        $actor18 = Actor::create([
+            'FullName' => 'Emma Myers',
+            'sexo' => 'Femenino',
+            'Name' => 'Emma Myers',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Emma_Myers.jpg',
+            'Frase' => "Being different is what makes you special.",
+            'birthday' => '2/04/2002',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'EmmaMyers',
+            'bio' => 'Emma Myers é uma atriz americana que ganhou reconhecimento por seu papel como Enid Sinclair na série "Wednesday" da Netflix. Sua atuação como a lobisomem extrovertida e melhor amiga de Wednesday Addams foi elogiada por sua energia e carisma.'         
+        ]);
+
+        $actor19 = Actor::create([
+            'FullName' => 'Joy Sunday',
+            'sexo' => 'Femenino',
+            'Name' => 'Joy Sunday',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Joy_Sunday.jpg',
+            'Frase' => "Art is a reflection of our deepest truths.",
+            'birthday' => '25/04/1996',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'JoySunday',
+            'bio' => 'Joy Sunday é uma atriz americana que se destacou por seu papel como Bianca Barclay na série "Wednesday" da Netflix. Além de sua atuação, Joy também é conhecida por seu trabalho como produtora e diretora em projetos independentes.'         
+        ]);
+
+        $actor20 = Actor::create([
+            'FullName' => 'Hunter Doohan',
+            'sexo' => 'Masculino',
+            'Name' => 'Joy Sunday',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Joy_Sunday.jpg',
+            'Frase' => "Embracing vulnerability is the key to authentic storytelling.",
+            'birthday' => '19/01/1994',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'JoySunday',
+            'bio' => 'Hunter Doohan é um ator americano conhecido por seu papel como Tyler Galpin na série "Wednesday" da Netflix. Ele também atuou em séries como "Your Honor" e "Truth Be Told", demonstrando sua versatilidade como ator.'         
+        
+        ]);
+        $SerieWednesday = Film::where('slug', 'Wednesday')->first();
+
+        $SerieWednesday->actors()->attach([
+            $actor17->id => ['personagem' => 'Wednesday Adams'],
+            $actor18->id => ['personagem' => 'Enid Sinclair'],
+            $actor19->id => ['personagem' => 'Missy Cooper'],
+            $actor20->id => ['personagem' => 'George Cooper'],
+
+        ]);
+        
+        $elenco = $SerieWednesday->actors->pluck('Name')->implode(', ');
+        $SerieWednesday->elenco = $elenco;
+        $SerieWednesday->save();
     }
 }
