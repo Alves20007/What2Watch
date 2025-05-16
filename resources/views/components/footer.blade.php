@@ -6,7 +6,7 @@
         <div class="footer-info">
             <h4>Informações de Contato</h4>
             <p>Email: a115860@aeg1.pt</p>
-            <p>Telefone: (+351) 932 471 315</p>
+            <p>Telefone: (+351) 123 456 789</p>
             <p>Endereço: Rio tinto, Porto, Portugal</p>
         </div>
 

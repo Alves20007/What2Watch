@@ -349,7 +349,7 @@ class ActorSeeder extends Seeder
             'birthday' => '19/01/1994',
             'country' => 'Estados Unidos',
             'profissao' => 'Ator',
-            'Slug' => 'TylerGalpin',
+            'Slug' => 'HunterDoohan',
             'bio' => 'Hunter Doohan é um ator americano conhecido por seu papel como Tyler Galpin na série "Wednesday" da Netflix. Ele também atuou em séries como "Your Honor" e "Truth Be Told", demonstrando sua versatilidade como ator.'         
         
         ]);
@@ -438,5 +438,116 @@ class ActorSeeder extends Seeder
         $SerieBrokklyn99->elenco = $elenco;
         $SerieBrokklyn99->save();
 
+        $actor25 = Actor::create([
+            'FullName' => 'William John Neeson',
+            'sexo' => 'Masculino',
+            'Name' => 'William Neeson',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'William_Neeson.jpg',
+            'Frase' => "I will find you, and I will kill you.",
+            'birthday' => '7/06/1952',
+            'country' => 'Irlanda do Norte',
+            'profissao' => 'Ator',
+            'Slug' => 'WilliamJohnNeeson',
+            'bio' => ' Ator norte-irlandês conhecido por seus papéis em filmes como Schindlers List, Taken e Star Wars: Episódio I – A Ameaça Fantasma, onde interpretou Qui-Gon Jinn.'        
+        ]);
+
+         $actor26 = Actor::create([
+            'FullName' => 'Ewan Gordon McGregor',
+            'sexo' => 'Masculino',
+            'Name' => 'Ewan McGregor',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Ewan_McGregor.jpg',
+            'Frase' => "May the Force be with you.",
+            'birthday' => '31/03/1971',
+            'country' => 'Escócia',
+            'profissao' => 'Ator',
+            'Slug' => 'EwanGordonMcGregor',
+            'bio' => 'Ator escocês que ganhou destaque com Trainspotting e ficou mundialmente conhecido por interpretar Obi-Wan Kenobi na trilogia prequela de Star Wars.'        
+        ]);
+
+         $actor27 = Actor::create([
+            'FullName' => 'Natalie Hershlag',
+            'sexo' => 'Femenino',
+            'Name' => 'Natalie Hershlag',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Natalie_Hershlag.jpg',
+            'Frase' => "So this is how liberty dies... with thunderous applause.",
+            'birthday' => '9/06/1981',
+            'country' => 'Israel',
+            'profissao' => 'Ator',
+            'Slug' => 'NatalieHershlag',
+            'bio' => 'Atriz israelense-americana vencedora do Oscar por Black Swan. Iniciou sua carreira em Léon: The Professional e interpretou Padmé Amidala na trilogia prequela de Star Wars.'        
+        ]);
+
+        $actor28 = Actor::create([
+            'FullName' => 'Jake Matthew Lloyd',
+            'sexo' => 'Masculino',
+            'Name' => 'Jake Lloyd',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Jake_Lloyd.jpg',
+            'Frase' => "Now this is podracing!",
+            'birthday' => '5/03/1989',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'WilliamJohnNeeson',
+            'bio' => 'Ator infantil americano que interpretou o jovem Anakin Skywalker em Star Wars: Episódio I – A Ameaça Fantasma. Após o filme, retirou-se da atuação.'        
+        ]);
+
+        $actor29 = Actor::create([
+            'FullName' => 'Hayden Christensen',
+            'sexo' => 'Masculino',
+            'Name' => 'Hayden Christensen',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Hayden_Christensen.jpg',
+            'Frase' => "I hate sand. It's coarse and rough and irritating, and it gets everywhere.",
+            'birthday' => '19/04/1981',
+            'country' => 'Canadá',
+            'profissao' => 'Ator',
+            'Slug' => 'HaydenChristensen',
+            'bio' => 'Ator canadense conhecido por interpretar Anakin Skywalker em Star Wars: Episódio II e III, além de retornar ao papel em séries recentes.'        
+        ]);
+
+        $actor30 = Actor::create([
+            'FullName' => 'Mark Richard Hamill',
+            'sexo' => 'Masculino',
+            'Name' => 'Mark Hamill',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Mark_Hamill.jpg',
+            'Frase' => "I'm Luke Skywalker. I'm here to rescue you.",
+            'birthday' => '25/09/1951',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'MarkRichardHamill',
+            'bio' => 'Ator americano famoso por interpretar Luke Skywalker na saga Star Wars e por seu trabalho como dublador do Coringa em animações da DC.'        
+        ]);
+
+        $actor28 = Actor::create([
+            'FullName' => 'Harrison Ford',
+            'sexo' => 'Masculino',
+            'Name' => 'Harrison Ford',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Harrison_Ford.jpg',
+            'Frase' => "Never tell me the odds.",
+            'birthday' => '13/07/1942',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'HarrisonFord',
+            'bio' => 'Ator americano conhecido por seus papéis icônicos como Han Solo em Star Wars e Indiana Jones na franquia homônima.'        
+        ]);
+
+        $actor28 = Actor::create([
+            'FullName' => 'Jake Matthew Lloyd',
+            'sexo' => 'Masculino',
+            'Name' => 'Jake Lloyd',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Jake_Lloyd.jpg',
+            'Frase' => "Now this is podracing!",
+            'birthday' => '5/03/1989',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'WilliamJohnNeeson',
+            'bio' => 'Ator infantil americano que interpretou o jovem Anakin Skywalker em Star Wars: Episódio I – A Ameaça Fantasma. Após o filme, retirou-se da atuação.'        
+        ]);
     }
 }
