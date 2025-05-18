@@ -265,7 +265,7 @@ class ActorSeeder extends Seeder
             'Frase' => 'Reading opens up new worlds and helps us understand others better.',
             'birthday' => '3/01/2008',
             'country' => 'Estados Unidos',
-            'profissao' => 'Ator',
+            'profissao' => 'Desportista',
             'Slug' => 'RaeganRevord',
             'bio' => 'Raegan Revord é uma atriz americana conhecida por seu papel como Missy Cooper em "Young Sheldon". Além da atuação, ela é apaixonada por literatura e criou o clube do livro online "Read with Raegan", voltado para jovens leitores. Em 2025, está previsto o lançamento de seu primeiro romance jovem adulto, "Rules for Fake Girlfriends".'         
         ]);

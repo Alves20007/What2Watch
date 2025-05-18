@@ -198,7 +198,7 @@ class FilmSeeder extends Seeder
             'banner'=> 'StarWarsVII.jpg',
             'image' => 'StarWarsVII.jpg',
             'Data' => '18/12/2015',
-            'oscares' => ' 5 indicações (incluindo Melhor Edição, Melhores Efeitos Visuais)',
+            'oscares' => '5 indicações (incluindo Melhor Edição, Melhores Efeitos Visuais)',
             'categoria'=> 'ação',
             'trailer'=>'the-batman.mp4',
             'escolhido'=>'sim',

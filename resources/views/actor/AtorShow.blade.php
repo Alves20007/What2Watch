@@ -19,7 +19,10 @@
                     <p class="mb-2"><b>profissão:</b> {{ $ator->profissao }}</p>
                     <p class="mb-2"><b>sexo:</b> {{ $ator->sexo }}</p>
                     <p class="mb-2"><b>Data de Nascimento:</b> {{ $ator->birthday }}</p>
-                    <p class="mb-2"><b>Local de Nascimento: </b> {{ $ator->country }}</p>
+                    @php
+                        $age = \Carbon\Carbon::createFromFormat('d/m/Y', $ator->birthday)->age;
+                    @endphp
+                    <p class="mb-2"><b>Idade:</b> {{ $age }} anos</p>                    <p class="mb-2"><b>Local de Nascimento: </b> {{ $ator->country }}</p>
                     <p class="mb-2"><b>Biografia:   </b>{{ $ator->bio}}</p>
                 </div>
             </div>
@@ -45,7 +48,6 @@
                 @endforeach
             </div>
         </section>
-
         <!-- Críticas -->
         {{-- <section class="p-6">
             <h2 class="text-xl font-bold text-yellow-500 mb-4">Críticas</h2>

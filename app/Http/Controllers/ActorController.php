@@ -26,6 +26,9 @@ class ActorController extends Controller
         if ($request->has('profissao') && !empty($request->profissao)) {
             $query->whereIn('profissao', $request->profissao);
         }
+        if ($request->has('search') && !empty($request->search)) {
+            $query->where('Name', 'like', '%' . $request->search . '%');
+        }
         
         $actors = $query->get();
 

@@ -9,7 +9,16 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                     </svg>
                 </h2>
-        
+                <div class="mb-3">
+                    <label for="searchInputSidebar" class="sr-only">Pesquisar</label>
+                    <input 
+                        type="text" 
+                        id="searchInputSidebar" 
+                        placeholder="Pesquisar..." 
+                        class="w-full px-3 py-1.5 text-sm bg-zinc-700 text-white border border-zinc-500 rounded-sm placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                    />
+                </div>
+
                 <!-- Seções compactas -->
                 <div class="space-y-3">
                     <!--profissao -->
@@ -60,8 +69,8 @@
             <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 grid-atores">
                 @foreach ($actor as $ator)
                     <a href="/atores/{{ $ator->Slug }}">
-                        <div class="border-2 p-4 rounded-lg bg-zinc-900 hover:shadow-lg transition">
-                            <img class="h-64 w-full object-cover rounded" src="/imagens/atores/{{ $ator->image }}" alt="{{ $ator->Name }}">
+                        <div class="aspect-w-2 aspect-h-3">
+                            <img class="object-cover w-full h-full rounded" src="/imagens/atores/{{ $ator->image }}" alt="{{ $ator->Name }}">
                             <b class="block text-neutral-50 mt-2 text-base">{{ $ator->Name }}</b>
                             <p class="text-sm text-neutral-300 italic">{{ $ator->birthday }}</p>
                         </div>
@@ -79,6 +88,9 @@
                 const profissao = Array.from(document.querySelectorAll("input[name='profissao[]']:checked"))
                                     .map(cb => cb.value);
 
+                const searchTerm = document.getElementById("searchInputSidebar").value;
+
+
                 fetch("{{ route('actor.filter') }}", {
                     method: "POST",
                     headers: {
@@ -89,6 +101,7 @@
                     },
                     body: JSON.stringify({
                         profissao: profissao,
+                        search: searchTerm
                     }),
                 })
                 .then(response => response.json())

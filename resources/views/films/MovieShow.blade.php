@@ -1,24 +1,5 @@
 <x-guestLayout>
-    <head>
-        <link rel="stylesheet" href="{{ asset('css/CG.css') }}">
-    </head>
-
     <body class="bg-neutral-700 text-white">
-        @auth
-            <div class="flex justify-end gap-4 p-4">
-                <button onclick="addToWatchLater({{ $film->id }})"
-                    class="bg-blue-500 text-white px-4 py-2 rounded-full shadow hover:bg-blue-600 transition">
-                    Ver Depois
-                </button>
-                <a href="{{ route('films.review.form', $film) }}"
-                    class="bg-green-500 text-white px-4 py-2 rounded-full shadow hover:bg-green-600 transition">
-                    Review
-                </a>
-            </div>
-        @else
-            <p class="text-center text-sm text-gray-300">Faz login para guardar na lista "Ver Depois" ou escrever uma review</p>
-        @endauth
-
         <section class="relative bg-neutral-700 text-white mb-6">
             <div class="absolute inset-0">
                 <img src="/bannerFilmw/{{ $film->banner }}" alt="{{ $film->title }}" class="w-full h-full object-cover opacity-30">
@@ -34,19 +15,32 @@
                     <p class="mb-4 text-sm italic">{{ $film->Falas }}</p>
                     <p class="mb-2"><b>Data:</b> {{ $film->Data }}</p>
                     <p class="mb-2"><b>Classificação:</b> {{ $film->CE }}</p>
-                    <p class="mb-2"><b>Sínopse:</b>{{ $film->sinopse}}</p>
-        
+                    <p class="mb-2"><b>Sínopse:</b> {{ $film->sinopse }}</p>
+                    <p class="mb-2"><b>Oscares:</b> {{ $film->oscares ?: 'N/A' }}</p>
+                    <p class="mb-2"><b>Diretor:</b> {{ $film->Diretor ?: 'N/A' }}</p>
+                    <p class="mb-2"><b>Editora:</b> {{ $film->Editora ?: 'N/A' }}</p>
                     @if($film->tipo === 'serie')
                         <p class="mb-2"><b>Temporadas:</b> {{ $film->Temporadas }}</p>
                         <p class="mb-2"><b>Episódios:</b> {{ $film->Episodios }}</p>
                     @endif
-        
-                    <a href="/video/{{ $film->trailer }}" target="_blank" class="inline-block mt-4 px-5 py-2 bg-red-600 text-white rounded-full shadow hover:bg-red-700 transition">
-                        ▶️ Ver Trailer
-                    </a>
+
+                    <div class="mt-4 flex gap-4 items-center">
+                        <a href="/video/{{ $film->trailer }}" target="_blank" class="inline-block px-5 py-2 bg-red-600 text-white rounded-full shadow hover:bg-red-700 transition">
+                            ▶️ Ver Trailer
+                        </a>
+                        @auth
+                            <button onclick="addToWatchLater({{ $film->id }})"
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow transition duration-300">
+                                ▶️ Ver Depois
+                            </button>
+                        @else
+                            <p class="text-sm text-gray-300 italic">Faça login para guardar na lista "WatchList".</p>
+                        @endauth
+                    </div>
                 </div>
             </div>
         </section>
+
         <!-- Elenco principal -->
         <section class="p-6">
             <h2 class="text-3xl font-extrabold text-yellow-400 mb-6 border-b border-yellow-500 pb-2">
@@ -71,7 +65,15 @@
 
         <!-- Críticas -->
         <section class="p-6">
-            <h2 class="text-xl font-bold text-yellow-500 mb-4">Críticas</h2>
+            <h2 class="text-xl font-bold text-yellow-500 mb-4 flex justify-between items-center">
+                Críticas
+                @auth
+                    <a href="{{ route('films.review.form', $film) }}"
+                       class="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-full shadow transition duration-300">
+                        📝 Escrever Review
+                    </a>
+                @endauth
+            </h2>
         
             @if ($film->reviews->count() > 0)
                 <p>Média: <span class="font-bold">{{ number_format($film->reviews->avg('rating'), 1) }}/5</span>
@@ -92,6 +94,7 @@
                 <p class="mt-4 text-sm text-gray-300 italic">⚠️ Inicia sessão para escrever uma crítica.</p>
             @endguest
         </section>
+
         <script>
             function addToWatchLater(filmId) {
                 fetch(`/filmes/watch-later/add/${filmId}`, {
@@ -104,7 +107,13 @@
                     body: JSON.stringify({})
                 })
                 .then(res => res.json())
-                .then(data => alert(data.message))
+                .then(data => {
+                    const msg = document.createElement('div');
+                    msg.textContent = data.message;
+                    msg.className = 'fixed top-20 right-4 bg-blue-600 text-white px-4 py-2 rounded shadow-lg z-50 animate-fadeInOut';
+                    document.body.appendChild(msg);
+                    setTimeout(() => msg.remove(), 3000);
+                })
                 .catch(error => console.error('Erro:', error));
             }
         </script>
