@@ -449,10 +449,10 @@ class ActorSeeder extends Seeder
             'country' => 'Irlanda do Norte',
             'profissao' => 'Ator',
             'Slug' => 'WilliamJohnNeeson',
-            'bio' => ' Ator norte-irlandês conhecido por seus papéis em filmes como Schindlers List, Taken e Star Wars: Episódio I – A Ameaça Fantasma, onde interpretou Qui-Gon Jinn.'        
+            'bio' => 'Ator norte-irlandês conhecido por seus papéis em filmes como Schindlers List, Taken e Star Wars: Episódio I – A Ameaça Fantasma, onde interpretou Qui-Gon Jinn.'        
         ]);
 
-         $actor26 = Actor::create([
+        $actor26 = Actor::create([
             'FullName' => 'Ewan Gordon McGregor',
             'sexo' => 'Masculino',
             'Name' => 'Ewan McGregor',
@@ -466,9 +466,9 @@ class ActorSeeder extends Seeder
             'bio' => 'Ator escocês que ganhou destaque com Trainspotting e ficou mundialmente conhecido por interpretar Obi-Wan Kenobi na trilogia prequela de Star Wars.'        
         ]);
 
-         $actor27 = Actor::create([
-            'FullName' => 'Natalie Hershlag',
-            'sexo' => 'Femenino',
+        $actor27 = Actor::create([
+            'FullName' => 'Natalie Portman Hershlag',
+            'sexo' => 'Feminino',
             'Name' => 'Natalie Hershlag',
             'banner' => 'atoresFelizes.jpg',
             'image' => 'Natalie_Hershlag.jpg',
@@ -485,12 +485,12 @@ class ActorSeeder extends Seeder
             'sexo' => 'Masculino',
             'Name' => 'Jake Lloyd',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'Jake_Lloyd.jpg',
+            'image' => 'Jake_Lioyd.jpg',
             'Frase' => "Now this is podracing!",
             'birthday' => '5/03/1989',
             'country' => 'Estados Unidos',
             'profissao' => 'Ator',
-            'Slug' => 'WilliamJohnNeeson',
+            'Slug' => 'JakeMatthewLloyd',
             'bio' => 'Ator infantil americano que interpretou o jovem Anakin Skywalker em Star Wars: Episódio I – A Ameaça Fantasma. Após o filme, retirou-se da atuação.'        
         ]);
 
@@ -522,9 +522,9 @@ class ActorSeeder extends Seeder
             'bio' => 'Ator americano famoso por interpretar Luke Skywalker na saga Star Wars e por seu trabalho como dublador do Coringa em animações da DC.'        
         ]);
 
-        $actor28 = Actor::create([
+        $actor31 = Actor::create([
             'FullName' => 'Carrie Frances Fisher',
-            'sexo' => 'Femenino',
+            'sexo' => 'Feminino',
             'Name' => 'Carrie Fisher',
             'banner' => 'atoresFelizes.jpg',
             'image' => 'Carrie_Fisher.jpg',
@@ -536,7 +536,7 @@ class ActorSeeder extends Seeder
             'bio' => 'Atriz e escritora americana, eternizada como a Princesa Leia em Star Wars. Também conhecida por seu trabalho como roteirista e defensora da saúde mental.'        
         ]);
 
-        $actor28 = Actor::create([
+        $actor32 = Actor::create([
             'FullName' => 'William December Williams Jr.',
             'sexo' => 'Masculino',
             'Name' => 'Billy Dee Williams',
@@ -549,5 +549,174 @@ class ActorSeeder extends Seeder
             'Slug' => 'WilliamDecemberWilliamsJr',
             'bio' => 'Ator americano conhecido por interpretar Lando Calrissian em Star Wars e por sua carreira em filmes e televisão desde os anos 1950.'        
         ]);
-    }
+
+        $actor33 = Actor::create([
+            'FullName' => 'Harrison Ford',
+            'sexo' => 'Masculino',
+            'Name' => 'Harrison Ford',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Harrison_Ford.jpg',
+            'Frase' => "Never tell me the odds.",
+            'birthday' => '13/07/1942',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'HarrisonFord',
+            'bio' => 'Ator americano conhecido por seus papéis icônicos como Han Solo em Star Wars e Indiana Jones na franquia homônima.'
+        ]);
+
+        $actor34 = Actor::create([
+            'FullName' => 'Samuel Leroy Jackson',
+            'sexo' => 'Masculino',
+            'Name' => 'Samuel L. Jackson',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Samuel_L_Jackson.jpg',
+            'Frase' => "This party's over.",
+            'birthday' => '21/12/1948',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'SamuelLeroyJackson',
+            'bio' => 'Ator americano reconhecido por seus papéis intensos em filmes de ação e drama. Interpretou o Mestre Jedi Mace Windu na trilogia prequela de Star Wars.'
+        ]);
+
+        $actor35 = Actor::create([
+            'FullName' => 'Ian McDiarmid',
+            'sexo' => 'Masculino',
+            'Name' => 'Ian McDiarmid',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Ian_McDiarmid.jpg',
+            'Frase' => "Unlimited power!",
+            'birthday' => '11/08/1944',
+            'country' => 'Reino Unido',
+            'profissao' => 'Ator',
+            'Slug' => 'IanMcDiarmid',
+            'bio' => 'Ator escocês conhecido por interpretar o vilão Palpatine/Darth Sidious em múltiplos episódios da saga Star Wars, desde o Império até a Ascensão Skywalker.'
+        ]);
+
+        $actor36 = Actor::create([
+            'FullName' => 'Daisy Jazz Isobel Ridley',
+            'sexo' => 'Feminino',
+            'Name' => 'Daisy Ridley',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Daisy_Ridley.jpg',
+            'Frase' => "I’m no one.",
+            'birthday' => '10/04/1992',
+            'country' => 'Reino Unido',
+            'profissao' => 'Ator',
+            'Slug' => 'DaisyJazzIsobelRidley',
+            'bio' => 'Atriz britânica que alcançou fama internacional como Rey, a protagonista da nova trilogia de Star Wars.'
+        ]);
+
+        $actor37 = Actor::create([
+            'FullName' => 'Adam Douglas Driver',
+            'sexo' => 'Masculino',
+            'Name' => 'Adam Driver',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Adam_Driver.jpg',
+            'Frase' => "Let the past die. Kill it if you have to.",
+            'birthday' => '19/11/1983',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'AdamDouglasDriver',
+            'bio' => 'Ator americano conhecido por seu papel como Kylo Ren / Ben Solo na trilogia sequela de Star Wars. Também reconhecido por sua versatilidade em cinema e teatro.'
+        ]);
+
+
+        $StarWarsI = Film::where('slug', 'StarWarsI')->first();
+        $StarWarsI->actors()->attach([
+            $actor25->id => ['personagem' => 'Mestre Jedi (Qui-Gon Jinn)'],
+            $actor26->id => ['personagem' => 'Padawan (Obi-Wan Kenobi)'],
+            $actor27->id => ['personagem' => 'Rainha de Naboo (Padmé Amidala)'],
+            $actor28->id => ['personagem' => 'Anakin Skywalker (criança)'],
+        ]);
+        $StarWarsI->elenco = $StarWarsI->actors->pluck('Name')->implode(', ');
+        $StarWarsI->save();
+
+            // Episódio II – Ataque dos Clones
+        $StarWarsII = Film::where('slug', 'StarWarsII')->first();
+        $StarWarsII->actors()->attach([
+            $actor26->id => ['personagem' => 'Obi-Wan Kenobi'],
+            $actor27->id => ['personagem' => 'Padmé Amidala'],
+            $actor29->id => ['personagem' => 'Anakin Skywalker (jovem)'],
+            $actor34->id => ['personagem' => 'Mace Windu'],
+        ]);
+        $StarWarsII->elenco = $StarWarsII->actors->pluck('Name')->implode(', ');
+        $StarWarsII->save();
+
+        // Episódio III – A Vingança dos Sith
+        $StarWarsIII = Film::where('slug', 'StarWarsIII')->first();
+        $StarWarsIII->actors()->attach([
+            $actor26->id => ['personagem' => 'Obi-Wan Kenobi'],
+            $actor27->id => ['personagem' => 'Padmé Amidala'],
+            $actor29->id => ['personagem' => 'Anakin Skywalker / Darth Vader'],
+            $actor35->id => ['personagem' => 'Palpatine / Darth Sidious'],
+        ]);
+        $StarWarsIII->elenco = $StarWarsIII->actors->pluck('Name')->implode(', ');
+        $StarWarsIII->save();
+
+        // Episódio IV – Uma Nova Esperança
+        $StarWarsIV = Film::where('slug', 'StarWarsIV')->first();
+        $StarWarsIV->actors()->attach([
+            $actor30->id => ['personagem' => 'Luke Skywalker'],
+            $actor31->id => ['personagem' => 'Princesa Leia Organa'],
+            $actor33->id => ['personagem' => 'Han Solo'],
+            $actor26->id => ['personagem' => 'Obi-Wan Kenobi ()'],
+        ]);
+        $StarWarsIV->elenco = $StarWarsIV->actors->pluck('Name')->implode(', ');
+        $StarWarsIV->save();
+
+        // Episódio V – O Império Contra-Ataca
+        $StarWarsV = Film::where('slug', 'StarWarsV')->first();
+        $StarWarsV->actors()->attach([
+            $actor30->id => ['personagem' => 'Luke Skywalker'],
+            $actor31->id => ['personagem' => 'Leia Organa'],
+            $actor33->id => ['personagem' => 'Han Solo'],
+            $actor32->id => ['personagem' => 'Lando Calrissian'],
+        ]);
+        $StarWarsV->elenco = $StarWarsV->actors->pluck('Name')->implode(', ');
+        $StarWarsV->save();
+
+        // Episódio VI – O Retorno de Jedi
+        $StarWarsVI = Film::where('slug', 'StarWarsVI')->first();
+        $StarWarsVI->actors()->attach([
+            $actor30->id => ['personagem' => 'Luke Skywalker'],
+            $actor31->id => ['personagem' => 'Leia Organa'],
+            $actor33->id => ['personagem' => 'Han Solo'],
+            $actor32->id => ['personagem' => 'Lando Calrissian'],
+        ]);
+        $StarWarsVI->elenco = $StarWarsVI->actors->pluck('Name')->implode(', ');
+        $StarWarsVI->save();
+
+        // Episódio VII – O Despertar da Força
+        $StarWarsVII = Film::where('slug', 'StarWarsVII')->first();
+        $StarWarsVII->actors()->attach([
+            $actor33->id => ['personagem' => 'Han Solo'],
+            $actor31->id => ['personagem' => 'General Leia Organa'],
+            $actor30->id => ['personagem' => 'Luke Skywalker'],
+            $actor36->id => ['personagem' => 'Rey'],
+        ]);
+        $StarWarsVII->elenco = $StarWarsVII->actors->pluck('Name')->implode(', ');
+        $StarWarsVII->save();
+
+        // Episódio VIII – Os Últimos Jedi
+        $StarWarsVIII = Film::where('slug', 'StarWarsVIII')->first();
+        $StarWarsVIII->actors()->attach([
+            $actor30->id => ['personagem' => 'Luke Skywalker'],
+            $actor31->id => ['personagem' => 'General Leia Organa'],
+            $actor36->id => ['personagem' => 'Rey'],
+            $actor37->id => ['personagem' => 'Kylo Ren'],
+        ]);
+        $StarWarsVIII->elenco = $StarWarsVIII->actors->pluck('Name')->implode(', ');
+        $StarWarsVIII->save();
+
+        // Episódio IX – A Ascensão Skywalker
+        $StarWarsIX = Film::where('slug', 'StarWarsIX')->first();
+        $StarWarsIX->actors()->attach([
+            $actor36->id => ['personagem' => 'Rey Skywalker'],
+            $actor37->id => ['personagem' => 'Kylo Ren / Ben Solo'],
+            $actor31->id => ['personagem' => 'Leia Organa'],
+            $actor32->id => ['personagem' => 'Lando Calrissian'],
+        ]);
+        $StarWarsIX->elenco = $StarWarsIX->actors->pluck('Name')->implode(', ');
+        $StarWarsIX->save();
+}
 }

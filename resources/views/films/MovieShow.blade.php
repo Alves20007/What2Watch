@@ -46,20 +46,22 @@
             <h2 class="text-3xl font-extrabold text-yellow-400 mb-6 border-b border-yellow-500 pb-2">
                 Elenco Principal
             </h2>
-        
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach($film->actors as $actor)
-                    <a href="/atores/{{ $actor->Slug }}" class="bg-neutral-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-                        <div class="h-64 w-full overflow-hidden">
-                            <img src="/imagens/atores/{{ $actor->image }}" alt="{{ $actor->title }}"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-white mb-1 truncate">{{ $actor->Name }}</h3>
-                            <p class="text-sm text-yellow-300 italic">Personagem: {{ $actor->pivot->personagem ?? 'Desconhecido' }}</p>
-                        </div>
-                    </a>
-                @endforeach
+
+            <div class="overflow-x-auto">
+                <div class="flex gap-6 min-w-[100%]">
+                    @foreach($film->actors as $actor)
+                        <a href="/atores/{{ $actor->Slug }}" class="min-w-[200px] max-w-[200px] bg-neutral-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
+                            <div class="h-64 w-full overflow-hidden">
+                                <img src="/imagens/atores/{{ $actor->image }}" alt="{{ $actor->title }}"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-white mb-1 truncate">{{ $actor->Name }}</h3>
+                                <p class="text-sm text-yellow-300 italic">Personagem: {{ $actor->pivot->personagem ?? 'Desconhecido' }}</p>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
             </div>
         </section>
 
