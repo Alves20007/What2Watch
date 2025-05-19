@@ -523,31 +523,31 @@ class ActorSeeder extends Seeder
         ]);
 
         $actor28 = Actor::create([
-            'FullName' => 'Harrison Ford',
-            'sexo' => 'Masculino',
-            'Name' => 'Harrison Ford',
+            'FullName' => 'Carrie Frances Fisher',
+            'sexo' => 'Femenino',
+            'Name' => 'Carrie Fisher',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'Harrison_Ford.jpg',
-            'Frase' => "Never tell me the odds.",
-            'birthday' => '13/07/1942',
+            'image' => 'Carrie_Fisher.jpg',
+            'Frase' => "Help me, Obi-Wan Kenobi. You're my only hope.",
+            'birthday' => '21/10/1956',
             'country' => 'Estados Unidos',
             'profissao' => 'Ator',
-            'Slug' => 'HarrisonFord',
-            'bio' => 'Ator americano conhecido por seus papéis icônicos como Han Solo em Star Wars e Indiana Jones na franquia homônima.'        
+            'Slug' => 'CarrieFisher',
+            'bio' => 'Atriz e escritora americana, eternizada como a Princesa Leia em Star Wars. Também conhecida por seu trabalho como roteirista e defensora da saúde mental.'        
         ]);
 
         $actor28 = Actor::create([
-            'FullName' => 'Jake Matthew Lloyd',
+            'FullName' => 'William December Williams Jr.',
             'sexo' => 'Masculino',
-            'Name' => 'Jake Lloyd',
+            'Name' => 'Billy Dee Williams',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'Jake_Lloyd.jpg',
-            'Frase' => "Now this is podracing!",
-            'birthday' => '5/03/1989',
+            'image' => 'Billy_Williams.jpg',
+            'Frase' => "Hello, what have we here?",
+            'birthday' => '6/04/1937',
             'country' => 'Estados Unidos',
             'profissao' => 'Ator',
-            'Slug' => 'WilliamJohnNeeson',
-            'bio' => 'Ator infantil americano que interpretou o jovem Anakin Skywalker em Star Wars: Episódio I – A Ameaça Fantasma. Após o filme, retirou-se da atuação.'        
+            'Slug' => 'WilliamDecemberWilliamsJr',
+            'bio' => 'Ator americano conhecido por interpretar Lando Calrissian em Star Wars e por sua carreira em filmes e televisão desde os anos 1950.'        
         ]);
     }
 }
