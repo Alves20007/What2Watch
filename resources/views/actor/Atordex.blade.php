@@ -63,9 +63,9 @@
                                 <span class="text-white text-sm group-hover:text-orange-300">Escritor</span>
                             </label>
                             <label class="flex items-center space-x-2 cursor-pointer group">
-                                <input type="checkbox" name="profissao[]" value="cantor" 
+                                <input type="checkbox" name="profissao[]" value="artistas" 
                                        class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
-                                <span class="text-white text-sm group-hover:text-orange-300">Cantor</span>
+                                <span class="text-white text-sm group-hover:text-orange-300">Artistas</span>
                             </label>
                         </div>
                     </div>

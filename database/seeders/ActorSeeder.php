@@ -719,5 +719,161 @@ class ActorSeeder extends Seeder
         ]);
         $StarWarsIX->elenco = $StarWarsIX->actors->pluck('Name')->implode(', ');
         $StarWarsIX->save();
+        
+        $actor39 = Actor::create([
+            'FullName' => 'Scarlett Estevez',
+            'sexo' => 'Femenino',
+            'Name' => 'Scarlett Estevez',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'ScarlettEstevez.jpg',
+            'Frase' => "I love acting because it lets me live a thousand lives.",
+            'birthday' => '4/12/2007',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'ScarlettEstevez',
+            'bio' => 'Scarlett Estevez é uma atriz americana conhecida por seu papel como Trixie Espinoza na série de televisão "Lucifer". Ela também participou de filmes como "Daddy’s Home" e sua sequência, além de "The Boss Baby".'
+        ]);
+
+        $actor40 = Actor::create([
+            'FullName' => 'Sky Katz',
+            'sexo' => 'Femenino',
+            'Name' => 'Sky Katz',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'SkyKatz.jpg',
+            'Frase' => "Creativity is my power and voice.",
+            'birthday' => '20/9/2002',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Ator',
+            'Slug' => 'SkyKatz',
+            'bio' => 'Sky Katz é uma atriz americana que ficou conhecida por seu papel na série da Nickelodeon "Cousins for Life". Ela também é cantora e tem uma presença significativa nas redes sociais.'
+        ]);
+
+        $actor41 = Actor::create([
+            'FullName' => 'Rowan Sebastian Atkinson',
+            'sexo' => 'Masculino',
+            'Name' => 'Rowan Atkinson',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'RowanAtkinson.jpg',
+            'Frase' => "I am just a comedian who happens to act.",
+            'birthday' => '6/1/1955',
+            'country' => 'Reino Unido',
+            'profissao' => 'Ator',
+            'Slug' => 'RowanSebastianAtkinson',
+            'bio' => 'Rowan Atkinson é um ator e comediante britânico, famoso mundialmente pelo personagem Mr. Bean. Ele também é conhecido por seus papéis em "Blackadder" e em diversos filmes de comédia.'
+        ]);
+
+        $actor42 = Actor::create([
+            'FullName' => 'Margarida Corceiro',
+            'sexo' => 'Femenino',
+            'Name' => 'Margarida Corceiro',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'MargaridaCorceiro.jpg',
+            'Frase' => "A autenticidade é o que conecta verdadeiramente as pessoas.",
+            'birthday' => '25/6/2002',
+            'country' => 'Portugal',
+            'profissao' => 'Ator',
+            'Slug' => 'MargaridaCorceiro',
+            'bio' => 'Margarida Corceiro é uma atriz e influenciadora portuguesa, conhecida por papéis em telenovelas como "Amor Amor". É muito popular no Instagram, onde partilha conteúdos pessoais e profissionais.'
+        ]);
+
+        $actor43 = Actor::create([
+            'FullName' => 'Kelly Bailey',
+            'sexo' => 'Femenino',
+            'Name' => 'Kelly Bailey',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'KellyBailey.jpg',
+            'Frase' => "A arte é a minha forma de me expressar.",
+            'birthday' => '24/10/1998',
+            'country' => 'Portugal',
+            'profissao' => 'Ator',
+            'Slug' => 'KellyBailey',
+            'bio' => 'Kelly Bailey é uma atriz portuguesa que ganhou destaque pela sua presença em séries e pela sua influência nas redes sociais.'
+        ]);
+
+        $actor44 = Actor::create([
+            'FullName' => 'Bárbara Bandeira',
+            'sexo' => 'Femenino',
+            'Name' => 'Bárbara Bandeira',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'BarbaraBandeira.jpg',
+            'Frase' => "A música é a linguagem da alma.",
+            'birthday' => '23/6/1996',
+            'country' => 'Portugal',
+            'profissao' => 'Artista',
+            'Slug' => 'BarbaraBandeira',
+            'bio' => 'Bárbara Bandeira é uma cantora portuguesa que se destacou no cenário musical nacional, com vários hits e uma grande presença digital.'
+        ]);
+
+        $actor45 = Actor::create([
+            'FullName' => 'Chiara Ferragni',
+            'sexo' => 'Femenino',
+            'Name' => 'Chiara Ferragni',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'ChiaraFerragni.jpg',
+            'Frase' => "Fashion is my passion and my business.",
+            'birthday' => '7/5/1987',
+            'country' => 'Itália',
+            'profissao' => 'CC',
+            'Slug' => 'ChiaraFerragni',
+            'bio' => 'Chiara Ferragni é uma influencer de moda e empresária italiana, considerada uma das pioneiras do digital fashion blogging, com enorme impacto nas redes sociais.'
+        ]);
+
+        $actor46 = Actor::create([
+            'FullName' => 'Loren Gray Beech',
+            'sexo' => 'Femenino',
+            'Name' => 'Loren Gray',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'LorenGray.jpg',
+            'Frase' => "Keep pushing forward, no matter what.",
+            'birthday' => '19/4/2002',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Artista',
+            'Slug' => 'LorenGrayBeech',
+            'bio' => 'Loren Gray é uma cantora e criadora de conteúdo americana, famosa pelo seu sucesso no TikTok e nas plataformas digitais, com milhões de seguidores.'
+        ]);
+
+        $actor47 = Actor::create([
+            'FullName' => 'Domelipa',
+            'sexo' => 'Femenino',
+            'Name' => 'Domelipa',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'Domelipa.jpg',
+            'Frase' => "Dance and life go hand in hand.",
+            'birthday' => '27/11/2001',
+            'country' => 'México',
+            'profissao' => 'CC',
+            'Slug' => 'Domelipa',
+            'bio' => 'Domelipa é uma famosa criadora de conteúdo mexicana, conhecida pelos seus vídeos de dança e lifestyle no TikTok, com grande popularidade entre os jovens.'
+        ]);
+
+        $actor48 = Actor::create([
+            'FullName' => 'Kimberly Loaiza',
+            'sexo' => 'Femenino',
+            'Name' => 'Kim Loaiza',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'KimLoaiza.jpg',
+            'Frase' => "La música es el idioma del corazón.",
+            'birthday' => '12/12/1997',
+            'country' => 'México',
+            'profissao' => 'Artista',
+            'Slug' => 'KimberlyLoaiza',
+            'bio' => 'Kim Loaiza é uma cantora e uma das maiores influenciadoras latinas, com uma enorme base de fãs nas redes sociais e vários sucessos musicais.'
+        ]);
+
+        $actor49 = Actor::create([
+            'FullName' => 'Dixie D’Amelio',
+            'sexo' => 'Femenino',
+            'Name' => 'Dixie D’Amelio',
+            'banner' => 'atoresFelizes.jpg',
+            'image' => 'DixieDAmelio.jpg',
+            'Frase' => "I just want to be me and have fun.",
+            'birthday' => '12/8/2001',
+            'country' => 'Estados Unidos',
+            'profissao' => 'Artista',
+            'Slug' => 'DixieDAmelio',
+            'bio' => 'Dixie D’Amelio é uma cantora e influenciadora americana, irmã da famosa Charli D’Amelio, conhecida por sua carreira musical e presença digital.'
+        ]);
+
+
 }
 }
