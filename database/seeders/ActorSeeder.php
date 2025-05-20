@@ -671,6 +671,7 @@ class ActorSeeder extends Seeder
             $actor31->id => ['personagem' => 'Leia Organa'],
             $actor33->id => ['personagem' => 'Han Solo'],
             $actor32->id => ['personagem' => 'Lando Calrissian'],
+            $actor26->id => ['personagem' => 'Obi-Wan Kenobi ()'],
         ]);
         $StarWarsV->elenco = $StarWarsV->actors->pluck('Name')->implode(', ');
         $StarWarsV->save();
