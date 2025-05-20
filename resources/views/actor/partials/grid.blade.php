@@ -1,12 +1,13 @@
 @foreach ($actors as $ator)
     <a href="/atores/{{ $ator->Slug }}">
-        <div class="border-2 p-4 ">
-            <img class="h-64 object-cover" src="/imagens/atores/{{ $ator->image }}">
-            <b class="text-neutral-50">{{ $ator->Name }}</b>
-            <p class="font-italic text-neutral-50">{{ $ator->birthday }}</p>
+        <div class="aspect-w-2 aspect-h-3">
+            <img class="object-cover w-full h-full rounded" src="/imagens/atores/{{ $ator->image }}" alt="{{ $ator->Name }}">
+            <b class="block text-neutral-50 mt-2 text-base">{{ $ator->Name }}</b>
+            <p class="text-sm text-neutral-300 italic">{{ $ator->birthday }}</p>
         </div>
     </a>
 @endforeach
+
 
 {{-- 
 <div class="ml-2 pr-4">

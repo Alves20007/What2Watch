@@ -24,6 +24,7 @@ use Laravel\Jetstream\Rules\Role;
 use Psy\CodeCleaner\ReturnTypePass;
 
 
+
 Route::get('/atores/aniversariantes', [ActorController::class, 'aniversariantesHoje'])->name('actor.Atordex');
 Route::get('/ver-depois/{id}', [FilmController::class, 'marcarVerDepois'])->name('verDepois');
 

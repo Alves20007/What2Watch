@@ -21,6 +21,23 @@
 
                 <!-- Seções compactas -->
                 <div class="space-y-3">
+
+                    <!--Genero -->
+                    <div>
+                        <h3 class="text-xs text-zinc-400 uppercase mb-1">Género</h3>
+                        <div class="space-y-1">
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="sexo[]" value="Masculino" 
+                                       class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Masculino</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group"> 
+                                <input type="checkbox" name="sexo[]" value="Femenino" 
+                                       class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Femenino </span>
+                            </label>
+                        </div>
+                    </div>
                     <!--profissao -->
                     <div>
                         <h3 class="text-xs text-zinc-400 uppercase mb-1">Tipo de profissao</h3>
@@ -84,8 +101,11 @@
             const searchButton = document.getElementById("searchButton");
             
             searchButton.addEventListener("click", function () {
-                // Coletar categorias e tipos selecionados
+
                 const profissao = Array.from(document.querySelectorAll("input[name='profissao[]']:checked"))
+                                    .map(cb => cb.value);
+
+                const sexo = Array.from(document.querySelectorAll("input[name='sexo[]']:checked"))
                                     .map(cb => cb.value);
 
                 const searchTerm = document.getElementById("searchInputSidebar").value;
@@ -101,6 +121,7 @@
                     },
                     body: JSON.stringify({
                         profissao: profissao,
+                        sexo: sexo,
                         search: searchTerm
                     }),
                 })
