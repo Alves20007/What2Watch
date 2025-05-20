@@ -16,7 +16,7 @@ class ActorController extends Controller
 
         $actor = Actor::whereRaw('DAY(birthday) = ? AND MONTH(birthday) = ?', [$dia, $mes])->get();
 
-        return view('actor.Atordex', compact('actor')); 
+        return view('actor.Atordex', compact('actor'));
     }
 
     public function filter(Request $request)
@@ -25,6 +25,9 @@ class ActorController extends Controller
 
         if ($request->has('profissao') && !empty($request->profissao)) {
             $query->whereIn('profissao', $request->profissao);
+        }
+        if ($request->has('sexo') && !empty($request->sexo)) {
+            $query->whereIn('sexo', $request->sexo);
         }
         if ($request->has('search') && !empty($request->search)) {
             $query->where('Name', 'like', '%' . $request->search . '%');
