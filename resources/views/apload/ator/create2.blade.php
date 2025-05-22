@@ -18,7 +18,7 @@
 
         <!-- Tipo -->
 
-         <div class="mb-S">
+        <div class="mb-S">
             <label for="sexo" class="block text-neutral-50 font-medium">De que Genero é a celebridade?</label>
             <select name="sexo" id="sexo" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="Femenino">Femenino</option>
@@ -28,8 +28,19 @@
         
         <!-- Data -->
         <div class="mb-4">
-            <label for="data" class="block text-neutral-50 font-medium">Data de nascimento</label>
-            <input type="date" name="data" id="data" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <label for="birthday" class="block text-neutral-50 font-medium">Data de nascimento</label>
+            <input type="date" name="birthday" id="birthday" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div class="mb-S">
+            <label for="profissao" class="block text-neutral-50 font-medium">Que tipo de trabalho faz?</label>
+            <select name="profissao" id="profissao" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="ator">Ator</option>
+                <option value="CC">Content Creator</option>
+                <option value="desportistas">Desportista</option>
+                <option value="escritor">Escritor</option>
+                <option value="artistas">Artistas (como Cantor, pintor e.t.c)</option>
+            </select>
         </div>
 
         <div class="mb-4">

@@ -118,8 +118,7 @@ class FilmController extends Controller
 
     public function create()
     {
-        $actors = actor::all(); // ou Atores, depende do nome do teu model
-
-        return view('films.create', compact('actors'));
+        $actors = actor::all();
+        return view('apload.filme.create', compact('actors'));
     }
 }

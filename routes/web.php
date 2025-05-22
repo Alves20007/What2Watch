@@ -28,7 +28,8 @@ Auth::loginusingid(1);
 
 Route::get('/atores/aniversariantes', [ActorController::class, 'aniversariantesHoje'])->name('actor.Atordex');
 Route::get('/ver-depois/{id}', [FilmController::class, 'marcarVerDepois'])->name('verDepois');
-
+Route::get('CriacaoFilmes', [FilmController::class, 'create'])->name('apload.filme.create');
+ 
 Route::middleware('auth')->get('/filmes/Ver/Mais/tarde', [WatchlistController::class, 'index'])->name('Watchlist.watchFilm');
 Route::middleware('auth')->get('/serie/Ver/Mais/tarde', [WatchlistController::class, 'serie'])->name('Watchlist.watchSerie');
 Route::middleware('auth')->get('/video/Ver/Mais/tarde', [WatchlistController::class, 'video'])->name('Watchlist.watchVideo');
@@ -298,33 +299,36 @@ Route::post('/films/store', function (Request $request) {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::post('/apload/ator/store', function (Request $request) {
-    
-    $request -> validate([
-        'idade'=> 'min1',
-        'birthday'=>'min:1',
-        'FullName'=> 'min:3',
-        'Slug' => 'required',
-        'Frase' => 'min1',
-        'sexo'=> 'min1',
+Route::post('/actor/store', function (Request $request) {
+    $request->validate([
+        'birthday' => 'required|date',
+        'Name' => 'required|string|min:3',
+        'Slug' => 'required|string',
+        'Falas' => 'required|string|min:1',
+        'sexo' => 'required|string',
+        'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+        'bio' => 'nullable|string',
     ]);
 
+    // Upload da imagem
     $image = $request->file('image');
-    $imageName = time() . '.' . $image->extension();     
-    $request->image->move(public_path('images'), $imageName);
+    $imageName = time() . '.' . $image->extension();
+    $image->move(public_path('images'), $imageName);
 
-    $video = $request->file('trailer');
-    $videoname = time() . '.' . $video->extension();     
-    $video->move(public_path('video'), $videoname);
+    // Criação do ator
+    Actor::create([
+        'Name' => $request->input('Name'),
+        'Slug' => $request->input('Slug'),
+        'sexo' => $request->input('sexo'),
+        'idade' => $request->input('idade'),
+        'birthday' => $request->input('birthday'),
+        'Frase' => $request->input('Falas'),
+        'bio' => $request->input('bio'),
+        'image' => $imageName,
+    ]);
+    
 
-    actor::create([
-        'birthday'=> $request->input('birthday'),
-        'Name'=> $request->input('Name'),
-        'idade'=> $request->input('idade'),
-        'Slug' => $request->input('Slug')
-,    ]);
-
-    return redirect()->route('apload.ator.create2')->banner('Race created with success');
+    return redirect()->route('apload.ator.create2')->with('success', 'Ator criado com sucesso!');
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
