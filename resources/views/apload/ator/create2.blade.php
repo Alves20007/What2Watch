@@ -1,13 +1,12 @@
 <x-guestLayout>
-    <form action="/films/store" method="POST" enctype="multipart/form-data" class="max-w-4xl mx-auto mt-10 p-6 bg-gray-800 rounded shadow">
+    <form action="/actor/store" method="POST" enctype="multipart/form-data" class="max-w-4xl mx-auto mt-10 p-6 bg-gray-800 rounded shadow">
         <h1 class="text-2xl text-neutral-50 font-bold mb-6">Cadastro das Celebridades</h1>
 
         @csrf
         <x-validation-errors />
         <!-- Name do Filme -->
-        <!-- Tipo -->
         <div class="mb-4">
-            <label for="Name" class="block text-neutral-50 font-medium">Nome da Celebridade</label>
+            <label for="Name" class="block text-neutral-50 font-medium">Nome da Celebridade (Tem de ser o nome completo)</label>
             <input type="text" name="Name" id="Name" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
                 onchange="document.getElementById('Slug').value=slugify(document.getElementById('Name').value)" required>
         </div>
@@ -16,13 +15,17 @@
             <label for="Slug" class="block text-neutral-50 font-medium">Slug</label>
             <input type="text" name="Slug" id="Slug" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
-        
-        <!-- Imagem -->
-        <div class="mb-4">
-            <label for="image" class="block text-neutral-50 font-medium">Imagem</label>
-            <x-input type="file" name="image" id="image" class="w-full p-2 border rounded bg-gray-700 text-white"/>
-        </div>
 
+        <!-- Tipo -->
+
+         <div class="mb-S">
+            <label for="sexo" class="block text-neutral-50 font-medium">De que Genero é a celebridade?</label>
+            <select name="sexo" id="sexo" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+            </select>
+        </div>
+        
         <!-- Data -->
         <div class="mb-4">
             <label for="data" class="block text-neutral-50 font-medium">Data de nascimento</label>
@@ -30,13 +33,13 @@
         </div>
 
         <div class="mb-4">
-            <label for="Falas" class="block text-neutral-50 font-medium">Frase do Ator</label>
+            <label for="Falas" class="block text-neutral-50 font-medium">Uma frase do Ator</label>
             <textarea name="Falas" id="Falas" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
 
         <div class="mb-4">
-            <label for="Falas" class="block text-neutral-50 font-medium">Hístoria</label>
-            <textarea name="Falas" id="Falas" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <label for="bio" class="block text-neutral-50 font-medium">Hístoria</label>
+            <textarea name="bio" id="bio" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
 
         <!-- Elenco -->
@@ -49,6 +52,11 @@
         <!-- Sinopse -->
         <!-- Botão -->
 
+        <!--imagem -->
+        <div class="mb-4">
+            <label for="image" class="block text-neutral-50 font-medium">Imagem</label>
+            <x-input type="file" name="image" id="image" class="w-full p-2 border rounded bg-gray-700 text-white"/>
+        </div>
 
         <div class="text-right">
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">

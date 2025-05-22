@@ -12,7 +12,7 @@
         </div>
         
         <div class="mb-S">
-            <label for="tipo" class="block text-neutral-50 font-medium">É filme/nao oNão video?</label>
+            <label for="tipo" class="block text-neutral-50 font-medium">Que tipo de Media é?</label>
             <select name="tipo" id="tipo" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="filme">Filme</option>
                 <option value="serie">Série</option>

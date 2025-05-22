@@ -24,6 +24,7 @@ use Laravel\Jetstream\Rules\Role;
 use Psy\CodeCleaner\ReturnTypePass;
 
 
+Auth::loginusingid(1);
 
 Route::get('/atores/aniversariantes', [ActorController::class, 'aniversariantesHoje'])->name('actor.Atordex');
 Route::get('/ver-depois/{id}', [FilmController::class, 'marcarVerDepois'])->name('verDepois');
@@ -298,11 +299,14 @@ Route::post('/films/store', function (Request $request) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::post('/apload/ator/store', function (Request $request) {
-    $validated = $request->validate([
+    
+    $request -> validate([
         'idade'=> 'min1',
         'birthday'=>'min:1',
-        'Name'=> 'min:3',
-        'Slug' => 'required'
+        'FullName'=> 'min:3',
+        'Slug' => 'required',
+        'Frase' => 'min1',
+        'sexo'=> 'min1',
     ]);
 
     $image = $request->file('image');

@@ -38,9 +38,10 @@ class DatabaseSeeder extends Seeder
             NoticiaFilmeSeeder::class,
             NoticiafamososSeeder::class,
             ImageSeeder::class,
-            PremiosSeeder::class,
+            PremiosSeeder::class,   
             WatchlistSeeder::class,
             RankingSeeder::class,
         ]);
     }
 }
+   
