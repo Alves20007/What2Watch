@@ -1,7 +1,7 @@
 @foreach ($actors as $ator)
     <a href="/atores/{{ $ator->Slug }}">
         <div class="aspect-w-2 aspect-h-3">
-            <img class="object-cover w-full h-full rounded" src="/imagens/atores/{{ $ator->image }}" alt="{{ $ator->Name }}">
+            <img class="object-cover w-full h-[500px] rounded" src="/imagens/atores/{{ $ator->image }}" alt="{{ $ator->Name }}">
             <b class="block text-neutral-50 mt-2 text-base">{{ $ator->Name }}</b>
             <p class="text-sm text-neutral-300 italic">{{ $ator->birthday }}</p>
         </div>
