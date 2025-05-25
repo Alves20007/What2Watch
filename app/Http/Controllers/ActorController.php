@@ -14,9 +14,18 @@ class ActorController extends Controller
         $dia = $hoje->format('d');
         $mes = $hoje->format('m');
 
-        $actor = Actor::whereRaw('DAY(birthday) = ? AND MONTH(birthday) = ?', [$dia, $mes])->get();
+        $atores = Actor::all()->filter(function ($ator) use ($dia, $mes) {
+            if (!$ator->birthday) return false;
 
-        return view('actor.Atordex', compact('actor'));
+            // Garante que birthday está no formato dd/mm/yyyy
+            if (preg_match('/^(\d{2})\/(\d{2})\/(\d{4})$/', $ator->birthday, $matches)) {
+                [$full, $d, $m, $y] = $matches;
+                return $d === $dia && $m === $mes;
+            }
+            return false;
+        });
+
+        return view('actor.Atordex', ['actor' => $atores]);
     }
 
     public function filter(Request $request)
@@ -43,10 +52,13 @@ class ActorController extends Controller
         return view('actor.Atordex', compact('actors'));
     }
 
-    public function show(Actor $actor)
+    public function show($slug)
     {
-        $actor->load('films');
+        $ator = Actor::where('slug', $slug)->firstOrFail();
 
-        return view('actor.show', compact('actor'));
+        // Filmes onde o campo 'elenco' contém o ID do ator
+        $filmesComAtor = \App\Models\Film::whereJsonContains('elenco', (string) $ator->id)->get();
+
+        return view('atores.show', compact('ator', 'filmesComAtor'));
     }
 }

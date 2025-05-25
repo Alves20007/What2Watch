@@ -42,7 +42,7 @@
             <h2 class="text-xl font-bold mt-10 mb-4">🎭 Atores</h2>
             <div class="space-y-4">
                 @foreach ($results['actors'] as $actor)
-                    <a href="/atores/{{ $actor->id }}" class="flex items-center bg-neutral-900 rounded-lg shadow hover:shadow-lg transition p-3 hover:bg-neutral-800">
+                    <a href="/atores/{{ $actor->Slug }}" class="flex items-center bg-neutral-900 rounded-lg shadow hover:shadow-lg transition p-3 hover:bg-neutral-800">
                         <img 
                             src="/imagens/atores/{{ $actor->image ?? 'default-actor.png' }}" 
                             alt="{{ $actor->Name }}" 

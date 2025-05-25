@@ -1,0 +1,23 @@
+Ator keanu reeves
+
+
+Keanu Reeves
+Masculino
+I try not to think about my life. I have no life. I need therapy
+2/9/1964
+Canadá
+Ator
+Keanu Reeves é um ator, produtor e músico canadense, conhecido por papéis icônicos em filmes como Matrix, John Wick e Velocidade Máxima. Além de sua carreira de sucesso em Hollywood, é admirado por sua humildade e discrição.
+
+
+Filme John Wick
+
+John Wick
+Yeah, I'm thinking I'm back
+24/10/2014
+filme
+ação
+ 'Editora' => 'Summit Entertainment',
+    'Diretor' => 'Chad Stahelski',
+M/16
+Após a morte de sua esposa, John Wick é forçado a sair da aposentadoria quando gangsters invadem sua casa e matam seu cachorro, presente de sua falecida. Isso desencadeia uma busca implacável por vingança no submundo do crime.'

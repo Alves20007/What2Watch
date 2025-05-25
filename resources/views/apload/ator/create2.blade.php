@@ -1,88 +1,107 @@
 <x-guestLayout>
-    <form action="/actor/store" method="POST" enctype="multipart/form-data" class="max-w-4xl mx-auto mt-10 p-6 bg-gray-800 rounded shadow">
-        <h1 class="text-2xl text-neutral-50 font-bold mb-6">Cadastro das Celebridades</h1>
-
+    <form action="/actor/store" method="POST" enctype="multipart/form-data" class="max-w-xl mx-auto bg-zinc-800 p-6 rounded-xl shadow-lg">
+         <h1 class="text-2xl text-neutral-50 font-bold mb-6">Registar Famoso/a</h1>
         @csrf
-        <x-validation-errors />
-        <!-- Name do Filme -->
+
+        <!-- Nome completo -->
         <div class="mb-4">
-            <label for="Name" class="block text-neutral-50 font-medium">Nome da Celebridade (Tem de ser o nome completo)</label>
-            <input type="text" name="Name" id="Name" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
-                onchange="document.getElementById('Slug').value=slugify(document.getElementById('Name').value)" required>
-        </div>
-        <!-- Slug -->
-        <div class="mb-4">
-            <label for="Slug" class="block text-neutral-50 font-medium">Slug</label>
-            <input type="text" name="Slug" id="Slug" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <label for="FullName" class="block text-neutral-50 font-medium">Nome Completo</label>
+            <input 
+                type="text" 
+                name="FullName" 
+                id="FullName" 
+                class="w-full p-2 border rounded bg-gray-700 text-white" 
+                required 
+                onchange="handleFullNameChange(this.value)">
         </div>
 
-        <!-- Tipo -->
+        <!-- Campo oculto: Name -->
+        <input type="hidden" name="Name" id="Name">
 
-        <div class="mb-S">
-            <label for="sexo" class="block text-neutral-50 font-medium">De que Genero é a celebridade?</label>
-            <select name="sexo" id="sexo" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="Femenino">Femenino</option>
+        <!-- Aniversário -->
+        <div class="mb-4">
+            <label for="birthday" class="block text-neutral-50 font-medium">Data de Nascimento</label>
+            <input type="date" name="birthday" id="birthday" class="w-full p-2 border rounded bg-gray-700 text-white" required>
+        </div>
+
+        <!-- Campo oculto: Slug -->
+        <input type="hidden" name="slug" id="slug">
+
+        <!-- Frase -->
+        <div class="mb-4">
+            <label for="Frase" class="block text-neutral-50 font-medium">Frase Marcante</label>
+            <input type="text" name="Frase" id="Frase" class="w-full p-2 border rounded bg-gray-700 text-white" required>
+        </div>
+
+        <!-- Sexo -->
+        <div class="mb-4">
+            <label for="sexo" class="block text-neutral-50 font-medium">Sexo</label>
+            <select name="sexo" id="sexo" class="w-full p-2 border rounded bg-gray-700 text-white" required>
                 <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
             </select>
         </div>
-        
-        <!-- Data -->
+
+        <!-- Falecimento -->
         <div class="mb-4">
-            <label for="birthday" class="block text-neutral-50 font-medium">Data de nascimento</label>
-            <input type="date" name="birthday" id="birthday" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <label for="Falecimento" class="block text-neutral-50 font-medium">Qual é o Estado Vital do Famoso</label>
+            <select name="Falecimento" id="Falecimento" class="w-full p-2 border rounded bg-gray-700 text-white">
+                <option value="Vivo">Vivo</option>
+                <option value="Morto">Morto</option>
+            </select>
         </div>
 
-        <div class="mb-S">
-            <label for="profissao" class="block text-neutral-50 font-medium">Que tipo de trabalho faz?</label>
-            <select name="profissao" id="profissao" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <!-- País -->
+        <div class="mb-4">
+            <label for="Country" class="block text-neutral-50 font-medium">País</label>
+            <input type="text" name="Country" id="Country" class="w-full p-2 border rounded bg-gray-700 text-white" required>
+        </div>
+
+        <!-- Profissão -->
+        <div class="mb-4">
+            <label for="profissao" class="block text-neutral-50 font-medium">Profissão</label>
+            <select name="profissao" id="profissao" class="w-full p-2 border rounded bg-gray-700 text-white">
                 <option value="ator">Ator</option>
-                <option value="CC">Content Creator</option>
-                <option value="desportistas">Desportista</option>
-                <option value="escritor">Escritor</option>
-                <option value="artistas">Artistas (como Cantor, pintor e.t.c)</option>
+                <option value="CC">Atriz</option>
+                <option value="desportista">Diretor</option>
+                <option value="escritor">Produtor</option>
+                <option value="artistas">Roteirista</option>
             </select>
         </div>
 
+        <!-- Biografia -->
         <div class="mb-4">
-            <label for="Falas" class="block text-neutral-50 font-medium">Uma frase do Ator</label>
-            <textarea name="Falas" id="Falas" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <label for="bio" class="block text-neutral-50 font-medium">Biografia</label>
+            <textarea name="bio" id="bio" rows="4" class="w-full p-2 border rounded bg-gray-700 text-white"></textarea>
         </div>
 
+        <!-- Imagem -->
         <div class="mb-4">
-            <label for="bio" class="block text-neutral-50 font-medium">Hístoria</label>
-            <textarea name="bio" id="bio" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <label for="image" class="block text-neutral-50 font-medium">Foto do Ator</label>
+            <input type="file" name="image" id="image" accept="image/*" class="w-full p-2 border rounded bg-gray-700 text-white" required>
         </div>
 
-        <!-- Elenco -->
-
-        {{-- <div class="mb-4">
-            <label for="elenco" class="block text-neutral-50 font-medium">Elenco</label>
-            <textarea name="elenco" id="elenco" class="w-full p-2 border rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-            <small class="text-gray-400">Se o ator estiver no banco de dados, sua foto será exibida automaticamente.</small>
-        </div> --}}
-        <!-- Sinopse -->
-        <!-- Botão -->
-
-        <!--imagem -->
-        <div class="mb-4">
-            <label for="image" class="block text-neutral-50 font-medium">Imagem</label>
-            <x-input type="file" name="image" id="image" class="w-full p-2 border rounded bg-gray-700 text-white"/>
-        </div>
-
-        <div class="text-right">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                Cadastrar ator
+        <!-- Submeter -->
+        <div class="mt-6">
+            <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded shadow">
+                Criar Ator
             </button>
         </div>
     </form>
+
     <script>
-            function slugify(str) {
-            str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
-            str = str.toLowerCase(); // convert string to lowercase
-            str = str.replace(/[^a-z0-9 -]/g, '') // remove any non-alphanumeric characters
-                    .replace(/\s+/g, '-') // replace spaces with hyphens
-                    .replace(/-+/g, '-'); // remove consecutive hyphens
-            return str;
-            }
+        function slugify(str) {
+            return str.trim().toLowerCase()
+                .replace(/[^a-z0-9 -]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-');
+        }
+
+        function handleFullNameChange(fullName) {
+            const partes = fullName.trim().split(/\s+/);
+            const name = (partes[0] ?? '') + ' ' + (partes[1] ?? '');
+            document.getElementById('Name').value = name.trim();
+            document.getElementById('slug').value = slugify(fullName);
+        }
     </script>
 </x-guestLayout>

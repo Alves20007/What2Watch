@@ -1,8 +1,13 @@
 <x-guestLayout>
-    <div class="max-w-4xl mx-auto p-4">
-        <div class="absolute right-4 top-45 w-56"> <!-- Container fixo à direita -->
+    <div class="max-w-7xl mx-auto p-4 grid grid-cols-1 md:grid-cols-[1fr,auto] gap-6 items-start">
+        
+        <!-- Grid de filmes -->
+       <div id="filmsGrid">
+            @include('films.partials.grid')
+        </div>
+        <!-- Filtro fixo à direita que acompanha scroll -->
+        <div class="sticky top-4 w-56">
             <div class="bg-zinc-800 bg-opacity-80 rounded-lg p-3 shadow-lg border border-zinc-600">
-                <!-- Cabeçalho compacto -->
                 <h2 class="text-white text-sm font-medium mb-2 flex items-center justify-between">
                     <span>FILTROS</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -10,7 +15,6 @@
                     </svg>
                 </h2>
 
-                <!-- 🔍 Nova barra de pesquisa -->
                 <div class="mb-3">
                     <label for="searchInputSidebar" class="sr-only">Pesquisar</label>
                     <input 
@@ -21,10 +25,7 @@
                     />
                 </div>
 
-        
-                <!-- Seções compactas -->
-                <div class="space-y-3">
-                    <!--estilo de media -->
+                <div class="space-y-3">                    <!--estilo de media -->
                     <div>
                         <h3 class="text-xs text-zinc-400 uppercase mb-1">Tipo de Média</h3>
                         <div class="space-y-1">
@@ -80,6 +81,51 @@
                                        class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
                                 <span class="text-white text-sm group-hover:text-orange-300">Ficção cientifíca</span>
                             </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="drama" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Drama</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="fantasia" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Fantasia</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="romance" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Romance</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="musical" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Musical</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="animacao" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Animação</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="documentario" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Documentário</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="biografia" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Biografia</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="guerra" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Guerra</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer group">
+                                <input type="checkbox" name="categorias[]" value="policial" 
+                                    class="h-3.5 w-3.5 rounded-sm border-zinc-500 text-orange-500 focus:ring-orange-500 bg-zinc-700">
+                                <span class="text-white text-sm group-hover:text-orange-300">Policial</span>
+                            </label>
                         </div>
                     </div>
         
@@ -104,8 +150,8 @@
                         </div>
                     </div>
                 </div>
-        
-                <!-- Botão compacto -->
+                </div>
+
                 <button id="searchButton" 
                         class="mt-3 w-full bg-orange-600 hover:bg-orange-700 text-white py-1.5 px-3 rounded-sm 
                                text-xs font-medium uppercase tracking-wider transition duration-150">
@@ -114,28 +160,6 @@
             </div>
         </div>
 
-        <!-- Grid de filmes -->
-        <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            @foreach ($films as $film)
-                <a href="/filmes/{{ $film->slug }}" class="block hover:shadow-lg transition-shadow duration-300">
-                    <div class="border-2 border-gray-200 rounded-lg overflow-hidden p-4">
-                        <!-- Imagem do filme -->
-                        <img 
-                            class="h-64 w-full object-cover rounded-t-lg" 
-                            src="/images/{{ $film->image }}" 
-                            alt="{{ $film->title }} - Poster" 
-                            loading="lazy"
-                        >
-                        <!-- Informações do filme -->
-                        <div class="mt-2">
-                            <h3 class="font-bold text-neutral-200 text-lg">{{ $film->title }}</h3>
-                            <p class="text-sm text-neutral-200">{{ $film->Data }}</p>
-                        </div>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-        
         <script>
             function addToWatchLater(filmId) {
                 fetch(`/filmes/watch-later/add/${filmId}`, {
@@ -153,53 +177,52 @@
             }
 
             document.addEventListener("DOMContentLoaded", function () {
-    const searchButton = document.getElementById("searchButton");
+                const searchButton = document.getElementById("searchButton");
 
-    searchButton.addEventListener("click", handleSearch);
-    document.getElementById("searchInputSidebar").addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            handleSearch();
-        }
-    });
+                searchButton.addEventListener("click", handleSearch);
+                document.getElementById("searchInputSidebar").addEventListener("keypress", function (e) {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        handleSearch();
+                    }
+                });
 
-    function handleSearch() {
-        const categorias = Array.from(document.querySelectorAll("input[name='categorias[]']:checked"))
-                            .map(cb => cb.value);
-        
-        const tipos = Array.from(document.querySelectorAll("input[name='tipos[]']:checked"))
-                        .map(cb => cb.value);
+                function handleSearch() {
+                    const categorias = Array.from(document.querySelectorAll("input[name='categorias[]']:checked"))
+                                        .map(cb => cb.value);
+                    
+                    const tipos = Array.from(document.querySelectorAll("input[name='tipos[]']:checked"))
+                                    .map(cb => cb.value);
 
-        const CE = Array.from(document.querySelectorAll("input[name='CE[]']:checked"))
-                        .map(cb => cb.value);
+                    const CE = Array.from(document.querySelectorAll("input[name='CE[]']:checked"))
+                                    .map(cb => cb.value);
 
-        const searchTerm = document.getElementById("searchInputSidebar").value;
+                    const searchTerm = document.getElementById("searchInputSidebar").value;
 
-        fetch("/filmes/filter", {  // Alterado para usar a rota correta
-            method: "POST",
-            headers: {
-                "X-CSRF-TOKEN": "{{ csrf_token() }}",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                categorias: categorias,
-                tipos: tipos,
-                CE: CE,
-                search: searchTerm
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.html) {
-                document.querySelector(".grid").innerHTML = data.html;
-            } else {
-                console.error("Resposta inesperada:", data);
-            }
-        })
-        .catch(error => console.error("Erro:", error));
-        }
-    });
-
+                    fetch("/filmes/filter", {
+                        method: "POST",
+                        headers: {
+                            "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            categorias: categorias,
+                            tipos: tipos,
+                            CE: CE,
+                            search: searchTerm
+                        }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.html) {
+                            document.getElementById("filmsGrid").innerHTML = data.html;
+                        } else {
+                            console.error("Resposta inesperada:", data);
+                        }
+                    })
+                    .catch(error => console.error("Erro:", error));
+                }
+            });
         </script>
     </div>
 </x-guestLayout>

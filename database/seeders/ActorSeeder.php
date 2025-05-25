@@ -799,7 +799,7 @@ class ActorSeeder extends Seeder
             'Frase' => "A música é a linguagem da alma.",
             'birthday' => '23/6/1996',
             'country' => 'Portugal',
-            'profissao' => 'Artista',
+            'profissao' => 'artistass',
             'Slug' => 'BarbaraBandeira',
             'bio' => 'Bárbara Bandeira é uma cantora portuguesa que se destacou no cenário musical nacional, com vários hits e uma grande presença digital.'
         ]);
@@ -827,7 +827,7 @@ class ActorSeeder extends Seeder
             'Frase' => "Keep pushing forward, no matter what.",
             'birthday' => '19/4/2002',
             'country' => 'Estados Unidos',
-            'profissao' => 'Artista',
+            'profissao' => 'artistas',
             'Slug' => 'LorenGrayBeech',
             'bio' => 'Loren Gray é uma cantora e criadora de conteúdo americana, famosa pelo seu sucesso no TikTok e nas plataformas digitais, com milhões de seguidores.'
         ]);
@@ -855,23 +855,37 @@ class ActorSeeder extends Seeder
             'Frase' => "La música es el idioma del corazón.",
             'birthday' => '12/12/1997',
             'country' => 'México',
-            'profissao' => 'Artista',
+            'profissao' => 'artistas',
             'Slug' => 'KimberlyLoaiza',
             'bio' => 'Kim Loaiza é uma cantora e uma das maiores influenciadoras latinas, com uma enorme base de fãs nas redes sociais e vários sucessos musicais.'
         ]);
 
         $actor49 = Actor::create([
-            'FullName' => 'Dixie D’Amelio',
-            'sexo' => 'Femenino',
-            'Name' => 'Dixie D’Amelio',
+            'FullName' => 'Chico da tina',
+            'sexo' => 'Masculino',
+            'Name' => 'Chico da tina',
             'banner' => 'atoresFelizes.jpg',
-            'image' => 'DixieDAmelio.jpg',
-            'Frase' => "I just want to be me and have fun.",
+            'image' => 'ChicoDaTina.jpg',
+            'Frase' => "Eu sou o melhor da tuga.",
             'birthday' => '12/8/2001',
-            'country' => 'Estados Unidos',
-            'profissao' => 'Artista',
-            'Slug' => 'DixieDAmelio',
-            'bio' => 'Dixie D’Amelio é uma cantora e influenciadora americana, irmã da famosa Charli D’Amelio, conhecida por sua carreira musical e presença digital.'
+            'country' => 'Portugal',
+            'profissao' => 'artistas',
+            'Slug' => 'ChicoDaTina',
+            'bio' => 'Chico da tina é um cantor muito bom.'
+        ]);
+
+        $actor50 = Actor::create([
+            'FullName' => 'Patryck Nogueira',
+            'sexo' => 'Masculino',
+            'Name' => 'Inemafoo',
+            'banner' => 'bannerInemafoo.jpg',
+            'image' => 'inemafoo.jpg',
+            'Frase' => 'A mente é o verdadeiro palco.',
+            'birthday' => '26/5/1998',
+            'country' => 'Brasil',
+            'profissao' => 'CC',
+            'Slug' => 'Inemafoo',
+            'bio' => 'Patryck Nogueira, conhecido como Inemafoo, é um criador de conteúdo brasileiro especializado em vídeos de Minecraft. Com mais de 4,7 milhões de inscritos no YouTube, ele é reconhecido por suas gameplays, tutoriais e conteúdo criativo voltado para o público gamer.'
         ]);
 
 

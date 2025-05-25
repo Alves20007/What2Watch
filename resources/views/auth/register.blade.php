@@ -1,17 +1,19 @@
+{!! NoCaptcha::renderJs() !!}
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
+            {{--A minha imagem estra no authentication card--}}
             <x-authentication-card-logo />
         </x-slot>
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data cl">
             @csrf
 
             <div>
                 <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-input id="name" class="block mt-1 w-full bg-neutral-100" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             {{-- <div>
@@ -52,6 +54,13 @@
             <div class="mt-4">
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+            </div>
+
+            <div class="mt-4">
+                {!! NoCaptcha::display() !!}
+                @error('g-recaptcha-response')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
             
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

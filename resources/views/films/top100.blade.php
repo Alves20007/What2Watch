@@ -1,12 +1,11 @@
 <x-guestLayout>
-    <div class="max-w-4xl mx-auto p-4">
+    <div class="max-w-4xl mx-auto p-4 bg-neutral-900 min-h-screen">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-
             <div class="md:col-span-4">
-                <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     @foreach ($films as $film)
                         <a href="/filmes/{{ $film->slug }}" class="block hover:shadow-lg transition-shadow duration-300">
-                            <div class="border-2 border-gray-200 rounded-lg overflow-hidden p-4 bg-zinc-800">
+                            <div class="rounded-lg overflow-hidden p-4 bg-zinc-800 border border-zinc-700">
                                 <!-- Imagem do filme -->
                                 <img 
                                     class="h-64 w-full object-cover rounded-t-lg" 
@@ -14,12 +13,11 @@
                                     alt="{{ $film->title }} - Poster" 
                                     loading="lazy"
                                 >
-                                
+
                                 <!-- Informações do filme -->
-                                <div class="mt-3">
+                                <div class="mt-2">
                                     <h3 class="font-bold text-neutral-200 text-lg">{{ $film->title }}</h3>
                                     <p class="text-sm text-neutral-400">{{ $film->Data }}</p>
-                                    
                                     <!-- Avaliação -->
                                     <div class="flex items-center mt-2">
                                         <div class="flex mr-2">
@@ -28,7 +26,7 @@
                                                 @if($i <= $roundedRating)
                                                     <span class="text-yellow-500">★</span>
                                                 @else
-                                                    <span class="text-gray-400">★</span>
+                                                    <span class="text-gray-500">★</span>
                                                 @endif
                                             @endfor
                                         </div>
@@ -43,6 +41,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {

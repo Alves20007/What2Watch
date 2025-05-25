@@ -1,6 +1,6 @@
 <x-guestLayout>
     <div class="max-w-4xl mx-auto p-4">
-        <div class="absolute right-4 top-45 w-56"> <!-- Container fixo à direita -->
+        <div class="fixed right-4 top-28  w-56 z-50"> <!-- Container fixo à direita -->
             <div class="bg-zinc-800 bg-opacity-80 rounded-lg p-3 shadow-lg border border-zinc-600">
                 <!-- Cabeçalho compacto -->
                 <h2 class="text-white text-sm font-medium mb-2 flex items-center justify-between">
@@ -82,15 +82,40 @@
 
         </div>
         </div>
-        <div class="ml-2 pr-64"> <!-- Adiciona espaço à direita para o filtro -->
+        <div class="ml-2 pr-64">
             <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 grid-atores">
                 @foreach ($actor as $ator)
-                    <a href="/atores/{{ $ator->Slug }}">
-                        <div class="aspect-w-2 aspect-h-3">
-                            <img class="object-cover w-full h-full rounded" src="/imagens/atores/{{ $ator->image }}" alt="{{ $ator->Name }}">
-                            <b class="block text-neutral-50 mt-2 text-base">{{ $ator->Name }}</b>
-                            <p class="text-sm text-neutral-300 italic">{{ $ator->birthday }}</p>
+                    @php
+                        // Nome: se null, usar primeiro e último do Fullname
+                        $nome = $ator->Name;
+                        if (empty($nome) && !empty($ator->Fullname)) {
+                            $partes = preg_split('/\s+/', trim($ator->Fullname));
+                            $primeiro = $partes[0] ?? '';
+                            $ultimo = count($partes) > 1 ? $partes[count($partes) - 1] : '';
+                            $nome = trim($primeiro . ' ' . $ultimo);
+                        }
+
+                        // Data: converter para DD/MM/YYYY se estiver no formato padrão
+                        $data = $ator->birthday;
+                        if (!empty($data) && preg_match('/^\d{4}-\d{2}-\d{2}$/', $data)) {
+                            try {
+                                $data = \Carbon\Carbon::parse($data)->format('d/m/Y');
+                            } catch (\Exception $e) {
+                                // Deixa a data como está se der erro
+                            }
+                        }
+                    @endphp
+
+                   <a href="/atores/{{ $ator->Slug }}">
+                        <div class="w-full">
+                            <img 
+                                class="w-full h-[500px] object-cover rounded" 
+                                src="/imagens/atores/{{ $ator->image }}" 
+                                alt="{{ $nome }}"
+                            >
                         </div>
+                        <b class="block text-neutral-50 mt-2 text-base">{{ $nome }}</b>
+                        <p class="text-sm text-neutral-300 italic">{{ $data }}</p>
                     </a>
                 @endforeach
             </div>

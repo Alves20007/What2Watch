@@ -92,7 +92,7 @@
                 @endauth
 
                 @guest
-                    <a href="{{ url('register') }}" class="bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium px-6 py-2 rounded-md">Registrar-se</a>
+                    <a href="{{ url('register') }}" class="bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium px-6 py-2 rounded-md">Registar-se</a>
                     <a href="{{ url('login') }}" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium px-6 py-2 rounded-md">Entrar</a>
                 @endguest
             </div>

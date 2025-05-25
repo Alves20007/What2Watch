@@ -12,6 +12,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\WatchlistController;
 use App\Models\actor;
 use App\Models\Film;
+use Carbon\Carbon;
 use App\Models\apload;
 use App\Models\noticiafamosos;
 use App\Models\noticiaFilme;
@@ -24,12 +25,19 @@ use Laravel\Jetstream\Rules\Role;
 use Psy\CodeCleaner\ReturnTypePass;
 
 
-Auth::loginusingid(1);
+// Auth::loginusingid(1);
 
 Route::get('/atores/aniversariantes', [ActorController::class, 'aniversariantesHoje'])->name('actor.Atordex');
 Route::get('/ver-depois/{id}', [FilmController::class, 'marcarVerDepois'])->name('verDepois');
 Route::get('CriacaoFilmes', [FilmController::class, 'create'])->name('apload.filme.create');
- 
+Route::get('/actors/search', function (Request $request) {
+    $query = $request->query('q');
+    $actors = Actor::where('FullName', 'LIKE', "%$query%")
+                   ->select('id', 'FullName', 'image')
+                   ->limit(10)
+                   ->get();
+    return response()->json($actors);
+});
 Route::middleware('auth')->get('/filmes/Ver/Mais/tarde', [WatchlistController::class, 'index'])->name('Watchlist.watchFilm');
 Route::middleware('auth')->get('/serie/Ver/Mais/tarde', [WatchlistController::class, 'serie'])->name('Watchlist.watchSerie');
 Route::middleware('auth')->get('/video/Ver/Mais/tarde', [WatchlistController::class, 'video'])->name('Watchlist.watchVideo');
@@ -107,7 +115,7 @@ Route::get('/escolhido', function() {
 
     $films = Film::where('escolhido', 'sim')->get();
     
-    return view('films.Filmdex', compact('films'));
+    return view('films.escolhido', compact('films'));
 });
 
 
@@ -193,17 +201,22 @@ Route::get('/', function () {
 
 
 Route::get('CaixaSurpresa', function () {
-
-
-    $calculo = rand();
     $total = Film::count();
 
-    $id = $calculo % $total + 1;
+    // Verifica se há filmes disponíveis
+    if ($total === 0) {
+        return redirect('/')->with('error', 'Ainda não existem filmes na base de dados.');
+    }
 
-    $film = Film::find($id);    
-    return view('films.MovieShow', compact(['film']));
+    // Tenta obter um filme aleatório de forma segura
+    $film = Film::inRandomOrder()->first();
+
+    if (!$film) {
+        return redirect('/')->with('error', 'Erro ao selecionar filme aleatório.');
+    }
+
+    return view('films.MovieShow', compact('film'));
 });
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('/apload', function () {
@@ -214,10 +227,6 @@ Route::get('/apload', function () {
 Route::get('/apload/filme/store',function(){
     return view('apload.filme.store');    
 });
-
-Route::get('CriacaoFilmes', function () {
-    return view(view: 'apload.filme.create');
-})->name('apload.filme.create');
 
 
 ////
@@ -245,19 +254,26 @@ Route::get('Own Movie', function (){
 Route::post('/films/store', function (Request $request) {
 
     // Validação dos dados
-    $request->validate([
-        'title' => 'required|min:3',        
-        'slug' => 'required',
-        'image' => 'required|image|mimes:jpeg,png,gif,PNG|max:2048',
-        'data' => 'min:3',
-        'sinopse' => 'required|min:3',
-        'tipo' => 'required|min:2',
-        'description' => 'min:3',
-        'Falas' => 'min:3',
-        'trailer' => 'required|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime|max:100000',
-        'categoria' => 'required|min:3', 
-        'Temporadas' => 'min:1',
-        'Episodios' => 'min:1'
+    $validated = $request->validate([
+    'title' =>'required|min:3',
+    'slug' => 'required',
+    'image' => 'required|image|mimes:jpeg,png,gif,PNG|max:2048',
+    'data' => 'min:3',
+    'sinopse' => 'required|min:3',
+    'tipo' => 'required|min:2',
+    'description' => 'min:3',
+    'Falas' => 'min:3',
+    'trailer' => 'required|file|mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime|max:100000',
+    'categoria' => 'required|array|min:1',
+    'categoria.*' => 'string',
+    'Temporadas' => 'nullable|integer|min:1',
+    'Episodios' => 'nullable|integer|min:1',
+    'Elenco' => 'nullable|array',
+    'Diretor' => 'nullable|min:1',
+    'CE' => 'nullable|min:1',
+    'Editora' => 'nullable|min:1',
+    'Oscares' => 'nullable|integer|min:1',
+    'Elenco.*' => 'integer|exists:actors,id',
     ]);
 
     //imagem e video
@@ -279,12 +295,16 @@ Route::post('/films/store', function (Request $request) {
     //filme no banco de dados
     Film::create([
         'tipo' => $request->input('tipo'),
-        'categoria' => $request->input('categoria'),
+        'Diretor' => $request->input('Diretor'),
+        'CE' => $request->input('CE'),
+        'Editora' => $request->input('Editora'),
+        'Oscares' => $request->input('Oscares'),
+        'categoria' => json_encode($request->input('categoria')), // <== aqui
         'title' => $request->input('title'),
         'slug' => $request->input('slug'),
         'description' => $request->input('description'),     
         'Data' => $request->input('data'),
-        'elenco' => $request->input('elenco'),
+        'Elenco' => $request->has('Elenco') ? json_encode($request->input('Elenco')) : json_encode([]), // se for array, pode salvar como JSON
         'sinopse' => $request->input('sinopse'),
         'Falas' => $request->input('Falas'),
         'image' => $imageName,
@@ -302,31 +322,41 @@ Route::post('/films/store', function (Request $request) {
 Route::post('/actor/store', function (Request $request) {
     $request->validate([
         'birthday' => 'required|date',
-        'Name' => 'required|string|min:3',
-        'Slug' => 'required|string',
-        'Falas' => 'required|string|min:1',
+        'FullName' => 'required|string|min:3',
+        'Frase' => 'required|string|min:1',
         'sexo' => 'required|string',
+        'Name' => 'nullable|string|min:1',
+        'Falecimento' => 'nullable|string|min:1',
+        'Country' => 'required|string|min:3',
+        'profissao' => 'nullable|string|min:1',
         'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
         'bio' => 'nullable|string',
     ]);
 
+    // Cálculo da idade
+
     // Upload da imagem
     $image = $request->file('image');
     $imageName = time() . '.' . $image->extension();
-    $image->move(public_path('images'), $imageName);
+    $image->move(public_path('\imagens\atores'), $imageName);
+
+    // Criação do slug com base no nome
+    $slug = Str::slug($request->input('FullName'));
 
     // Criação do ator
     Actor::create([
+        'FullName' => $request->input('FullName'),
+        'Slug' => $slug,
         'Name' => $request->input('Name'),
-        'Slug' => $request->input('Slug'),
         'sexo' => $request->input('sexo'),
-        'idade' => $request->input('idade'),
-        'birthday' => $request->input('birthday'),
-        'Frase' => $request->input('Falas'),
+        'birthday' =>$request->input('birthday'),
+        'Frase' => $request->input('Frase'),
+        'Falecimento'  => $request->input('Falecimento'),
+        'Country' => $request->input('Country'),
+        'profissao' => $request->input('profissao'),
         'bio' => $request->input('bio'),
         'image' => $imageName,
     ]);
-    
 
     return redirect()->route('apload.ator.create2')->with('success', 'Ator criado com sucesso!');
 });

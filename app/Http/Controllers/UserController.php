@@ -17,6 +17,7 @@ class UserController extends Controller
         'email' => 'required|email|max:255|unique:users,email,' . $user->id,
         'bio' => 'nullable|string|max:500',
         'Foto_Perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'g-recaptcha-response' => 'required|captcha',   
     ]);
 
     // Se houver nova imagem...

@@ -11,12 +11,13 @@ class Actor extends Model
     use HasFactory;
     protected $guarded = [];
 
-     protected $fillable = ['Name', 'Slug', 'Falas', 'birthday', 'sexo', 'bio'];
+    protected $fillable = ['FullName', 'Slug', 'Frase', 'birthday', 'sexo', 'bio', 'Country', 'profissao', 'Falecimento', 'image', 'Name'];
 
     public function oscar() {
         return $this->belongsToMany(Category::class);        
     }
 
+ 
     public function films()
     {
         return $this->belongsToMany(Film::class)

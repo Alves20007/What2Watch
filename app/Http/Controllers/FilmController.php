@@ -39,8 +39,8 @@ class FilmController extends Controller
     }
     public function show(Film $film)
     {
-        $film->load(['rankings.user', 'actors']);
-
+         $film->load(['rankings.user', 'actors', 'creator']);
+         
         return view('films.show', compact('film'));
     }
     public function top100()
@@ -82,22 +82,28 @@ class FilmController extends Controller
     }
 
     
-    public function filter(Request $request)
+   public function filter(Request $request)
     {
         $query = Film::query();
 
-        if ($request->has('categorias') && !empty($request->categorias)) {
-            $query->whereIn('categoria', $request->categorias);
+        if ($request->has('categorias') && is_array($request->categorias) && count($request->categorias)) {
+            $query->where(function ($q) use ($request) {
+                foreach ($request->categorias as $categoria) {
+                    $q->orWhereJsonContains('categoria', $categoria)
+                    ->orWhere('categoria', 'like', '%"' . $categoria . '"%')
+                    ->orWhere('categoria', $categoria);
+                }
+            });
         }
 
-        if ($request->has('tipos') && !empty($request->tipos)) {
+        if ($request->has('tipos') && is_array($request->tipos) && count($request->tipos)) {
             $query->whereIn('tipo', $request->tipos);
         }
 
-        if ($request->has('CE') && !empty($request->CE)) {
+        if ($request->has('CE') && is_array($request->CE) && count($request->CE)) {
             $query->whereIn('CE', $request->CE);
         }
-        
+
         if ($request->has('search') && !empty($request->search)) {
             $query->where('title', 'like', '%' . $request->search . '%');
         }
@@ -108,7 +114,6 @@ class FilmController extends Controller
 
         return response()->json(['html' => $html]);
     }
-
     public function index2()
     {
         $films = Film::where('escolhido', 'SIM')->get();

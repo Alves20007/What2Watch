@@ -5,8 +5,8 @@
     <body class="bg-neutral-700 text-white">
         <section class="relative bg-neutral-700 text-white mb-6">
             <div class="absolute inset-0">
-                <img src="/bannerAtor/{{ $ator->banner }}" alt="{{ $ator->title }}" class="w-full h-full object-cover opacity-30">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
+                <img src="/bannerAtor/{{ empty($ator->banner) || $ator->banner === 'N/A' ? 'atoresFelizes.jpg' : $ator->banner }}" alt="{{ $ator->title }}" class="w-full h-full object-cover opacity-30">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
             </div>
         
             <div class="relative z-10 px-6 py-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6">
@@ -18,11 +18,33 @@
                     <p class="mb-4 text-sm italic">{{ $ator->Frase }}</p>
                     <p class="mb-2"><b>profissão:</b> {{ $ator->profissao }}</p>
                     <p class="mb-2"><b>sexo:</b> {{ $ator->sexo }}</p>
-                    <p class="mb-2"><b>Data de Nascimento:</b> {{ $ator->birthday }}</p>
-                    @php
-                        $age = \Carbon\Carbon::createFromFormat('d/m/Y', $ator->birthday)->age;
+                   @php
+                        try {
+                            $birthday = \Carbon\Carbon::createFromFormat('d/m/Y', $ator->birthday);
+                        } catch (\Exception $e) {
+                            try {
+                                $birthday = \Carbon\Carbon::createFromFormat('Y-m-d', $ator->birthday);
+                            } catch (\Exception $e) {
+                                $birthday = \Carbon\Carbon::parse($ator->birthday);
+                            }
+                            $age = $birthday->age;
+                        }
+                         $age = $birthday->age;
                     @endphp
-                    <p class="mb-2"><b>Idade:</b> {{ $age }} anos</p>                    <p class="mb-2"><b>Local de Nascimento: </b> {{ $ator->country }}</p>
+
+                    <p class="mb-2"><b>Data de Nascimento:</b> {{ $birthday->format('d/m/Y') }}</p>
+
+                    <p class="mb-2"><b>Idade:</b> {{ $age }} anos</p>
+                    @php
+                        $estado = strtolower($ator->Falecimento);
+                    @endphp
+
+                    @if (empty($estado) || $estado === 'nao' || $estado === 'vivo' || $estado === 'null')
+                        <p class="mb-2"><b>Estado:</b> Vivo</p>
+                    @else
+                        <p class="mb-2"><b>Estado:</b> Morto</p>
+                    @endif          
+                    <p class="mb-2"><b>Local de Nascimento: </b> {{ $ator->country }}</p>
                     <p class="mb-2"><b>Biografia:   </b>{{ $ator->bio}}</p>
                 </div>
             </div>
@@ -33,19 +55,21 @@
                 Filmes mais famosos que participou
             </h2>
         
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach($ator->films as $film)
-                    <a href="/filmes/{{ $film->slug }}" class="bg-neutral-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-                        <div class="h-64 w-full overflow-hidden">
-                            <img src="/images/{{ $film->image }}" alt="{{ $film->title }}"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-white mb-1 truncate">{{ $film->title }}</h3>
-                            <p class="text-sm text-yellow-300 italic">Personagem: {{ $film->pivot->personagem ?? 'Desconhecido' }}</p>
-                        </div>
-                    </a>
-                @endforeach
+            <div class="overflow-x-auto">
+                <div class="flex gap-6 min-w-[100%]">
+                    @foreach($ator->films as $film)
+                        <a href="/filmes/{{ $film->slug }}" class="min-w-[200px] max-w-[200px] bg-neutral-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
+                            <div class="h-64 w-full overflow-hidden">
+                                <img src="/images/{{ $film->image }}" alt="{{ $film->title }}"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-white mb-1 truncate">{{ $film->title }}</h3>
+                                <p class="text-sm text-yellow-300 italic">Personagem: {{ $film->pivot->personagem ?? 'Desconhecido' }}</p>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
             </div>
         </section>
         <!-- Críticas -->

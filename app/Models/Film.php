@@ -12,21 +12,32 @@ class Film extends Model
     protected $fillable = [
         'title',
         'slug',
+        'Falas',
+        'participou',
+        'Editora',
+        'Oscares',
+        'Diretor',
         'Data',
+        'CE',
         'PCategoria',
         'categoria',
         'audio',
         'trailer',
-        'elenco',
+        'Elenco',
         'sinopse',
         'tipo',
         'image',
-        'Temporada',
+        'Diretor',
+        'Editora',
+        'Temporadas',
         'Episodios',
         'banner',
         'criador'    
     ];
-    
+    protected $casts = [
+    'Elenco' => 'array',
+    'Categoria'=> 'array'
+    ];
     public function usersWhoWatchlist()
     {
         return $this->belongsToMany(User::class, 'watchlist')->withTimestamps();
@@ -34,13 +45,13 @@ class Film extends Model
     public function reviews() {
         return $this->hasMany(Ranking::class);
     }
-
+    
     public function users()
     {
         return $this->belongsToMany(User::class)->withPivot('rating');
     }
 
-    public function creador()
+    public function creator()
     {
         return $this->belongsTo(User::class, 'criador');
     }
